@@ -15,32 +15,44 @@ instructions: |
   ## Process
 
   1. **Identify the input file**: Ask the user which text file contains the requirements to extract.
-     The file should contain requirement-like statements with keywords such as:
-     - "must", "should", "shall", "will"
-     - User stories format: "As a... I want... So that..."
-     - Numbered or bulleted lists describing functionality
 
-  2. **Check for template**: The script expects the Excel template at:
+  2. **Check if input file has proper requirement format**:
+     - If the file contains explicit "must", "should", "shall", "will" statements: proceed to step 4
+     - If the file is a business case, high-level description, or informal document: proceed to step 3
+
+  3. **Create formatted requirements (REQUIRED for business cases)**:
+     - Read the source document to understand the proposed solution and capabilities
+     - Create a new file: `<original_filename>_Requirements.txt` in the same directory
+     - Write structured functional requirements with proper format:
+       * Use "The system must...", "The platform must...", "The system should..." language
+       * Organize by phases, features, or functional areas
+       * Number each requirement (1, 2, 3, etc.)
+       * Group related requirements under descriptive headings
+     - Example transformation:
+       * Business case: "The platform will automate document analysis"
+       * Formatted requirement: "The system must automatically read and interpret supplier documentation."
+
+  4. **Check for template**: The script expects the Excel template at:
      `.claude/skills/code-review/templates/PRJ-Functional Requirements Specification.xlsx`
      Verify this file exists before running the script.
 
-  3. **Run the extraction**: Execute the Python script:
+  5. **Run the extraction**: Execute the Python script on the formatted requirements file:
      ```bash
-     python .claude/skills/scripts/functional_requirement.py <input_file> [project_name]
+     python .claude/skills/scripts/functional_requirement.py <formatted_requirements_file> [project_name]
      ```
 
      Where:
-     - `<input_file>`: Path to the text file containing requirements
+     - `<formatted_requirements_file>`: Path to the formatted requirements text file (e.g., "*_Requirements.txt")
      - `[project_name]`: Optional project name (defaults to input filename)
 
-  4. **Review results**: The script will:
+  6. **Review results**: The script will:
      - Extract requirements using pattern matching
      - Categorize them (Authentication, Data Management, UI, Integration, etc.)
      - Assign priority (High/Medium/Low) based on keywords
      - Generate a timestamped Excel file in the `requirements/` directory
      - Output file format: `FRS_{project_name}_{timestamp}.xlsx`
 
-  5. **Verify output**: Check the generated Excel file and report:
+  7. **Verify output**: Check the generated Excel file and report:
      - Number of requirements found
      - Output file location
      - Any warnings if no requirements were detected
