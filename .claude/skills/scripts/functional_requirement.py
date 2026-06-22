@@ -153,6 +153,30 @@ class FunctionalRequirementExtractor:
         # Default fallback
         return ('General', category)
 
+    def _sort_requirements_by_category(self, requirements: List[Dict[str, str]]) -> List[Dict[str, str]]:
+        """
+        Sort requirements by CATEGORY (main) and then SUB-CATEGORY.
+        This ensures IDs are assigned in a logical order.
+        """
+        # Add category and sub-category to each requirement for sorting
+        requirements_with_categories = []
+        for req in requirements:
+            main_category, sub_category = self._split_category(req['category'])
+            requirements_with_categories.append({
+                'req': req,
+                'main_category': main_category,
+                'sub_category': sub_category
+            })
+
+        # Sort by main category first, then by sub-category
+        sorted_reqs = sorted(
+            requirements_with_categories,
+            key=lambda x: (x['main_category'], x['sub_category'])
+        )
+
+        # Return just the requirement objects
+        return [item['req'] for item in sorted_reqs]
+
     def read_text_file(self, file_path: str) -> str:
         """Read content from a text file."""
         try:
@@ -197,9 +221,12 @@ class FunctionalRequirementExtractor:
         # Look for header row containing "Requirement" or "ID"
         start_row = self._find_header_row(ws) + 1
 
+        # Sort requirements by category and sub-category before assigning IDs
+        sorted_requirements = self._sort_requirements_by_category(requirements)
+
         # Populate requirements - simply write data to cells
         # Template may have some pre-formatted rows, but we'll just overwrite/extend
-        for idx, req in enumerate(requirements, start=1):
+        for idx, req in enumerate(sorted_requirements, start=1):
             row = start_row + idx - 1
 
             # Template structure based on PRJ-Functional Requirements Specification:
@@ -216,7 +243,7 @@ class FunctionalRequirementExtractor:
             # Populate data
             ws.cell(row=row, column=1, value=main_category)  # CATEGORY
             ws.cell(row=row, column=2, value=sub_category)  # SUB-CATEGORY
-            ws.cell(row=row, column=3, value=f"FR-{idx:03d}")  # ID
+            ws.cell(row=row, column=3, value=f"FR-{idx:03d}")  # ID (assigned after sorting)
             ws.cell(row=row, column=4, value=req['description'])  # DESCRIPTION
             ws.cell(row=row, column=5, value=req['priority'])  # MRL Priority
             # Column F (COMPLIANCE) is intentionally left blank
