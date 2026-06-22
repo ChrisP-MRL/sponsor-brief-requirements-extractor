@@ -1,0 +1,29 @@
+# Claude Code local settings
+.claude/settings.local.json
+
+# Excel templates (binary files - keep only the Python/YAML code)
+*.xlsx
+*.xls
+*.xlsm
+
+# Word documents
+*.docx
+*.doc
+
+# Generated output
+requirements/
+raw data/
+external/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# IDE
+.vscode/
+*.log
