@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Drone Operations >2kg Offshore of Onslow: Regulatory Implications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', 'Avenir', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            color: #000000;
+            background-color: #FFFFFF;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #CE372F 0%, #00444C 100%);
+            color: white;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .toc {
+            background: #F1EDE7;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            border-left: 5px solid #CE372F;
+        }
+
+        .toc h2 {
+            color: #CE372F;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+        .toc li::before {
+            content: "▸";
+            color: #CE372F;
+            font-weight: bold;
+            display: inline-block;
+            width: 20px;
+            margin-left: -20px;
+        }
+
+        .toc a {
+            color: #00444C;
+            text-decoration: none;
+            font-size: 15pt;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: #CE372F;
+            text-decoration: underline;
+        }
+
+        .toc .subsection {
+            padding-left: 40px;
+            font-size: 14pt;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #CE372F;
+        }
+
+        .section-alt {
+            background: #F1EDE7;
+            border-left: 5px solid #00444C;
+        }
+
+        .section-title {
+            color: #CE372F;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-subtitle {
+            color: #00444C;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        .body-text {
+            font-size: 15pt;
+            line-height: 1.8;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+
+        .emphasis {
+            font-weight: 700;
+            color: #CE372F;
+        }
+
+        .callout-box {
+            background: linear-gradient(135deg, #F9E5E3 0%, #F3C5BF 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #CE372F;
+            margin: 20px 0;
+        }
+
+        .callout-box h4 {
+            color: #CE372F;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #E0F7F9 0%, #B0EDF3 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #3F939C;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #00444C;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .citation {
+            background: #E3F2F4;
+            padding: 15px 20px;
+            border-left: 4px solid #3F939C;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        ul.guidelines-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.guidelines-list li {
+            padding: 12px;
+            margin: 10px 0;
+            background: #F1EDE7;
+            border-left: 4px solid #CE372F;
+            border-radius: 4px;
+        }
+
+        ul.guidelines-list li strong {
+            color: #CE372F;
+        }
+
+        ul.requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.requirements-list li {
+            padding: 12px 15px;
+            margin: 10px 0;
+            background: white;
+            border-left: 4px solid #5ED9E6;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        ul.requirements-list li::before {
+            content: "✓";
+            color: #5ED9E6;
+            font-weight: bold;
+            display: inline-block;
+            width: 25px;
+            font-size: 1.3em;
+        }
+
+        ul.barrier-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.barrier-list li {
+            padding: 12px 15px;
+            margin: 10px 0;
+            background: #ffebee;
+            border-left: 4px solid #CE372F;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        ul.barrier-list li::before {
+            content: "✗";
+            color: #CE372F;
+            font-weight: bold;
+            display: inline-block;
+            width: 25px;
+            font-size: 1.3em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            background: #CE372F;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background: #F1EDE7;
+        }
+
+        .citations {
+            background: #EFEFEF;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 5px solid #5C5C5C;
+        }
+
+        .citations h3 {
+            color: #5C5C5C;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .citations ol {
+            font-size: 13pt;
+            line-height: 1.6;
+        }
+
+        .citations li {
+            margin-bottom: 8px;
+        }
+
+        .citations a {
+            color: #00444C;
+            word-break: break-word;
+        }
+
+        .footer-signature {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: #666;
+            border-top: 2px solid #CE372F;
+        }
+
+        .sup-ref {
+            font-size: 0.8em;
+            color: #3F939C;
+            font-weight: 600;
+            vertical-align: super;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Commercial Drone Operations >2kg Offshore of Onslow</h1>
+        <p class="subtitle">Regulatory Implications and Compliance Requirements for MinRes Operations</p>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#section-1">1. Critical Limitation: Lack of Offshore Airspace Guidance</a></li>
+            <li><a href="#section-2">2. Applicable Regulatory Framework for >2kg Drones</a>
+                <ul class="subsection">
+                    <li><a href="#section-2-1">2.1 Remote Pilot Licence (RePL) Requirement</a></li>
+                    <li><a href="#section-2-2">2.2 Remote Operator's Certificate (ReOC)</a></li>
+                </ul>
+            </li>
+            <li><a href="#section-3">3. Airspace Classification Considerations</a>
+                <ul class="subsection">
+                    <li><a href="#section-3-1">3.1 Offshore Class G Airspace</a></li>
+                    <li><a href="#section-3-2">3.2 Distance from Controlled Aerodromes</a></li>
+                </ul>
+            </li>
+            <li><a href="#section-4">4. Standard Operating Conditions for >2kg Offshore Operations</a>
+                <ul class="subsection">
+                    <li><a href="#section-4-1">4.1 Visual Line of Sight (VLOS) Requirement</a></li>
+                    <li><a href="#section-4-2">4.2 Altitude Restrictions</a></li>
+                    <li><a href="#section-4-3">4.3 People Separation Requirements</a></li>
+                </ul>
+            </li>
+            <li><a href="#section-5">5. Maritime and Safety Considerations</a>
+                <ul class="subsection">
+                    <li><a href="#section-5-1">5.1 Lack of Specific Maritime Drone Guidance</a></li>
+                    <li><a href="#section-5-2">5.2 Insurance and Liability Constraints</a></li>
+                </ul>
+            </li>
+            <li><a href="#section-6">6. Specific Operational Barriers to >2kg Offshore Operations</a>
+                <ul class="subsection">
+                    <li><a href="#section-6-1">6.1 Training and Competency Requirements</a></li>
+                    <li><a href="#section-6-2">6.2 VLOS Practicality at 20 km Offshore</a></li>
+                </ul>
+            </li>
+            <li><a href="#section-7">7. Airspace Approval Pathway</a>
+                <ul class="subsection">
+                    <li><a href="#section-7-1">7.1 Beyond Visual Line of Sight (BVLOS) Waiver Requirement</a></li>
+                </ul>
+            </li>
+            <li><a href="#section-8">8. Summary: >2kg Offshore Onslow Implications</a></li>
+            <li><a href="#citations">Citations</a></li>
+        </ul>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="section">
+        <p class="body-text">Operating a drone weighing more than 2 kg approximately 20 km offshore of Onslow (west of Thevenard Island) presents a significantly different regulatory scenario compared to operations near the airport itself. This document analyzes the specific implications based on current Australian drone regulations and CASA guidelines.</p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section section-alt" id="section-1">
+        <h2 class="section-title">1. Critical Limitation: Lack of Offshore Airspace Guidance</h2>
+
+        <div class="callout-box">
+            <h4>⚠ Critical Regulatory Gap</h4>
+            <p class="body-text"><span class="emphasis">The provided documentation does not contain specific regulatory information regarding commercial drone operations in offshore airspace beyond Australian territorial waters or in maritime zones west of coastal locations like Onslow.</span></p>
+        </div>
+
+        <p class="body-text">The search results focus primarily on:</p>
+
+        <ul class="guidelines-list">
+            <li><strong>Onshore airspace classifications</strong> and controlled/uncontrolled designations<span class="sup-ref">[1]</span></li>
+            <li><strong>Distance restrictions</strong> relative to controlled aerodromes (5.5 km)<span class="sup-ref">[2]</span></li>
+            <li><strong>Standard operating conditions</strong> for terrestrial operations<span class="sup-ref">[3]</span></li>
+            <li><strong>Class G airspace management</strong> in uncontrolled areas<span class="sup-ref">[4]</span></li>
+        </ul>
+
+        <p class="body-text" style="margin-top: 20px;">However, regulatory guidance can be provided based on general CASA principles that would reasonably apply to your scenario.</p>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section" id="section-2">
+        <h2 class="section-title">2. Applicable Regulatory Framework for >2kg Drones</h2>
+
+        <h3 class="section-subtitle" id="section-2-1">2.1 Remote Pilot Licence (RePL) Requirement</h3>
+
+        <div class="callout-box">
+            <h4>Mandatory Requirement</h4>
+            <p class="body-text"><span class="emphasis">If your drone weighs more than 2 kg, you cannot operate it commercially under CASA's excluded category. You must obtain a Remote Pilot Licence (RePL).</span><span class="sup-ref">[5]</span></p>
+        </div>
+
+        <div class="citation">
+            <p class="body-text">"An RePL is required to fly a drone larger than 2kg for commercial operations, and outside drone safety rules."<span class="sup-ref">[6]</span></p>
+        </div>
+
+        <p class="body-text">This is a non-negotiable requirement regardless of whether your operations are offshore or onshore.</p>
+
+        <h3 class="section-subtitle" id="section-2-2">2.2 Remote Operator's Certificate (ReOC)</h3>
+
+        <p class="body-text">In addition to the individual pilot's RePL, <span class="emphasis">for commercial operations you'll generally need a Remote Pilot Licence (RePL) and an Operator's Certificate (OC).</span><span class="sup-ref">[7]</span></p>
+
+        <p class="body-text">The Operator's Certificate represents organizational-level compliance and insurance considerations.</p>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section section-alt" id="section-3">
+        <h2 class="section-title">3. Airspace Classification Considerations</h2>
+
+        <h3 class="section-subtitle" id="section-3-1">3.1 Offshore Class G Airspace</h3>
+
+        <p class="body-text">While specific offshore classifications aren't detailed in the documentation, the general principle is that <span class="emphasis">most RPAS/drone operations are conducted in Class G (General/Uncontrolled) airspace.</span><span class="sup-ref">[8]</span> This would reasonably extend to offshore areas beyond controlled aerodrome influence zones.</p>
+
+        <div class="info-box">
+            <h4>Class G Airspace Implications</h4>
+            <p class="body-text">In Class G airspace, no ATC services are provided to VFR or IFR traffic.<span class="sup-ref">[9]</span> This means:</p>
+        </div>
+
+        <ul class="requirements-list">
+            <li><strong>Full responsibility:</strong> You bear full responsibility for detecting and avoiding other aircraft<span class="sup-ref">[10]</span></li>
+            <li><strong>No separation services:</strong> No separation services are provided by air traffic control<span class="sup-ref">[11]</span></li>
+            <li><strong>Situational awareness:</strong> Situational awareness becomes entirely your responsibility<span class="sup-ref">[12]</span></li>
+        </ul>
+
+        <h3 class="section-subtitle" id="section-3-2">3.2 Distance from Controlled Aerodromes</h3>
+
+        <p class="body-text">At approximately 20 km offshore west of Thevenard Island, you are likely <span class="emphasis">well beyond the 5.5 km restriction zone that applies to non-controlled aerodromes like Onslow Airport.</span><span class="sup-ref">[2]</span></p>
+
+        <p class="body-text">However, this geographical separation does not eliminate other regulatory obligations.</p>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section" id="section-4">
+        <h2 class="section-title">4. Standard Operating Conditions for >2kg Offshore Operations</h2>
+
+        <h3 class="section-subtitle" id="section-4-1">4.1 Visual Line of Sight (VLOS) Requirement</h3>
+
+        <div class="citation">
+            <p class="body-text">"Core operating rules include flying below 120 m AGL, keeping visual line of sight, maintaining 30 m separation from people and staying out of controlled airspace without approval."<span class="sup-ref">[13]</span></p>
+        </div>
+
+        <div class="callout-box">
+            <h4>⚠ Critical Challenge for Offshore Operations</h4>
+            <p class="body-text">The <span class="emphasis">visual line of sight (VLOS)</span> requirement becomes particularly challenging in an offshore environment at 20 km distance. You must maintain <span class="emphasis">continuous unaided visual contact with your drone at all times.</span><span class="sup-ref">[14]</span></p>
+
+            <p class="body-text" style="margin-top: 15px;">Operating at 20 km offshore likely presents practical and legal challenges to maintaining VLOS, unless you are operating from a marine vessel in that location.</p>
+        </div>
+
+        <h3 class="section-subtitle" id="section-4-2">4.2 Altitude Restrictions</h3>
+
+        <p class="body-text"><span class="emphasis">Maximum Altitude: 120 Meter (393.7 Feet) in uncontrolled airspace.</span><span class="sup-ref">[15]</span></p>
+
+        <p class="body-text">This altitude ceiling applies equally to offshore operations in Class G airspace.</p>
+
+        <h3 class="section-subtitle" id="section-4-3">4.3 People Separation Requirements</h3>
+
+        <p class="body-text"><span class="emphasis">You must stay below 120 metres and keep more than 30 metres away from other people.</span><span class="sup-ref">[16]</span></p>
+
+        <p class="body-text">In an offshore environment 20 km from land, this requirement becomes context-dependent—you must maintain 30 m separation from any personnel on your vessel or other vessels in the operational area.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section section-alt" id="section-5">
+        <h2 class="section-title">5. Maritime and Safety Considerations</h2>
+
+        <h3 class="section-subtitle" id="section-5-1">5.1 Lack of Specific Maritime Drone Guidance</h3>
+
+        <div class="callout-box">
+            <h4>⚠ Regulatory Gap</h4>
+            <p class="body-text"><span class="emphasis">The provided documentation does not contain specific regulations for maritime drone operations, coordination with marine traffic, or safety protocols for offshore commercial drone use.</span> This represents a significant gap in the regulatory framework provided.</p>
+        </div>
+
+        <p class="body-text">However, you would reasonably need to consider:</p>
+
+        <ul class="guidelines-list">
+            <li><strong>Coordination with vessel operators</strong> in the operational area</li>
+            <li><strong>Maritime safety protocols</strong> and vessel traffic awareness</li>
+            <li><strong>Communication with maritime authorities</strong> (not covered in the aviation-focused documentation)</li>
+            <li><strong>Sea state and weather conditions</strong> affecting safe drone recovery and operation</li>
+        </ul>
+
+        <h3 class="section-subtitle" id="section-5-2">5.2 Insurance and Liability Constraints</h3>
+
+        <p class="body-text">An important practical limitation exists: <span class="emphasis">You cannot obtain aviation-specific liability insurance</span> if operating under the sub-2kg excluded category.<span class="sup-ref">[17]</span></p>
+
+        <p class="body-text">While your >2kg drone with RePL/ReOC should theoretically qualify for aviation liability insurance, offshore operations may present insurability challenges not addressed in this documentation.</p>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section" id="section-6">
+        <h2 class="section-title">6. Specific Operational Barriers to >2kg Offshore Operations</h2>
+
+        <h3 class="section-subtitle" id="section-6-1">6.1 Training and Competency Requirements</h3>
+
+        <div class="citation">
+            <p class="body-text">"The training curriculum prepares you for real-world commercial drone operations and ensures you understand both the privileges and responsibilities that come with commercial pilot status."<span class="sup-ref">[18]</span></p>
+        </div>
+
+        <p class="body-text">Your RePL training would likely not specifically prepare you for offshore maritime drone operations, creating a potential competency gap.</p>
+
+        <h3 class="section-subtitle" id="section-6-2">6.2 VLOS Practicality at 20 km Offshore</h3>
+
+        <div class="callout-box">
+            <h4>⚠ Fundamental Operational Conflict</h4>
+            <p class="body-text">Operating a drone >2kg at 20 km offshore presents a fundamental practical conflict with CASA's core requirements. <span class="emphasis">You must keep visual line of sight (VLOS)</span> at all times,<span class="sup-ref">[19]</span> but maintaining continuous unaided visual contact with a drone 20 km from your position is practically impossible under standard operating conditions.</p>
+        </div>
+
+        <p class="body-text" style="margin-top: 20px;">To legally operate beyond VLOS, <span class="emphasis">you would need to apply for and obtain specific CASA approval or a waiver,</span> which is not granted automatically and requires demonstrated safety justification.</p>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="section section-alt" id="section-7">
+        <h2 class="section-title">7. Airspace Approval Pathway</h2>
+
+        <h3 class="section-subtitle" id="section-7-1">7.1 Beyond Visual Line of Sight (BVLOS) Waiver Requirement</h3>
+
+        <p class="body-text">If your intended offshore operations genuinely require drone operation beyond visual line of sight or outside standard operating conditions, <span class="emphasis">"this path allows for more advanced flight operations, including flights with larger drones and the authority to apply to CASA for flight permission in some restricted airspaces."</span><span class="sup-ref">[20]</span></p>
+
+        <div class="info-box">
+            <h4>BVLOS Approval Requirements</h4>
+            <p class="body-text">Obtaining such approvals typically requires:</p>
+        </div>
+
+        <ul class="requirements-list">
+            <li>Demonstrated operational necessity</li>
+            <li>Enhanced safety protocols and redundancy</li>
+            <li>Advanced pilot qualifications beyond standard RePL</li>
+            <li>Comprehensive risk assessments</li>
+            <li>CASA formal approval processes (timelines and success rates not detailed in provided documentation)</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 8 - SUMMARY -->
+    <div class="section" id="section-8">
+        <h2 class="section-title">8. Summary: >2kg Offshore Onslow Implications</h2>
+
+        <p class="body-text">Your proposed operation presents the following regulatory landscape:</p>
+
+        <h3 class="section-subtitle">Mandatory Requirements</h3>
+
+        <ul class="requirements-list">
+            <li><strong>Remote Pilot Licence (RePL) required</strong> (not optional for >2kg commercial operations)<span class="sup-ref">[5][6]</span></li>
+            <li><strong>Remote Operator's Certificate (ReOC) likely required</strong> for organizational compliance<span class="sup-ref">[7]</span></li>
+            <li><strong>Standard operating conditions apply:</strong> VLOS mandatory, 120m altitude ceiling, 30m people separation<span class="sup-ref">[13][15][16]</span></li>
+            <li><strong>Class G airspace rules apply:</strong> full responsibility for detect-and-avoid<span class="sup-ref">[9][10]</span></li>
+        </ul>
+
+        <h3 class="section-subtitle">Significant Practical Barriers</h3>
+
+        <ul class="barrier-list">
+            <li><strong>VLOS maintenance at 20 km offshore likely impossible</strong> without CASA waiver/approval<span class="sup-ref">[19]</span></li>
+            <li><strong>BVLOS waiver required</strong> if operation demands exceed visual line of sight<span class="sup-ref">[20]</span></li>
+            <li><strong>Insurance availability uncertain</strong> for offshore commercial drone operations</li>
+            <li><strong>No specific regulatory guidance provided</strong> for maritime/offshore operations in documentation</li>
+            <li><strong>Pilot training likely insufficient</strong> for offshore operational environment<span class="sup-ref">[18]</span></li>
+        </ul>
+
+        <h3 class="section-subtitle">Critical Gap</h3>
+
+        <div class="callout-box">
+            <h4>⚠ Insufficient Documentation</h4>
+            <p class="body-text"><span class="emphasis">The provided documentation does not contain sufficient detail regarding offshore airspace operations, maritime coordination requirements, or BVLOS approval processes to provide complete regulatory clarity for your specific scenario.</span></p>
+
+            <p class="body-text" style="margin-top: 15px;">You would need to consult directly with CASA regarding:</p>
+
+            <ul style="margin-top: 15px; list-style-position: inside;">
+                <li>Whether offshore operations 20 km from land fall under Australian airspace jurisdiction</li>
+                <li>Whether BVLOS waiver approval is available for your operational profile</li>
+                <li>What maritime coordination requirements exist</li>
+                <li>What additional insurance and safety protocols are mandated</li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="margin-top: 30px;">
+            <h4>Recommended Next Steps</h4>
+            <p class="body-text">We recommend contacting <span class="emphasis">CASA directly</span> (casa.gov.au) or engaging with a specialized <span class="emphasis">aviation legal consultant</span> experienced in advanced drone operations to clarify the regulatory pathway for your specific offshore commercial drone application.</p>
+        </div>
+    </div>
+
+    <!-- CITATIONS -->
+    <div class="citations" id="citations">
+        <h3>Citations</h3>
+        <ol>
+            <li><a href="https://drone-laws.com/drone-laws-in-australia/" target="_blank">https://drone-laws.com/drone-laws-in-australia/</a></li>
+            <li><a href="https://www.casa.gov.au/drones/operator-accreditation-certificate/drone-weight-categories-and-requirements" target="_blank">https://www.casa.gov.au/drones/operator-accreditation-certificate/drone-weight-categories-and-requirements</a></li>
+            <li><a href="https://help.dronedeploy.com/hc/en-us/articles/19739227685527-Drone-regulations-in-Australia" target="_blank">https://help.dronedeploy.com/hc/en-us/articles/19739227685527-Drone-regulations-in-Australia</a></li>
+            <li><a href="https://www.flyingglass.com.au/drone-weight-class-australia/" target="_blank">https://www.flyingglass.com.au/drone-weight-class-australia/</a></li>
+            <li><a href="https://www.casa.gov.au/knowyourdrone/drone-rules" target="_blank">https://www.casa.gov.au/knowyourdrone/drone-rules</a></li>
+            <li><a href="https://www.flyingglass.com.au/drone-rules-under-250g-australia-legal/" target="_blank">https://www.flyingglass.com.au/drone-rules-under-250g-australia-legal/</a></li>
+            <li><a href="https://www.propelrc.com/drone-laws-in-australia/" target="_blank">https://www.propelrc.com/drone-laws-in-australia/</a></li>
+            <li><a href="https://www.flyeye.io/australian-drone-regulations-drone-class/" target="_blank">https://www.flyeye.io/australian-drone-regulations-drone-class/</a></li>
+            <li><a href="https://www.flyingglass.com.au/drone-laws-australia-for-every-pilot/" target="_blank">https://www.flyingglass.com.au/drone-laws-australia-for-every-pilot/</a></li>
+            <li><a href="https://uavcoach.com/drone-laws-in-australia/" target="_blank">https://uavcoach.com/drone-laws-in-australia/</a></li>
+            <li><a href="https://skymediatraining.com.au/drone-rules-under-250g-australia/" target="_blank">https://skymediatraining.com.au/drone-rules-under-250g-australia/</a></li>
+            <li><a href="https://www.parrot.com/en/drone-regulations/australia" target="_blank">https://www.parrot.com/en/drone-regulations/australia</a></li>
+            <li><a href="https://dronesgator.com/australia-drone-laws/" target="_blank">https://dronesgator.com/australia-drone-laws/</a></li>
+            <li><a href="https://ts2.tech/en/australian-drone-laws-2025-complete-guide-to-rules-registration-no-fly-zones/" target="_blank">https://ts2.tech/en/australian-drone-laws-2025-complete-guide-to-rules-registration-no-fly-zones/</a></li>
+            <li><a href="https://tolluncrewedsystems.com/drone-licence/australian-drone-licence-guide/" target="_blank">https://tolluncrewedsystems.com/drone-licence/australian-drone-licence-guide/</a></li>
+            <li><a href="https://www.spheredrones.com.au/resources/blog/commercial-drone-laws" target="_blank">https://www.spheredrones.com.au/resources/blog/commercial-drone-laws</a></li>
+            <li><a href="https://www.flyeye.io/australia-drone-laws/" target="_blank">https://www.flyeye.io/australia-drone-laws/</a></li>
+            <li><a href="https://www.dji.com/flyingtips/au" target="_blank">https://www.dji.com/flyingtips/au</a></li>
+            <li><a href="https://www.fortyfourdegrees.com.au/overview-of-australian-drone-laws/" target="_blank">https://www.fortyfourdegrees.com.au/overview-of-australian-drone-laws/</a></li>
+            <li><a href="https://www.uncrewedapprovals.com.au/resources/reoc-assessment-prep/classes-of-airspace/" target="_blank">https://www.uncrewedapprovals.com.au/resources/reoc-assessment-prep/classes-of-airspace/</a></li>
+        </ol>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-signature">
+        <p style="font-size: 1.1em; margin-bottom: 10px;"><strong>Commercial Drone Operations: Regulatory Analysis</strong></p>
+        <p style="margin-bottom: 5px;">Mineral Resources Limited | Offshore Operations Compliance</p>
+        <p style="font-size: 0.9em; color: #999;">Generated: July 2026 | For Internal Review</p>
+    </div>
+</body>
+</html>

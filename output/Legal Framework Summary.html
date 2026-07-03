@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Framework Analysis: UAV Operations for OGV Draft Surveys</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', 'Avenir', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            color: #000000;
+            background-color: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #CE372F 0%, #00444C 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
+
+        header .meta {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 15px;
+        }
+
+        nav {
+            background-color: #F1EDE7;
+            padding: 30px;
+            border-bottom: 3px solid #CE372F;
+        }
+
+        nav h2 {
+            color: #CE372F;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .toc {
+            list-style: none;
+        }
+
+        .toc > li {
+            margin-bottom: 12px;
+        }
+
+        .toc a {
+            color: #00444C;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 8px 12px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            background-color: #E8E8E8;
+            border-left-color: #CE372F;
+            padding-left: 20px;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .toc ul li {
+            margin-bottom: 6px;
+        }
+
+        .toc ul a {
+            font-weight: normal;
+            font-size: 0.95em;
+            color: #5C5C5C;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section {
+            background: #FFFFFF;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #CE372F;
+        }
+
+        h2 {
+            color: #CE372F;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E8E8E8;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #00444C;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: #000000;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+            font-size: 15pt;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .executive-summary {
+            background-color: #F1EDE7;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 5px solid #CE372F;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .key-finding {
+            background-color: #F9E5E3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #CE372F;
+        }
+
+        .high-relevance {
+            background-color: #E3F2F4;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3F939C;
+        }
+
+        .medium-relevance {
+            background-color: #F0F2E5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #878C56;
+        }
+
+        .low-relevance {
+            background-color: #F4D9DD;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #8B2E45;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #E8E8E8;
+        }
+
+        th {
+            background-color: #CE372F;
+            color: white;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F1EDE7;
+        }
+
+        .score {
+            font-weight: 700;
+            color: #CE372F;
+        }
+
+        .critical-gap {
+            background-color: #F9E5E3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #CE372F;
+        }
+
+        .icon {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        .new-tag {
+            background-color: #CE372F;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .enhanced-tag {
+            background-color: #3F939C;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .checkmark {
+            color: #3F939C;
+            font-weight: 700;
+        }
+
+        footer {
+            background-color: #00444C;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        footer .footer-title {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-subtitle {
+            margin-bottom: 5px;
+        }
+
+        footer .footer-meta {
+            font-size: 0.85em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        footer .footer-disclaimer {
+            font-size: 0.85em;
+            margin-top: 15px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        footer .footer-copyright {
+            margin-top: 15px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #CE372F;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            background-color: #7A1F18;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+
+            header h1 {
+                font-size: 1.6em;
+            }
+
+            main, nav {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 0.85em;
+            }
+        }
+
+        /* Document reference links */
+        .document-title a,
+        .reference-matrix a,
+        .document-content a[href$=".pdf"] {
+            color: #2563eb;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        .document-title a:hover,
+        .reference-matrix a:hover,
+        .document-content a[href$=".pdf"]:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        .high-relevance .document-title a,
+        .medium-relevance .document-title a,
+        .low-relevance .document-title a {
+            font-weight: 600;
+        }
+
+        /* External link indicator */
+        a[target="_blank"]::after {
+            content: " ↗";
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        /* Source Documents Section Styling */
+        .source-list {
+            margin: 20px 0;
+        }
+
+        .source-list h3 {
+            margin-bottom: 15px;
+        }
+
+        .source-list ul {
+            line-height: 2;
+        }
+
+        .source-list li {
+            margin-bottom: 8px;
+        }
+
+        .source-list li strong {
+            color: #000000;
+        }
+
+        /* Icon color overrides for relevance indicators */
+        .icon-high {
+            color: #3F939C;
+        }
+
+        .icon-medium {
+            color: #878C56;
+        }
+
+        .icon-low {
+            color: #8B2E45;
+        }
+
+        /* Strong text emphasis */
+        strong {
+            font-weight: 700;
+        }
+
+        /* Document card h5 styling */
+        h5 {
+            color: #00444C;
+            font-size: 1.1em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Key finding icon */
+        .icon-key {
+            color: #CE372F;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Legal Framework Analysis</h1>
+            <div class="subtitle">UAV Operations for OGV Draft Surveys at Onslow Port</div>
+            <div class="meta">
+                <strong>Analysis Date:</strong> 15 June 2026<br>
+                <strong>Purpose:</strong> Assess relevance of legal documents to UAV (drone) operations for conducting draft surveys of Ocean Going Vessels at Onslow Port<br>
+                <strong>Operational Context:</strong> Small/Medium RPA (>250g), hybrid operator model (internal staff + contractors)
+            </div>
+        </header>
+
+        <nav id="toc">
+            <h2>Table of Contents</h2>
+            <ul class="toc">
+                <li><a href="#executive-summary">Executive Summary</a></li>
+                <li><a href="#source-documents">Source Documents</a></li>
+                <li>
+                    <a href="#document-relevance">Document Relevance Assessment</a>
+                    <ul>
+                        <li><a href="#high-relevance">🟢 High Relevance (71-100/100)</a></li>
+                        <li><a href="#medium-relevance">🟡 Medium Relevance (41-70/100)</a></li>
+                        <li><a href="#low-relevance">🔴 Low Relevance (0-40/100)</a></li>
+                    </ul>
+                </li>
+                <li><a href="#comparative-analysis">Comparative Analysis Summary</a></li>
+                <li>
+                    <a href="#regulatory-requirements">Critical Regulatory Requirements</a>
+                    <ul>
+                        <li><a href="#federal-requirements">Federal Requirements (CASA)</a></li>
+                        <li><a href="#port-requirements">Port Authority Requirements</a></li>
+                        <li><a href="#environmental">Environmental Considerations</a></li>
+                    </ul>
+                </li>
+                <li><a href="#critical-gaps">Critical Gaps Identified</a></li>
+                <li>
+                    <a href="#next-steps">Recommended Next Steps</a>
+                    <ul>
+                        <li><a href="#immediate-actions">Immediate Actions</a></li>
+                        <li><a href="#medium-term">Medium-Term Actions</a></li>
+                        <li><a href="#long-term">Long-Term Actions</a></li>
+                    </ul>
+                </li>
+                <li><a href="#cross-reference">Document Cross-Reference Matrix</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#key-insights">Key Insights from Enhanced Analysis</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="executive-summary" class="executive-summary">
+                <h2>Executive Summary</h2>
+                <p>UAV operations for maritime draft surveys in Australian ports require <strong>dual compliance</strong>: federal aviation regulations administered by CASA (Civil Aviation Safety Authority) and port-specific operational procedures from the relevant port authority. The Legal Framework folder contains foundational CASA regulations and comparable port procedures, scoring 28-90/100 for relevance to Onslow operations.</p>
+
+                <div class="key-finding">
+                    <h3><span class="icon icon-key">●</span> Key Finding</h3>
+                    <p>High-relevance documents (72-90/100) establish mandatory operational constraints—Visual Line of Sight (VLOS), 400ft altitude limits, 30m separation distances, and operator licensing requirements. However, <strong>critical gaps exist</strong>: no Onslow-specific port procedures, missing Part 101 Manual of Standards, and unclear CASA approval pathways for operations over "populous areas" (ports).</p>
+                </div>
+
+                <h3>Compliance Path</h3>
+                <p>Operators must obtain:</p>
+                <ol>
+                    <li>CASA RPA accreditation/Remote Pilot License</li>
+                    <li>Aircraft registration</li>
+                    <li>CASA approval for port operations</li>
+                    <li>Pilbara Ports Authority operational permit with 72-hour advance notification to harbor master and VTS</li>
+                </ol>
+            </section>
+
+            <section id="source-documents">
+                <h2>Source Documents</h2>
+                <p>This analysis reviewed the following regulatory and operational documents. Click any document name to view the source PDF:</p>
+
+                <div class="source-list">
+                    <h3><span class="icon icon-high">◆</span> High Relevance Documents (71-100/100)</h3>
+                    <ul>
+                        <li><a href="../input/Legal Framework/annex-b-advisory-circular-101-01-applying-approval-conduct-many-rpa-operations.pdf" target="_blank"><strong>CASA Advisory Circular AC 101-01 Annex B</strong></a> — Relevance: 95/100 — ReOC approval process for non-standard RPA operations</li>
+                        <li><a href="../input/Legal Framework/part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf" target="_blank"><strong>CASR Part 101 Plain English Guide</strong></a> — Relevance: 90/100 — Federal RPA operational requirements (VLOS, altitude, separation)</li>
+                        <li><a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank"><strong>Drone Operations Over Port Lands and Waters Procedure</strong></a> — Relevance: 85/100 — MWPA (Geraldton) port drone permit framework</li>
+                        <li><a href="../input/Legal Framework/F2026C00286VOL03.pdf" target="_blank"><strong>Civil Aviation Safety Regulations 1998 - Volume 03</strong></a> — Relevance: 72/100 — CASR Part 101 legislative text</li>
+                    </ul>
+
+                    <h3><span class="icon icon-medium">◆</span> Medium Relevance Documents (41-70/100)</h3>
+                    <ul>
+                        <li><a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank"><strong>Port of Ashburton Port Handbook</strong></a> — Relevance: 65/100 — VTS protocols, notification frameworks, licensing systems</li>
+                        <li><strong>Port of Ashburton Port Handbook (Text Version)</strong> — Relevance: 65/100 — <em>(Source file unavailable - see <a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">PDF version</a>)</em></li>
+                        <li><a href="../input/Legal Framework/F2026C00286VOL04.pdf" target="_blank"><strong>Civil Aviation Safety Regulations 1998 - Volume 04</strong></a> — Relevance: 45/100 — Aerial work operations (manned aircraft only)</li>
+                    </ul>
+
+                    <h3><span class="icon icon-low">◆</span> Low Relevance Documents (0-40/100)</h3>
+                    <ul>
+                        <li><a href="../input/Legal Framework/F2026C00286VOL05.pdf" target="_blank"><strong>Civil Aviation Safety Regulations 1998 - Volume 05</strong></a> — Relevance: 35/100 — Regulatory dictionary and definitions</li>
+                        <li><a href="../input/Legal Framework/F2026C00286VOL01.pdf" target="_blank"><strong>Civil Aviation Safety Regulations 1998 - Volume 01</strong></a> — Relevance: 32/100 — Aircraft registration requirements</li>
+                        <li><a href="../input/Legal Framework/F2026C00286VOL02.pdf" target="_blank"><strong>Civil Aviation Safety Regulations 1998 - Volume 02</strong></a> — Relevance: 28/100 — Registration markings and display</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="document-relevance">
+                <h2>Document Relevance Assessment</h2>
+                <p>This analysis evaluates 10 documents from the Legal Framework folder, scoring each based on its relevance to UAV operations for OGV draft surveys at Onslow Port.</p>
+
+                <h3 id="high-relevance"><span class="icon icon-high">◆</span> High Relevance (71-100/100)</h3>
+
+                <div class="high-relevance">
+                    <h4>1. CASA Advisory Circular AC 101-01 Annex B <span class="new-tag">NEW</span></h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/annex-b-advisory-circular-101-01-applying-approval-conduct-many-rpa-operations.pdf" target="_blank">annex-b-advisory-circular-101-01-applying-approval-conduct-many-rpa-operations.pdf</a><br>
+                    <strong>Relevance Score:</strong> <span class="score">95/100</span></p>
+
+                    <p><strong>Summary:</strong> CASA official guidance on ReOC approval process for one-to-many/swarm RPA operations including application requirements (CONOPS, operational procedures, risk assessments), assessment process (desktop review plus on-site inspection), 3-month processing timeline, fee structure, and operational area specifications.</p>
+
+                    <p><strong>Why This Is Critical:</strong> This document is <strong>the critical missing piece</strong> addressing the approval pathway gap. While oriented toward one-to-many operations, it reveals CASA's complete approval process framework applicable to ANY non-standard RPA operations requiring Regulation 101.029 approval.</p>
+
+                    <h5>Key Contributions:</h5>
+                    <ul>
+                        <li><strong>Application Process:</strong> Submit RPAS Multi-purpose Application Form minimum 3 months before intended operations</li>
+                        <li><strong>Mandatory Documentation:</strong> CONOPS with coordinates, operational procedures, emergency procedures, stakeholder engagement plan, RPA technical manual, landowner/water authority permission</li>
+                        <li><strong>Assessment Phases:</strong> Desktop assessment → Training/testing approval → On-site technical assessment → Final review</li>
+                        <li><strong>Risk Management:</strong> Containment requirements, situational awareness protocols, stakeholder coordination, abnormal operations procedures</li>
+                        <li><strong>Operational Area Options:</strong> Location-specific (e.g., "Onslow Port only") or location-agnostic (Australia-wide)</li>
+                    </ul>
+
+                    <p><strong>Transformative Value:</strong> Changes "unclear CASA approval pathway" from critical gap to actionable roadmap with clear timeline (minimum 3 months), documentation requirements, and assessment criteria.</p>
+                </div>
+
+                <div class="high-relevance">
+                    <h4>2. CASR Part 101 Plain English Guide</h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf" target="_blank">part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf</a><br>
+                    <strong>Relevance Score:</strong> <span class="score">90/100</span></p>
+
+                    <p><strong>Summary:</strong> Federal CASA regulation establishing foundational RPA operational requirements: VLOS mandate, 120m altitude limit, 30m separation from persons, daylight-only operations, operator accreditation, and aircraft registration. Defines "populous area" restrictions directly applicable to port operations.</p>
+
+                    <p><strong>Why This Matters:</strong> This is the authoritative federal regulation governing ALL small RPA operations in Australia. It establishes non-negotiable requirements that form the foundation for all maritime drone operations.</p>
+
+                    <h5>Core Requirements:</h5>
+                    <ul>
+                        <li>Visual Line of Sight (cannot use FPV as substitute)</li>
+                        <li>120m/400ft maximum altitude</li>
+                        <li>30m minimum lateral separation from non-associated persons</li>
+                        <li>Prohibition on flying over people</li>
+                        <li>Daylight operations only</li>
+                        <li>Ports classified as likely "populous areas" requiring special CASA approval</li>
+                    </ul>
+                </div>
+
+                <div class="high-relevance">
+                    <h4>3. Drone Operations Over Port Lands and Waters Procedure <span class="enhanced-tag">ENHANCED</span></h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank">Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf</a> (Mid West Ports Authority)<br>
+                    <strong>Relevance Score:</strong> <span class="score">85/100</span></p>
+
+                    <p><strong>Summary:</strong> Mid West Ports Authority procedure for Geraldton Port establishing permit-to-work system with multi-level approval chain, mandatory JSEA risk assessment, 60m marine mammal separation, 100m Osprey nest exclusion zone, MSIC security card requirements, and VTS/harbor master vessel notification protocols.</p>
+
+                    <p><strong>Why This Is Valuable:</strong> Provides a comprehensive, proven operational framework specifically designed for commercial port drone operations in Western Australia. Demonstrates how federal CASA Part 101 regulations are implemented at the port authority level.</p>
+
+                    <h5>Key Provisions:</h5>
+                    <ul>
+                        <li><strong>Permit Application Process:</strong> Multi-tier approval workflow (Harbour Master → Duty Ops → Port Security → CEO)</li>
+                        <li><strong>Operator Qualifications:</strong> RePL/ReOC/RPA required; operators of >2kg drones without RePL or ReOC will NOT be authorized</li>
+                        <li><strong>Environmental Protection:</strong> 60m separation from marine mammals; 100m exclusion zone around Osprey nesting platform</li>
+                        <li><strong>Maritime Coordination:</strong> Harbour Master notifies ship agents; vessel masters must be aware of drone activities</li>
+                        <li><strong>Documentation:</strong> Flight path plan, JSEA/risk assessment, pilot license, drone registration</li>
+                    </ul>
+
+                    <p><strong>Transferability to Onslow:</strong> As both Geraldton (MWPA) and Onslow (Pilbara Ports Authority) operate under the same state legislation, this procedural framework is highly transferable despite being Geraldton-specific (15-point deduction).</p>
+                </div>
+
+                <div class="high-relevance">
+                    <h4>4. Civil Aviation Safety Regulations 1998 - Volume 03</h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/F2026C00286VOL03.pdf" target="_blank">F2026C00286VOL03.pdf</a><br>
+                    <strong>Relevance Score:</strong> <span class="score">72/100</span></p>
+
+                    <p><strong>Summary:</strong> Contains CASR Part 101 (unmanned aircraft regulations) establishing operational restrictions: VLOS requirements, prohibited areas, controlled airspace limitations, 400ft altitude ceiling, weather/daylight limitations, and commercial operation frameworks.</p>
+
+                    <p><strong>Key Legal Provisions:</strong></p>
+                    <ul>
+                        <li>VLOS as non-negotiable (Reg 101.073)</li>
+                        <li>Maximum 400ft AGL altitude unless CASA-approved (Reg 101.085)</li>
+                        <li>Prohibition on operations over "populous areas" without approval (Reg 101.280)</li>
+                        <li>Commercial hire-or-reward operation requirements</li>
+                        <li>Weather/visibility limitations (Reg 101.095)</li>
+                    </ul>
+
+                    <p><strong>Limitation:</strong> Repeatedly defers specific implementation details to the "Part 101 Manual of Standards" (not included in folder), particularly for over-water operations (28-point deduction).</p>
+                </div>
+            </section>
+
+            <section id="medium-relevance">
+                <h2><span class="icon icon-medium">◆</span> Medium Relevance (41-70/100)</h2>
+
+                <div class="medium-relevance">
+                    <h4>5. Port of Ashburton Port Handbook</h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">Port-of-Ashburton-Port-Handbook-A341988.pdf</a><br>
+                    <strong>Relevance Score:</strong> <span class="score">65/100</span></p>
+
+                    <p><strong>Summary:</strong> Comprehensive port operational handbook defining VTS protocols, security zones, boating exclusion areas, 72-hour dive operation notification model, and incident reporting frameworks. Lacks explicit UAV procedures but provides transferable regulatory structure.</p>
+
+                    <p><strong>Transferable Elements:</strong></p>
+                    <ul>
+                        <li>72-hour advance notification requirement for specialized operations</li>
+                        <li>VTS (Vessel Traffic Service) mandatory coordination</li>
+                        <li>Maritime Security (ISPS Code) frameworks</li>
+                        <li>Licensing/permit systems for specialized service providers</li>
+                        <li>Comprehensive incident reporting protocols</li>
+                    </ul>
+
+                    <p><strong>Gap:</strong> No explicit aerial operations framework or defined airspace procedures (35-point deduction).</p>
+                </div>
+
+                <div class="medium-relevance">
+                    <h4>6. Port of Ashburton Port Handbook (Text Version)</h4>
+                    <p><strong>File:</strong> port-ashburton-handbook.txt <em>(Source file unavailable - text conversion of <a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">Port-of-Ashburton-Port-Handbook-A341988.pdf</a>)</em><br>
+                    <strong>Relevance Score:</strong> <span class="score">65/100</span></p>
+
+                    <p><strong>Summary:</strong> Text-converted version of Ashburton Port Handbook providing searchable access to VTS communication protocols, licensing frameworks, and notification requirements.</p>
+
+                    <p><strong>Value:</strong> Identical content to PDF version but easier for keyword searching and policy extraction. Same scoring and limitations apply.</p>
+                </div>
+
+                <div class="medium-relevance">
+                    <h4>7. Civil Aviation Safety Regulations 1998 - Volume 04</h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/F2026C00286VOL04.pdf" target="_blank">F2026C00286VOL04.pdf</a><br>
+                    <strong>Relevance Score:</strong> <span class="score">45/100</span></p>
+
+                    <p><strong>Summary:</strong> Covers aerial work operations (Part 138) including marine pilot transport by helicopter and aerodrome operations. Establishes safety management and training frameworks for manned maritime aviation.</p>
+
+                    <p><strong>Limitation:</strong> Part 138 applies to <strong>manned aircraft only</strong>—no RPA/drone provisions (55-point deduction). Value is contextual, showing safety standards expected for maritime aerial operations.</p>
+                </div>
+            </section>
+
+            <section id="low-relevance">
+                <h2><span class="icon icon-low">◆</span> Low Relevance (0-40/100)</h2>
+
+                <div class="low-relevance">
+                    <h4>8. Civil Aviation Safety Regulations 1998 - Volume 05</h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/F2026C00286VOL05.pdf" target="_blank">F2026C00286VOL05.pdf</a> | <strong>Score:</strong> <span class="score">35/100</span></p>
+                    <p><strong>Summary:</strong> Regulatory dictionary and exemption provisions. Defines RPA categories and "populated area." Primarily reference material with limited operational guidance.</p>
+                </div>
+
+                <div class="low-relevance">
+                    <h4>9. Civil Aviation Safety Regulations 1998 - Volume 01</h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/F2026C00286VOL01.pdf" target="_blank">F2026C00286VOL01.pdf</a> | <strong>Score:</strong> <span class="score">32/100</span></p>
+                    <p><strong>Summary:</strong> Aircraft registration and certification requirements. RPA registration mandatory for commercial operations but provides no operational guidance (68-point deduction).</p>
+                </div>
+
+                <div class="low-relevance">
+                    <h4>10. Civil Aviation Safety Regulations 1998 - Volume 02</h4>
+                    <p><strong>File:</strong> <a href="../input/Legal Framework/F2026C00286VOL02.pdf" target="_blank">F2026C00286VOL02.pdf</a> | <strong>Score:</strong> <span class="score">28/100</span></p>
+                    <p><strong>Summary:</strong> Registration markings and display requirements. Pure administrative compliance documentation. Lowest relevance for operational planning (72-point deduction).</p>
+                </div>
+            </section>
+
+            <section id="comparative-analysis">
+                <h2>Comparative Analysis Summary</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Score</th>
+                            <th>Primary Focus</th>
+                            <th>Key Contribution</th>
+                            <th>Critical Gap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CASA AC 101-01 Annex B</strong> <span class="new-tag">NEW</span></td>
+                            <td class="score">95/100</td>
+                            <td>CASA approval process</td>
+                            <td>Complete application process, assessment criteria, timeline</td>
+                            <td>Swarm-oriented; not maritime-specific</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Part 101 Plain English Guide</strong></td>
+                            <td class="score">90/100</td>
+                            <td>Federal RPA regulations</td>
+                            <td>VLOS, altitude, separation requirements</td>
+                            <td>Port-specific implementation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MWPA Drone Procedure</strong> <span class="enhanced-tag">ENHANCED</span></td>
+                            <td class="score">85/100</td>
+                            <td>Port operational framework</td>
+                            <td>Permit system, JSEA requirements, VTS coordination</td>
+                            <td>Geraldton-specific (not Onslow)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CASR Vol 03</strong></td>
+                            <td class="score">72/100</td>
+                            <td>Legislative Part 101</td>
+                            <td>Populous area restrictions, legal basis for approvals</td>
+                            <td>Defers details to Manual of Standards</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ashburton Handbook (PDF)</strong></td>
+                            <td class="score">65/100</td>
+                            <td>Port procedures</td>
+                            <td>Transferable notification/permit frameworks</td>
+                            <td>No UAV-specific procedures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ashburton Handbook (TXT)</strong></td>
+                            <td class="score">65/100</td>
+                            <td>Port procedures (text)</td>
+                            <td>Searchable regulatory patterns</td>
+                            <td>No UAV-specific procedures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CASR Vol 04</strong></td>
+                            <td class="score">45/100</td>
+                            <td>Manned aerial work</td>
+                            <td>Maritime aviation safety frameworks</td>
+                            <td>Not applicable to RPA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CASR Vol 05</strong></td>
+                            <td class="score">35/100</td>
+                            <td>Definitions/exemptions</td>
+                            <td>RPA definitions, exemption pathway</td>
+                            <td>No operational details</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CASR Vol 01</strong></td>
+                            <td class="score">32/100</td>
+                            <td>Registration admin</td>
+                            <td>RPA registration requirements</td>
+                            <td>No operational guidance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CASR Vol 02</strong></td>
+                            <td class="score">28/100</td>
+                            <td>Markings/registration</td>
+                            <td>Display requirements</td>
+                            <td>No operational guidance</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Average Relevance Score:</strong> 61.2/100 (Medium-High relevance overall)<br>
+                <strong>Score Improvement:</strong> +4.9 points from initial analysis due to addition of CASA AC 101-01 Annex B</p>
+            </section>
+
+            <section id="regulatory-requirements">
+                <h2>Critical Regulatory Requirements for Onslow OGV Draft Survey Operations</h2>
+
+                <h3 id="federal-requirements">Federal Requirements (CASA)</h3>
+
+                <h4>Operator Qualifications</h4>
+                <ul>
+                    <li><strong>Small/Medium RPA (>250g):</strong> Remote Pilot License (RePL) OR Remotely Piloted Aircraft Operator Certificate (ReOC) mandatory</li>
+                    <li><strong>Age:</strong> Minimum 16 years for accreditation; under-16 operators require adult (18+) supervision</li>
+                    <li><strong>Aviation Reference Number (ARN):</strong> Required to access myCASA portal for licensing/registration</li>
+                </ul>
+
+                <h4>Aircraft Requirements</h4>
+                <ul>
+                    <li><strong>Registration:</strong> RPA must be registered with CASA before first commercial flight</li>
+                    <li><strong>Maintenance:</strong> Must be maintained in airworthy condition; pre-flight checks mandatory</li>
+                    <li><strong>Markings:</strong> Nationality and registration marks displayed per Part 45 specifications</li>
+                </ul>
+
+                <h4>Operational Restrictions</h4>
+                <ul>
+                    <li><strong>Visual Line of Sight (VLOS):</strong> Mandatory at all times; electronic aids (FPV, screens) cannot replace VLOS</li>
+                    <li><strong>Altitude:</strong> Maximum 120m (400ft) AGL unless CASA approval obtained</li>
+                    <li><strong>Separation Distances:</strong>
+                        <ul>
+                            <li>30m minimum lateral distance from non-associated persons</li>
+                            <li>Prohibition on flying over people regardless of altitude</li>
+                        </ul>
+                    </li>
+                    <li><strong>Weather:</strong> Operations only in good visibility; prohibited in cloud, fog, or low visibility</li>
+                    <li><strong>Daylight Only:</strong> Night operations prohibited for excluded RPA</li>
+                    <li><strong>Populous Areas:</strong> <span style="background-color: #fff3cd; padding: 2px 6px; font-weight: bold;">CRITICAL - Ports likely classified as populous; CASA approval required</span></li>
+                </ul>
+
+                <h4>Record Keeping</h4>
+                <ul>
+                    <li>Operational logs: nature, location, altitude, dates, times, controller ARN, serviceability records</li>
+                    <li>Incident reporting: Near-misses, equipment failures, safety concerns</li>
+                </ul>
+
+                <h3 id="port-requirements">Port Authority Requirements (Based on MWPA Model)</h3>
+
+                <h4>Permit and Approval</h4>
+                <ul>
+                    <li><strong>Application for Drone Operations Permit</strong> required</li>
+                    <li><strong>Approval chain:</strong> Harbour Master → Duty Operations Supervisor → Port Security Officer → CEO (if media involved)</li>
+                    <li><strong>72-hour advance notification</strong> (based on Ashburton dive operations model)</li>
+                </ul>
+
+                <h4>Risk Assessment</h4>
+                <p><strong>JSEA (Job Safety and Environmental Analysis)</strong> mandatory before operations, including:</p>
+                <ul>
+                    <li>Flight path and waypoints</li>
+                    <li>Landing/takeoff areas</li>
+                    <li>Flight times and duration</li>
+                    <li>Flight height profile</li>
+                    <li>Purpose and operational details</li>
+                    <li>Hazard identification and mitigation</li>
+                </ul>
+
+                <h4>Documentation Required</h4>
+                <ul>
+                    <li>Copy of pilot license/accreditation (RePL/ReOC)</li>
+                    <li>Aircraft registration certificate</li>
+                    <li>Flight path plan with coordinates</li>
+                    <li>Public liability insurance (recommended)</li>
+                </ul>
+
+                <h4>Maritime-Specific Restrictions</h4>
+                <ul>
+                    <li><strong>Marine Mammals:</strong> 60m minimum separation from whales, dolphins, sea lions</li>
+                    <li><strong>Wildlife:</strong> 100m exclusion zones around nesting sites (if applicable)</li>
+                    <li><strong>Vessel Operations:</strong> Must not pose hazard or distraction to shipping activities</li>
+                    <li><strong>Security Zones:</strong> Maritime Security Identification Card (MSIC) may be required if operating within Port Security Zone</li>
+                </ul>
+
+                <h4>Coordination Protocols</h4>
+                <ul>
+                    <li><strong>Harbor Master notification:</strong> Must notify before operations</li>
+                    <li><strong>VTS (Vessel Traffic Service):</strong> Integration with port traffic monitoring</li>
+                    <li><strong>Vessel Operators:</strong> Harbor master notifies ship agents; vessel masters must be aware of drone activities</li>
+                    <li><strong>No interference</strong> with pilotage or shipping movements</li>
+                </ul>
+
+                <h3 id="environmental">Environmental Considerations</h3>
+                <ul>
+                    <li><strong>Noise minimization</strong> required</li>
+                    <li><strong>No dropping/discharging objects</strong> unless no hazard to aircraft, people, or property</li>
+                    <li><strong>Weather conditions:</strong> Wind, temperature, moisture limits per manufacturer specifications</li>
+                    <li><strong>Visibility over water:</strong> Particularly challenging due to glare and environmental conditions</li>
+                </ul>
+            </section>
+
+            <section id="critical-gaps">
+                <h2>Critical Gaps Identified</h2>
+
+                <h3>Missing Onslow-Specific Documentation</h3>
+                <div class="critical-gap">
+                    <ol>
+                        <li><strong>Pilbara Ports Authority Drone Procedure:</strong> No Onslow-specific operational procedure in Legal Framework folder. MWPA procedure (Geraldton) is transferable but cannot substitute for Onslow's specific requirements.</li>
+                        <li><strong>Onslow Port Handbook:</strong> Port-specific operational constraints, security zones, VTS procedures, and restricted areas not available.</li>
+                        <li><strong>Local Airspace Chart:</strong> Onslow airspace classification (controlled vs. uncontrolled), aerodrome restrictions, and no-fly zones not confirmed.</li>
+                    </ol>
+                </div>
+
+                <h3>Missing Regulatory Implementation Documents</h3>
+                <div class="critical-gap">
+                    <ol start="4">
+                        <li><strong>Part 101 Manual of Standards (MOS):</strong> Referenced repeatedly in CASR Vol 03 as containing detailed operational requirements for operations over water, populous area exceptions, and commercial operation specifics.</li>
+                        <li><strong>CASA Approval Process:</strong> <span class="checkmark">✅ Gap Partially Closed by AC 101-01 Annex B</span>
+                            <ul>
+                                <li><strong>Previously:</strong> Documents described that approval required but not how to obtain it</li>
+                                <li><strong>Now Resolved:</strong> AC 101-01 Annex B provides complete approval pathway with application form, timeline (minimum 3 months), documentation requirements, and assessment process</li>
+                                <li><strong>Remaining Gap:</strong> Port-specific application nuances for maritime draft surveys</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Operational Planning Gaps</h3>
+                <div class="critical-gap">
+                    <ol start="6">
+                        <li><strong>Onslow Port Boundaries:</strong> Precise coordinates defining port-controlled waters and airspace not available</li>
+                        <li><strong>Security Zone Definitions:</strong> MSIC requirements, security alert levels, and airspace restrictions during security operations unclear</li>
+                        <li><strong>Vessel Traffic Patterns:</strong> Typical OGV anchorages, approach lanes, and berth locations at Onslow not documented</li>
+                        <li><strong>Environmental Baselines:</strong> Marine mammal presence, seabird nesting sites, and seasonal restrictions for Onslow area unknown</li>
+                    </ol>
+                </div>
+
+                <h3>Legal and Liability Considerations</h3>
+                <div class="critical-gap">
+                    <ol start="10">
+                        <li><strong>Insurance Requirements:</strong> No regulatory mandate for public liability insurance, but exposure to significant liability claims. Recommended coverage levels not specified.</li>
+                        <li><strong>Incident Investigation Protocols:</strong> Who investigates drone incidents at ports (CASA, ATSB, Port Authority, or combination) and reporting thresholds unclear.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="next-steps">
+                <h2>Recommended Next Steps</h2>
+
+                <h3 id="immediate-actions">Immediate Actions (Before Operations)</h3>
+
+                <h4>1. Obtain Onslow-Specific Documentation</h4>
+                <ul>
+                    <li><strong>Contact Pilbara Ports Authority</strong> to request:
+                        <ul>
+                            <li>Drone operations procedure for Onslow Port (if exists)</li>
+                            <li>Onslow Port Handbook with operational boundaries, VTS procedures, security zones</li>
+                            <li>Port airspace restrictions and coordination protocols</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verify Onslow airspace classification</strong> via CASA airspace charts:
+                        <ul>
+                            <li>Check for controlled aerodrome restrictions (5.5km radius)</li>
+                            <li>Identify restricted areas, danger areas, or military operating zones</li>
+                            <li>Confirm Class G airspace designation</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>2. Acquire Missing CASA Documentation and Initiate Approval Process</h4>
+                <ul>
+                    <li><strong>Download Part 101 Manual of Standards</strong> from CASA website (casa.gov.au)</li>
+                    <li><strong>Prepare CASA Approval Application</strong> (Based on AC 101-01 Annex B Guidance):
+                        <ul>
+                            <li><strong>Form:</strong> Obtain RPAS Multi-purpose Application Form</li>
+                            <li><strong>Lead Time:</strong> Submit minimum 3 months before intended operations</li>
+                            <li><strong>Prepare CONOPS:</strong> Onslow Port area in coordinates, altitude profile, operating dates/times</li>
+                            <li><strong>Operational Procedures:</strong> Pre-flight checks, VTS coordination, vessel notification</li>
+                            <li><strong>Emergency Procedures:</strong> Loss of VLOS, GPS failure, airspace incursion protocols</li>
+                            <li><strong>Stakeholder Engagement Plan:</strong> Pilbara Ports, harbour master, ship agents, emergency services</li>
+                            <li><strong>Supporting Documentation:</strong> RPA manual, landowner permission, insurance, licenses</li>
+                        </ul>
+                    </li>
+                    <li><strong>Contact CASA Regional Office (Perth):</strong> Pre-application consultation, clarify maritime-specific criteria</li>
+                </ul>
+
+                <h4>3. Establish Operator Compliance</h4>
+                <ul>
+                    <li><strong>Internal Staff Pathway:</strong> Enroll in CASA-accredited training, obtain RePL/ReOC, register RPA, develop procedures</li>
+                    <li><strong>Contractor Pathway:</strong> Verify RePL/ReOC, confirm insurance coverage (minimum $20M recommended), establish safety protocols</li>
+                </ul>
+
+                <h4>4. Develop Operational Procedures</h4>
+                <ul>
+                    <li><strong>Model on MWPA framework</strong> with Onslow adaptations:
+                        <ul>
+                            <li>Permit-to-work application form</li>
+                            <li>JSEA risk assessment template</li>
+                            <li>72-hour advance notification protocol</li>
+                            <li>Marine mammal observation and avoidance procedures</li>
+                        </ul>
+                    </li>
+                    <li><strong>Integrate with Onslow Port systems:</strong> VTS communication, harbour master coordination, security zone access</li>
+                </ul>
+
+                <h3 id="medium-term">Medium-Term Actions (Operational Preparedness)</h3>
+
+                <h4>5. Apply for CASA Approvals</h4>
+                <ul>
+                    <li>Submit application for populous area operations with risk mitigation demonstration</li>
+                    <li>Request altitude approval if surveys require >400ft operations</li>
+                </ul>
+
+                <h4>6. Engage Stakeholders</h4>
+                <ul>
+                    <li><strong>Port Authority:</strong> Present operational concept, establish permit process</li>
+                    <li><strong>Vessel Operators:</strong> Coordinate with ship agents, establish communication protocols</li>
+                    <li><strong>CASA Regional Office:</strong> Brief on operational concept, seek compliance guidance</li>
+                </ul>
+
+                <h4>7. Conduct Trial Operations</h4>
+                <ul>
+                    <li><strong>Desktop simulation:</strong> Flight path planning, JSEA risk assessment, emergency procedure rehearsal</li>
+                    <li><strong>Controlled trial:</strong> Initial survey with full safety protocols, Port Authority/CASA observer presence</li>
+                    <li><strong>Operational validation:</strong> Verify sensor accuracy, confirm compliance, validate communication protocols</li>
+                </ul>
+
+                <h3 id="long-term">Long-Term Actions (Continuous Improvement)</h3>
+
+                <h4>8. Establish Safety Management System</h4>
+                <ul>
+                    <li>Periodic risk reviews (quarterly or after incidents)</li>
+                    <li>Annual refresher training for operators</li>
+                    <li>Regular RPA maintenance and pre-flight checks</li>
+                    <li>Incident analysis with root cause investigation</li>
+                </ul>
+
+                <h4>9. Regulatory Monitoring</h4>
+                <ul>
+                    <li>Monitor CASA updates to Part 101 and Manual of Standards</li>
+                    <li>Stay current with Pilbara Ports Authority operational requirements</li>
+                    <li>Track Australian drone industry best practices</li>
+                </ul>
+
+                <h4>10. Expand Operational Capability</h4>
+                <ul>
+                    <li><strong>BVLOS:</strong> If surveys exceed VLOS range, pursue Beyond Visual Line of Sight approval</li>
+                    <li><strong>Night operations:</strong> If required for efficiency, seek approval and implement lighting systems</li>
+                    <li><strong>Autonomous operations:</strong> Explore automated survey patterns as regulations evolve</li>
+                </ul>
+            </section>
+
+            <section id="cross-reference">
+                <h2>Document Cross-Reference Matrix</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Requirement</th>
+                            <th>Primary Source</th>
+                            <th>Supporting Documents</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VLOS Mandate</td>
+                            <td><a href="../input/Legal Framework/part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf" target="_blank">Part 101 Plain English Guide</a> (p.18-19)</td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL03.pdf" target="_blank">CASR Vol 03</a> Reg 101.073</td>
+                        </tr>
+                        <tr>
+                            <td>Altitude Limits</td>
+                            <td><a href="../input/Legal Framework/part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf" target="_blank">Part 101 Plain English Guide</a> (p.16)</td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL03.pdf" target="_blank">CASR Vol 03</a> Reg 101.085</td>
+                        </tr>
+                        <tr>
+                            <td>Separation Distances</td>
+                            <td><a href="../input/Legal Framework/part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf" target="_blank">Part 101 Plain English Guide</a> (p.20-21)</td>
+                            <td><a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank">MWPA Procedure</a> (p.5)</td>
+                        </tr>
+                        <tr>
+                            <td>Operator Licensing</td>
+                            <td><a href="../input/Legal Framework/part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf" target="_blank">Part 101 Plain English Guide</a> (p.8-12)</td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL01.pdf" target="_blank">CASR Vol 01</a> Part 11, <a href="../input/Legal Framework/F2026C00286VOL05.pdf" target="_blank">Vol 05</a> Dictionary</td>
+                        </tr>
+                        <tr>
+                            <td>Aircraft Registration</td>
+                            <td><a href="../input/Legal Framework/part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf" target="_blank">Part 101 Plain English Guide</a> (p.13-14)</td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL01.pdf" target="_blank">CASR Vol 01</a> Part 47.C.2, <a href="../input/Legal Framework/F2026C00286VOL02.pdf" target="_blank">Vol 02</a> Part 45</td>
+                        </tr>
+                        <tr>
+                            <td>Populous Area Restrictions</td>
+                            <td><a href="../input/Legal Framework/part-101-micro-excluded-rpa-operations-plain-english-guide-interactive.pdf" target="_blank">Part 101 Plain English Guide</a> (p.22)</td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL03.pdf" target="_blank">CASR Vol 03</a> Reg 101.280, <a href="../input/Legal Framework/F2026C00286VOL05.pdf" target="_blank">Vol 05</a> Dictionary</td>
+                        </tr>
+                        <tr>
+                            <td>Marine Mammal Protection</td>
+                            <td><a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank">MWPA Procedure</a> (p.5)</td>
+                            <td><a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">Ashburton Handbook</a> environmental provisions</td>
+                        </tr>
+                        <tr>
+                            <td>Port Permit System</td>
+                            <td><a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank">MWPA Procedure</a> (p.3-4)</td>
+                            <td><a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">Ashburton Handbook</a> licensing framework (Section 11)</td>
+                        </tr>
+                        <tr>
+                            <td>Risk Assessment (JSEA)</td>
+                            <td><a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank">MWPA Procedure</a> (p.4, Attachment 2)</td>
+                            <td><a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">Ashburton Handbook</a> dive permit model (Section 12.8)</td>
+                        </tr>
+                        <tr>
+                            <td>VTS Coordination</td>
+                            <td><a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank">MWPA Procedure</a> (p.4)</td>
+                            <td><a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">Ashburton Handbook</a> VTS requirements (Section 7, 8)</td>
+                        </tr>
+                        <tr>
+                            <td>Security Requirements (MSIC)</td>
+                            <td><a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank">MWPA Procedure</a> (p.5)</td>
+                            <td><a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">Ashburton Handbook</a> security zones (Section 19)</td>
+                        </tr>
+                        <tr>
+                            <td>Incident Reporting</td>
+                            <td><a href="../input/Legal Framework/Drone_Operations_Over_Port_Lands_and_Waters_Procedure__A1038610_.pdf" target="_blank">MWPA Procedure</a> (p.5)</td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL04.pdf" target="_blank">CASR Vol 04</a> Reg 138.230-235, <a href="../input/Legal Framework/Port-of-Ashburton-Port-Handbook-A341988.pdf" target="_blank">Ashburton</a> Section 16</td>
+                        </tr>
+                        <tr>
+                            <td>Exemption Pathway</td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL05.pdf" target="_blank">CASR Vol 05</a> Part 201</td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL03.pdf" target="_blank">CASR Vol 03</a> Part 101 references to MOS</td>
+                        </tr>
+                        <tr>
+                            <td>CASA Approval Process</td>
+                            <td><a href="../input/Legal Framework/annex-b-advisory-circular-101-01-applying-approval-conduct-many-rpa-operations.pdf" target="_blank">CASA AC 101-01 Annex B</a></td>
+                            <td><a href="../input/Legal Framework/F2026C00286VOL03.pdf" target="_blank">CASR Vol 03</a> Reg 101.029</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="conclusion">
+                <h2>Conclusion</h2>
+                <p>The Legal Framework folder provides <strong>essential foundational documentation</strong> for understanding UAV operations at Australian ports, with analysis updated to include <strong>10 documents</strong> scoring an average <strong>61.2/100 relevance</strong>. Four high-relevance documents (CASA AC 101-01 Annex B, Part 101 Plain English Guide, MWPA Drone Procedure, CASR Vol 03) establish mandatory operational constraints, CASA approval processes, and proven port procedural frameworks.</p>
+
+                <div class="key-finding">
+                    <h3><span class="icon">🆕</span>Significant Improvement from Initial Analysis</h3>
+                    <p>Addition of CASA Advisory Circular AC 101-01 Annex B <strong>resolves the critical "unclear CASA approval pathway" gap</strong> identified in the initial assessment. The approval process is now well-defined: RPAS Multi-purpose Application Form, 3-month minimum processing, specific documentation requirements (CONOPS, operational procedures, stakeholder engagement plan), and clear assessment phases (desktop review → on-site inspection → final instrument).</p>
+                </div>
+
+                <h3>Remaining Critical Gaps (Reduced from 3 to 2)</h3>
+                <ol>
+                    <li><strong>No Onslow-specific port operational procedure</strong> (MWPA Geraldton procedure provides highly transferable template)</li>
+                    <li><strong>Missing Part 101 Manual of Standards</strong> with detailed over-water operational requirements</li>
+                </ol>
+
+                <p><strong>Status: CASA Approval Pathway Gap = CLOSED <span class="checkmark">✅</span></strong><br>
+                Previously: "Unclear CASA approval pathway for populous area operations"<br>
+                Now: Complete approval architecture documented in AC 101-01 Annex B</p>
+
+                <h3>Revised Timeline to Operational Readiness</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Duration</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Documentation acquisition</td>
+                            <td>2-4 weeks</td>
+                            <td>Onslow port procedures, airspace data</td>
+                        </tr>
+                        <tr>
+                            <td>CASA application preparation</td>
+                            <td>4-6 weeks</td>
+                            <td>CONOPS, procedures, stakeholder engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Operator licensing</td>
+                            <td>8-12 weeks</td>
+                            <td>Can occur parallel to application prep</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CASA approval process</strong></td>
+                            <td><strong>Minimum 12 weeks</strong></td>
+                            <td>Confirmed by AC 101-01 Annex B</td>
+                        </tr>
+                        <tr>
+                            <td>Training/testing phase</td>
+                            <td>2-4 weeks</td>
+                            <td>If CASA issues interim approval</td>
+                        </tr>
+                        <tr>
+                            <td>On-site assessment</td>
+                            <td>1-2 weeks</td>
+                            <td>CASA Inspector observation</td>
+                        </tr>
+                        <tr>
+                            <td>Final instrument issuance</td>
+                            <td>1-2 weeks</td>
+                            <td>Post-assessment approval</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Total Realistic Timeline: 7-10 months from commencement</strong> (assumes no major application rejections or rework cycles)</p>
+
+                <h3>Key Success Factors</h3>
+                <ol>
+                    <li><strong>Complete, accurate initial application:</strong> AC 101-01 Annex B warns incomplete applications are rejected and timeline resets</li>
+                    <li><strong>Early Pilbara Ports Authority engagement:</strong> Secure landowner permission, understand Onslow-specific requirements</li>
+                    <li><strong>Proactive CASA consultation:</strong> Pre-application meeting with Perth regional office</li>
+                    <li><strong>Robust stakeholder engagement documentation:</strong> Demonstrate coordination with all relevant parties</li>
+                    <li><strong>Training/testing site identification:</strong> Low-population area for rehearsal operations</li>
+                </ol>
+            </section>
+
+            <section id="key-insights">
+                <h2><span class="icon">🆕</span>Key Insights from Enhanced Analysis</h2>
+
+                <h3>What Changed?</h3>
+                <p>Two documents provided significant additional clarity that was missing from the initial 9-document analysis:</p>
+
+                <ol>
+                    <li><strong>CASA AC 101-01 Annex B</strong> (Score: 95/100) - Highest scored document
+                        <ul>
+                            <li>Reveals complete CASA approval process for non-standard operations</li>
+                            <li>Defines application requirements, assessment phases, and timeline expectations</li>
+                            <li>Closes critical "unclear approval pathway" gap</li>
+                        </ul>
+                    </li>
+                    <li><strong>MWPA Procedure Enhanced Review</strong> (Score: 85/100)
+                        <ul>
+                            <li>Multi-tier approval workflow detail</li>
+                            <li>Specific documentation requirements (JSEA format, flight path standards)</li>
+                            <li>Exact environmental restrictions with diagrams</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Critical Findings for Onslow Operations</h3>
+
+                <div class="high-relevance">
+                    <h4><span class="checkmark">✅</span> CASA Approval Pathway - NOW ACTIONABLE</h4>
+                    <ul>
+                        <li><strong>What to apply for:</strong> Regulation 101.029 approval instrument</li>
+                        <li><strong>How to apply:</strong> RPAS Multi-purpose Application Form + comprehensive documentation</li>
+                        <li><strong>What CASA reviews:</strong> Desktop risk assessment → On-site inspection → DPP finalization</li>
+                        <li><strong>How long it takes:</strong> Minimum 3 months (can extend if incomplete)</li>
+                        <li><strong>What approval looks like:</strong> Instrument with conditions (location-specific or location-agnostic)</li>
+                    </ul>
+                </div>
+
+                <div class="high-relevance">
+                    <h4><span class="checkmark">✅</span> Port Procedure Framework - COMPREHENSIVE TEMPLATE</h4>
+                    <ul>
+                        <li>End-to-end workflow from application to permit closeout</li>
+                        <li>Multi-stakeholder approval chain clearly defined</li>
+                        <li>Risk assessment (JSEA) requirements with specific content</li>
+                        <li>Environmental protections quantified: 60m marine mammals, 100m Osprey exclusion</li>
+                        <li>Qualification verification process: RePL/ReOC/RPA + MSIC</li>
+                    </ul>
+                </div>
+
+                <h3>Recommended Immediate Actions (Revised Priority)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Priority</th>
+                            <th>Action</th>
+                            <th>Timeline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PRIORITY 1</strong></td>
+                            <td>CASA Application Preparation</td>
+                            <td>Weeks 1-6 (parallel)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PRIORITY 2</strong></td>
+                            <td>Pilbara Ports Authority Engagement</td>
+                            <td>Weeks 1-4 (parallel)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PRIORITY 3</strong></td>
+                            <td>Operator Qualification</td>
+                            <td>Weeks 1-12 (parallel)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PRIORITY 4</strong></td>
+                            <td>CASA Submission</td>
+                            <td>Week 7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <p class="footer-title"><strong>Legal Framework Analysis for UAV Operations</strong></p>
+            <p class="footer-subtitle">Mineral Resources Limited | Onslow Port Operations</p>
+            <p class="footer-meta">
+                <strong>Analysis Date:</strong> 15 June 2026 |
+                <strong>Documents Analyzed:</strong> 10 |
+                <strong>Pages Reviewed:</strong> 820+ |
+                <strong>Critical Documents:</strong> 4 (scores 72-95/100)
+            </p>
+            <p class="footer-disclaimer">
+                This analysis is current as of 15 June 2026. Regulatory requirements are subject to change—verify current CASA regulations and port procedures before commencing operations.
+            </p>
+            <p class="footer-copyright">&copy; 2026 Mineral Resources Limited. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <a href="#toc" class="back-to-top">&#8593;</a>
+</body>
+</html>
