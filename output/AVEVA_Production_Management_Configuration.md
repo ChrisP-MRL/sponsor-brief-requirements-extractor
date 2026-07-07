@@ -576,7 +576,8 @@ Based on the navigation hierarchy, the following report types are configured acr
 The system includes a comprehensive Planning and Scheduling module (PLRP - Planning) that enables production planning and activity scheduling across the operation.
 
 **Module Location:**
-- Access via left navigation panel under "Planning - CSI Haulage.PLRP"
+- Access via left navigation panel under "CSI > Haulage"
+- Navigation path: Planning - CSI Haulage.PLRP
 - Separate view from Downtime tracking
 - Integrated within the same AVEVA Production Management platform
 
@@ -584,7 +585,7 @@ The system includes a comprehensive Planning and Scheduling module (PLRP - Plann
 
 **Current View Details:**
 - **View Type:** PLRP - Schedule
-- **Location:** CSI (Roy Hill) - Haulage operations
+- **Location:** CSI Haulage (CSI.Haulage.PLRP)
 - **Filter:** Sample Period is Current Hour
 - **Record Count:** 35 activities displayed
 - **Total Duration:** 1.11:00... (hours tracked)
