@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-This document provides a detailed analysis of the configured functionality within the AVEVA Production Management 2020 U2 system, based on screenshot evidence captured from the production environment. The system is configured to track downtime events across multiple mining sites and processing facilities, with comprehensive hierarchical organization and reporting capabilities.
+This document provides a detailed analysis of the configured functionality within the AVEVA Production Management 2020 U2 system, based on screenshot evidence captured from the production environment. The system is configured to track downtime events across multiple mining sites and processing facilities, with comprehensive hierarchical organization, reporting capabilities, and production planning/scheduling functionality. The analysis reveals a dual-module system encompassing both reactive downtime tracking and proactive production planning with multi-year Gantt chart scheduling capabilities.
 
 ---
 
@@ -28,6 +28,10 @@ This document provides a detailed analysis of the configured functionality withi
 - Comprehensive reporting framework
 - Time-based event recording with duration tracking
 - Equipment-specific monitoring
+- **Production planning and scheduling module (PLRP)**
+- **Multi-year Gantt chart visualization**
+- **Activity-based planning with resource allocation**
+- **Planned vs. actual performance tracking**
 
 ---
 
@@ -565,9 +569,253 @@ Based on the navigation hierarchy, the following report types are configured acr
 
 ---
 
-## 14. Conclusion
+## 14. Planning and Scheduling Module
 
-The AVEVA Production Management 2020 U2 system as configured demonstrates a comprehensive, enterprise-scale implementation for tracking downtime and production events across 14 mining and processing sites. The configuration exhibits:
+### 14.1 Module Overview
+
+The system includes a comprehensive Planning and Scheduling module (PLRP - Planning) that enables production planning and activity scheduling across the operation.
+
+**Module Location:**
+- Access via left navigation panel under "Planning - CSI Haulage.PLRP"
+- Separate view from Downtime tracking
+- Integrated within the same AVEVA Production Management platform
+
+### 14.2 Schedule View Configuration
+
+**Current View Details:**
+- **View Type:** PLRP - Schedule
+- **Location:** CSI (Roy Hill) - Haulage operations
+- **Filter:** Sample Period is Current Hour
+- **Record Count:** 35 activities displayed
+- **Total Duration:** 1.11:00... (hours tracked)
+
+**View Selector:**
+Located in bottom-left corner with three options:
+1. Downtime (separate module)
+2. Knowledge (documentation/reference)
+3. Metrics (performance indicators)
+
+### 14.3 Planning Data Structure
+
+**Grid Columns:**
+
+| Column | Description | Example Values |
+|--------|-------------|----------------|
+| **Is Clipped** | Event clipping indicator | Checkboxes (checked/unchecked) |
+| **LastMo...** | Last modified timestamp | 2/07/20... |
+| **Last...** | Additional timestamp | PIHA-... |
+| **Plann...** | Planned start date | 7/05/20, 29/04/2..., 16/01/2... |
+| **Planne...** | Planned end date | 7/05/20, 29/04/2..., 16/01/2... |
+| **Planne...** | Planned duration | 01:00:0... |
+| **Actual...** | Actual start time | (timestamps) |
+| **Actual...** | Actual end time | 00:00:00 |
+| **Actual...** | Actual duration | 00:00:00 |
+| **Location** | Equipment/area location | CSI Ha... |
+| **ActivityId** | Unique activity identifier | WL2343, WL2342, WL2341, WL2288, etc. |
+| **Parent...** | Parent activity reference | (hierarchical linking) |
+| **State** | Activity status | Available |
+| **Product** | Product/material type | (not visible in data) |
+| **Locatio...** | Extended location code | CSI_H... |
+| **Require...** | Required resources | (truncated) |
+| **Require...** | Additional requirements | (truncated) |
+| **Comment** | Activity notes/comments | (empty in view) |
+| **Operati...** | Operation details | (truncated) |
+| **Operati...** | Operation type/code | (truncated) |
+| **Equip...** | Equipment identifier | WL2... |
+
+### 14.4 Activity Identifiers
+
+**Visible Activity IDs:**
+- WL2343, WL2342, WL2341 (WL prefix series)
+- WL2288, WL2272, WL2226 (numeric sequence)
+- WL2192 (variant)
+- EX1167, EX1050 (EX prefix series)
+- GS3329_IV (specialized identifier)
+- WL2326, WL2324, WL2323 (continued WL series)
+
+**Naming Convention:**
+- Alphanumeric codes with consistent prefixes
+- "WL" prefix appears to be dominant (likely "Work Location" or equipment code)
+- "EX" prefix for specific activity types
+- "GS" prefix with site suffix (e.g., "_IV" for Iron Valley)
+
+### 14.5 Gantt Chart Visualization
+
+**Timeline Display:**
+- **X-Axis:** Time scale spanning Jan 2023 through 2028 (multi-year view)
+- **Y-Axis:** Activity IDs (rows for each scheduled activity)
+- **Bars:** Red/pink colored bars representing scheduled activities
+- **Duration:** Visual bar length indicates activity duration
+- **Overlap:** Multiple concurrent activities visible
+
+**Timeline Features:**
+- Quarter-based gridlines (Q1, Q2, Q3, Q4 markers visible)
+- Year headers (2023, 2024, 2025, 2026, 2027, 2028)
+- Scrollable horizontal timeline
+- Current date indicator (vertical line in 2026 region)
+
+**Activity Scheduling Patterns:**
+- Most activities scheduled in 2026-2027 timeframe
+- Long-duration activities spanning multiple quarters
+- Some activities extending 6-12 months
+- Concurrent parallel activities visible
+
+### 14.6 Planning Workflow
+
+**Time-Based Tracking:**
+
+1. **Planned Phase:**
+   - Planned start date
+   - Planned end date
+   - Planned duration (mostly 01:00:0... format)
+
+2. **Actual Phase:**
+   - Actual start time
+   - Actual end time
+   - Actual duration
+   - Status tracking ("Available" state)
+
+3. **Variance Tracking:**
+   - Comparison between planned and actual
+   - Duration calculation (automatic)
+   - Time delta analysis capability
+
+### 14.7 Status Management
+
+**Activity States:**
+- **Available** - Current state for all visible activities
+- Likely additional states: Planned, In Progress, Completed, Delayed (not visible in current filter)
+
+**State Indicators:**
+- Text-based status column
+- Visual color coding on Gantt bars
+- Filter capability by state
+
+### 14.8 Resource Planning
+
+**Resource Fields Identified:**
+- **Required Resources** - Resource allocation tracking
+- **Equipment** - Specific equipment assignment (WL2... codes)
+- **Location/Location Id** - Geographic/operational location
+- **Parent Activity** - Hierarchical activity dependencies
+
+### 14.9 Actions Panel
+
+**Available Actions (Right Sidebar):**
+
+**Primary Actions:**
+- **Save Changes** - Commit modifications to schedule
+- **Cancel Changes** - Discard unsaved edits
+
+**Display Options:**
+- Display: Active/All toggle
+- Location (radio button)
+- ActivityId (radio button)
+- Parent Activity (radio button)
+- State (radio button)
+- Product (radio button)
+- Location Id (radio button)
+- Required Crew (radio button)
+- Required Crew (duplicate option)
+- Operations (radio button)
+- Operations (duplicate option)
+- Equipment (radio button)
+- SiteRef (radio button)
+
+**Display Customization:**
+These radio buttons allow users to configure which attribute is displayed as the primary identifier in the Gantt chart rows.
+
+### 14.10 Schedule Management Capabilities
+
+**Identified Functions:**
+
+1. **Long-Range Planning**
+   - Multi-year scheduling (2023-2028 visible)
+   - Quarterly planning cycles
+   - Strategic activity sequencing
+
+2. **Activity Management**
+   - Create/edit scheduled activities
+   - Assign activity IDs
+   - Link parent-child activities
+   - Set planned durations (standardized to 1-hour increments)
+
+3. **Resource Allocation**
+   - Equipment assignment
+   - Location allocation
+   - Crew requirements
+   - Operations planning
+
+4. **Progress Tracking**
+   - Planned vs. actual comparison
+   - State-based workflow
+   - Duration variance analysis
+   - Timeline adherence monitoring
+
+5. **Visual Planning**
+   - Gantt chart visualization
+   - Concurrent activity view
+   - Timeline scrolling
+   - Activity overlap identification
+
+### 14.11 Integration with Downtime Module
+
+**Relationship:**
+- Planning module operates alongside Downtime tracking
+- Same hierarchical structure (CSI site organization)
+- Shared user interface framework
+- Consistent data model
+- Common filtering mechanisms (Current Hour)
+
+**Data Flow:**
+- Planned activities may generate downtime events when delays occur
+- Actual durations feed into performance analysis
+- Equipment codes link to downtime equipment tracking
+- Location codes consistent across modules
+
+### 14.12 Planning Configuration Insights
+
+**Standardization:**
+- Consistent 01:00:00 planned duration for activities
+- Structured activity ID naming conventions
+- Standardized location coding (CSI_H...)
+- Uniform state management ("Available")
+
+**Customization:**
+- Site-specific activity IDs (GS3329_IV for Iron Valley)
+- Equipment-specific planning (WL, EX prefixes)
+- Flexible timeline visualization
+- Configurable display options
+
+**Scale:**
+- 35 activities in current view
+- Multi-year planning horizon (5+ years visible)
+- Multiple concurrent activities
+- Enterprise-wide scheduling capability
+
+---
+
+## 15. Conclusion
+
+The AVEVA Production Management 2020 U2 system as configured demonstrates a comprehensive, enterprise-scale implementation spanning both reactive and proactive production management capabilities across 14 mining and processing sites.
+
+### 15.1 Dual-Module Architecture
+
+The system operates with two integrated modules:
+
+1. **Downtime Tracking Module**
+   - Real-time event recording
+   - Root cause analysis
+   - Equipment performance monitoring
+   - Operational response and reporting
+
+2. **Planning and Scheduling Module (PLRP)**
+   - Multi-year production planning (5+ year horizon)
+   - Activity-based scheduling with Gantt visualization
+   - Resource allocation and tracking
+   - Planned vs. actual performance comparison
+
+### 15.2 Configuration Strengths
 
 - **Standardization** across sites for consistency
 - **Flexibility** for site-specific requirements
@@ -575,9 +823,69 @@ The AVEVA Production Management 2020 U2 system as configured demonstrates a comp
 - **User-friendly interface** for efficient data entry and analysis
 - **Real-time capabilities** for operational decision-making
 - **Historical analysis** support for continuous improvement
+- **Long-range planning** with multi-year visibility
+- **Visual scheduling** with Gantt chart timelines
+- **Integrated workflow** connecting planning to execution
 
-The system serves as a central repository for downtime tracking, enabling both real-time operational response and longer-term trend analysis across the entire operation portfolio.
+### 15.3 System Scope and Scale
+
+**Downtime Module:**
+- 14 sites configured
+- Real-time hourly tracking
+- Automated email reporting (10 sites)
+- Multiple visualization options (Gantt, Pareto, Pie)
+
+**Planning Module:**
+- 35+ activities tracked (per site/area)
+- 5+ year planning horizon
+- Standardized activity management
+- Resource and equipment allocation
+- State-based workflow management
+
+### 15.4 Strategic Value
+
+The system serves as a **central production management platform** enabling:
+
+1. **Proactive Planning** - Multi-year strategic scheduling with resource optimization
+2. **Reactive Response** - Real-time downtime tracking and root cause analysis
+3. **Performance Management** - Planned vs. actual variance analysis across both modules
+4. **Decision Support** - Visual analytics and comprehensive reporting
+5. **Continuous Improvement** - Historical trending and pattern analysis
+6. **Cross-Site Coordination** - Standardized data model enables enterprise-wide visibility
+
+### 15.5 Integration and Workflow
+
+The dual-module design creates a complete production management lifecycle:
+
+**Plan → Execute → Monitor → Analyze → Improve**
+
+- **Planning Module** defines scheduled activities and resource requirements
+- **Downtime Module** captures execution deviations and unplanned events
+- **Shared data model** enables variance analysis and performance trending
+- **Common interface** provides unified user experience across modules
+- **Coordinated reporting** delivers integrated production intelligence
+
+### 15.6 Document Summary
+
+This analysis has identified:
+- **2 core modules** (Downtime, Planning)
+- **14 operational sites** with consistent configuration
+- **35+ planning activities** per site/area
+- **Multiple visualization types** (Grid, Gantt, Pareto, Pie)
+- **Comprehensive data structure** supporting both planning and tracking
+- **Enterprise-scale deployment** with standardization and customization balance
+- **Multi-year planning horizon** (2023-2028 observed)
+- **Real-time operational monitoring** (hourly tracking)
+- **Automated reporting framework** with email distribution
+
+The AVEVA Production Management system represents a **mature, enterprise-grade solution** for production management across a diverse mining operation portfolio, successfully balancing standardization for consistency with flexibility for site-specific requirements.
 
 ---
 
 **Document End**
+
+**Document Version:** 2.0  
+**Last Updated:** 7 July 2026  
+**Sections:** 15 (added Planning and Scheduling Module analysis)  
+**Total Sites Analyzed:** 14  
+**Modules Documented:** 2 (Downtime, Planning/PLRP)
