@@ -280,3 +280,304 @@ Based on the navigation hierarchy, the following report types are configured acr
 - 10 sites have email notification systems configured
 - 3 sites have daily reporting mechanisms
 - Multiple sites share similar report templates
+
+---
+
+## 7. Equipment and Process Monitoring
+
+### 7.1 Equipment Types Tracked
+
+**Primary Processing Equipment:**
+
+1. **Crushing Circuits** - Present at 14 sites
+   - CSI, Carina, GRUYERE, Hopes Downs4, Iron Valley, Koolyanobbing (Main Plant), Mount Marion, Mount Whaleback, Reed, Ripidian, Shire, Wodgina, Wonmunna
+   - Most common equipment type across all operations
+
+2. **Processing Plants**
+   - CSI - Processing Plant
+   - Mount Marion - Processing Plant
+   - Koolyanobbing - Main Plant, North Plant Mt C Backfill Circuit
+   - Utah Point - Plant 1
+
+3. **Material Handling**
+   - Carina - Train Loadout
+   - Hopes Downs4 - Reclaim-TLO (Train Load Out)
+
+4. **Specialized Operations**
+   - Ripidian - DSO (Direct Shipping Ore)
+   - Utah Point - Wondinlas
+   - Koolyanobbing - North Plant Mt C Backfill Circuit
+
+### 7.2 Monitoring Scope
+
+**Site Coverage:**
+- 14 distinct mining/processing sites
+- Geographic spread across multiple operations
+- Mix of iron ore and lithium operations (Mount Marion, Wodgina, Mount Whaleback)
+
+**Equipment Hierarchy:**
+- Site → Equipment Area → Reports structure
+- Equipment areas represent major process steps
+- Consistent naming conventions across sites
+
+---
+
+## 8. Data Management and Analysis
+
+### 8.1 Time-Based Features
+
+**Temporal Filtering:**
+- Current Hour filtering capability
+- Sample Period tracking
+- Start Time and End Time recording
+- Duration calculation (automatic)
+- Last Modified timestamp tracking
+
+**Time Aggregation:**
+- Hourly tracking
+- Daily reporting (Daily Report, Email Daily Summary)
+- Month-to-Date (MTD) reporting available
+
+### 8.2 Cause and Effect Tracking
+
+**Data Fields:**
+- **Cause Category** - High-level categorization of downtime reasons
+- **Cause** - Specific cause description
+- **Location** - Equipment location identification
+- **Equipment** - Specific equipment identifier
+- **Efficiency** - Performance effectiveness metrics
+
+**Event Classification:**
+- Is Clipped indicator for partial events
+- Visual status indicators (color coding)
+- Multiple cause fields for detailed root cause analysis
+
+### 8.3 Analytical Capabilities
+
+**Visualization Options:**
+1. **Gantt Chart** - Timeline-based analysis for event sequences
+2. **Pareto Chart** - Identify major downtime contributors (80/20 analysis)
+3. **Pie Chart** - Distribution analysis of downtime by category
+4. **Grid View** - Detailed tabular data
+
+**Export Capabilities:**
+- Toolbar suggests export functionality
+- Print capabilities
+- Data manipulation tools
+- Import/export buttons visible
+
+---
+
+## 9. System Configuration Insights
+
+### 9.1 Standardization Strategy
+
+**Common Configuration Patterns:**
+
+1. **Equipment Naming:**
+   - "Crushing Circuit" used as standard terminology across 14 sites
+   - Consistent hierarchy: Site > Equipment > Reports
+
+2. **Reporting Structure:**
+   - Standard "Reports" folder at each site
+   - Email notification systems widely deployed
+   - Mix of automated daily summaries and on-demand reports
+
+3. **User Interface:**
+   - Consistent navigation across all sites
+   - Standardized toolbar and controls
+   - Uniform data grid layout
+
+### 9.2 Site-Specific Customizations
+
+**Unique Configurations:**
+- Reed: MTD Employee reporting (employee-focused metrics)
+- Ripidian: DSO (Direct Shipping Ore) tracking
+- Hopes Downs4: Reclaim-TLO specialized reporting
+- Koolyanobbing: Backfill circuit monitoring
+- Utah Point: Multiple plant configuration (Wondinlas, Plant 1)
+
+### 9.3 Operational Characteristics
+
+**Current State (from screenshot):**
+- System actively in use (user logged in)
+- Real-time data entry (current hour filtering)
+- 2 downtime events recorded for CSI Roy Hill
+- Total downtime: 12.85 hours tracked
+- Data spans 7/07/2026 (current day)
+
+**Access Control:**
+- User identification: PIHA-CS\chris.pavlinovich
+- Domain-based authentication (PIHA-CS domain)
+- User-specific session tracking
+
+---
+
+## 10. Functional Capabilities Summary
+
+### 10.1 Core Functions
+
+1. **Downtime Tracking**
+   - Real-time event recording
+   - Duration tracking with automatic calculation
+   - Multi-site simultaneous monitoring
+   - Equipment-specific attribution
+
+2. **Cause Analysis**
+   - Detailed cause categorization
+   - Root cause tracking
+   - Location-based analysis
+   - Equipment efficiency metrics
+
+3. **Reporting**
+   - Automated daily summaries
+   - Email distribution system
+   - Multiple report formats
+   - Customizable report templates
+
+4. **Data Visualization**
+   - Multiple chart types (Gantt, Pareto, Pie)
+   - Grid-based detailed views
+   - Real-time data refresh
+   - Export capabilities
+
+5. **Multi-Site Management**
+   - 14 operational sites configured
+   - Hierarchical organization structure
+   - Consistent data model across sites
+   - Site-specific customization support
+
+### 10.2 User Interaction Patterns
+
+**Navigation:**
+- Tree-based hierarchy browsing
+- Favorites/bookmark system
+- Navigation history (back/forward)
+- Quick home return
+
+**Data Entry:**
+- Grid-based data input
+- Status indicators (checkboxes, color coding)
+- Time-based filtering
+- Multi-field event recording
+
+**Analysis:**
+- On-demand chart generation
+- Filtering and sorting capabilities
+- Data aggregation (count, duration totals)
+- Export for external analysis
+
+---
+
+## 11. Integration Points
+
+### 11.1 External Systems
+
+**Email Integration:**
+- Automated email reports configured for 10 sites
+- Daily summary distribution
+- Event-based notifications
+
+**Data Export:**
+- Standard export functionality visible in toolbar
+- Support for external analysis tools
+- Report generation for distribution
+
+### 11.2 Data Flow
+
+**Input:**
+- Manual data entry (downtime events)
+- Real-time event recording
+- Equipment status updates
+
+**Processing:**
+- Duration calculations
+- Aggregation (hourly, daily, MTD)
+- Efficiency metrics computation
+
+**Output:**
+- Email notifications
+- Reports (daily, summary, specialized)
+- Charts and visualizations
+- Data exports
+
+---
+
+## 12. Observations and Recommendations
+
+### 12.1 Strengths
+
+1. **Comprehensive Coverage** - 14 sites with consistent configuration
+2. **Standardization** - Common equipment terminology and hierarchy
+3. **Flexibility** - Site-specific customization while maintaining standards
+4. **Reporting** - Robust automated reporting framework
+5. **User Interface** - Intuitive navigation and data entry
+6. **Multi-Modal Analysis** - Grid and chart views for different needs
+
+### 12.2 Evident Use Cases
+
+1. **Real-Time Monitoring** - Current hour filtering for active shift monitoring
+2. **Historical Analysis** - Comprehensive data fields for trend analysis
+3. **Root Cause Analysis** - Detailed cause tracking capabilities
+4. **Management Reporting** - Automated daily summaries for leadership
+5. **Cross-Site Comparison** - Consistent data structure enables benchmarking
+
+### 12.3 Configuration Maturity
+
+**Indicators of Mature Configuration:**
+- 14 sites fully configured
+- Consistent naming conventions
+- Comprehensive reporting framework
+- Multiple visualization options
+- Automated notification systems
+- Standardized data model
+
+**Areas of Specialization:**
+- Custom reports for specific sites (MTD Employee, DSO, Reclaim-TLO)
+- Site-specific equipment tracking (Backfill Circuit, Train Loadout)
+- Varied reporting frequencies (hourly, daily, MTD)
+
+---
+
+## 13. Technical Specifications
+
+### 13.1 System Information
+
+- **Product:** AVEVA Production Management
+- **Version:** 2020 U2
+- **Platform:** Windows-based application
+- **Authentication:** Domain-based (PIHA-CS)
+- **User Interface:** Desktop application with rich client interface
+
+### 13.2 Data Model
+
+**Key Entities:**
+1. Site (top-level organizational unit)
+2. Equipment/Area (processing location)
+3. Downtime Event (tracked occurrence)
+4. Cause (reason categorization)
+5. Report (output document)
+
+**Relationships:**
+- Site → Equipment → Downtime Events
+- Downtime Events → Causes
+- Equipment → Reports
+
+---
+
+## 14. Conclusion
+
+The AVEVA Production Management 2020 U2 system as configured demonstrates a comprehensive, enterprise-scale implementation for tracking downtime and production events across 14 mining and processing sites. The configuration exhibits:
+
+- **Standardization** across sites for consistency
+- **Flexibility** for site-specific requirements
+- **Comprehensive reporting** for various stakeholders
+- **User-friendly interface** for efficient data entry and analysis
+- **Real-time capabilities** for operational decision-making
+- **Historical analysis** support for continuous improvement
+
+The system serves as a central repository for downtime tracking, enabling both real-time operational response and longer-term trend analysis across the entire operation portfolio.
+
+---
+
+**Document End**
