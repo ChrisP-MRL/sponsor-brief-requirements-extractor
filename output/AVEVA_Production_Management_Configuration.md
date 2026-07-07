@@ -164,3 +164,119 @@ The system displays downtime events in a tabular format with the following data 
 - Color-coded rows (tan/beige highlighting on second record)
 - Checkbox indicators for clipping status
 - Three-state checkboxes (white, beige, blue squares) for event status tracking
+
+### 4.3 Filtering Capabilities
+
+**Active Filter:**
+- Filter Type: Time-based
+- Filter Rule: "Sample Period is Current Hour"
+- Filter applies to: CSI Roy Hill.Crushing Circuit.DRP
+
+**Filter Display:**
+- Prominently shown at top of data grid
+- Applied to the specific equipment hierarchy path
+- Results count displayed at bottom of grid
+
+---
+
+## 5. User Interface Components
+
+### 5.1 Navigation Panel (Left Sidebar)
+
+**Primary Navigation Tabs:**
+1. **Downtime** - Currently active, displaying downtime tracking interface
+2. **Knowledge** - Access to knowledge base/documentation
+3. **Metrics** - Performance metrics and KPI dashboard
+
+**Hierarchy Browser:**
+- Expandable/collapsible tree structure
+- Visual indicators (+ / - icons) for node expansion
+- Icon types:
+  - Site icons (organizational level)
+  - Equipment icons (operational level)
+  - Report icons (document level)
+- Currently viewing: Ripidian > Crushing Circuit (highlighted in blue)
+
+### 5.2 Top Navigation Bar
+
+**Navigation Controls (Left to Right):**
+1. Back arrow (navigation history)
+2. Forward arrow (navigation history)
+3. Home icon (return to home view)
+4. Refresh icon (reload current view)
+5. Filter icon (data filtering)
+6. Additional view options
+7. Grid view icon (switch to grid display)
+8. Chart view icon (switch to chart display)
+
+**Right-Side Controls:**
+1. Star icon (favorites/bookmarks)
+2. Settings/configuration gear icon
+3. Help/information icon
+4. Notifications bell icon
+5. User profile (PIHA-CS\chris.pavlinovich)
+
+### 5.3 Data Grid Interface
+
+**Grid Features:**
+- Multi-column sortable table
+- Horizontal scrolling for additional columns
+- Resizable columns
+- Status bar showing record count ("Count: 2") and total duration ("12.85")
+- Horizontal scroll indicator
+- Navigation arrows for moving between records
+
+**Toolbar (Bottom of Grid):**
+- Standard data manipulation icons
+- Export functionality
+- Print options
+- Chart generation tools
+- Copy/paste capabilities
+- Data import/export buttons
+- Refresh data button
+- Additional analysis tools
+
+### 5.4 Chart Selection Panel (Right Sidebar)
+
+**Available Chart Types:**
+1. **Gantt chart** - Timeline visualization (radio button)
+2. **Pareto chart** - Pareto analysis visualization (radio button)
+3. **Pie chart** - Distribution pie chart (radio button, currently selected)
+4. **No chart** - Disable chart view (radio button)
+
+**Current State:**
+- Pie chart option selected
+- Chart area displays "No Data Available" message
+- Chart panel remains visible but empty due to filtered dataset
+
+---
+
+## 6. Reporting Framework
+
+### 6.1 Report Types Configured
+
+Based on the navigation hierarchy, the following report types are configured across sites:
+
+#### **Daily Reports**
+- Daily Report (Hopes Downs4, Ripidian)
+- Daily Sample Report (Shire)
+- Email Daily Summary (multiple sites)
+
+#### **Email Notifications**
+- Email Summary (GRUYERE, Iron Valley, Mount Marion, Reed, Wodgina, Wonmunna)
+- Email Daily Summary (Hopes Downs4, Mount Whaleback, Ripidian)
+- Email Summary Report (Iron Valley, Shire)
+
+#### **Specialized Reports**
+- MTD Employee (Reed) - Month-to-Date employee reporting
+- DSO (Ripidian) - Direct Shipping Ore reporting
+- Reclaim-TLO (Hopes Downs4) - Reclaim and Train Load Out
+- North Plant Mt C Backfill Circuit (Koolyanobbing) - Specialized circuit reporting
+
+### 6.2 Report Distribution
+
+**Standardization:**
+- All 14 sites have a "Reports" folder
+- 10 sites have email notification systems configured
+- 3 sites have daily reporting mechanisms
+- Multiple sites share similar report templates
