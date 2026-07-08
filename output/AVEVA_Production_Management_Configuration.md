@@ -1,37 +1,59 @@
 # AVEVA Production Management System Configuration Analysis
 
-**Document Version:** 1.0  
+**Document Version:** 2.0  
 **Date:** 7 July 2026  
-**System Version:** AVEVA Production Management 2020 U2  
-**User:** PIHA-CS\chris.pavlinovich
+**System:** AVEVA Production Management 2020 U2  
+**Organization:** CSI Mining Services
 
 ---
 
 ## 1. Executive Summary
 
-This document provides a detailed analysis of the configured functionality within the AVEVA Production Management 2020 U2 system, based on screenshot evidence captured from the production environment. The system is configured to track downtime events across multiple mining sites and processing facilities, with comprehensive hierarchical organization, reporting capabilities, and production planning/scheduling functionality. The analysis reveals a dual-module system encompassing both reactive downtime tracking and proactive production planning with multi-year Gantt chart scheduling capabilities.
+This document provides a comprehensive technical analysis of the AVEVA Production Management 2020 U2 system as configured and deployed across CSI Mining Services operations. The analysis is based on system screenshots, database schema documentation, and the Time Usage Model (TUM) specification document PRC-OPS-COR-SPC-0001.
+
+**Key Findings:**
+
+- **Multi-Site Deployment**: The system is configured to support 14 distinct mining sites across Australia, encompassing crushing circuits, processing plants, haulage operations, and marine facilities.
+- **Comprehensive TUM Framework**: A standardized 4-level Time Usage Model hierarchy governs downtime tracking, delay classification, and performance metrics across all operations.
+- **Integrated Reporting**: SQL Server Reporting Services (SSRS) integration provides daily site reports, email summaries, and production dashboards with safety, production, and delay tracking.
+- **Planning & Scheduling Capability**: The PLRP (Planning) module supports long-range activity scheduling with Gantt chart visualization spanning multiple years.
+- **Flexible Data Model**: The underlying database schema uses custom field arrays (Field0001-0021 for downtime, Field0001-0035 for metrics) enabling site-specific data capture without schema changes.
+
+The system supports crushing & fixed plant operations, haulage, and marine activities with standardized performance measurement enabling consistent benchmarking and continuous improvement across the CSI Mining Services portfolio.
 
 ---
 
 ## 2. System Overview
 
 ### 2.1 Application Details
-- **Product Name:** AVEVA Production Management 2020 U2
-- **Primary Function:** Downtime tracking and production monitoring
-- **Current View:** Downtime - CSI Roy Hill.Crushing Circuit.DRP
-- **Filter Context:** Records filtered to show "Sample Period is Current Hour"
 
-### 2.2 Key Features Identified
-- Hierarchical site/equipment navigation
-- Real-time downtime event tracking
-- Multi-site support across mining operations
-- Comprehensive reporting framework
-- Time-based event recording with duration tracking
-- Equipment-specific monitoring
-- **Production planning and scheduling module (PLRP)**
-- **Multi-year Gantt chart visualization**
-- **Activity-based planning with resource allocation**
-- **Planned vs. actual performance tracking**
+- **Application Name:** AVEVA Production Management
+- **Version:** 2020 U2
+- **Application Type:** Web-based enterprise production management system
+- **Access Method:** Browser-based interface (Report Server Web Portal for reports)
+- **User Authentication:** Domain-based (PIHA-CSI\chris.pavlinovich visible in screenshots)
+
+### 2.2 Core Functional Modules
+
+From screenshot evidence, the system implements three primary functional modules:
+
+1. **Downtime Module** - Equipment downtime event tracking with cause/effect classification
+2. **Knowledge Module** - Knowledge capture and documentation functionality
+3. **Metrics Module** - Production metrics and KPI tracking
+4. **Planning Module** - Long-range planning and scheduling (PLRP - Planning)
+
+### 2.3 Key System Features
+
+- Hierarchical organizational navigation with expandable site/location tree
+- Real-time and historical downtime event tracking
+- Time-period filtering (e.g., "Current Hour" filter visible)
+- Multiple visualization options: Gantt charts, Pareto charts, Pie charts
+- Data grid with inline editing capabilities
+- Event splitting for concurrent downtime causes
+- Confirmation workflow (IsConfirmed flags in data model)
+- SQL Server Reporting Services integration for formatted reports
+- Email summary report generation and distribution
+- Multi-year planning with activity tracking
 
 ---
 
@@ -39,251 +61,259 @@ This document provides a detailed analysis of the configured functionality withi
 
 ### 3.1 Site Structure
 
-The system is configured with a comprehensive multi-site hierarchy representing various mining and processing operations:
+From the navigation hierarchy visible in AVEVA_Screenshot.png, the system is configured with the following 14 top-level sites:
 
-#### **CSI (Roy Hill)**
-- Crushing Circuit
-- Processing Plant
-- Reports
+| Site Code | Site Name | Sub-Components Visible |
+|-----------|-----------|------------------------|
+| CSI | CSI (Parent) | Crushing Circuit, Processing Plant, Haulage, Reports |
+| Bald Hill | Bald Hill | Crushing Circuit, Processing Plant, Reports |
+| Carina | Carina | Crushing Circuit, Train Loadout, Reports |
+| GRUYERE | GRUYERE | Crushing Circuit, Email Summary, Reports |
+| Hope Downs4 | Hope Downs4 | Crushing Circuit, Reclaim-TLO, Daily Report, Email Summary |
+| Iron Valley | Iron Valley | Crushing Circuit, Reports, Email Summary Report |
+| KGSM | Koolyanobbing | Main Plant, North Plant Mt C Backfill Circuit, Reports |
+| Mount Marion | Mount Marion | Crushing Circuit 2, Processing Plant, Reports, Email Daily Summary |
+| Mount Whaleback | Mount Whaleback | Crushing Circuit, Email Daily Summary, Reports |
+| Red Ore | Red Ore | Crushing Circuit, Email Summary, MTD Employee, Reports |
+| Roy Hill | Roy Hill | Crushing Circuit, DSO, Daily Report, Email Summary |
+| Sanjiv Ridge | Sanjiv Ridge | Crushing Circuit, Daily Sample Report, Email Summary Report, Reports |
+| West Angelas | West Angelas | Plant 1, Reports |
+| Wodgina | Wodgina | Crushing Circuit, Email Summary, Reports |
+| Wonmunna | Wonmunna | Crushing Circuit, Email Summary, Reports |
 
-#### **Carina**
-- Crushing Circuit
-- Train Loadout
-- Reports
+**Note:** The screenshot shows "Haulage" visible under CSI parent, and the planning screenshot references "CSI Haulage.PLRP" indicating haulage operations are tracked as separate reporting points.
 
-#### **GRUYERE**
-- Crushing Circuit
-- Email Summary
-- Reports
+### 3.2 Hierarchical Structure
 
-#### **Hopes Downs4**
-- Crushing Circuit
-- Reclaim-TLO
-- Daily Report
-- Email Daily Summary
-- Reports
+The organizational model follows a three-tier hierarchy:
 
-#### **Iron Valley**
-- Crushing Circuit
-- Reports
-- Email Summary Report
+1. **Site Level** - Top-level mining site (e.g., "Roy Hill")
+2. **Location Level** - Specific operational areas (e.g., "Crushing Circuit", "Processing Plant", "Haulage")
+3. **Equipment/Reporting Point Level** - Individual equipment or reporting points within each location
 
-#### **Koolyanobbing**
-- Main Plant
-- North Plant Mt C Backfill Circuit
-- Reports
-
-#### **Mount Marion**
-- Crushing Circuit 2
-- Processing Plant
-- Reports
-- Email Daily Summary
-
-#### **Mount Whaleback**
-- Crushing Circuit
-- Email Daily Summary
-- Reports
-
-#### **Reed**
-- Crushing Circuit
-- Email Summary
-- MTD Employee
-- Reports
-
-#### **Ripidian**
-- Crushing Circuit
-- DSO
-- Daily Report
-- Email Summary
-- Reports
-
-#### **Shire**
-- Crushing Circuit
-- Daily Sample Report
-- Email Summary Report
-- Reports
-
-#### **Utah Point**
-- Wondinlas
-- Plant 1
-- Reports
-
-#### **Wodgina**
-- Crushing Circuit
-- Email Summary
-- Reports
-
-#### **Wonmunna**
-- Crushing Circuit
-- Email Summary
-- Reports
-
-### 3.2 Hierarchy Characteristics
-
-**Multi-Level Structure:**
-1. **Site Level** - Geographic location/operation (e.g., CSI, Carina, GRUYERE)
-2. **Equipment/Area Level** - Specific processing areas (e.g., Crushing Circuit, Processing Plant)
-3. **Reporting Level** - Reports and communication outputs
-
-**Standardized Components:**
-- Most sites include a "Crushing Circuit" module
-- "Reports" folders are standard across all sites
-- Email notification systems (Email Summary, Email Daily Summary) are configured for multiple sites
-- Some sites have specialized equipment tracking (Train Loadout, Reclaim-TLO, DSO)
+This structure is reinforced by the database schema where `items` table has self-referential `ParentID` enabling unlimited hierarchical depth, and `reportingpoint` table links items to operational tracking points.
 
 ---
 
 ## 4. Downtime Tracking Functionality
 
-### 4.1 Downtime Record Structure
+### 4.1 Core Downtime Features
 
-The system displays downtime events in a tabular format with the following data fields:
+The Downtime module visible in AVEVA_Screenshot.png demonstrates the following capabilities:
 
-| Field | Description | Example Value |
-|-------|-------------|---------------|
-| **Sample Period** | Recording period indicator | Current Hour |
-| **Is Clipped** | Event clipping status indicator | Checkbox (visual indicators) |
-| **Last Modified** | Timestamp of last record update | 7/07/20... |
-| **Last...** | Additional timestamp field | 7/07/20... |
-| **Start Time** | Downtime event start | 7/07/20... |
-| **End Time** | Downtime event end | 7/07/20... |
-| **Duration** | Length of downtime | 10.95 (hours), 1.9 (hours) |
-| **Location** | Equipment location code | CSI Ro... |
-| **Equipment** | Specific equipment identifier | 10.95 CSI_R... |
-| **Eff...** | Efficiency/effectiveness metric | (Partial view) |
-| **Locatio...** | Extended location details | CSI_R... |
-| **Cause...** | Cause category | CSI.Ro... |
-| **Cause** | Specific cause description | CSI.Ro... |
-| **Eff** | Efficiency rating | (Partial view) |
+**Data Grid Columns:**
+- Is Clipped (checkbox indicator for events extending beyond view window)
+- Last Modified timestamp
+- Last... (additional timestamp field)
+- Start Time
+- End Time  
+- Duration (calculated in hours, showing values like 10.95, 1.9)
+- Location (CSI Roy Hill references visible)
+- Equipment identifier
+- Eff... (likely Efficiency or Effect classification)
+- Location... (additional location reference)
+- Cause... (downtime cause classification)
+- Cause (downtime cause description)
+- Eff... (effect/classification)
 
-### 4.2 Event Tracking Details
+**Filtering & Time Selection:**
+- Period filter showing "Filtered to only show records where Sample Period is Current Hour"
+- Date picker showing 7/07/2026
+- Count indicator showing "Count: 2" with total duration "12.85" hours
 
-**Visible Records:**
-- Count: 2 downtime events displayed in current view
-- Total Duration: 12.85 hours (10.95 + 1.9 hours)
-- Location: CSI Roy Hill (CSI Ro...)
-- Date: 7/07/2026 (filtered to current hour)
+**Visualization Options:**
+A dropdown menu provides chart options:
+- Gantt chart (radio button selected)
+- Pareto chart
+- Pie chart
+- No chart
 
-**Visual Indicators:**
-- Color-coded rows (tan/beige highlighting on second record)
-- Checkbox indicators for clipping status
-- Three-state checkboxes (white, beige, blue squares) for event status tracking
+### 4.2 Time Usage Model Classification
 
-### 4.3 Filtering Capabilities
+According to the TUM specification document (PRC-OPS-COR-SPC-0001), downtime events are classified into a 4-level hierarchy:
 
-**Active Filter:**
-- Filter Type: Time-based
-- Filter Rule: "Sample Period is Current Hour"
-- Filter applies to: CSI Roy Hill.Crushing Circuit.DRP
+**Level 0: Calendar Time (CT)**
+- Total available time (24 hours/day, 8760 hours/year)
 
-**Filter Display:**
-- Prominently shown at top of data grid
-- Applied to the specific equipment hierarchy path
-- Results count displayed at bottom of grid
+**Level 1: Available Time vs. Downtime**
+- **Available Time (AT)** - Time equipment can operate
+- **Downtime (DT)** - Time equipment is unavailable:
+  - Scheduled Maintenance (SM) - Planned maintenance activities
+  - Unscheduled Maintenance (UM) - Breakdown events
+  - Non-Maintainable Downtime (NMD) - Non-preventable events (accidents, weather)
+
+**Level 2: Utilization Breakdown**
+- **Utilised Time (UT)** - Equipment being used for production
+- **Standby (SB)** - Available but not utilized:
+  - Operating Standby (OSB) - Management decision
+  - External Standby (ESB) - External factors beyond control
+
+**Level 3: Operating Time Breakdown**
+- **Operating Time (OT)** - Actual production time
+- **Non-Productive Time (NPT)** - Activities not contributing to production (refueling, training)
+- **Operating Delay (OD)** - Temporary stoppages
+
+**Level 4: Production Rate**
+- **Full Rate Production (FRP)** - Operating at or above target rate
+- **Reduced Rate Production (RRP)** - Operating below target rate
+
+### 4.3 Event Capture Requirements
+
+From the TUM specification, each downtime event must capture:
+
+| Data Field | Description |
+|------------|-------------|
+| Production Unit | Highest level of asset hierarchy (e.g., Crushing Train 1) |
+| Plant Component | Component where event occurred (e.g., Conveyor) |
+| Equipment ID | ID number of component (e.g., 3210CV101) |
+| Equipment Type | Specific equipment type (e.g., Belt) |
+| Event Start Time | Start timestamp (to the second) |
+| Event End Time | End timestamp (to the second) |
+| Cause | Root cause from site cause/effect matrix |
+| Effect | Effect classification (No Production, Reduced Rate) |
+| Classification | TUM classification code (SM, UM, NMD, OSB, ESB, OD, NPT) |
+| Comment | Free-text explanation where required |
 
 ---
 
 ## 5. User Interface Components
 
-### 5.1 Navigation Panel (Left Sidebar)
+### 5.1 Navigation Panel
 
-**Primary Navigation Tabs:**
-1. **Downtime** - Currently active, displaying downtime tracking interface
-2. **Knowledge** - Access to knowledge base/documentation
-3. **Metrics** - Performance metrics and KPI dashboard
+**Location:** Left side panel  
+**Features:**
+- Hierarchical tree view labeled "Navigation" and "Hierarchy"
+- Location dropdown filter at top
+- Expandable/collapsible nodes with [+]/[-] icons
+- Color-coded icons:
+  - Orange gear icons for equipment/circuits
+  - Yellow folder icons for report categories
+  - Site identifiers with checkbox indicators
 
-**Hierarchy Browser:**
-- Expandable/collapsible tree structure
-- Visual indicators (+ / - icons) for node expansion
-- Icon types:
-  - Site icons (organizational level)
-  - Equipment icons (operational level)
-  - Report icons (document level)
-- Currently viewing: Ripidian > Crushing Circuit (highlighted in blue)
+### 5.2 Toolbar
 
-### 5.2 Top Navigation Bar
+**Top Navigation Bar:**
+- Back/Forward navigation arrows
+- Home button
+- Refresh button
+- Filter button (funnel icon)
+- Additional view controls (grid icon, list icon)
+- Chart/graph button
+- User profile icon (top right)
+- Settings icon (gear)
+- Help icon (question mark)
+- Notifications icon (bell)
+- User display: "PIHA-CSI\chris.pavlinovich"
 
-**Navigation Controls (Left to Right):**
-1. Back arrow (navigation history)
-2. Forward arrow (navigation history)
-3. Home icon (return to home view)
-4. Refresh icon (reload current view)
-5. Filter icon (data filtering)
-6. Additional view options
-7. Grid view icon (switch to grid display)
-8. Chart view icon (switch to chart display)
+### 5.3 Data Grid
 
-**Right-Side Controls:**
-1. Star icon (favorites/bookmarks)
-2. Settings/configuration gear icon
-3. Help/information icon
-4. Notifications bell icon
-5. User profile (PIHA-CS\chris.pavlinovich)
+**Features:**
+- Multi-column sortable grid
+- Checkbox column for row selection
+- Color-coded rows (beige/tan highlighting visible in screenshot)
+- Horizontal and vertical scrolling
+- Status bar showing count and totals
+- Inline editing capability implied by structure
 
-### 5.3 Data Grid Interface
+**Grid Footer Toolbar:**
+- Multiple action buttons for data manipulation
+- Chart selection dropdown (visible on right)
+- Export and print icons visible
 
-**Grid Features:**
-- Multi-column sortable table
-- Horizontal scrolling for additional columns
-- Resizable columns
-- Status bar showing record count ("Count: 2") and total duration ("12.85")
-- Horizontal scroll indicator
-- Navigation arrows for moving between records
+### 5.4 Module Tabs
 
-**Toolbar (Bottom of Grid):**
-- Standard data manipulation icons
-- Export functionality
-- Print options
-- Chart generation tools
-- Copy/paste capabilities
-- Data import/export buttons
-- Refresh data button
-- Additional analysis tools
+**Bottom of Navigation Panel:**
+Three module tabs visible:
+1. Downtime (clock icon)
+2. Knowledge (book icon)
+3. Metrics (gauge/chart icon)
 
-### 5.4 Chart Selection Panel (Right Sidebar)
-
-**Available Chart Types:**
-1. **Gantt chart** - Timeline visualization (radio button)
-2. **Pareto chart** - Pareto analysis visualization (radio button)
-3. **Pie chart** - Distribution pie chart (radio button, currently selected)
-4. **No chart** - Disable chart view (radio button)
-
-**Current State:**
-- Pie chart option selected
-- Chart area displays "No Data Available" message
-- Chart panel remains visible but empty due to filtered dataset
+These tabs switch between the three primary data collection modules.
 
 ---
 
 ## 6. Reporting Framework
 
-### 6.1 Report Types Configured
+### 6.1 SQL Server Reporting Services Integration
 
-Based on the navigation hierarchy, the following report types are configured across sites:
+From AVEVA_Reporting.png and AVEVA_email_summary.png, the system integrates with **SQL Server Reporting Services** to deliver formatted reports.
 
-#### **Daily Reports**
-- Daily Report (Hopes Downs4, Ripidian)
-- Daily Sample Report (Shire)
-- Email Daily Summary (multiple sites)
+**SSRS Portal Features:**
+- Navigation: "SQL Server Reporting Services" breadcrumb
+- Report folders: Favorites, Browse
+- Reporting Date parameter with date picker (06/07/2026 17:00:00)
+- NULL checkbox option
+- Page navigation controls (1 of 1)
+- Zoom control (100% dropdown)
+- Refresh, back, print, and export buttons
+- Comments toggle
+- View Report button
+- User context: Chris Pavlinovich
 
-#### **Email Notifications**
-- Email Summary (GRUYERE, Iron Valley, Mount Marion, Reed, Wodgina, Wonmunna)
-- Email Daily Summary (Hopes Downs4, Mount Whaleback, Ripidian)
-- Email Summary Report (Iron Valley, Shire)
+### 6.2 Daily Site Report Format
 
-#### **Specialized Reports**
-- MTD Employee (Reed) - Month-to-Date employee reporting
-- DSO (Ripidian) - Direct Shipping Ore reporting
-- Reclaim-TLO (Hopes Downs4) - Reclaim and Train Load Out
-- North Plant Mt C Backfill Circuit (Koolyanobbing) - Specialized circuit reporting
+**Report:** Bald Hill Daily Site Report  
+**Date:** 06/07/2026  
+**Branding:** CSI Mining Services logo
 
-### 6.2 Report Distribution
+**Report Sections:**
 
-**Standardization:**
-- All 14 sites have a "Reports" folder
-- 10 sites have email notification systems configured
-- 3 sites have daily reporting mechanisms
-- Multiple sites share similar report templates
+**1. Safety & Training**
+Table with Day and MTD columns:
+- Take Times: 52 (Day), 66 (MTD)
+- Field Interactions: 16 (Day), 25 (MTD)
+- Hazards: Gas bottle in laydown yard (Day), Hazards Reported: 1 (Day), 3 (MTD)
+- Incidents: Nil, Incidents Reported: 0 (Day), 0 (MTD)
+- PSI Topic: Hand Injuries
+- Safety Discussion: CRM's for Crusher shut and quality inspections
+
+**2. Production Summary**
+Table with columns: D/S, N/S, Day, Target, Variance, MTD, MTD Target, Variance
+
+| Metric | D/S | N/S | Day | Target | Variance | MTD | MTD Target | Variance |
+|--------|-----|-----|-----|--------|----------|-----|------------|----------|
+| Total Tonnes Crushed | 0 | 0 | 0 | 2,100 | -2,100 | 9,951 | 16,100 | -6,149 |
+| Run Hours | 0.0 | 0.0 | 0.0 | 6.0 | -6.0 | 37.3 | 46.0 | -8.7 |
+| Rate (tph) | 0 | 0 | 0 | 350 | -350 | 267 | 350 | -83 |
+| Availability | 0.0% | 0.0% | 0.0% | 50.0% | -50.0% | 75.5% | 71.9% | 3.6% |
+| Utilisation | 0.0% | 0.0% | 0.0% | 50.0% | -50.0% | 59.4% | 66.3% | -6.9% |
+| Overall Utilisation | 0.0% | 0.0% | 0.0% | 25.0% | -25.0% | 47.1% | 42.2% | 5.0% |
+
+**Note:** Report continues with additional sections (Delay Summary visible at bottom edge)
+
+### 6.3 Email Summary Report Format
+
+**Report:** GRA_EMAIL_SUMMARY (Granites Email Summary Report)  
+**Date:** 06/07/2026 04:31:00  
+**Title:** EMAIL SUMMARY- GRANITES  
+**Branding:** CSI Mining Services logo
+
+**Report Content:**
+
+**Header:** Granites Daily Production Report  
+**Date:** Monday, 06 July 2026
+
+**Production Table:**
+| Metric | Value |
+|--------|-------|
+| Daily Tonnes Target | 0 |
+| Daily Tonnes Actual | 0 |
+| MTD Target | 7,362 |
+| MTD Actual | 0 |
+| Comments | Scheduled shutdown |
+
+**Safety Sections:**
+- **Safety Focus:** Area awareness
+- **Safety Discussion:** Discussed fatigue management and to check on your work mates
+
+**Distribution:** Email delivery via SSRS subscription mechanism
+
+### 6.4 Report Distribution
+
+The presence of "Email Summary" and "Email Daily Summary" report nodes under multiple sites indicates automated email distribution configured for:
+- Daily production reports
+- Site-specific summary reports
+- Targeted stakeholder distribution
 
 ---
 
@@ -291,38 +321,55 @@ Based on the navigation hierarchy, the following report types are configured acr
 
 ### 7.1 Equipment Types Tracked
 
-**Primary Processing Equipment:**
+From the organizational hierarchy and TUM specification, the system tracks the following equipment and process types:
 
-1. **Crushing Circuits** - Present at 14 sites
-   - CSI, Carina, GRUYERE, Hopes Downs4, Iron Valley, Koolyanobbing (Main Plant), Mount Marion, Mount Whaleback, Reed, Ripidian, Shire, Wodgina, Wonmunna
-   - Most common equipment type across all operations
+**Crushing & Fixed Plant Operations:**
+- Crushing Circuits (Primary, Secondary, Tertiary)
+- Conveyors
+- Screens
+- Feeders
+- Processing Plants
+- Train Loadout facilities
+- Reclaim operations
 
-2. **Processing Plants**
-   - CSI - Processing Plant
-   - Mount Marion - Processing Plant
-   - Koolyanobbing - Main Plant, North Plant Mt C Backfill Circuit
-   - Utah Point - Plant 1
+**Haulage Operations:**
+- Haulage equipment and activities
+- Tracked as separate reporting points under sites
 
-3. **Material Handling**
-   - Carina - Train Loadout
-   - Hopes Downs4 - Reclaim-TLO (Train Load Out)
+**Marine Operations:**
+- Port and marine loading facilities (referenced in TUM scope)
 
-4. **Specialized Operations**
-   - Ripidian - DSO (Direct Shipping Ore)
-   - Utah Point - Wondinlas
-   - Koolyanobbing - North Plant Mt C Backfill Circuit
+**Supporting Equipment:**
+- Referenced in data capture requirements (belts, motors, electrical systems)
 
-### 7.2 Monitoring Scope
+### 7.2 Performance Metrics Tracked
 
-**Site Coverage:**
-- 14 distinct mining/processing sites
-- Geographic spread across multiple operations
-- Mix of iron ore and lithium operations (Mount Marion, Wodgina, Mount Whaleback)
+According to the TUM specification (PRC-OPS-COR-SPC-0001), the system calculates and reports the following metrics:
 
-**Equipment Hierarchy:**
-- Site → Equipment Area → Reports structure
-- Equipment areas represent major process steps
-- Consistent naming conventions across sites
+**Level 1 Metrics (Primary KPIs):**
+- **Availability (%)** = Available Time / Calendar Time
+- **Utilisation (%)** = Utilised Time / Calendar Time
+- **Overall Utilisation (%)** = Operating Time / Calendar Time
+- **Mean Time Between Failure (MTBF)** = Utilised Time / Count of UM Events
+- **Mean Time to Repair (MTTR)** = Downtime / Count of Downtime Events
+
+**Level 2 Metrics (Detailed Analysis):**
+- **Mean Time Between Stoppages (MTBS)** = Operating Time / Count of (OD + NPT) Events
+- **Utilisation of Available Time (%)** = Utilised Time / Available Time
+- **Operating Efficiency (%)** = Operating Time / Utilised Time
+- **Standby Rate (%)** = Standby Time / Calendar Time
+- **Standby Ratio (%)** = Standby Time / Available Time
+- **Non-Productive Time Ratio (%)** = NPT / Utilised Time
+- **Operating Delay Ratio (%)** = Operating Delay / Utilised Time
+- **Production Efficiency (%)** = Full Rate Production Time / Operating Time
+
+**Level 3 Metrics (Maintenance Focus):**
+- **Scheduled Maintenance Rate (%)** = SM / Calendar Time
+- **Unscheduled Maintenance Rate (%)** = UM / Calendar Time
+- **Non-Maintainable Downtime Rate (%)** = NMD / Calendar Time
+- **Scheduled Maintenance Efficiency (%)** = SM / Downtime
+- **Unscheduled Maintenance Ratio (%)** = UM / Downtime
+- **Non-Maintainable Downtime Ratio (%)** = NMD / Downtime
 
 ---
 
@@ -330,45 +377,44 @@ Based on the navigation hierarchy, the following report types are configured acr
 
 ### 8.1 Time-Based Features
 
-**Temporal Filtering:**
-- Current Hour filtering capability
-- Sample Period tracking
-- Start Time and End Time recording
-- Duration calculation (automatic)
-- Last Modified timestamp tracking
+**Time Granularity:**
+- Minimum 1-minute granularity for event capture (per TUM specification)
+- Timestamp precision to the second in database schema
+- Duration calculations in hours with decimal precision (10.95 hours visible in screenshot)
 
-**Time Aggregation:**
-- Hourly tracking
-- Daily reporting (Daily Report, Email Daily Summary)
-- Month-to-Date (MTD) reporting available
+**Time Period Filters:**
+- Current Hour (visible in screenshot filter)
+- Date range selection via date picker
+- Shift-based reporting (D/S, N/S visible in daily report - Day Shift, Night Shift)
 
-### 8.2 Cause and Effect Tracking
+**Calendar Integration:**
+- 24-hour operations (Calendar Time = 24 hours/day)
+- 8760 hours/year baseline
+- Multi-year planning capability (2023-2028 visible in planning Gantt chart)
 
-**Data Fields:**
-- **Cause Category** - High-level categorization of downtime reasons
-- **Cause** - Specific cause description
-- **Location** - Equipment location identification
-- **Equipment** - Specific equipment identifier
-- **Efficiency** - Performance effectiveness metrics
+### 8.2 Data Confirmation Workflow
 
-**Event Classification:**
-- Is Clipped indicator for partial events
-- Visual status indicators (color coding)
-- Multiple cause fields for detailed root cause analysis
+The database schema includes `IsConfirmed` boolean fields in:
+- **downtimedataset** table
+- **metricsdataset** table
+- **knowledgedataset** table
 
-### 8.3 Analytical Capabilities
+This indicates a two-stage data entry process:
+1. **Initial Entry** - Events entered by operators (IsConfirmed = False)
+2. **Confirmation** - Events reviewed and confirmed by supervisors/managers (IsConfirmed = True)
 
-**Visualization Options:**
-1. **Gantt Chart** - Timeline-based analysis for event sequences
-2. **Pareto Chart** - Identify major downtime contributors (80/20 analysis)
-3. **Pie Chart** - Distribution analysis of downtime by category
-4. **Grid View** - Detailed tabular data
+### 8.3 Data Audit and Integrity
 
-**Export Capabilities:**
-- Toolbar suggests export functionality
-- Print capabilities
-- Data manipulation tools
-- Import/export buttons visible
+**Audit Trail Fields:**
+- **CreatedBy** (string) - User who created the record
+- **LastModified** - Timestamp of last modification (visible in grid column)
+- **IsDeleted** (string) - Soft delete flag for maintaining history
+
+**Data Integrity Mechanisms:**
+- **IsSplit** (boolean) - Indicates downtime event has been split across multiple causes
+- **downtimedatasetsplit** table - Manages split event relationships with RootSetId, NextId, PreviousId
+- **MaskedById** (int) - Tracks overlapping or superseded events
+- **PercentDowntime** (double) - For partial downtime allocation
 
 ---
 
@@ -376,517 +422,530 @@ Based on the navigation hierarchy, the following report types are configured acr
 
 ### 9.1 Standardization Strategy
 
-**Common Configuration Patterns:**
+The deployment demonstrates a **centralized standardization** approach:
 
-1. **Equipment Naming:**
-   - "Crushing Circuit" used as standard terminology across 14 sites
-   - Consistent hierarchy: Site > Equipment > Reports
+**Standardized Elements:**
+- Common TUM classification hierarchy (4 levels)
+- Standard performance metrics calculations
+- Consistent reporting formats (daily reports, email summaries)
+- Shared database schema across all sites
+- Common user interface and navigation patterns
 
-2. **Reporting Structure:**
-   - Standard "Reports" folder at each site
-   - Email notification systems widely deployed
-   - Mix of automated daily summaries and on-demand reports
+**Site-Specific Flexibility:**
+- Custom field arrays (Field0001-0021 for downtime, Field0001-0035 for metrics)
+- Site-specific cause/effect matrices
+- Configurable reporting hierarchies
+- Location-specific equipment types and reporting points
 
-3. **User Interface:**
-   - Consistent navigation across all sites
-   - Standardized toolbar and controls
-   - Uniform data grid layout
+### 9.2 Scalability Features
 
-### 9.2 Site-Specific Customizations
+**Multi-Site Architecture:**
+- 14 sites currently configured
+- Hierarchical data model supports unlimited site addition
+- Centralized reporting with site-level filtering
+- Common authentication and access control
 
-**Unique Configurations:**
-- Reed: MTD Employee reporting (employee-focused metrics)
-- Ripidian: DSO (Direct Shipping Ore) tracking
-- Hopes Downs4: Reclaim-TLO specialized reporting
-- Koolyanobbing: Backfill circuit monitoring
-- Utah Point: Multiple plant configuration (Wondinlas, Plant 1)
+**Data Model Flexibility:**
+- Generic custom field arrays avoid schema changes for new data points
+- Hierarchical items structure supports any organizational depth
+- Type-based item classification (itemtypes table with TypeFullName, AssemblyFullName)
 
-### 9.3 Operational Characteristics
+### 9.3 Integration Architecture
 
-**Current State (from screenshot):**
-- System actively in use (user logged in)
-- Real-time data entry (current hour filtering)
-- 2 downtime events recorded for CSI Roy Hill
-- Total downtime: 12.85 hours tracked
-- Data spans 7/07/2026 (current day)
+**Database Integration:**
+- SQL Server backend (evident from SSRS integration)
+- Relational data model with referential integrity
+- Foreign key relationships between items, reporting points, and datasets
 
-**Access Control:**
-- User identification: PIHA-CS\chris.pavlinovich
-- Domain-based authentication (PIHA-CS domain)
-- User-specific session tracking
+**Reporting Integration:**
+- SQL Server Reporting Services for formatted reports
+- Email delivery mechanism for automated distribution
+- Web-based report portal access
+
+**Change Data Capture:**
+- **_cdc_type** field in downtimedatasetsplit table suggests CDC (Change Data Capture) enabled
+- Supports real-time or near-real-time data replication and integration
 
 ---
 
 ## 10. Functional Capabilities Summary
 
-### 10.1 Core Functions
+### 10.1 Core Capabilities
 
-1. **Downtime Tracking**
-   - Real-time event recording
-   - Duration tracking with automatic calculation
-   - Multi-site simultaneous monitoring
-   - Equipment-specific attribution
+1. **Downtime Event Management**
+   - Real-time downtime event capture
+   - Multi-level cause/effect classification
+   - Event splitting for concurrent causes
+   - Duration calculation and tracking
+   - Historical event query and analysis
 
-2. **Cause Analysis**
-   - Detailed cause categorization
-   - Root cause tracking
-   - Location-based analysis
-   - Equipment efficiency metrics
+2. **Performance Measurement**
+   - Automated metric calculations (24+ standard metrics)
+   - Availability, utilization, and efficiency tracking
+   - MTBF, MTTR, MTBS analysis
+   - Maintenance effectiveness metrics
 
-3. **Reporting**
-   - Automated daily summaries
-   - Email distribution system
-   - Multiple report formats
-   - Customizable report templates
+3. **Reporting & Analytics**
+   - Daily site reports with safety, production, and variance tracking
+   - Email summary distribution
+   - Visualization options (Gantt, Pareto, Pie charts)
+   - Shift-based reporting (Day/Night shift breakdown)
+   - MTD (Month-to-Date) aggregations
 
-4. **Data Visualization**
-   - Multiple chart types (Gantt, Pareto, Pie)
-   - Grid-based detailed views
-   - Real-time data refresh
-   - Export capabilities
+4. **Planning & Scheduling**
+   - Long-range planning (multi-year Gantt charts)
+   - Activity scheduling with planned vs. actual tracking
+   - Resource and location assignment
+   - Activity state management (Available, Planned, Actual)
 
-5. **Multi-Site Management**
-   - 14 operational sites configured
-   - Hierarchical organization structure
-   - Consistent data model across sites
-   - Site-specific customization support
+5. **Knowledge Management**
+   - Knowledge capture module (separate from downtime)
+   - Sample-based data collection (SampleDateTime in knowledgedataset)
+   - Structured knowledge retention
 
-### 10.2 User Interaction Patterns
+6. **Metrics Tracking**
+   - Production metrics dataset
+   - Period-based aggregation (hourly, shift, daily)
+   - 35 custom metric fields per reporting point
 
-**Navigation:**
-- Tree-based hierarchy browsing
-- Favorites/bookmark system
-- Navigation history (back/forward)
-- Quick home return
+### 10.2 User Roles and Workflows
 
-**Data Entry:**
-- Grid-based data input
-- Status indicators (checkboxes, color coding)
-- Time-based filtering
-- Multi-field event recording
+From the TUM specification document, the system supports the following organizational roles:
 
-**Analysis:**
-- On-demand chart generation
-- Filtering and sorting capabilities
-- Data aggregation (count, duration totals)
-- Export for external analysis
+**1. Chief Operating Officer**
+- TUM and metrics definition and change management
+- Enterprise-wide standardization governance
+
+**2. General Managers & Operations Managers**
+- Target setting for sites
+- Performance monitoring and variance investigation
+- Corrective action implementation
+
+**3. Site Managers**
+- Daily performance monitoring and reporting
+- Downtime event validation
+- Non-compliance identification
+- Site-specific cause/effect matrix management
+
+**4. Operators (Implied)**
+- Real-time event entry
+- Initial data capture
+- Equipment status updates
+
+**5. Supervisors (Implied)**
+- Data confirmation and validation
+- Event classification review
+- Comment and context addition
 
 ---
 
 ## 11. Integration Points
 
-### 11.1 External Systems
+### 11.1 External System Integration
 
-**Email Integration:**
-- Automated email reports configured for 10 sites
-- Daily summary distribution
-- Event-based notifications
+**SQL Server Reporting Services**
+- Report rendering and distribution
+- Email subscription mechanism
+- PDF/Excel export capabilities (implied by SSRS standard features)
 
-**Data Export:**
-- Standard export functionality visible in toolbar
-- Support for external analysis tools
-- Report generation for distribution
+**Active Directory / Domain Authentication**
+- User authentication (PIHA-CSI domain visible)
+- Role-based access control (implied by CreatedBy tracking)
 
-### 11.2 Data Flow
+**Corporate Email System**
+- Automated email report distribution
+- Subscription-based delivery to stakeholders
 
-**Input:**
-- Manual data entry (downtime events)
-- Real-time event recording
-- Equipment status updates
+### 11.2 Data Flow Architecture
 
-**Processing:**
-- Duration calculations
-- Aggregation (hourly, daily, MTD)
-- Efficiency metrics computation
+**Input Layer:**
+- Manual data entry via web interface
+- Operator event creation
+- Supervisor confirmation workflow
 
-**Output:**
-- Email notifications
-- Reports (daily, summary, specialized)
-- Charts and visualizations
-- Data exports
+**Processing Layer:**
+- TUM classification engine
+- Metric calculation engine
+- Duration and aggregation calculations
+- Data validation and integrity checks
+
+**Storage Layer:**
+- SQL Server relational database
+- Hierarchical item structure
+- Time-series event datasets (downtime, metrics, knowledge)
+- Audit trail and change tracking
+
+**Output Layer:**
+- Web-based data grids and visualizations
+- SSRS formatted reports
+- Email distribution
+- Chart generation (Gantt, Pareto, Pie)
+
+### 11.3 Data Model Integration
+
+The database schema demonstrates a well-integrated relational model:
+
+**Core Hierarchy:**
+- `items` → Self-referential hierarchy (ParentID)
+- `itemtypes` → Item type definitions
+- `reportingpoint` → Links items to operational tracking
+
+**Event Datasets:**
+- `downtimedataset` → Links to reportingpoint (FK: ReportingPointId)
+- `metricsdataset` → Links to reportingpoint (FK: ReportingPointId)
+- `knowledgedataset` → Links to reportingpoint (FK: ReportingPointId)
+
+**Supporting Structures:**
+- `downtimedatasetsplit` → Manages split events with linked list structure (RootSetId, NextId, PreviousId)
 
 ---
 
 ## 12. Observations and Recommendations
 
-### 12.1 Strengths
+### 12.1 System Strengths
 
-1. **Comprehensive Coverage** - 14 sites with consistent configuration
-2. **Standardization** - Common equipment terminology and hierarchy
-3. **Flexibility** - Site-specific customization while maintaining standards
-4. **Reporting** - Robust automated reporting framework
-5. **User Interface** - Intuitive navigation and data entry
-6. **Multi-Modal Analysis** - Grid and chart views for different needs
+1. **Comprehensive TUM Framework**
+   - Well-documented 4-level classification system
+   - Clear definitions and calculations for 24+ metrics
+   - Standardized across entire organization
 
-### 12.2 Evident Use Cases
+2. **Multi-Site Scalability**
+   - 14 sites successfully deployed
+   - Consistent user interface and experience
+   - Centralized reporting with site-specific detail
 
-1. **Real-Time Monitoring** - Current hour filtering for active shift monitoring
-2. **Historical Analysis** - Comprehensive data fields for trend analysis
-3. **Root Cause Analysis** - Detailed cause tracking capabilities
-4. **Management Reporting** - Automated daily summaries for leadership
-5. **Cross-Site Comparison** - Consistent data structure enables benchmarking
+3. **Flexible Data Model**
+   - Custom field arrays avoid schema changes
+   - Hierarchical structure supports any organizational model
+   - Audit trail and data integrity features built-in
 
-### 12.3 Configuration Maturity
+4. **Integrated Reporting**
+   - SSRS integration provides professional report formatting
+   - Automated email distribution reduces manual effort
+   - Multiple visualization options for different audiences
 
-**Indicators of Mature Configuration:**
-- 14 sites fully configured
-- Consistent naming conventions
-- Comprehensive reporting framework
-- Multiple visualization options
-- Automated notification systems
-- Standardized data model
+5. **Planning Capability**
+   - Multi-year planning with visual Gantt charts
+   - Planned vs. actual tracking enables schedule adherence monitoring
 
-**Areas of Specialization:**
-- Custom reports for specific sites (MTD Employee, DSO, Reclaim-TLO)
-- Site-specific equipment tracking (Backfill Circuit, Train Loadout)
-- Varied reporting frequencies (hourly, daily, MTD)
+### 12.2 Potential Use Cases for Enhancement
+
+1. **Real-Time Dashboards**
+   - Current interface shows data grids; opportunity for live KPI dashboards
+   - Real-time availability and utilization gauges
+   - Live production rate monitoring
+
+2. **Mobile Data Entry**
+   - Web interface suggests desktop/laptop usage
+   - Mobile-optimized interface could improve data capture timeliness
+   - Offline data entry with synchronization
+
+3. **Advanced Analytics**
+   - Historical data enables predictive maintenance modeling
+   - Trend analysis and forecasting
+   - Pareto analysis of downtime causes across sites
+
+4. **Integration Opportunities**
+   - SCADA/DCS integration for automatic event detection
+   - Maintenance management system integration (work order linkage)
+   - ERP integration for cost tracking and analysis
+
+5. **Performance Benchmarking**
+   - Cross-site performance comparison reports
+   - Industry benchmark tracking
+   - Best practice identification and sharing
 
 ---
 
 ## 13. Technical Specifications
 
-### 13.1 System Information
+### 13.1 Database Schema Summary
 
-- **Product:** AVEVA Production Management
-- **Version:** 2020 U2
-- **Platform:** Windows-based application
-- **Authentication:** Domain-based (PIHA-CS)
-- **User Interface:** Desktop application with rich client interface
+The system utilizes a SQL Server database with the following core tables:
 
-### 13.2 Data Model
+#### items
+**Purpose:** Hierarchical item/location structure
 
-**Key Entities:**
-1. Site (top-level organizational unit)
-2. Equipment/Area (processing location)
-3. Downtime Event (tracked occurrence)
-4. Cause (reason categorization)
-5. Report (output document)
+| Field | Type | Key | Description |
+|-------|------|-----|-------------|
+| ID | string | PK | Unique item identifier |
+| ParentID | string | FK | Self-referential parent item |
+| TypeID | string | FK | Links to itemtypes |
+| Name | string | | Display name |
+| DisplayOrder | bigint | | Sort order for display |
 
-**Relationships:**
-- Site → Equipment → Downtime Events
-- Downtime Events → Causes
-- Equipment → Reports
+#### itemtypes
+**Purpose:** Item type definitions
+
+| Field | Type | Key | Description |
+|-------|------|-----|-------------|
+| ID | string | PK | Type identifier |
+| TypeFullName | string | | Full type name |
+| AssemblyFullName | string | | Assembly reference |
+
+#### reportingpoint
+**Purpose:** Links items to operational tracking points
+
+| Field | Type | Key | Description |
+|-------|------|-----|-------------|
+| ReportingPointId | int | PK | Unique reporting point ID |
+| ItemId | string | FK | Links to items table |
+| ItemFullName | string | | Full hierarchical name |
+| SiteId | bigint | | Site identifier |
+| LocationIdentifier | string | | Location code |
+
+#### downtimedataset
+**Purpose:** Downtime event records
+
+| Field | Type | Key | Description |
+|-------|------|-----|-------------|
+| Id | int | PK | Event ID |
+| ReportingPointId | int | FK | Links to reportingpoint |
+| StartDateTime | timestamp | | Event start time |
+| EndDateTime | timestamp | | Event end time |
+| Duration | int | | Duration in minutes |
+| Cause | int | | Cause code |
+| Classification | int | | TUM classification code |
+| IsSplit | boolean | | Indicates split event |
+| IsConfirmed | boolean | | Confirmation status |
+| PercentDowntime | double | | Partial downtime percentage |
+| CreatedBy | string | | User who created record |
+| Field0001-Field0021 | string | | Custom fields (21 fields) |
+| MaskedById | int | | Overlapping event reference |
+| IsDeleted | string | | Soft delete flag |
+
+#### metricsdataset
+**Purpose:** Production metrics records
+
+| Field | Type | Key | Description |
+|-------|------|-----|-------------|
+| Id | int | PK | Metric record ID |
+| ReportingPointId | int | FK | Links to reportingpoint |
+| StartDateTime | timestamp | | Period start time |
+| EndDateTime | timestamp | | Period end time |
+| Duration | int | | Period duration |
+| Period | string | | Period type (Hour, Shift, Day) |
+| IsConfirmed | boolean | | Confirmation status |
+| CreatedBy | string | | User who created record |
+| Field0001-Field0035 | string | | Custom fields (35 fields) |
+| IsDeleted | string | | Soft delete flag |
+
+#### knowledgedataset
+**Purpose:** Knowledge capture records
+
+| Field | Type | Key | Description |
+|-------|------|-----|-------------|
+| Id | int | PK | Knowledge record ID |
+| ReportingPointId | int | FK | Links to reportingpoint |
+| SampleDateTime | timestamp | | Sample time |
+| Duration | int | | Duration |
+| IsConfirmed | boolean | | Confirmation status |
+| CreatedBy | string | | User who created record |
+| IsDeleted | string | | Soft delete flag |
+
+#### downtimedatasetsplit
+**Purpose:** Split downtime event management
+
+| Field | Type | Key | Description |
+|-------|------|-----|-------------|
+| SetId | int | PK | Split set identifier |
+| RootSetId | int | FK | Original event reference |
+| NextId | int | | Next split event in chain |
+| PreviousId | int | | Previous split event in chain |
+| _cdc_type | string | | Change data capture type |
+
+### 13.2 System Architecture
+
+**Presentation Layer:**
+- Web-based interface (HTML/JavaScript)
+- SSRS Report Portal
+- Browser-based access (no client installation required)
+
+**Application Layer:**
+- AVEVA Production Management 2020 U2 application server
+- Business logic and calculation engine
+- TUM classification engine
+- Metric calculation services
+
+**Data Layer:**
+- SQL Server relational database
+- Stored procedures for calculations (implied)
+- Change Data Capture enabled
+- Referential integrity enforced
+
+**Integration Layer:**
+- SQL Server Reporting Services
+- Email delivery services
+- Authentication services (Active Directory)
 
 ---
 
 ## 14. Planning and Scheduling Module
 
-### 14.1 Module Overview
+### 14.1 PLRP Module Overview
 
-The system includes a comprehensive Planning and Scheduling module (PLRP - Planning) that enables production planning and activity scheduling across the operation.
+From AVEVA_schedule.png, the Planning module (PLRP - Planning) provides comprehensive long-range scheduling capabilities.
 
-**Module Location:**
-- Access via left navigation panel under "CSI > Haulage"
-- Navigation path: Planning - CSI Haulage.PLRP
-- Separate view from Downtime tracking
-- Integrated within the same AVEVA Production Management platform
+**Module Features:**
+- **View:** PLRP - Schedule (dropdown selector visible)
+- **Reporting Point:** CSI Haulage.PLRP (navigation hierarchy shows "Planning - CSI Haulage.PLRP")
+- **Filter:** "Filtered to only show records where Sample Period is Current Hour"
+- **Record Count:** 35 activities visible
 
-### 14.2 Schedule View Configuration
-
-**Current View Details:**
-- **View Type:** PLRP - Schedule
-- **Location:** CSI Haulage (CSI.Haulage.PLRP)
-- **Filter:** Sample Period is Current Hour
-- **Record Count:** 35 activities displayed
-- **Total Duration:** 1.11:00... (hours tracked)
-
-**View Selector:**
-Located in bottom-left corner with three options:
-1. Downtime (separate module)
-2. Knowledge (documentation/reference)
-3. Metrics (performance indicators)
-
-### 14.3 Planning Data Structure
+### 14.2 Planning Data Grid
 
 **Grid Columns:**
 
-| Column | Description | Example Values |
-|--------|-------------|----------------|
-| **Is Clipped** | Event clipping indicator | Checkboxes (checked/unchecked) |
-| **LastMo...** | Last modified timestamp | 2/07/20... |
-| **Last...** | Additional timestamp | PIHA-... |
-| **Plann...** | Planned start date | 7/05/20, 29/04/2..., 16/01/2... |
-| **Planne...** | Planned end date | 7/05/20, 29/04/2..., 16/01/2... |
-| **Planne...** | Planned duration | 01:00:0... |
-| **Actual...** | Actual start time | (timestamps) |
-| **Actual...** | Actual end time | 00:00:00 |
-| **Actual...** | Actual duration | 00:00:00 |
-| **Location** | Equipment/area location | CSI Ha... |
-| **ActivityId** | Unique activity identifier | WL2343, WL2342, WL2341, WL2288, etc. |
-| **Parent...** | Parent activity reference | (hierarchical linking) |
-| **State** | Activity status | Available |
-| **Product** | Product/material type | (not visible in data) |
-| **Locatio...** | Extended location code | CSI_H... |
-| **Require...** | Required resources | (truncated) |
-| **Require...** | Additional requirements | (truncated) |
-| **Comment** | Activity notes/comments | (empty in view) |
-| **Operati...** | Operation details | (truncated) |
-| **Operati...** | Operation type/code | (truncated) |
-| **Equip...** | Equipment identifier | WL2... |
+| Column | Type | Description |
+|--------|------|-------------|
+| Is Clipped | Checkbox | Indicates event extends beyond visible window |
+| LastMo... (Last Modified) | Timestamp | Last modification date/time |
+| Last... | Timestamp | Additional timestamp field |
+| Plann... (Planned Start) | Date | Planned start date (format: 2/07/20..., showing dates in 2020s) |
+| Planne... (Planned End) | Date | Planned end date |
+| Planne... (Planned Duration) | Duration | Planned duration value (format: 31/07/2... visible) |
+| Actual... (Actual Start) | Time | Actual start time (format: 00:00:00 visible) |
+| Actual... (Actual End) | Time | Actual end time |
+| Actual... (Actual Duration) | Time | Actual duration (format: 00:00:00) |
+| Location | String | Location identifier (CSI Ha... visible) |
+| ActivityId | String | Activity identifier (WL2343, WL2342, WL2341, WL2288, WL2272, WL2226, WL2192, EX1167, EX1050, GS3329_IV, etc.) |
+| Parent... (Parent Activity) | String | Parent activity reference |
+| State | String | Activity state (showing "Available") |
+| Product | String | Product type (visible in grid) |
+| Locatio... (Location Id) | String | Location identifier code (CSI_H... visible) |
+| Require... (Required Equipment) | String | Equipment requirements |
+| Require... (Required Resources) | String | Resource requirements |
+| Comment | String | Free-text comments |
+| Operati... (Operations) | String | Operations details |
+| Operati... (Operations Details) | String | Extended operations info |
+| Equip... (Equipment) | String | Equipment assignment |
 
-### 14.4 Activity Identifiers
-
-**Visible Activity IDs:**
-- WL2343, WL2342, WL2341 (WL prefix series)
-- WL2288, WL2272, WL2226 (numeric sequence)
-- WL2192 (variant)
-- EX1167, EX1050 (EX prefix series)
-- GS3329_IV (specialized identifier)
-- WL2326, WL2324, WL2323 (continued WL series)
-
-**Naming Convention:**
-- Alphanumeric codes with consistent prefixes
-- "WL" prefix appears to be dominant (likely "Work Location" or equipment code)
-- "EX" prefix for specific activity types
-- "GS" prefix with site suffix (e.g., "_IV" for Iron Valley)
-
-### 14.5 Gantt Chart Visualization
-
-**Timeline Display:**
-- **X-Axis:** Time scale spanning Jan 2023 through 2028 (multi-year view)
-- **Y-Axis:** Activity IDs (rows for each scheduled activity)
-- **Bars:** Red/pink colored bars representing scheduled activities
-- **Duration:** Visual bar length indicates activity duration
-- **Overlap:** Multiple concurrent activities visible
+### 14.3 Gantt Chart Visualization
 
 **Timeline Features:**
-- Quarter-based gridlines (Q1, Q2, Q3, Q4 markers visible)
-- Year headers (2023, 2024, 2025, 2026, 2027, 2028)
-- Scrollable horizontal timeline
-- Current date indicator (vertical line in 2026 region)
+- **Date Range:** Jan 29, 2023 - Dec 1, 2028 (5+ year planning horizon)
+- **Timeline Granularity:** Quarterly breakdown (Q1, Q2, Q3, Q4) with year labels (2023, 2024, 2025, 2026, 2027, 2028)
+- **Bar Color:** Red Gantt bars indicating scheduled activities
+- **Activity Count:** 35 activities shown in left grid with corresponding Gantt bars
 
-**Activity Scheduling Patterns:**
-- Most activities scheduled in 2026-2027 timeframe
-- Long-duration activities spanning multiple quarters
-- Some activities extending 6-12 months
-- Concurrent parallel activities visible
+**Activity Identifiers Visible:**
+- WL-series activities (WL2343, WL2342, WL2341, WL2288, WL2272, WL2226, WL2192, WL2324, WL2323)
+- EX-series activities (EX1167, EX1050)
+- GS-series activities (GS3329_IV)
 
-### 14.6 Planning Workflow
+**Activity Pattern:**
+Most activities show bars spanning 1-2 years across 2025-2027 period, indicating long-range campaign or project planning.
 
-**Time-Based Tracking:**
+### 14.4 Planning Module Actions
 
-1. **Planned Phase:**
-   - Planned start date
-   - Planned end date
-   - Planned duration (mostly 01:00:0... format)
+**Actions Panel (Right Side):**
+- **Save Changes** button
+- **Cancel Changes** button
+- **Display options:**
+  - Location (radio button)
+  - ActivityId (radio button)
+  - Parent Activity (radio button)
+  - State (radio button)
+  - Product (radio button)
+  - Location Id (radio button)
+  - Required Equipment (radio button)
+  - Required Resources (radio button)
+  - Operations (radio button)
+  - Equipment (radio button)
+  - SiteRef (radio button - appears at bottom)
 
-2. **Actual Phase:**
-   - Actual start time
-   - Actual end time
-   - Actual duration
-   - Status tracking ("Available" state)
+These display options suggest the Gantt chart can be colored/grouped by different dimensions for visual analysis.
 
-3. **Variance Tracking:**
-   - Comparison between planned and actual
-   - Duration calculation (automatic)
-   - Time delta analysis capability
+### 14.5 Planning Workflow
 
-### 14.7 Status Management
+The Planning module supports the following workflow:
 
-**Activity States:**
-- **Available** - Current state for all visible activities
-- Likely additional states: Planned, In Progress, Completed, Delayed (not visible in current filter)
+1. **Activity Definition**
+   - Create activity with unique ActivityId
+   - Assign to Location (e.g., CSI Haulage)
+   - Define product, equipment, and resource requirements
+   - Set planned start/end dates and duration
 
-**State Indicators:**
-- Text-based status column
-- Visual color coding on Gantt bars
-- Filter capability by state
+2. **Schedule Visualization**
+   - View activities on multi-year Gantt chart
+   - Identify resource conflicts and scheduling gaps
+   - Adjust activity timing via drag-and-drop (implied by interface)
 
-### 14.8 Resource Planning
+3. **State Management**
+   - Track activity state (Available, Planned, Actual visible as options)
+   - Transition activities through lifecycle stages
 
-**Resource Fields Identified:**
-- **Required Resources** - Resource allocation tracking
-- **Equipment** - Specific equipment assignment (WL2... codes)
-- **Location/Location Id** - Geographic/operational location
-- **Parent Activity** - Hierarchical activity dependencies
+4. **Actual Tracking**
+   - Record actual start/end times
+   - Calculate actual duration
+   - Compare planned vs. actual for variance analysis
 
-### 14.9 Actions Panel
+5. **Save and Confirm**
+   - Save Changes commits updates to database
+   - Cancel Changes reverts unsaved modifications
 
-**Available Actions (Right Sidebar):**
+### 14.6 Planning Data Integration
 
-**Primary Actions:**
-- **Save Changes** - Commit modifications to schedule
-- **Cancel Changes** - Discard unsaved edits
+The Planning module likely uses the same `reportingpoint` and custom dataset structure:
 
-**Display Options:**
-- Display: Active/All toggle
-- Location (radio button)
-- ActivityId (radio button)
-- Parent Activity (radio button)
-- State (radio button)
-- Product (radio button)
-- Location Id (radio button)
-- Required Crew (radio button)
-- Required Crew (duplicate option)
-- Operations (radio button)
-- Operations (duplicate option)
-- Equipment (radio button)
-- SiteRef (radio button)
+**Potential Table:** A planning-specific dataset table (not visible in ERD excerpt but following same pattern):
+- Links to `reportingpoint` (FK: ReportingPointId)
+- Planned Start/End/Duration fields
+- Actual Start/End/Duration fields
+- ActivityId, State, Product, Location fields
+- Custom Field0001-0035 array for flexible attributes
+- IsConfirmed and CreatedBy for workflow
 
-**Display Customization:**
-These radio buttons allow users to configure which attribute is displayed as the primary identifier in the Gantt chart rows.
-
-### 14.10 Schedule Management Capabilities
-
-**Identified Functions:**
-
-1. **Long-Range Planning**
-   - Multi-year scheduling (2023-2028 visible)
-   - Quarterly planning cycles
-   - Strategic activity sequencing
-
-2. **Activity Management**
-   - Create/edit scheduled activities
-   - Assign activity IDs
-   - Link parent-child activities
-   - Set planned durations (standardized to 1-hour increments)
-
-3. **Resource Allocation**
-   - Equipment assignment
-   - Location allocation
-   - Crew requirements
-   - Operations planning
-
-4. **Progress Tracking**
-   - Planned vs. actual comparison
-   - State-based workflow
-   - Duration variance analysis
-   - Timeline adherence monitoring
-
-5. **Visual Planning**
-   - Gantt chart visualization
-   - Concurrent activity view
-   - Timeline scrolling
-   - Activity overlap identification
-
-### 14.11 Integration with Downtime Module
-
-**Relationship:**
-- Planning module operates alongside Downtime tracking
-- Same hierarchical structure (CSI site organization)
-- Shared user interface framework
-- Consistent data model
-- Common filtering mechanisms (Current Hour)
-
-**Data Flow:**
-- Planned activities may generate downtime events when delays occur
-- Actual durations feed into performance analysis
-- Equipment codes link to downtime equipment tracking
-- Location codes consistent across modules
-
-### 14.12 Planning Configuration Insights
-
-**Standardization:**
-- Consistent 01:00:00 planned duration for activities
-- Structured activity ID naming conventions
-- Standardized location coding (CSI_H...)
-- Uniform state management ("Available")
-
-**Customization:**
-- Site-specific activity IDs (GS3329_IV for Iron Valley)
-- Equipment-specific planning (WL, EX prefixes)
-- Flexible timeline visualization
-- Configurable display options
-
-**Scale:**
-- 35 activities in current view
-- Multi-year planning horizon (5+ years visible)
-- Multiple concurrent activities
-- Enterprise-wide scheduling capability
+**Integration with Operations:**
+- Planned activities define maintenance windows (Scheduled Maintenance in TUM)
+- Actual execution feeds into downtime and metrics tracking
+- Variance between planned and actual drives continuous improvement
 
 ---
 
 ## 15. Conclusion
 
-The AVEVA Production Management 2020 U2 system as configured demonstrates a comprehensive, enterprise-scale implementation spanning both reactive and proactive production management capabilities across 14 mining and processing sites.
+The AVEVA Production Management 2020 U2 system as deployed by CSI Mining Services represents a comprehensive, enterprise-scale production management solution with the following characteristics:
 
-### 15.1 Dual-Module Architecture
+**Scope and Scale:**
+- 14-site deployment across diverse mining operations
+- Standardized Time Usage Model with 4-level classification hierarchy
+- 24+ standard performance metrics automatically calculated
+- Multi-year planning and scheduling capability
 
-The system operates with two integrated modules:
+**Technical Architecture:**
+- SQL Server-based relational database with robust schema
+- Web-based user interface accessible via standard browsers
+- SSRS integration for professional reporting and email distribution
+- Flexible data model with custom field arrays avoiding schema changes
 
-1. **Downtime Tracking Module**
-   - Real-time event recording
-   - Root cause analysis
-   - Equipment performance monitoring
-   - Operational response and reporting
+**Functional Coverage:**
+- Real-time downtime event tracking with cause/effect classification
+- Automated availability, utilization, and efficiency calculations
+- Daily site reporting with safety, production, and variance tracking
+- Knowledge capture and retention
+- Long-range planning with Gantt chart visualization
+- Multi-dimensional data confirmation workflow
 
-2. **Planning and Scheduling Module (PLRP)**
-   - Multi-year production planning (5+ year horizon)
-   - Activity-based scheduling with Gantt visualization
-   - Resource allocation and tracking
-   - Planned vs. actual performance comparison
+**Operational Benefits:**
+- Consistent performance measurement across all CSI operations
+- Standardized reporting enabling cross-site benchmarking
+- Automated metric calculations reducing manual effort
+- Hierarchical data model supporting any organizational structure
+- Audit trail and data integrity features ensuring reliable analytics
 
-### 15.2 Configuration Strengths
+**Strategic Advantages:**
+- Common TUM framework enables consistent communication across organization
+- Detailed downtime classification supports targeted improvement initiatives
+- Historical data accumulation enables trend analysis and predictive modeling
+- Integration architecture supports expansion to additional sites and data sources
 
-- **Standardization** across sites for consistency
-- **Flexibility** for site-specific requirements
-- **Comprehensive reporting** for various stakeholders
-- **User-friendly interface** for efficient data entry and analysis
-- **Real-time capabilities** for operational decision-making
-- **Historical analysis** support for continuous improvement
-- **Long-range planning** with multi-year visibility
-- **Visual scheduling** with Gantt chart timelines
-- **Integrated workflow** connecting planning to execution
-
-### 15.3 System Scope and Scale
-
-**Downtime Module:**
-- 14 sites configured
-- Real-time hourly tracking
-- Automated email reporting (10 sites)
-- Multiple visualization options (Gantt, Pareto, Pie)
-
-**Planning Module:**
-- 35+ activities tracked (per site/area)
-- 5+ year planning horizon
-- Standardized activity management
-- Resource and equipment allocation
-- State-based workflow management
-
-### 15.4 Strategic Value
-
-The system serves as a **central production management platform** enabling:
-
-1. **Proactive Planning** - Multi-year strategic scheduling with resource optimization
-2. **Reactive Response** - Real-time downtime tracking and root cause analysis
-3. **Performance Management** - Planned vs. actual variance analysis across both modules
-4. **Decision Support** - Visual analytics and comprehensive reporting
-5. **Continuous Improvement** - Historical trending and pattern analysis
-6. **Cross-Site Coordination** - Standardized data model enables enterprise-wide visibility
-
-### 15.5 Integration and Workflow
-
-The dual-module design creates a complete production management lifecycle:
-
-**Plan → Execute → Monitor → Analyze → Improve**
-
-- **Planning Module** defines scheduled activities and resource requirements
-- **Downtime Module** captures execution deviations and unplanned events
-- **Shared data model** enables variance analysis and performance trending
-- **Common interface** provides unified user experience across modules
-- **Coordinated reporting** delivers integrated production intelligence
-
-### 15.6 Document Summary
-
-This analysis has identified:
-- **2 core modules** (Downtime, Planning)
-- **14 operational sites** with consistent configuration
-- **35+ planning activities** per site/area
-- **Multiple visualization types** (Grid, Gantt, Pareto, Pie)
-- **Comprehensive data structure** supporting both planning and tracking
-- **Enterprise-scale deployment** with standardization and customization balance
-- **Multi-year planning horizon** (2023-2028 observed)
-- **Real-time operational monitoring** (hourly tracking)
-- **Automated reporting framework** with email distribution
-
-The AVEVA Production Management system represents a **mature, enterprise-grade solution** for production management across a diverse mining operation portfolio, successfully balancing standardization for consistency with flexibility for site-specific requirements.
+The system provides CSI Mining Services with enterprise-class production management capabilities aligned with industry best practices and positioned to support continuous operational improvement across the organization's portfolio of mining operations.
 
 ---
 
 **Document End**
 
-**Document Version:** 2.0  
-**Last Updated:** 7 July 2026  
-**Sections:** 15 (added Planning and Scheduling Module analysis)  
-**Total Sites Analyzed:** 14  
-**Modules Documented:** 2 (Downtime, Planning/PLRP)
+*Analysis based on AVEVA Production Management 2020 U2 system screenshots, database schema (AMPLA_ERD.drawio), and Time Usage Model Specification PRC-OPS-COR-SPC-0001 revision 00 dated 21/01/2026.*
+
+*Version 2.0 - 7 July 2026*

@@ -10,6 +10,9 @@
 *.docx
 *.doc
 
+# PowerPoint documents
+*.pptx
+
 # Generated output
 requirements/
 raw data/
