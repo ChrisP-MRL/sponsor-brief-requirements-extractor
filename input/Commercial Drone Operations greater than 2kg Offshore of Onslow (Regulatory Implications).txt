@@ -1,0 +1,177 @@
+# Commercial Drone Operations >2kg Offshore of Onslow: Regulatory Implications
+
+Operating a drone weighing more than 2 kg approximately 20 km offshore of Onslow (west of Thevenard Island) presents a significantly different regulatory scenario compared to operations near the airport itself. Let me analyze the specific implications based on the provided documentation.
+
+## Critical Limitation: Lack of Offshore Airspace Guidance
+
+**The provided documentation does not contain specific regulatory information regarding commercial drone operations in offshore airspace beyond Australian territorial waters or in maritime zones west of coastal locations like Onslow**. The search results focus primarily on:
+
+- Onshore airspace classifications and controlled/uncontrolled designations<citation href="https://drone-laws.com/drone-laws-in-australia/" title="Australia Drone Laws 2026">1</citation>
+- Distance restrictions relative to controlled aerodromes (5.5 km)<citation href="https://www.casa.gov.au/drones/operator-accreditation-certificate/drone-weight-categories-and-requirements" title="Drone weight categories and requirements | Civil Aviation Safety Authority">2</citation>
+- Standard operating conditions for terrestrial operations<citation href="https://help.dronedeploy.com/hc/en-us/articles/19739227685527-Drone-regulations-in-Australia" title="Drone regulations in Australia – DroneDeploy">3</citation>
+- Class G airspace management in uncontrolled areas<citation href="https://www.flyingglass.com.au/drone-weight-class-australia/" title="Drone Weight Class Guide: Rules by Category in Australia">4</citation>
+
+However, I can provide regulatory guidance based on general CASA principles that would reasonably apply to your scenario.
+
+## Applicable Regulatory Framework for >2kg Drones
+
+### Remote Pilot Licence (RePL) Requirement
+
+**Your most critical regulatory requirement is straightforward: if your drone weighs more than 2 kg, you cannot operate it commercially under CASA's excluded category. You must obtain a Remote Pilot Licence (RePL)**<citation href="https://www.casa.gov.au/knowyourdrone/drone-rules" title="Drone rules | Civil Aviation Safety Authority">5</citation>.
+
+**An RePL is required to fly a drone larger than 2kg for commercial operations, and outside drone safety rules**<citation href="https://www.flyingglass.com.au/drone-rules-under-250g-australia-legal/" title="Drone Rules Under 250g Australia: Complete 2026 Legal Guide">6</citation>. This is a non-negotiable requirement regardless of whether your operations are offshore or onshore.
+
+### Remote Operator's Certificate (ReOC)
+
+In addition to the individual pilot's RePL, **for commercial operations you'll generally need a Remote Pilot Licence (RePL) and an Operator's Certificate (OC)**<citation href="https://www.propelrc.com/drone-laws-in-australia/" title="Drone Laws in Australia (June 2026): Complete Guide">7</citation>. The Operator's Certificate represents organizational-level compliance and insurance considerations.
+
+## Airspace Classification Considerations
+
+### Offshore Class G Airspace
+
+While specific offshore classifications aren't detailed in the documentation, the general principle is that **most RPAS/drone operations are conducted in Class G (General/Uncontrolled) airspace**<citation href="https://www.flyeye.io/australian-drone-regulations-drone-class/" title="Australian Regulations by Drone Class - Fly Eye">8</citation>. This would reasonably extend to offshore areas beyond controlled aerodrome influence zones.
+
+**In Class G airspace, no ATC services are provided to VFR or IFR traffic**<citation href="https://www.flyingglass.com.au/drone-laws-australia-for-every-pilot/" title="Your Guide to Drone Laws Australia in 2026">9</citation>, meaning:
+
+- **You bear full responsibility for detecting and avoiding other aircraft**<citation href="https://uavcoach.com/drone-laws-in-australia/" title="Drone Laws in Australia | UAV Coach (2023)">10</citation>
+- **No separation services are provided by air traffic control**<citation href="https://skymediatraining.com.au/drone-rules-under-250g-australia/" title="Drone Rules Under 250g Australia: What You Need to Know">11</citation>
+- **Situational awareness becomes entirely your responsibility**<citation href="https://www.parrot.com/en/drone-regulations/australia" title="Australian Drone Regulations | Parrot">12</citation>
+
+### Distance from Controlled Aerodromes
+
+At approximately 20 km offshore west of Thevenard Island, you are likely **well beyond the 5.5 km restriction zone that applies to non-controlled aerodromes like Onslow Airport**<citation href="https://www.casa.gov.au/drones/operator-accreditation-certificate/drone-weight-categories-and-requirements" title="Drone weight categories and requirements | Civil Aviation Safety Authority">2</citation>. However, this geographical separation does not eliminate other regulatory obligations.
+
+## Standard Operating Conditions for >2kg Offshore Operations
+
+### Visual Line of Sight (VLOS) Requirement
+
+**Core operating rules include flying below 120 m AGL, keeping visual line of sight, maintaining 30 m separation from people and staying out of controlled airspace without approval**<citation href="https://dronesgator.com/australia-drone-laws/" title="All Drone Laws In Australia In 2026 (Ultimate Guide)">13</citation>.
+
+The **visual line of sight (VLOS)** requirement becomes particularly challenging in an offshore environment at 20 km distance. You must maintain **continuous unaided visual contact with your drone at all times**<citation href="https://ts2.tech/en/australian-drone-laws-2025-complete-guide-to-rules-registration-no-fly-zones/" title="Australian Drone Laws 2025: Complete Guide to Rules, Registration & No-Fly Zones">14</citation>. Operating at 20 km offshore likely presents practical and legal challenges to maintaining VLOS, unless you are operating from a marine vessel in that location.
+
+### Altitude Restrictions
+
+**Maximum Altitude: 120 Meter (393.7 Feet) in uncontrolled airspace**<citation href="https://tolluncrewedsystems.com/drone-licence/australian-drone-licence-guide/" title="Complete Australian Drone Licence Guide 2026 | Toll Uncrewed Systems">15</citation>. This altitude ceiling applies equally to offshore operations in Class G airspace.
+
+### People Separation Requirements
+
+**You must stay below 120 metres and keep more than 30 metres away from other people**<citation href="https://www.spheredrones.com.au/resources/blog/commercial-drone-laws" title="Commercial Drone Laws in Australia: What You Need to Know">16</citation>. In an offshore environment 20 km from land, this requirement becomes context-dependent—you must maintain 30 m separation from any personnel on your vessel or other vessels in the operational area.
+
+## Maritime and Safety Considerations
+
+### Lack of Specific Maritime Drone Guidance
+
+**The provided documentation does not contain specific regulations for maritime drone operations, coordination with marine traffic, or safety protocols for offshore commercial drone use**. This represents a significant gap in the regulatory framework provided.
+
+However, you would reasonably need to consider:
+
+- **Coordination with any vessel operators in the area**
+- **Maritime safety protocols and vessel traffic awareness**
+- **Communication with relevant maritime authorities** (not covered in the aviation-focused documentation)
+- **Sea state and weather conditions** affecting safe drone recovery and operation
+
+### Insurance and Liability Constraints
+
+An important practical limitation exists: **You cannot obtain aviation-specific liability insurance** if operating under the sub-2kg excluded category<citation href="https://www.flyeye.io/australia-drone-laws/" title="Australia Drone Laws (2026): Rules, Limits & Penalties - Fly Eye">17</citation>. While your >2kg drone with RePL/ReOC should theoretically qualify for aviation liability insurance, offshore operations may present insurability challenges not addressed in this documentation.
+
+## Specific Operational Barriers to >2kg Offshore Operations
+
+### Training and Competency Requirements
+
+**The training curriculum prepares you for real-world commercial drone operations and ensures you understand both the privileges and responsibilities that come with commercial pilot status**<citation href="https://www.dji.com/flyingtips/au" title="Australia - Flying Tips - DJI">18</citation>. Your RePL training would likely not specifically prepare you for offshore maritime drone operations, creating a potential competency gap.
+
+### VLOS Practicality at 20 km Offshore
+
+Operating a drone >2kg at 20 km offshore presents a fundamental practical conflict with CASA's core requirements. **You must keep visual line of sight (VLOS)** at all times<citation href="https://www.fortyfourdegrees.com.au/overview-of-australian-drone-laws/" title="Overview of Australian drone laws">19</citation>, but maintaining continuous unaided visual contact with a drone 20 km from your position is practically impossible under standard operating conditions.
+
+To legally operate beyond VLOS, **you would need to apply for and obtain specific CASA approval or a waiver**, which is not granted automatically and requires demonstrated safety justification.
+
+## Airspace Approval Pathway
+
+### Beyond Visual Line of Sight (BVLOS) Waiver Requirement
+
+If your intended offshore operations genuinely require drone operation beyond visual line of sight or outside standard operating conditions, **this path allows for more advanced flight operations, including flights with larger drones and the authority to apply to CASA for flight permission in some restricted airspaces**<citation href="https://www.uncrewedapprovals.com.au/resources/reoc-assessment-prep/classes-of-airspace/" title="Australian Airspace Classification | Uncrewed Approvals">20</citation>.
+
+However, **obtaining such approvals typically requires:**
+
+1. Demonstrated operational necessity
+2. Enhanced safety protocols and redundancy
+3. Advanced pilot qualifications beyond standard RePL
+4. Comprehensive risk assessments
+5. CASA formal approval processes (timelines and success rates not detailed in provided documentation)
+
+## Summary: >2kg Offshore Onslow Implications
+
+Your proposed operation presents the following regulatory landscape:
+
+### **Mandatory Requirements:**
+- ✓ **Remote Pilot Licence (RePL) required** (not optional for >2kg commercial operations)<citation href="https://www.casa.gov.au/knowyourdrone/drone-rules" title="Drone rules | Civil Aviation Safety Authority">5</citation><citation href="https://www.flyingglass.com.au/drone-rules-under-250g-australia-legal/" title="Drone Rules Under 250g Australia: Complete 2026 Legal Guide">6</citation>
+- ✓ **Remote Operator's Certificate (ReOC) likely required** for organizational compliance<citation href="https://www.propelrc.com/drone-laws-in-australia/" title="Drone Laws in Australia (June 2026): Complete Guide">7</citation>
+- ✓ **Standard operating conditions apply**: VLOS mandatory, 120m altitude ceiling, 30m people separation<citation href="https://dronesgator.com/australia-drone-laws/" title="All Drone Laws In Australia In 2026 (Ultimate Guide)">13</citation><citation href="https://tolluncrewedsystems.com/drone-licence/australian-drone-licence-guide/" title="Complete Australian Drone Licence Guide 2026 | Toll Uncrewed Systems">15</citation><citation href="https://www.spheredrones.com.au/resources/blog/commercial-drone-laws" title="Commercial Drone Laws in Australia: What You Need to Know">16</citation>
+- ✓ **Class G airspace rules apply**: full responsibility for detect-and-avoid<citation href="https://www.flyingglass.com.au/drone-laws-australia-for-every-pilot/" title="Your Guide to Drone Laws Australia in 2026">9</citation><citation href="https://uavcoach.com/drone-laws-in-australia/" title="Drone Laws in Australia | UAV Coach (2023)">10</citation>
+
+### **Significant Practical Barriers:**
+- ✗ **VLOS maintenance at 20 km offshore likely impossible** without CASA waiver/approval<citation href="https://www.fortyfourdegrees.com.au/overview-of-australian-drone-laws/" title="Overview of Australian drone laws">19</citation>
+- ✗ **BVLOS waiver required** if operation demands exceed visual line of sight<citation href="https://www.uncrewedapprovals.com.au/resources/reoc-assessment-prep/classes-of-airspace/" title="Australian Airspace Classification | Uncrewed Approvals">20</citation>
+- ✗ **Insurance availability uncertain** for offshore commercial drone operations
+- ✗ **No specific regulatory guidance provided** for maritime/offshore operations in documentation
+- ✗ **Pilot training likely insufficient** for offshore operational environment<citation href="https://www.dji.com/flyingtips/au" title="Australia - Flying Tips - DJI">18</citation>
+
+### **Critical Gap:**
+**The provided documentation does not contain sufficient detail regarding offshore airspace operations, maritime coordination requirements, or BVLOS approval processes to provide complete regulatory clarity for your specific scenario**. You would need to consult directly with CASA regarding:
+
+1. Whether offshore operations 20 km from land fall under Australian airspace jurisdiction
+2. Whether BVLOS waiver approval is available for your operational profile
+3. What maritime coordination requirements exist
+4. What additional insurance and safety protocols are mandated
+
+I recommend contacting **CASA directly** (casa.gov.au) or engaging with a specialized **aviation legal consultant** experienced in advanced drone operations to clarify the regulatory pathway for your specific offshore commercial drone application.
+
+Citations:
+[1] https://drone-laws.com/drone-laws-in-australia/
+[2] https://www.casa.gov.au/drones/operator-accreditation-certificate/drone-weight-categories-and-requirements
+[3] https://help.dronedeploy.com/hc/en-us/articles/19739227685527-Drone-regulations-in-Australia
+[4] https://www.flyingglass.com.au/drone-weight-class-australia/
+[5] https://www.casa.gov.au/knowyourdrone/drone-rules
+[6] https://www.flyingglass.com.au/drone-rules-under-250g-australia-legal/
+[7] https://www.propelrc.com/drone-laws-in-australia/
+[8] https://www.flyeye.io/australian-drone-regulations-drone-class/
+[9] https://www.flyingglass.com.au/drone-laws-australia-for-every-pilot/
+[10] https://uavcoach.com/drone-laws-in-australia/
+[11] https://skymediatraining.com.au/drone-rules-under-250g-australia/
+[12] https://www.parrot.com/en/drone-regulations/australia
+[13] https://dronesgator.com/australia-drone-laws/
+[14] https://ts2.tech/en/australian-drone-laws-2025-complete-guide-to-rules-registration-no-fly-zones/
+[15] https://tolluncrewedsystems.com/drone-licence/australian-drone-licence-guide/
+[16] https://www.spheredrones.com.au/resources/blog/commercial-drone-laws
+[17] https://www.flyeye.io/australia-drone-laws/
+[18] https://www.dji.com/flyingtips/au
+[19] https://www.fortyfourdegrees.com.au/overview-of-australian-drone-laws/
+[20] https://www.uncrewedapprovals.com.au/resources/reoc-assessment-prep/classes-of-airspace/
+[21] https://www.futurelearn.com/info/courses/drone-safety/0/steps/171204
+[22] https://aaa.edu.au/news/drone-flying-laws-in-australia-what-every-pilot-must-know/
+[23] https://www.propelleraero.com/blog/commercial-drone-regulations-in-australia-the-u-s-and-europe-the-basics-you-need-to-know/
+[24] https://www.dronegenuity.com/navigating-airspace-classifications/
+[25] https://gdronesolutions.com/news/casa-rules-every-remote-pilot-must-know/
+[26] https://www.robertcmorton.com/flying-a-drone-in-australia-rules-guidelines/
+[27] https://sprintlaw.com.au/articles/australian-drone-laws-key-rules-for-commercial-operators/
+[28] https://www.lexology.com/library/detail.aspx?g=9c52371e-5bf2-4ef7-a922-ffd777689918
+[29] https://drone-traveller.com/drone-laws-australia/
+[30] https://www.casa.gov.au/drones
+[31] https://www.airservicesaustralia.com/industry-info/unmanned-aerial-systems-in-controlled-airspace/
+[32] https://www.airservicesaustralia.com/about-us/our-services/how-air-traffic-control-works/how-airspace-is-managed/
+[33] https://gdronesolutions.com/casa-drone-licence-under-2kg/
+[34] https://www.propelleraero.com/blog/getting-casa-registered-to-fly-your-drone-on-site-is-easy/
+[35] https://www.armstronglegal.com.au/commercial-law/national/technology-law/casa-drone-rules/
+[36] https://aaa.edu.au/news/what-you-need-to-operate-a-drone-commercially-in-australia/
+[37] https://skymediatraining.com.au/casa-drone-rules-repl-certification/
+[38] https://skymediatraining.com.au/casa-drone-licence-under-2kg-repl/
+[39] https://uavair.com.au/a-list-of-drones-under-2kg/
+[40] https://skymediatraining.com.au/casa-drones-australia-commercial-pilot/
+[41] https://www.casa.gov.au/sites/default/files/2021-08/part-101-micro-excluded-rpa-operations-plain-english-guide.pdf
+[42] https://blog.uavmodel.com/casa-australia-drone-rules-for-fpv-and-recreational-pilots-in-2026/
+[43] https://www.casa.gov.au/drones/drone-rules
+[44] https://www.lexology.com/library/detail.aspx?g=50565648-a052-48f0-ab70-d373301d9b3f
+[45] https://skykelpie.com/insights/the-landholder-rule-flying-drones-on-your-own-property
+[46] https://www.avian.net.au/casa-drone-rules-australia-2022/
+[47] https://store.potensic.com/blogs/news/global-drone-flight-regulations-quick-guide
