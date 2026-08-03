@@ -534,10 +534,10 @@ benefit]. ~55 words, falsifiable.]
 ### Cost–Benefit Summary
 
 - [Stage]-stage cost (this ask): [Role] [n] days @ $[rate] = $[total]; [Role] [n] days @ $[rate] = $[total]
-- Indicative build (to firm up in [next stage]): [module ~effort]; [module ~$]
-- [Recommended option]: ~$[amount] – [alternatives] higher
-- Benefits are primarily [themes] (see Value slide)
-- Detail: see budget estimates [link]
+- Indicative build (Class 5, ±50% to +100%, to firm up in [next stage]): [module] ~$[amount] ($[low]–$[high]); [module] ~$[amount] ($[low]–$[high]); basis: [comparable project / parametric rate]
+- [Recommended option]: ~$[amount] ($[low]–$[high]) – [alternatives] higher
+- Contingency $[amount] – covers [named risk]; [named risk]
+- Benefits are primarily [themes] (see Value slide). Detail: see budget estimates [link]
 
 ---
 
