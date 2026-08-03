@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINRES AI Content Style Guidelines</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', 'Avenir', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background-color: #FFFFFF;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #CE372F 0%, #00444C 100%);
+            color: white;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #CE372F;
+        }
+
+        .section-title {
+            color: #CE372F;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-subtitle {
+            color: #00444C;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .color-box {
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+
+        .color-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .color-name {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .color-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .color-usage {
+            margin-top: 10px;
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+        /* Primary Colors */
+        .color-primary-red {
+            background-color: #CE372F;
+            color: white;
+        }
+
+        .color-dark-teal {
+            background-color: #00444C;
+            color: white;
+        }
+
+        .color-deep-maroon {
+            background-color: #49121C;
+            color: white;
+        }
+
+        /* Accent Colors - Grey Scale */
+        .color-grey-100 {
+            background-color: #E8E8E8;
+            color: #000000;
+        }
+
+        .color-grey-200 {
+            background-color: #D1D1D1;
+            color: #000000;
+        }
+
+        .color-grey-300 {
+            background-color: #B0B0B0;
+            color: white;
+        }
+
+        .color-grey-400 {
+            background-color: #888888;
+            color: white;
+        }
+
+        .color-grey-500 {
+            background-color: #5C5C5C;
+            color: white;
+        }
+
+        /* Accent Colors - Burgundy/Wine */
+        .color-wine-100 {
+            background-color: #F4D9DD;
+            color: #000000;
+        }
+
+        .color-wine-200 {
+            background-color: #E8A5AD;
+            color: #000000;
+        }
+
+        .color-wine-300 {
+            background-color: #C5556B;
+            color: white;
+        }
+
+        .color-wine-400 {
+            background-color: #8B2E45;
+            color: white;
+        }
+
+        .color-wine-500 {
+            background-color: #49121C;
+            color: white;
+        }
+
+        /* Accent Colors - Cyan/Turquoise */
+        .color-cyan-100 {
+            background-color: #E0F7F9;
+            color: #000000;
+        }
+
+        .color-cyan-200 {
+            background-color: #B0EDF3;
+            color: #000000;
+        }
+
+        .color-cyan-300 {
+            background-color: #5ED9E6;
+            color: #000000;
+        }
+
+        .color-cyan-400 {
+            background-color: #2AB8C9;
+            color: white;
+        }
+
+        .color-cyan-500 {
+            background-color: #1A7C87;
+            color: white;
+        }
+
+        /* Accent Colors - Red/Coral */
+        .color-coral-100 {
+            background-color: #F9E5E3;
+            color: #000000;
+        }
+
+        .color-coral-200 {
+            background-color: #F3C5BF;
+            color: #000000;
+        }
+
+        .color-coral-300 {
+            background-color: #E8867A;
+            color: white;
+        }
+
+        .color-coral-400 {
+            background-color: #CE372F;
+            color: white;
+        }
+
+        .color-coral-500 {
+            background-color: #7A1F18;
+            color: white;
+        }
+
+        /* Accent Colors - Brown */
+        .color-brown-100 {
+            background-color: #F1EDE7;
+            color: #000000;
+        }
+
+        .color-brown-200 {
+            background-color: #D9CDB8;
+            color: #000000;
+        }
+
+        .color-brown-300 {
+            background-color: #A58D62;
+            color: white;
+        }
+
+        .color-brown-400 {
+            background-color: #6B5435;
+            color: white;
+        }
+
+        .color-brown-500 {
+            background-color: #3D2E1E;
+            color: white;
+        }
+
+        /* Accent Colors - Grey-Brown */
+        .color-grey-brown-100 {
+            background-color: #EFEFEF;
+            color: #000000;
+        }
+
+        .color-grey-brown-200 {
+            background-color: #D4D4D4;
+            color: #000000;
+        }
+
+        .color-grey-brown-300 {
+            background-color: #A5A5A5;
+            color: white;
+        }
+
+        .color-grey-brown-400 {
+            background-color: #6E6E6E;
+            color: white;
+        }
+
+        .color-grey-brown-500 {
+            background-color: #424242;
+            color: white;
+        }
+
+        /* Accent Colors - Terra Cotta */
+        .color-terra-cotta-100 {
+            background-color: #F5E5DD;
+            color: #000000;
+        }
+
+        .color-terra-cotta-200 {
+            background-color: #E8C4B0;
+            color: #000000;
+        }
+
+        .color-terra-cotta-300 {
+            background-color: #C37556;
+            color: white;
+        }
+
+        .color-terra-cotta-400 {
+            background-color: #8E5239;
+            color: white;
+        }
+
+        .color-terra-cotta-500 {
+            background-color: #5C3324;
+            color: white;
+        }
+
+        /* Accent Colors - Olive Green */
+        .color-olive-100 {
+            background-color: #F0F2E5;
+            color: #000000;
+        }
+
+        .color-olive-200 {
+            background-color: #D9DCBC;
+            color: #000000;
+        }
+
+        .color-olive-300 {
+            background-color: #878C56;
+            color: white;
+        }
+
+        .color-olive-400 {
+            background-color: #5E623C;
+            color: white;
+        }
+
+        .color-olive-500 {
+            background-color: #3A3D25;
+            color: white;
+        }
+
+        /* Accent Colors - Teal Blue */
+        .color-teal-100 {
+            background-color: #E3F2F4;
+            color: #000000;
+        }
+
+        .color-teal-200 {
+            background-color: #B8DDE3;
+            color: #000000;
+        }
+
+        .color-teal-300 {
+            background-color: #3F939C;
+            color: white;
+        }
+
+        .color-teal-400 {
+            background-color: #2D686F;
+            color: white;
+        }
+
+        .color-teal-500 {
+            background-color: #1D4347;
+            color: white;
+        }
+
+        /* Base Colors */
+        .color-black {
+            background-color: #000000;
+            color: white;
+        }
+
+        .color-white {
+            background-color: #FFFFFF;
+            color: #000000;
+            border: 2px solid #E0E0E0;
+        }
+
+        .typography-example {
+            background: #F1EDE7;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .font-display {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid #CE372F;
+        }
+
+        .heading-1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #CE372F;
+            margin-bottom: 10px;
+        }
+
+        .heading-2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: #00444C;
+            margin-bottom: 10px;
+        }
+
+        .heading-3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .body-text {
+            font-size: 15pt;
+            line-height: 1.8;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+
+        .emphasis-text {
+            font-weight: 700;
+            color: #CE372F;
+        }
+
+        .guidelines-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .guidelines-list li {
+            padding: 12px;
+            margin: 10px 0;
+            background: #F1EDE7;
+            border-left: 4px solid #CE372F;
+            border-radius: 4px;
+        }
+
+        .guidelines-list li strong {
+            color: #CE372F;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .icon-example {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #F1EDE7;
+        }
+
+        .icon-placeholder {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+        }
+
+        .layout-example {
+            background: #F1EDE7;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .layout-header {
+            background: #CE372F;
+            color: white;
+            padding: 20px;
+            border-radius: 6px 6px 0 0;
+            font-weight: 700;
+            font-size: 1.3em;
+        }
+
+        .layout-content {
+            background: white;
+            padding: 25px;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .layout-footer {
+            background: #00444C;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 0 0 6px 6px;
+            font-size: 0.9em;
+            margin-top: -6px;
+        }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .do-box {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #4caf50;
+        }
+
+        .dont-box {
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #f44336;
+        }
+
+        .do-box h3, .dont-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .do-box h3 {
+            color: #2e7d32;
+        }
+
+        .dont-box h3 {
+            color: #c62828;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .prompt-template {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #CE372F;
+            margin: 20px 0;
+        }
+
+        .prompt-template h4 {
+            color: #CE372F;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #CE372F;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 5px 5px 5px 0;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            background: #CE372F;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background: #F1EDE7;
+        }
+
+        .footer-signature {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: #666;
+            border-top: 2px solid #CE372F;
+        }
+
+        @media (max-width: 768px) {
+            .do-dont-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MINRES AI Content Style Guidelines</h1>
+        <p class="subtitle">Brand Standards for AI-Generated Content | Mineral Resources Limited</p>
+    </div>
+
+    <!-- COLOR GUIDELINES -->
+    <div class="section">
+        <h2 class="section-title">1. Color Palette Standards</h2>
+
+        <h3 class="section-subtitle">Primary Brand Colors</h3>
+        <p class="body-text">These are the core colors that define the Mineral Resources brand identity. Use these prominently in all AI-generated content.</p>
+
+        <div class="color-palette">
+            <div class="color-box color-primary-red">
+                <div class="color-name">MinRes Red</div>
+                <div class="color-value">HEX: #CE372F</div>
+                <div class="color-value">RGB: 206, 55, 47</div>
+                <div class="color-usage">Primary accent, headings, CTAs</div>
+            </div>
+
+            <div class="color-box color-dark-teal">
+                <div class="color-name">Dark Teal</div>
+                <div class="color-value">HEX: #00444C</div>
+                <div class="color-value">RGB: 0, 68, 76</div>
+                <div class="color-usage">Secondary headings, dark backgrounds</div>
+            </div>
+
+            <div class="color-box color-deep-maroon">
+                <div class="color-name">Deep Maroon</div>
+                <div class="color-value">HEX: #49121C</div>
+                <div class="color-value">RGB: 73, 18, 28</div>
+                <div class="color-usage">Alternative dark accent</div>
+            </div>
+
+            <div class="color-box color-black">
+                <div class="color-name">Black</div>
+                <div class="color-value">HEX: #000000</div>
+                <div class="color-value">RGB: 0, 0, 0</div>
+                <div class="color-usage">Body text, primary content</div>
+            </div>
+
+            <div class="color-box color-white">
+                <div class="color-name">White</div>
+                <div class="color-value">HEX: #FFFFFF</div>
+                <div class="color-value">RGB: 255, 255, 255</div>
+                <div class="color-usage">Backgrounds, contrast text</div>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Accent Colors</h3>
+        <p class="body-text">These accent colors provide visual variety while maintaining brand consistency. Each color family includes 5 shades (100-500) from light to dark. Use for highlights, icons, data visualization, and supporting elements.</p>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Grey Scale</h4>
+        <div class="color-palette">
+            <div class="color-box color-grey-100">
+                <div class="color-name">Grey 100</div>
+                <div class="color-value">HEX: #E8E8E8</div>
+            </div>
+            <div class="color-box color-grey-200">
+                <div class="color-name">Grey 200</div>
+                <div class="color-value">HEX: #D1D1D1</div>
+            </div>
+            <div class="color-box color-grey-300">
+                <div class="color-name">Grey 300</div>
+                <div class="color-value">HEX: #B0B0B0</div>
+            </div>
+            <div class="color-box color-grey-400">
+                <div class="color-name">Grey 400</div>
+                <div class="color-value">HEX: #888888</div>
+            </div>
+            <div class="color-box color-grey-500">
+                <div class="color-name">Grey 500</div>
+                <div class="color-value">HEX: #5C5C5C</div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Burgundy/Wine</h4>
+        <div class="color-palette">
+            <div class="color-box color-wine-100">
+                <div class="color-name">Wine 100</div>
+                <div class="color-value">HEX: #F4D9DD</div>
+            </div>
+            <div class="color-box color-wine-200">
+                <div class="color-name">Wine 200</div>
+                <div class="color-value">HEX: #E8A5AD</div>
+            </div>
+            <div class="color-box color-wine-300">
+                <div class="color-name">Wine 300</div>
+                <div class="color-value">HEX: #C5556B</div>
+            </div>
+            <div class="color-box color-wine-400">
+                <div class="color-name">Wine 400</div>
+                <div class="color-value">HEX: #8B2E45</div>
+            </div>
+            <div class="color-box color-wine-500">
+                <div class="color-name">Wine 500</div>
+                <div class="color-value">HEX: #49121C</div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Cyan/Turquoise</h4>
+        <div class="color-palette">
+            <div class="color-box color-cyan-100">
+                <div class="color-name">Cyan 100</div>
+                <div class="color-value">HEX: #E0F7F9</div>
+            </div>
+            <div class="color-box color-cyan-200">
+                <div class="color-name">Cyan 200</div>
+                <div class="color-value">HEX: #B0EDF3</div>
+            </div>
+            <div class="color-box color-cyan-300">
+                <div class="color-name">Cyan 300</div>
+                <div class="color-value">HEX: #5ED9E6</div>
+            </div>
+            <div class="color-box color-cyan-400">
+                <div class="color-name">Cyan 400</div>
+                <div class="color-value">HEX: #2AB8C9</div>
+            </div>
+            <div class="color-box color-cyan-500">
+                <div class="color-name">Cyan 500</div>
+                <div class="color-value">HEX: #1A7C87</div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Red/Coral</h4>
+        <div class="color-palette">
+            <div class="color-box color-coral-100">
+                <div class="color-name">Coral 100</div>
+                <div class="color-value">HEX: #F9E5E3</div>
+            </div>
+            <div class="color-box color-coral-200">
+                <div class="color-name">Coral 200</div>
+                <div class="color-value">HEX: #F3C5BF</div>
+            </div>
+            <div class="color-box color-coral-300">
+                <div class="color-name">Coral 300</div>
+                <div class="color-value">HEX: #E8867A</div>
+            </div>
+            <div class="color-box color-coral-400">
+                <div class="color-name">Coral 400</div>
+                <div class="color-value">HEX: #CE372F</div>
+            </div>
+            <div class="color-box color-coral-500">
+                <div class="color-name">Coral 500</div>
+                <div class="color-value">HEX: #7A1F18</div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Brown</h4>
+        <div class="color-palette">
+            <div class="color-box color-brown-100">
+                <div class="color-name">Brown 100</div>
+                <div class="color-value">HEX: #F1EDE7</div>
+            </div>
+            <div class="color-box color-brown-200">
+                <div class="color-name">Brown 200</div>
+                <div class="color-value">HEX: #D9CDB8</div>
+            </div>
+            <div class="color-box color-brown-300">
+                <div class="color-name">Brown 300</div>
+                <div class="color-value">HEX: #A58D62</div>
+            </div>
+            <div class="color-box color-brown-400">
+                <div class="color-name">Brown 400</div>
+                <div class="color-value">HEX: #6B5435</div>
+            </div>
+            <div class="color-box color-brown-500">
+                <div class="color-name">Brown 500</div>
+                <div class="color-value">HEX: #3D2E1E</div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Grey-Brown</h4>
+        <div class="color-palette">
+            <div class="color-box color-grey-brown-100">
+                <div class="color-name">Grey-Brown 100</div>
+                <div class="color-value">HEX: #EFEFEF</div>
+            </div>
+            <div class="color-box color-grey-brown-200">
+                <div class="color-name">Grey-Brown 200</div>
+                <div class="color-value">HEX: #D4D4D4</div>
+            </div>
+            <div class="color-box color-grey-brown-300">
+                <div class="color-name">Grey-Brown 300</div>
+                <div class="color-value">HEX: #A5A5A5</div>
+            </div>
+            <div class="color-box color-grey-brown-400">
+                <div class="color-name">Grey-Brown 400</div>
+                <div class="color-value">HEX: #6E6E6E</div>
+            </div>
+            <div class="color-box color-grey-brown-500">
+                <div class="color-name">Grey-Brown 500</div>
+                <div class="color-value">HEX: #424242</div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Terra Cotta</h4>
+        <div class="color-palette">
+            <div class="color-box color-terra-cotta-100">
+                <div class="color-name">Terra Cotta 100</div>
+                <div class="color-value">HEX: #F5E5DD</div>
+            </div>
+            <div class="color-box color-terra-cotta-200">
+                <div class="color-name">Terra Cotta 200</div>
+                <div class="color-value">HEX: #E8C4B0</div>
+            </div>
+            <div class="color-box color-terra-cotta-300">
+                <div class="color-name">Terra Cotta 300</div>
+                <div class="color-value">HEX: #C37556</div>
+            </div>
+            <div class="color-box color-terra-cotta-400">
+                <div class="color-name">Terra Cotta 400</div>
+                <div class="color-value">HEX: #8E5239</div>
+            </div>
+            <div class="color-box color-terra-cotta-500">
+                <div class="color-name">Terra Cotta 500</div>
+                <div class="color-value">HEX: #5C3324</div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Olive Green</h4>
+        <div class="color-palette">
+            <div class="color-box color-olive-100">
+                <div class="color-name">Olive 100</div>
+                <div class="color-value">HEX: #F0F2E5</div>
+            </div>
+            <div class="color-box color-olive-200">
+                <div class="color-name">Olive 200</div>
+                <div class="color-value">HEX: #D9DCBC</div>
+            </div>
+            <div class="color-box color-olive-300">
+                <div class="color-name">Olive 300</div>
+                <div class="color-value">HEX: #878C56</div>
+            </div>
+            <div class="color-box color-olive-400">
+                <div class="color-name">Olive 400</div>
+                <div class="color-value">HEX: #5E623C</div>
+            </div>
+            <div class="color-box color-olive-500">
+                <div class="color-name">Olive 500</div>
+                <div class="color-value">HEX: #3A3D25</div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Teal Blue</h4>
+        <div class="color-palette">
+            <div class="color-box color-teal-100">
+                <div class="color-name">Teal 100</div>
+                <div class="color-value">HEX: #E3F2F4</div>
+            </div>
+            <div class="color-box color-teal-200">
+                <div class="color-name">Teal 200</div>
+                <div class="color-value">HEX: #B8DDE3</div>
+            </div>
+            <div class="color-box color-teal-300">
+                <div class="color-name">Teal 300</div>
+                <div class="color-value">HEX: #3F939C</div>
+            </div>
+            <div class="color-box color-teal-400">
+                <div class="color-name">Teal 400</div>
+                <div class="color-value">HEX: #2D686F</div>
+            </div>
+            <div class="color-box color-teal-500">
+                <div class="color-name">Teal 500</div>
+                <div class="color-value">HEX: #1D4347</div>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Color Usage Guidelines</h3>
+        <ul class="guidelines-list">
+            <li><strong>Primary Red (#CE372F):</strong> Reserve for headlines, key callouts, important buttons, and brand emphasis. Never use as body text background.</li>
+            <li><strong>Dark Teal (#00444C):</strong> Excellent for footers, secondary navigation, and professional dark sections.</li>
+            <li><strong>Black on White:</strong> Default for body copy to ensure maximum readability.</li>
+            <li><strong>Shade Numbering System:</strong> Each accent color family has 5 shades (100-500). Lower numbers (100-200) are lighter for backgrounds and subtle highlights. Mid-range (300) for icons and moderate emphasis. Higher numbers (400-500) for text on light backgrounds and strong accents.</li>
+            <li><strong>Background Colors:</strong> Use 100-200 shades for backgrounds and light sections (Brown 100 #F1EDE7, Grey 100 #E8E8E8, Cyan 100 #E0F7F9).</li>
+            <li><strong>Accent Colors for Data Viz:</strong> Use 300-400 shades for charts, graphs, and data visualizations. The mid-range provides good contrast and visual distinction.</li>
+            <li><strong>Color Families by Purpose:</strong> Grey scale for neutral elements; Wine/Burgundy for deep accents; Cyan for technical/digital themes; Coral/Red for primary emphasis; Brown for earth/natural themes; Terra Cotta for warm highlights; Olive for sustainability/environmental; Teal for professional/corporate.</li>
+            <li><strong>Limit Per Design:</strong> Use 2-3 accent color families per design to maintain visual cohesion.</li>
+            <li><strong>Contrast Ratio:</strong> Maintain WCAG AA compliance with minimum 4.5:1 contrast ratio for body text, 3:1 for large text. Lighter shades (100-200) should use dark text; darker shades (400-500) should use white text.</li>
+        </ul>
+    </div>
+
+    <!-- TYPOGRAPHY GUIDELINES -->
+    <div class="section">
+        <h2 class="section-title">2. Typography Standards</h2>
+
+        <h3 class="section-subtitle">Primary Typeface: Century Gothic</h3>
+        <p class="body-text">Century Gothic is the official MinRes typeface for both headings and body copy. Its clean, modern geometric design conveys professionalism and clarity.</p>
+
+        <div class="typography-example">
+            <div class="font-display">
+                <div class="heading-1">Heading 1 - Century Gothic Bold</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Font: Century Gothic Bold | Size: 32-40pt | Color: #CE372F | Use: Page titles, major section headers</p>
+            </div>
+
+            <div class="font-display">
+                <div class="heading-2">Heading 2 - Century Gothic Bold</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Font: Century Gothic Bold | Size: 24-28pt | Color: #00444C | Use: Section titles, subheaders</p>
+            </div>
+
+            <div class="font-display">
+                <div class="heading-3">Heading 3 - Century Gothic Semibold</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Font: Century Gothic Semibold | Size: 18-22pt | Color: #000000 | Use: Subsection headers</p>
+            </div>
+
+            <div class="font-display">
+                <div class="body-text">This is body copy at 15pt. Use Century Gothic Regular for all body text. Maintain line spacing of 1.8 for optimal readability. Ensure sufficient paragraph spacing (12pt after) for comfortable reading flow.</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Font: Century Gothic Regular | Size: 15pt | Color: #000000 | Line Height: 1.8 | Use: Body text, descriptions, content</p>
+            </div>
+
+            <div class="font-display">
+                <p><span class="emphasis-text">Emphasis Text - Bold for Important Points</span></p>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Font: Century Gothic Bold | Size: 15pt | Color: #CE372F | Use: Emphasis, key terms, important callouts</p>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Alternative: Avenir</h3>
+        <p class="body-text">When Century Gothic is unavailable, use <strong>Avenir</strong> as the secondary typeface. Avenir Black for headings, Avenir Regular for body copy.</p>
+
+        <h3 class="section-subtitle">Typography Rules</h3>
+        <ul class="guidelines-list">
+            <li><strong>Hierarchy:</strong> Maintain clear visual hierarchy with size and weight. Headlines should be bold and prominent.</li>
+            <li><strong>Body Text Size:</strong> Always use 15pt for body copy. Never go below 12pt for any text.</li>
+            <li><strong>Line Spacing:</strong> Set line height to 1.8 (180%) for body text to ensure comfortable reading.</li>
+            <li><strong>Paragraph Spacing:</strong> Use 12pt spacing after paragraphs instead of indents.</li>
+            <li><strong>ALL CAPS:</strong> Use sparingly and only for short headings or labels. Never use for body text.</li>
+            <li><strong>Text Color:</strong> Primary text should be black (#000000) on white backgrounds. Use MinRes Red (#CE372F) for emphasis only.</li>
+            <li><strong>Font Weights:</strong> Bold (700) for headings, Semibold (600) for subheadings, Regular (400) for body.</li>
+        </ul>
+    </div>
+
+    <!-- ICON GUIDELINES -->
+    <div class="section">
+        <h2 class="section-title">3. Icon & Visual Element Standards</h2>
+
+        <h3 class="section-subtitle">Icon Library Overview</h3>
+        <p class="body-text">The MinRes icon library provides a comprehensive collection of <strong>60 professional icons</strong> organized into 8 industry-specific categories. Icons follow a consistent visual language that aligns with MinRes brand values: modern, clean, professional, and industry-focused.</p>
+
+        <div style="background: linear-gradient(135deg, #F1EDE7 0%, #E8E8E8 100%); padding: 25px; border-radius: 8px; border: 2px solid #CE372F; margin: 30px 0;">
+            <h4 style="color: #CE372F; margin: 0 0 15px 0;">📚 Complete Icon Library Access</h4>
+            <p style="margin-bottom: 20px;"><strong>Total Available:</strong> 60 icons across 8 themed categories</p>
+            <p style="margin-bottom: 20px;"><strong>Full Library Reference:</strong> <a href="Icon_Reference.html" style="color: #CE372F; font-weight: 600; text-decoration: underline;">Icon_Reference.html</a> - Browse all icons with detailed classifications, SVG code, and usage guidelines</p>
+        </div>
+
+        <h3 class="section-subtitle">Icon Categories</h3>
+        <p class="body-text" style="margin-bottom: 25px;">Below is a summary of the 8 icon categories. Click on any category to explore the full set in <a href="Icon_Reference.html" style="color: #CE372F; font-weight: 600;">Icon_Reference.html</a>.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0;">
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #CE372F; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #CE372F; margin: 0 0 10px 0; font-size: 1.2em;">
+                    <a href="Icon_Reference.html#business-planning" style="color: #CE372F; text-decoration: none;">Business/Planning (14)</a>
+                </h4>
+                <p style="color: #666; font-size: 0.95em; margin: 0; line-height: 1.6;">Strategy, goals, project planning, roadmaps, timelines, milestones, budgeting, resource allocation</p>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #00444C; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #00444C; margin: 0 0 10px 0; font-size: 1.2em;">
+                    <a href="Icon_Reference.html#business-analytics" style="color: #00444C; text-decoration: none;">Business/Analytics (13)</a>
+                </h4>
+                <p style="color: #666; font-size: 0.95em; margin: 0; line-height: 1.6;">Charts, graphs, data visualization, KPIs, metrics, reporting, dashboard elements, financial analysis</p>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #8E5239; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #8E5239; margin: 0 0 10px 0; font-size: 1.2em;">
+                    <a href="Icon_Reference.html#industrial-mining-operations" style="color: #8E5239; text-decoration: none;">Industrial/Mining Operations (11)</a>
+                </h4>
+                <p style="color: #666; font-size: 0.95em; margin: 0; line-height: 1.6;">Mining processes, extraction, processing, operations management, site management, industrial workflows</p>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #5E623C; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #5E623C; margin: 0 0 10px 0; font-size: 1.2em;">
+                    <a href="Icon_Reference.html#industrial-mining-equipment" style="color: #5E623C; text-decoration: none;">Industrial/Mining Equipment (9)</a>
+                </h4>
+                <p style="color: #666; font-size: 0.95em; margin: 0; line-height: 1.6;">Heavy machinery, mining equipment, excavators, drills, trucks, processing equipment, industrial tools</p>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #2D686F; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #2D686F; margin: 0 0 10px 0; font-size: 1.2em;">
+                    <a href="Icon_Reference.html#navigation-location" style="color: #2D686F; text-decoration: none;">Navigation/Location (4)</a>
+                </h4>
+                <p style="color: #666; font-size: 0.95em; margin: 0; line-height: 1.6;">Maps, GPS, location pins, navigation, directions, geospatial data, site locations</p>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #C37556; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #C37556; margin: 0 0 10px 0; font-size: 1.2em;">
+                    <a href="Icon_Reference.html#transport-logistics" style="color: #C37556; text-decoration: none;">Transport/Logistics (4)</a>
+                </h4>
+                <p style="color: #666; font-size: 0.95em; margin: 0; line-height: 1.6;">Shipping, trucks, transportation, supply chain, logistics, distribution, freight</p>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #CE372F; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #CE372F; margin: 0 0 10px 0; font-size: 1.2em;">
+                    <a href="Icon_Reference.html#safety-and-warnings" style="color: #CE372F; text-decoration: none;">Safety & Warnings (3)</a>
+                </h4>
+                <p style="color: #666; font-size: 0.95em; margin: 0; line-height: 1.6;">Safety equipment, warning signs, hazard indicators, protective gear, safety protocols</p>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #878C56; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h4 style="color: #878C56; margin: 0 0 10px 0; font-size: 1.2em;">
+                    <a href="Icon_Reference.html#learning" style="color: #878C56; text-decoration: none;">Learning (2)</a>
+                </h4>
+                <p style="color: #666; font-size: 0.95em; margin: 0; line-height: 1.6;">Training, education, knowledge transfer, learning materials, documentation</p>
+            </div>
+        </div>
+
+
+        <h3 class="section-subtitle">Icon Guidelines</h3>
+        <ul class="guidelines-list">
+            <li><strong>Style:</strong> Use line-based icons with 2-3pt stroke weight. Solid fills acceptable for simple shapes.</li>
+            <li><strong>Format:</strong> Prefer SVG format for scalability. PNG at minimum 512x512px if raster required.</li>
+            <li><strong>Color:</strong> Icons should use brand colors. Primary Red for active/important, Dark Teal for standard, accent colors for categories.</li>
+            <li><strong>Size:</strong> Design icons on 24x24px or 48x48px grid. Maintain consistent sizing across sets.</li>
+            <li><strong>Simplicity:</strong> Icons must be clear and recognizable at small sizes (16px minimum).</li>
+            <li><strong>Consistency:</strong> Maintain consistent stroke weight, corner radius, and style across all icons in a set.</li>
+            <li><strong>Industry Relevance:</strong> Use industry-appropriate iconography (mining equipment, safety, environment, logistics).</li>
+        </ul>
+
+        <h3 class="section-subtitle">Visual Element Placement</h3>
+        <ul class="guidelines-list">
+            <li><strong>Logo Placement:</strong> MinRes logo should appear in top-left or bottom-left. Maintain clear space equal to logo height.</li>
+            <li><strong>Image Treatment:</strong> Use high-quality photography. Apply subtle overlays if text overlay required (rgba(0,0,0,0.3)).</li>
+            <li><strong>Graphics:</strong> Keep graphics clean and purposeful. Avoid decorative elements that don't add meaning.</li>
+            <li><strong>White Space:</strong> Embrace white space for breathing room. Don't overcrowd layouts.</li>
+        </ul>
+    </div>
+
+    <!-- LAYOUT GUIDELINES -->
+    <div class="section">
+        <h2 class="section-title">4. Layout & Composition Standards</h2>
+
+        <h3 class="section-subtitle">Document Structure Example</h3>
+        <div class="layout-example">
+            <div class="layout-header">
+                DOCUMENT TITLE OR SECTION HEADER
+            </div>
+            <div class="layout-content">
+                <h3 style="color: #00444C; margin-bottom: 15px;">Section Heading</h3>
+                <p style="margin-bottom: 15px;">Body content goes here at 15pt Century Gothic Regular. Maintain generous spacing between elements for clarity and professionalism. Use the warm beige background (#F1EDE7) for alternating sections to create visual rhythm without overwhelming the design.</p>
+                <p style="font-weight: 600; color: #CE372F;">Key Point: Emphasized text uses bold weight and MinRes Red color.</p>
+            </div>
+            <div class="layout-footer">
+                FOOTER: PRESENTATION NAME | PAGE NUMBER | © Mineral Resources Limited
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Layout Principles</h3>
+        <ul class="guidelines-list">
+            <li><strong>Grid System:</strong> Use 12-column grid for web, flexible margins for documents. Maintain alignment and consistency.</li>
+            <li><strong>Margins:</strong> Minimum 40px margins on all sides for digital content. 1 inch margins for print documents.</li>
+            <li><strong>Spacing:</strong> Use consistent spacing scale (8px, 16px, 24px, 32px, 40px) for element separation.</li>
+            <li><strong>Headers:</strong> Place headers at top with MinRes Red background or as left-aligned with red accent bar.</li>
+            <li><strong>Footers:</strong> Include presentation name, page number, and branding in footer. Use Dark Teal background.</li>
+            <li><strong>Content Blocks:</strong> Break long content into digestible sections. Use the warm beige (#F1EDE7) for alternating backgrounds.</li>
+            <li><strong>Asymmetry:</strong> While alignment is key, asymmetric layouts can create visual interest. Balance is more important than symmetry.</li>
+        </ul>
+
+        <h3 class="section-subtitle">Responsive Considerations</h3>
+        <ul class="guidelines-list">
+            <li><strong>Mobile-First:</strong> Design for smallest screen first, then scale up.</li>
+            <li><strong>Typography Scale:</strong> Reduce heading sizes by 20-30% on mobile while maintaining hierarchy.</li>
+            <li><strong>Touch Targets:</strong> Minimum 44x44px for interactive elements on mobile.</li>
+            <li><strong>Single Column:</strong> Stack content in single column on narrow viewports.</li>
+        </ul>
+    </div>
+
+    <!-- AI PROMPT TEMPLATES -->
+    <div class="section">
+        <h2 class="section-title">5. AI Prompt Templates for Brand-Compliant Content</h2>
+
+        <h3 class="section-subtitle">Using the MinRes Icon Library in AI Prompts</h3>
+        <p class="body-text">MinRes has a comprehensive library of <strong>60 professionally designed icons</strong> organized into 8 industry-specific categories. When creating AI-generated content, always instruct AI systems to use icons from this existing library rather than generating new ones. This ensures brand consistency and visual coherence across all materials.</p>
+
+        <div style="background: linear-gradient(135deg, #E0F7F9 0%, #B8DDE3 100%); padding: 25px; border-radius: 8px; border: 2px solid #3F939C; margin: 20px 0;">
+            <h4 style="color: #00444C; margin: 0 0 15px 0;">📚 Complete Icon Library: <a href="Icon_Reference.html" style="color: #CE372F; font-weight: 600; text-decoration: underline;">Icon_Reference.html</a></h4>
+            <p style="margin-bottom: 15px;">Browse all 60 icons with SVG code, classifications, and usage guidelines.</p>
+
+            <h5 style="color: #00444C; margin: 15px 0 10px 0; font-size: 1.1em;">8 Icon Categories:</h5>
+            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <li style="padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #CE372F;">
+                    <strong>Business/Planning (14 icons)</strong> - Strategy, goals, roadmaps, timelines
+                </li>
+                <li style="padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #00444C;">
+                    <strong>Business/Analytics (13 icons)</strong> - Charts, metrics, KPIs, reporting
+                </li>
+                <li style="padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #8E5239;">
+                    <strong>Industrial/Mining Operations (11 icons)</strong> - Processes, operations, workflows
+                </li>
+                <li style="padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #5E623C;">
+                    <strong>Industrial/Mining Equipment (9 icons)</strong> - Machinery, tools, equipment
+                </li>
+                <li style="padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #2D686F;">
+                    <strong>Navigation/Location (4 icons)</strong> - Maps, GPS, directions, sites
+                </li>
+                <li style="padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #C37556;">
+                    <strong>Transport/Logistics (4 icons)</strong> - Shipping, trucks, supply chain
+                </li>
+                <li style="padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #CE372F;">
+                    <strong>Safety & Warnings (3 icons)</strong> - Safety equipment, warnings, protocols
+                </li>
+                <li style="padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #878C56;">
+                    <strong>Learning (2 icons)</strong> - Training, education, documentation
+                </li>
+            </ul>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">How to Reference Icons in AI Prompts</h4>
+        <ul class="guidelines-list">
+            <li><strong>Always Specify:</strong> Instruct AI to use existing icons from Icon_Reference.html rather than creating new ones.</li>
+            <li><strong>Category Selection:</strong> Direct AI to select from relevant categories (e.g., "Use icons from Business/Analytics and Industrial/Mining Operations categories").</li>
+            <li><strong>Icon Count Awareness:</strong> Note the number of available icons per category to set appropriate expectations.</li>
+            <li><strong>Style Consistency:</strong> Existing icons use 2-3pt stroke weight, line-based design. New icons should only be created if absolutely necessary and must match this style.</li>
+            <li><strong>SVG Format:</strong> Icons are provided as SVG for scalability. Reference the SVG code from Icon_Reference.html.</li>
+            <li><strong>Color Application:</strong> Icons should use brand colors from Section 1. Primary Red (#CE372F) for emphasis, Dark Teal (#00444C) for standard, accent colors for categorical differentiation.</li>
+        </ul>
+
+        <h3 class="section-subtitle">Template 1: Document/Presentation Generation</h3>
+        <div class="prompt-template">
+            <h4>Copy this prompt structure when generating MinRes documents:</h4>
+            <div class="code-block">Create a [document type] for Mineral Resources Limited with the following specifications:
+
+<strong>Brand Colors:</strong>
+- Primary: MinRes Red (#CE372F) for headings and key emphasis
+- Secondary: Dark Teal (#00444C) for subheadings and dark sections
+- Backgrounds: Use light shades (100-200) from color families - Brown 100 (#F1EDE7), Grey 100 (#E8E8E8), Cyan 100 (#E0F7F9)
+- Accent Families: Choose 2-3 families from Grey, Wine, Cyan, Coral, Brown, Grey-Brown, Terra Cotta, Olive, Teal Blue
+- Each family has 5 shades (100=lightest to 500=darkest)
+- Body text: Black (#000000) on White (#FFFFFF)
+
+<strong>Typography:</strong>
+- Font: Century Gothic (primary) or Avenir (fallback)
+- Heading 1: Century Gothic Bold, 32-40pt, #CE372F
+- Heading 2: Century Gothic Bold, 24-28pt, #00444C
+- Body: Century Gothic Regular, 15pt, #000000, line-height 1.8
+
+<strong>Icons (Use Existing Library):</strong>
+- Reference: Icon_Reference.html - 60 professionally designed icons
+- For presentations: Select from Business/Planning (14 icons) for strategy, goals, roadmaps, timelines
+- For data-driven slides: Use Business/Analytics (13 icons) for charts, metrics, KPIs
+- For operational content: Use Industrial/Mining Operations (11 icons) or Equipment (9 icons)
+- Style: Use existing SVG icons with 2-3pt stroke weight, colored with brand palette
+- DO NOT generate new icons - always select from the existing 60-icon library
+
+<strong>Layout:</strong>
+- Generous white space and clear visual hierarchy
+- Left-aligned header with red accent bar
+- Footer with presentation name and page number
+- Minimum 40px margins, consistent 8px spacing scale
+
+<strong>Content Requirements:</strong>
+[Describe your specific content needs here]
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Template 2: Infographic/Visual Content</h3>
+        <div class="prompt-template">
+            <h4>For creating brand-aligned infographics and visual content:</h4>
+            <div class="code-block">Design an infographic for Mineral Resources Limited with these brand specifications:
+
+<strong>Visual Style:</strong>
+- Clean, modern, professional mining/resources industry aesthetic
+- Line-based icons with 2-3pt stroke weight
+- Minimal decorative elements, maximum clarity
+
+<strong>Icons (CRITICAL - Use Existing Library):</strong>
+- ALWAYS use icons from Icon_Reference.html (60 professional icons available)
+- DO NOT create new icons - select from existing library to ensure brand consistency
+- All 8 categories available depending on content:
+  * Business/Planning (14) - strategy, goals, roadmaps
+  * Business/Analytics (13) - charts, metrics, data
+  * Industrial/Mining Operations (11) - processes, workflows
+  * Industrial/Mining Equipment (9) - machinery, tools
+  * Navigation/Location (4) - maps, GPS, sites
+  * Transport/Logistics (4) - shipping, supply chain
+  * Safety & Warnings (3) - safety equipment, protocols
+  * Learning (2) - training, documentation
+- Icons already have consistent 2-3pt stroke weight - use as-is
+- Apply brand colors (#CE372F, #00444C, or accent shades 300-400) to icons
+
+<strong>Color Application:</strong>
+- Primary elements: MinRes Red (#CE372F / Coral 400)
+- Secondary elements: Dark Teal (#00444C)
+- Backgrounds: Use 100-200 shades - Brown 100 (#F1EDE7), Grey 100 (#E8E8E8), Cyan 100 (#E0F7F9)
+- Data visualization: Use 300-400 shades from 2-3 families (Teal 300 #3F939C, Terra Cotta 300 #C37556, Olive 300 #878C56, Cyan 300 #5ED9E6)
+- Icons and highlights: 300-400 shades for good contrast
+- Maintain WCAG AA contrast compliance (4.5:1 minimum)
+
+<strong>Typography in Graphics:</strong>
+- Headlines: Century Gothic Bold, #CE372F
+- Labels/Data: Century Gothic Regular, minimum 12pt
+- Clear hierarchy with size and weight variation
+
+<strong>Content to Visualize:</strong>
+[Your specific infographic content]
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Template 3: Web Content/UI Elements</h3>
+        <div class="prompt-template">
+            <h4>For generating web interfaces and digital UI:</h4>
+            <div class="code-block">Create a web [component/page] for Mineral Resources Limited following these brand guidelines:
+
+<strong>Color System:</strong>
+- Primary CTA buttons: #CE372F (Coral 400) with white text
+- Secondary buttons: #00444C (Dark Teal) with white text
+- Tertiary buttons: Use 300-400 shades from accent families
+- Links: #3F939C (Teal 300), #2AB8C9 (Cyan 400), underline on hover
+- Backgrounds: White primary, light shades (100-200) for sections - #F1EDE7 (Brown 100), #E8E8E8 (Grey 100)
+- Text: #000000 for body, #CE372F for emphasis
+- Hover states: Use adjacent shades (300→400 or 400→500) for depth
+
+<strong>Icons for UI Components:</strong>
+- Reference: Icon_Reference.html for all UI icons (60 icons available)
+- Navigation icons: Use Navigation/Location category (4 icons) for maps, directions, location pins
+- Dashboard/Analytics: Use Business/Analytics category (13 icons) for metrics, charts, data displays
+- Action buttons: Select from Business/Planning (14 icons) for strategic actions
+- Status indicators: Choose appropriate icons from Safety & Warnings (3 icons) or operational categories
+- Format: SVG format preferred for web (scalable, small file size)
+- Sizing: Scale icons appropriately for UI context (16px-32px typical for interface elements)
+- Color application: Apply brand colors via CSS/fill property
+- DO NOT generate new icons - use existing library for consistency
+
+<strong>Typography System:</strong>
+- Font stack: 'Century Gothic', 'Avenir', -apple-system, sans-serif
+- Headings: Bold weight, size scale (2.5em, 2em, 1.5em)
+- Body: 15pt regular weight, 1.8 line-height
+- Maintain hierarchy and readability at all viewport sizes
+
+<strong>Component Styling:</strong>
+- Border radius: 6-8px for cards/buttons
+- Shadows: Subtle, 0 2px 8px rgba(0,0,0,0.1)
+- Spacing: 8px base scale (8, 16, 24, 32, 40)
+- Transitions: 0.2s ease for interactive elements
+
+<strong>Responsive Behavior:</strong>
+- Mobile-first approach
+- Stack content in single column on mobile
+- Minimum 44px touch targets
+- Adjust typography scale for smaller screens
+
+<strong>Specific Requirements:</strong>
+[Your specific web content needs]
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Template 4: Data Visualization</h3>
+        <div class="prompt-template">
+            <h4>For charts, graphs, and data-driven visualizations:</h4>
+            <div class="code-block">Create a data visualization for Mineral Resources Limited using brand-compliant styling:
+
+<strong>Chart Colors:</strong>
+- Primary data series: #CE372F (Coral 400 - MinRes Red)
+- Secondary series: #00444C (Dark Teal)
+- Additional series (use 300-400 shades): #3F939C (Teal 300), #C37556 (Terra Cotta 300), #878C56 (Olive 300), #5ED9E6 (Cyan 300), #8B2E45 (Wine 400), #A58D62 (Brown 300)
+- Multi-series charts: Select from different color families to ensure visual distinction
+- Grid lines/Axes: #D1D1D1 (Grey 200) or #E0E0E0
+- Background: White or light shades #F1EDE7 (Brown 100), #E8E8E8 (Grey 100)
+
+<strong>Icons for Dashboard Integration:</strong>
+- Reference: Icon_Reference.html for data visualization icons
+- Use Business/Analytics category (13 icons) for:
+  * Chart type indicators (bar, line, pie representations)
+  * KPI and metric displays
+  * Trend indicators and performance metrics
+  * Dashboard widgets and data cards
+- Use Industrial/Mining Operations category (11 icons) for operational dashboards:
+  * Site performance indicators
+  * Process flow visualizations
+  * Production metrics
+- Icon placement: Position icons adjacent to chart titles, in KPI cards, or as legend elements
+- Icon sizing: 24px-48px for dashboard headers, 16px-24px for inline data displays
+- Combining charts with icons: Use icons to create infographic-style data stories
+- DO NOT create new icons - select from existing 60-icon library
+
+<strong>Typography in Charts:</strong>
+- Title: Century Gothic Bold, 18-24pt, #CE372F
+- Axis labels: Century Gothic Regular, 12-14pt, #000000
+- Legend: Century Gothic Regular, 12pt
+- Data labels: Century Gothic Semibold, 11-12pt
+
+<strong>Chart Style:</strong>
+- Clean, minimal design
+- Remove unnecessary gridlines
+- Clear axis labels and units
+- Legend positioned for readability
+- Accessible color combinations (check contrast)
+
+<strong>Annotations:</strong>
+- Use MinRes Red (#CE372F) for callouts and important markers
+- Dotted or dashed lines in #D1D1D1 (Grey 200) for reference lines
+- Clear, concise labels in Century Gothic
+
+<strong>Data to Visualize:</strong>
+[Your specific data and chart type]
+            </div>
+        </div>
+    </div>
+
+    <!-- MINRES OPERATIONS CONTEXT -->
+    <div class="section">
+        <h2 class="section-title">6. MinRes Operations & Business Context</h2>
+
+        <h3 class="section-subtitle">Overview</h3>
+        <p class="body-text">Mineral Resources Limited (MinRes) is a leading diversified mining services and commodities company operating across Western Australia. Understanding our operations, locations, and commodities is essential for creating accurate and relevant AI-generated content.</p>
+
+        <h3 class="section-subtitle">Commodities & Business Lines</h3>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Infrastructure Services</h4>
+        <div style="background: #F1EDE7; padding: 20px; border-radius: 8px; margin: 15px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #CE372F;">
+                    <h5 style="color: #CE372F; margin-bottom: 10px; font-size: 1.1em;">Mining Services</h5>
+                    <p style="margin-bottom: 8px;"><strong>Description:</strong> Leading pit-to-ship mining services provider</p>
+                    <p style="margin-bottom: 8px;"><strong>Capabilities:</strong> Contract mining, drill and blast, crushing and screening, haulage logistics</p>
+                    <p><strong>Position:</strong> Top-tier provider in Australian mining services sector</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #CE372F;">
+                    <h5 style="color: #CE372F; margin-bottom: 10px; font-size: 1.1em;">Engineering & Construction</h5>
+                    <p style="margin-bottom: 8px;"><strong>Description:</strong> Unmatched in-house capacity</p>
+                    <p style="margin-bottom: 8px;"><strong>Capabilities:</strong> Project design, civil works, structural fabrication, plant installation, maintenance</p>
+                    <p><strong>Position:</strong> Integrated delivery model for mining infrastructure</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 style="color: #00444C; font-size: 1.2em; margin: 25px 0 15px 0;">Commodities Operations</h4>
+
+        <div style="background: #E0F7F9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+            <h5 style="color: #00444C; margin-bottom: 15px; font-size: 1.1em;">Iron Ore</h5>
+            <p style="margin-bottom: 8px;"><strong>Status:</strong> Top five Australian-listed iron ore producer</p>
+            <p style="margin-bottom: 8px;"><strong>Key Operations:</strong> Multiple mine sites in the Pilbara region</p>
+            <p style="margin-bottom: 8px;"><strong>Infrastructure:</strong> Export through Port Hedland sea port</p>
+            <p><strong>Major Sites:</strong> Iron Valley, Wonmunna, Koolyanobbing (Mt Marion), Newman area projects</p>
+        </div>
+
+        <div style="background: #F0F2E5; padding: 20px; border-radius: 8px; margin: 15px 0;">
+            <h5 style="color: #00444C; margin-bottom: 15px; font-size: 1.1em;">Lithium</h5>
+            <p style="margin-bottom: 8px;"><strong>Status:</strong> Top five global lithium supplier</p>
+            <p style="margin-bottom: 8px;"><strong>Key Operations:</strong> Hard-rock lithium mining and processing</p>
+            <p style="margin-bottom: 8px;"><strong>Major Sites:</strong> Wodgina, Mt Marion, Bald Hill (Esperance region)</p>
+            <p><strong>Market Position:</strong> Critical supplier to global battery and EV supply chains</p>
+        </div>
+
+        <div style="background: #F5E5DD; padding: 20px; border-radius: 8px; margin: 15px 0;">
+            <h5 style="color: #00444C; margin-bottom: 15px; font-size: 1.1em;">Energy (Natural Gas)</h5>
+            <p style="margin-bottom: 8px;"><strong>Status:</strong> Significant onshore natural gas discoveries</p>
+            <p style="margin-bottom: 8px;"><strong>Activities:</strong> Exploration and appraisal drilling</p>
+            <p style="margin-bottom: 8px;"><strong>Region:</strong> Perth Basin, Southwest Western Australia</p>
+            <p><strong>Strategic Focus:</strong> Energy transition and domestic gas supply</p>
+        </div>
+
+        <h3 class="section-subtitle">Geographic Locations & Regions</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Region</th>
+                    <th>Key Sites</th>
+                    <th>Operations Type</th>
+                    <th>Infrastructure</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Pilbara</strong></td>
+                    <td>Port Hedland, Iron Valley, Wonmunna, Newman, Onslow, Tom Price, Mahinna, Lamb Creek</td>
+                    <td>Iron ore operations, Mining services</td>
+                    <td>Port Hedland sea port, Haul roads</td>
+                </tr>
+                <tr>
+                    <td><strong>Mid-West</strong></td>
+                    <td>Koolyanobbing (Mt Marion)</td>
+                    <td>Iron ore operations</td>
+                    <td>Rail connection to Esperance</td>
+                </tr>
+                <tr>
+                    <td><strong>Goldfields</strong></td>
+                    <td>Wodgina, Kalgoorlie</td>
+                    <td>Lithium operations</td>
+                    <td>Processing facilities</td>
+                </tr>
+                <tr>
+                    <td><strong>Southwest/Perth Basin</strong></td>
+                    <td>Perth Basin, Hazelmare Workshop, Bunbury, Kwinana Workshop</td>
+                    <td>Energy exploration, Workshops, Development projects</td>
+                    <td>Perth industrial facilities</td>
+                </tr>
+                <tr>
+                    <td><strong>Esperance Region</strong></td>
+                    <td>Bald Hill, Esperance</td>
+                    <td>Lithium operations</td>
+                    <td>Esperance sea port</td>
+                </tr>
+                <tr>
+                    <td><strong>Northern Regions</strong></td>
+                    <td>Carnarvon Basin</td>
+                    <td>Energy exploration</td>
+                    <td>Offshore and onshore facilities</td>
+                </tr>
+                <tr>
+                    <td><strong>Perth Metro</strong></td>
+                    <td>Geraldton</td>
+                    <td>Corporate, Workshops, Support services</td>
+                    <td>Headquarters and facilities</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="section-subtitle">Operation Types & Terminology</h3>
+        <ul class="guidelines-list">
+            <li><strong>Office/Workshop:</strong> Corporate facilities, maintenance workshops (Hazelmare, Kwinana), engineering centers</li>
+            <li><strong>Iron Ore Operations:</strong> Open-cut mining, crushing, screening, stockpiling, rail/road transport to ports</li>
+            <li><strong>Lithium Operations:</strong> Hard-rock mining, processing, concentration, transport to processing facilities or ports</li>
+            <li><strong>CSI Mining Services:</strong> Contract mining services across multiple client sites</li>
+            <li><strong>Sea Port:</strong> Port Hedland (iron ore exports), Esperance (lithium exports), Kwinana (industrial)</li>
+            <li><strong>Town:</strong> Residential communities and support towns (Geraldton, Newman, Bunbury)</li>
+            <li><strong>Development Project:</strong> New projects under evaluation or construction (Tom Price expansion, new lithium prospects)</li>
+            <li><strong>Energy Exploration:</strong> Drilling, appraisal, and development of natural gas resources</li>
+            <li><strong>Haul Road:</strong> Heavy-duty roads connecting mine sites to processing facilities or ports</li>
+        </ul>
+
+        <h3 class="section-subtitle">MinRes Brand Positioning</h3>
+        <div style="background: linear-gradient(135deg, #F1EDE7 0%, #E8E8E8 100%); padding: 25px; border-radius: 8px; border: 2px solid #CE372F; margin: 20px 0;">
+            <h4 style="color: #CE372F; margin-bottom: 15px;">Key Messaging Pillars</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 10px; margin: 8px 0; background: white; border-radius: 4px; border-left: 4px solid #CE372F;">
+                    <strong style="color: #CE372F;">Integrated Capability:</strong> Unique combination of mining services and commodity production
+                </li>
+                <li style="padding: 10px; margin: 8px 0; background: white; border-radius: 4px; border-left: 4px solid #00444C;">
+                    <strong style="color: #00444C;">Scale & Growth:</strong> Top-tier Australian producer in iron ore and lithium; expanding energy portfolio
+                </li>
+                <li style="padding: 10px; margin: 8px 0; background: white; border-radius: 4px; border-left: 4px solid #3F939C;">
+                    <strong style="color: #3F939C;">Innovation & Engineering:</strong> Industry-leading in-house engineering and construction capabilities
+                </li>
+                <li style="padding: 10px; margin: 8px 0; background: white; border-radius: 4px; border-left: 4px solid #878C56;">
+                    <strong style="color: #878C56;">Western Australian Focus:</strong> All operations based in WA, supporting local communities and economy
+                </li>
+                <li style="padding: 10px; margin: 8px 0; background: white; border-radius: 4px; border-left: 4px solid #C37556;">
+                    <strong style="color: #C37556;">Resource Diversity:</strong> Multi-commodity strategy reduces risk and captures global energy transition opportunities
+                </li>
+            </ul>
+        </div>
+
+        <h3 class="section-subtitle">Content Context Guidelines</h3>
+        <ul class="guidelines-list">
+            <li><strong>Location References:</strong> Always specify region (e.g., "Wodgina lithium operation in the Goldfields" not just "Wodgina")</li>
+            <li><strong>Commodity Accuracy:</strong> Use correct terminology - "iron ore" (not iron), "lithium" or "spodumene" (hard-rock lithium), "natural gas" (not just gas)</li>
+            <li><strong>Scale Context:</strong> Reference MinRes's market position (Top 5 iron ore, Top 5 lithium, leading mining services)</li>
+            <li><strong>Integrated Story:</strong> Highlight the connection between mining services and commodity operations where relevant</li>
+            <li><strong>Geographic Accuracy:</strong> All MinRes operations are in Western Australia - never reference other Australian states or international locations for MinRes operations</li>
+            <li><strong>Infrastructure Importance:</strong> Emphasize MinRes's control over infrastructure (ports, haul roads, processing) as a competitive advantage</li>
+            <li><strong>Safety First:</strong> When referencing operations, prioritize safety messaging and Zero Harm culture</li>
+        </ul>
+    </div>
+
+    <!-- BEST PRACTICES -->
+    <div class="section">
+        <h2 class="section-title">7. Best Practices & Common Scenarios</h2>
+
+        <h3 class="section-subtitle">Do's and Don'ts</h3>
+        <div class="do-dont-grid">
+            <div class="do-box">
+                <h3>✓ DO</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin: 10px 0;">✓ Use MinRes Red (#CE372F) for emphasis and key callouts</li>
+                    <li style="margin: 10px 0;">✓ Maintain consistent spacing and alignment</li>
+                    <li style="margin: 10px 0;">✓ Use high-quality, professional imagery</li>
+                    <li style="margin: 10px 0;">✓ Keep layouts clean with generous white space</li>
+                    <li style="margin: 10px 0;">✓ Use Century Gothic or Avenir exclusively</li>
+                    <li style="margin: 10px 0;">✓ Ensure WCAG AA contrast compliance</li>
+                    <li style="margin: 10px 0;">✓ Test content at multiple screen sizes</li>
+                    <li style="margin: 10px 0;">✓ Use brand accent colors purposefully</li>
+                </ul>
+            </div>
+
+            <div class="dont-box">
+                <h3>✗ DON'T</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin: 10px 0;">✗ Mix multiple typefaces beyond brand fonts</li>
+                    <li style="margin: 10px 0;">✗ Use colors outside the defined palette</li>
+                    <li style="margin: 10px 0;">✗ Overcrowd layouts with too many elements</li>
+                    <li style="margin: 10px 0;">✗ Use font sizes below 12pt for any text</li>
+                    <li style="margin: 10px 0;">✗ Apply excessive effects (gradients, shadows, glows)</li>
+                    <li style="margin: 10px 0;">✗ Ignore accessibility requirements</li>
+                    <li style="margin: 10px 0;">✗ Use low-quality or generic stock images</li>
+                    <li style="margin: 10px 0;">✗ Create inconsistent icon styles</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Common Use Cases</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Content Type</th>
+                    <th>Primary Color</th>
+                    <th>Secondary Color</th>
+                    <th>Background</th>
+                    <th>Key Considerations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Executive Presentations</strong></td>
+                    <td>#CE372F</td>
+                    <td>#00444C</td>
+                    <td>#FFFFFF / #F1EDE7</td>
+                    <td>Bold headlines, data focus, minimal text</td>
+                </tr>
+                <tr>
+                    <td><strong>Safety Documentation</strong></td>
+                    <td>#CE372F</td>
+                    <td>#000000</td>
+                    <td>#FFFFFF</td>
+                    <td>High contrast, clear icons, readable at distance</td>
+                </tr>
+                <tr>
+                    <td><strong>Environmental Reports</strong></td>
+                    <td>#878C56</td>
+                    <td>#3F939C</td>
+                    <td>#F1EDE7</td>
+                    <td>Earth tones, sustainability focus, data viz</td>
+                </tr>
+                <tr>
+                    <td><strong>Operational Dashboards</strong></td>
+                    <td>#00444C</td>
+                    <td>#3F939C</td>
+                    <td>#FFFFFF</td>
+                    <td>High contrast, scan-able, real-time data</td>
+                </tr>
+                <tr>
+                    <td><strong>Training Materials</strong></td>
+                    <td>#CE372F</td>
+                    <td>#93886F</td>
+                    <td>#FFFFFF / #F1EDE7</td>
+                    <td>Clear hierarchy, icons, step-by-step layouts</td>
+                </tr>
+                <tr>
+                    <td><strong>Marketing Collateral</strong></td>
+                    <td>#CE372F</td>
+                    <td>#C37556</td>
+                    <td>#FFFFFF</td>
+                    <td>Bold visuals, photography, brand prominence</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="section-subtitle">Accessibility Checklist</h3>
+        <ul class="guidelines-list">
+            <li><strong>Color Contrast:</strong> Verify all text meets WCAG AA standards (4.5:1 for normal text, 3:1 for large text >18pt).</li>
+            <li><strong>Alternative Text:</strong> Provide descriptive alt text for all images and icons in AI-generated content.</li>
+            <li><strong>Font Size:</strong> Never use text smaller than 12pt. Prefer 15pt for body content.</li>
+            <li><strong>Color Alone:</strong> Don't rely solely on color to convey information. Use text labels, icons, or patterns.</li>
+            <li><strong>Focus Indicators:</strong> Ensure interactive elements have clear focus states for keyboard navigation.</li>
+            <li><strong>Readability:</strong> Maintain line length of 50-75 characters for optimal readability.</li>
+        </ul>
+    </div>
+
+    <!-- QUICK REFERENCE -->
+    <div class="section">
+        <h2 class="section-title">7. Quick Reference Guide</h2>
+
+        <h3 class="section-subtitle">Essential Brand Elements - Copy & Paste Values</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+            <div style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
+                <h4 style="color: #CE372F; margin-bottom: 15px;">Primary Colors - HEX</h4>
+                <div class="code-block" style="font-size: 0.8em;">
+#CE372F  /* MinRes Red - Primary */
+#00444C  /* Dark Teal - Secondary */
+#49121C  /* Deep Maroon */
+#000000  /* Black - Body Text */
+#FFFFFF  /* White */
+                </div>
+            </div>
+
+            <div style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
+                <h4 style="color: #CE372F; margin-bottom: 15px;">Accent Color Families - HEX</h4>
+                <div class="code-block" style="font-size: 0.7em;">
+/* Grey Scale */
+#E8E8E8  /* Grey 100 */    #D1D1D1  /* Grey 200 */
+#B0B0B0  /* Grey 300 */    #888888  /* Grey 400 */
+#5C5C5C  /* Grey 500 */
+
+/* Wine/Burgundy */
+#F4D9DD  /* Wine 100 */    #E8A5AD  /* Wine 200 */
+#C5556B  /* Wine 300 */    #8B2E45  /* Wine 400 */
+#49121C  /* Wine 500 */
+
+/* Cyan/Turquoise */
+#E0F7F9  /* Cyan 100 */    #B0EDF3  /* Cyan 200 */
+#5ED9E6  /* Cyan 300 */    #2AB8C9  /* Cyan 400 */
+#1A7C87  /* Cyan 500 */
+
+/* Red/Coral */
+#F9E5E3  /* Coral 100 */   #F3C5BF  /* Coral 200 */
+#E8867A  /* Coral 300 */   #CE372F  /* Coral 400 */
+#7A1F18  /* Coral 500 */
+
+/* Brown */
+#F1EDE7  /* Brown 100 */   #D9CDB8  /* Brown 200 */
+#A58D62  /* Brown 300 */   #6B5435  /* Brown 400 */
+#3D2E1E  /* Brown 500 */
+
+/* Grey-Brown */
+#EFEFEF  /* Grey-Brown 100 */  #D4D4D4  /* Grey-Brown 200 */
+#A5A5A5  /* Grey-Brown 300 */  #6E6E6E  /* Grey-Brown 400 */
+#424242  /* Grey-Brown 500 */
+
+/* Terra Cotta */
+#F5E5DD  /* Terra Cotta 100 */  #E8C4B0  /* Terra Cotta 200 */
+#C37556  /* Terra Cotta 300 */  #8E5239  /* Terra Cotta 400 */
+#5C3324  /* Terra Cotta 500 */
+
+/* Olive Green */
+#F0F2E5  /* Olive 100 */   #D9DCBC  /* Olive 200 */
+#878C56  /* Olive 300 */   #5E623C  /* Olive 400 */
+#3A3D25  /* Olive 500 */
+
+/* Teal Blue */
+#E3F2F4  /* Teal 100 */    #B8DDE3  /* Teal 200 */
+#3F939C  /* Teal 300 */    #2D686F  /* Teal 400 */
+#1D4347  /* Teal 500 */
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h4 style="color: #CE372F; margin-bottom: 15px;">CSS Font Stack</h4>
+            <div class="code-block">
+font-family: 'Century Gothic', 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+             'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            </div>
+        </div>
+
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h4 style="color: #CE372F; margin-bottom: 15px;">Typography Scale</h4>
+            <div class="code-block">
+/* Heading 1 */ font-size: 32-40pt; font-weight: 700; color: #CE372F;
+/* Heading 2 */ font-size: 24-28pt; font-weight: 700; color: #00444C;
+/* Heading 3 */ font-size: 18-22pt; font-weight: 600; color: #000000;
+/* Body Text */ font-size: 15pt; font-weight: 400; color: #000000; line-height: 1.8;
+/* Emphasis  */ font-size: 15pt; font-weight: 700; color: #CE372F;
+            </div>
+        </div>
+
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h4 style="color: #CE372F; margin-bottom: 15px;">Spacing Scale (8px base)</h4>
+            <div class="code-block">
+8px   /* Tight spacing between related items */
+16px  /* Default spacing between elements */
+24px  /* Section spacing */
+32px  /* Large section breaks */
+40px  /* Page margins, major divisions */
+            </div>
+        </div>
+
+        <h3 class="section-subtitle">Tags for AI Systems</h3>
+        <p class="body-text">When instructing AI systems, use these tags to ensure brand compliance:</p>
+        <div style="margin: 20px 0;">
+            <span class="tag">MINRES-BRAND</span>
+            <span class="tag">CENTURY-GOTHIC</span>
+            <span class="tag">COLOR-CE372F</span>
+            <span class="tag">COLOR-00444C</span>
+            <span class="tag">15PT-BODY</span>
+            <span class="tag">PROFESSIONAL-MINING</span>
+            <span class="tag">WCAG-AA</span>
+            <span class="tag">CLEAN-LAYOUT</span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-signature">
+        <p style="font-size: 1.1em; margin-bottom: 10px;"><strong>MINRES AI Content Style Guidelines</strong></p>
+        <p style="margin-bottom: 5px;">Mineral Resources Limited Brand Standards</p>
+        <p style="font-size: 0.9em; color: #999;">Version 1.0 | Last Updated: July 2026</p>
+        <p style="margin-top: 15px; font-size: 0.85em;">For questions or clarifications, contact the Brand & Communications team</p>
+    </div>
+</body>
+</html>

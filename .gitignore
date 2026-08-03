@@ -33,3 +33,7 @@ env/
 # IDE
 .vscode/
 *.log
+
+# Windows / OneDrive folder metadata
+desktop.ini
+Thumbs.db
