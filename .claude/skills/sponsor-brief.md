@@ -245,17 +245,49 @@ At Standard tier this slide replaces a standalone Value Case.
   which DTS/business objective it serves
 - What capability or improvement it establishes beyond the immediate fix
 
-**COST–BENEFIT SUMMARY** (5 bullets, ~60 words):
+**COST–BENEFIT SUMMARY** (5 bullets, ~70 words):
 
 - `<Stage>-stage cost (this ask):` broken down by role, days and day rate
-  (`BA 6 days @ $1,150 = $6,900`)
-- `Indicative build (to firm up in <next stage>):` rough per-module numbers
-- Cost of the recommended option from slide 4
-- Where the benefits actually land (cross-reference the Value slide)
-- `Detail: see budget estimates [link]`
+  (`BA 6 days @ $1,150 = $6,900`) — the only firm figure on this slide
+- `Indicative build (Class 5, ±50% to +100%, to firm up in <next stage>):` per-module
+  numbers with the range carried on them
+- Cost of the recommended option from slide 4, also ranged
+- `Contingency:` amount and the named risks it covers — never a flat percentage
+- Where the benefits land (cross-reference the Value slide);
+  `detail: see budget estimates [link]`
 
 Keep the ask cost and the indicative build cost visibly separate — approvers are
 committing only to the first.
+
+#### Cost estimate discipline
+
+A Concept-stage brief is an **AACE Class 5 estimate**: 0–5% definition maturity, accuracy
+range **±50% to +100%**. Every cost statement on this slide must respect that. Full rules:
+[.claude/rules/cost_estimate_guidelines.html](../rules/cost_estimate_guidelines.html).
+
+The four that bind this slide:
+
+1. **No single-point build figures.** `Indicative build: $180,000` is false precision at
+   Class 5. Write `~$180,000 (Class 5: $90,000–$360,000)`. The ask cost is the exception —
+   it is a day-rate calculation for known roles over a known number of days, so it is
+   quoted firm.
+2. **Contingency is always shown, and always named.** Not "30% buffer" — list the risks
+   it covers, drawn from the slide 7 risk table so the two agree:
+   `Contingency $45,000 – covers workflow technology unproven at MinRes, requirements
+   emergence in Define`.
+3. **Say where the number came from.** One clause is enough: `based on <comparable
+   project>` or `parametric: <n> modules × ~$<rate>`. "Our estimate" or "based on
+   experience" is not a basis.
+4. **Don't write "rough".** Use the class: `Class 5 estimate, ±50% to +100%`.
+
+If the user supplies a bare figure with no range, basis or contingency, ask for those
+three before drafting the bullet. If they can't supply them, draft
+`[$amount – Class 5 range, basis and contingency to confirm]` and carry it into
+**Outstanding items** — do not quietly print a naked number.
+
+Where the estimate is broken into baseline, scope emergence allowance, scope change
+reserve and contingency, keep those four visibly separate rather than rolled into one
+total — approvers need to see which part is scope and which part is risk.
 
 ### Slide 7 — Scope & Key Risks
 
