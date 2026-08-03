@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sponsor Brief Guardrail Skill</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .metadata {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .metadata-item {
+            font-size: 0.9em;
+        }
+        
+        .metadata-label {
+            opacity: 0.8;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .metadata-value {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .nav-tabs button {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-tabs button:hover {
+            background: #f0f0f0;
+            border-color: #3498db;
+        }
+        
+        .nav-tabs button.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 4px solid #3498db;
+        }
+        
+        .card.warning {
+            border-left-color: #f39c12;
+        }
+        
+        .card.error {
+            border-left-color: #e74c3c;
+        }
+        
+        .card.success {
+            border-left-color: #27ae60;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin: 25px 0 15px 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+        
+        h4 {
+            color: #7f8c8d;
+            margin: 15px 0 8px 0;
+            font-size: 1.1em;
+        }
+        
+        p {
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .checklist li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            color: #3498db;
+        }
+        
+        .checklist li.checked:before {
+            content: "☑";
+            color: #27ae60;
+        }
+        
+        .step {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+        
+        th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #2c3e50;
+        }
+        
+        td {
+            padding: 12px;
+            border: 1px solid #ecf0f1;
+            color: #2c3e50;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f7ff;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .badge.primary {
+            background: #3498db;
+            color: white;
+        }
+        
+        .badge.warning {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .badge.error {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .badge.success {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .matrix {
+            overflow-x: auto;
+        }
+        
+        .callout {
+            background: #ecf7ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .callout.warning {
+            background: #fff4e6;
+            border-left-color: #f39c12;
+        }
+        
+        .callout.error {
+            background: #ffe6e6;
+            border-left-color: #e74c3c;
+        }
+        
+        .callout.success {
+            background: #e6f7e6;
+            border-left-color: #27ae60;
+        }
+        
+        .example-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            overflow-x: auto;
+        }
+        
+        .example-box.good {
+            background: #e6f7e6;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .example-box.bad {
+            background: #ffe6e6;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .formula {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        .accuracy-range {
+            background: linear-gradient(90deg, #e74c3c 0%, #f39c12 50%, #27ae60 100%);
+            height: 40px;
+            border-radius: 4px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            border-top: 1px solid #ecf0f1;
+            margin-top: 50px;
+        }
+        
+        .print-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .print-button:hover {
+            background: #2980b9;
+        }
+        
+        @media print {
+            .nav-tabs, .print-button {
+                display: none;
+            }
+            
+            .tab-content {
+                display: block !important;
+            }
+            
+            body {
+                background: white;
+            }
+            
+            .card, .step, .example-box {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .metadata {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🛡️ Project Sponsor Brief Guardrail</h1>
+            <p>Ensure transparent, accurate cost communication using AACE-adapted classification principles</p>
+            <div class="metadata">
+                <div class="metadata-item">
+                    <span class="metadata-label">Skill Type</span>
+                    <span class="metadata-value">Project Governance</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Version</span>
+                    <span class="metadata-value">1.0</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Use Case</span>
+                    <span class="metadata-value">Software, Infrastructure, Construction</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Applicable For</span>
+                    <span class="metadata-value">Class 5 through Class 1 Estimates</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Print Button -->
+        <button class="print-button" onclick="window.print()">🖨️ Print This Page</button>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="tab-button active" data-tab="overview">Overview</button>
+            <button class="tab-button" data-tab="steps">8 Steps</button>
+            <button class="tab-button" data-tab="rules">Rules & Flags</button>
+            <button class="tab-button" data-tab="templates">Templates</button>
+            <button class="tab-button" data-tab="reference">Quick Ref</button>
+        </div>
+
+        <!-- TAB 1: OVERVIEW -->
+        <div id="overview" class="tab-content active">
+            <div class="card">
+                <h2>📋 What This Guardrail Does</h2>
+                <p>This skill ensures project sponsor briefs accurately and transparently communicate:</p>
+                <ul>
+                    <li><strong>Project definition maturity</strong> (0-100%) and what it means for cost certainty</li>
+                    <li><strong>Appropriate accuracy ranges</strong> for cost estimates based on project class</li>
+                    <li><strong>Realistic contingency allocation</strong> tied to identified risks, not arbitrary percentages</li>
+                    <li><strong>Scope management strategy</strong> distinguishing baseline scope, emergence, and changes</li>
+                    <li><strong>Governance and decision criteria</strong> aligned with project phase and maturity</li>
+                </ul>
+            </div>
+
+            <div class="card warning">
+                <h3>⚠️ Common Failures This Prevents</h3>
+                <ul>
+                    <li>❌ Presenting false precision in early-stage estimates</li>
+                    <li>❌ Omitting contingency or treating it as "hidden reserve"</li>
+                    <li>❌ Failing to distinguish scope change from estimation error</li>
+                    <li>❌ Committing to timelines before technical feasibility is confirmed</li>
+                    <li>❌ Using different estimation methodologies inconsistently across projects</li>
+                </ul>
+            </div>
+
+            <div class="card success">
+                <h3>✅ When to Use This Skill</h3>
+                <h4>USE for:</h4>
+                <ul>
+                    <li>Initial business cases and project charters</li>
+                    <li>Cost estimates at any phase (Class 5 through Class 1)</li>
+                    <li>Board or executive steering committee presentations</li>
+                    <li>Budget authorization requests</li>
+                    <li>Risk and contingency justifications</li>
+                    <li>Scope management and change control communications</li>
+                </ul>
+                <h4>DO NOT use for:</h4>
+                <ul>
+                    <li>Routine operational cost tracking</li>
+                    <li>Vendor pricing analysis</li>
+                    <li>Resource capacity planning</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🎯 Key Principles</h3>
+                <p><strong>1. Project definition maturity drives accuracy</strong><br>
+                A project at 10% definition maturity (Class 5) naturally has wider cost uncertainty than a project at 60% definition maturity (Class 3).</p>
+                
+                <p><strong>2. Never present false precision</strong><br>
+                Early-stage estimates must show accuracy ranges (e.g., ±50% to +100%), never single-point estimates.</p>
+                
+                <p><strong>3. Contingency is risk-based, not arbitrary</strong><br>
+                Contingency must be tied to specifically identified risks with probability and impact assessment, not "we always add 20%."</p>
+                
+                <p><strong>4. Scope has multiple components</strong><br>
+                Distinguish: Baseline Scope → Scope Emergence Allowance → Scope Change Reserve → Contingency Reserve</p>
+                
+                <p><strong>5. Governance scales with project magnitude</strong><br>
+                Different approval authorities, oversight intensity, and review frequency for Class 5 vs. Class 1 estimates.</p>
+            </div>
+
+            <div class="card">
+                <h3>📊 AACE Classification Overview</h3>
+                <table>
+                    <tr>
+                        <th>Class</th>
+                        <th>Definition</th>
+                        <th>Maturity</th>
+                        <th>Accuracy</th>
+                        <th>Primary Use</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Class 5</strong></td>
+                        <td>Concept Screening</td>
+                        <td>0-5%</td>
+                        <td>±50% to +100%</td>
+                        <td>"Should we explore this?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Class 4</strong></td>
+                        <td>Feasibility</td>
+                        <td>5-20%</td>
+                        <td>±30% to +50%</td>
+                        <td>"Should we fund this?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Class 3</strong></td>
+                        <td>Budget</td>
+                        <td>20-50%</td>
+                        <td>±20% to +30%</td>
+                        <td>"Can we commit?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Class 2</strong></td>
+                        <td>Control</td>
+                        <td>50-80%</td>
+                        <td>±15% to +20%</td>
+                        <td>"On track?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Class 1</strong></td>
+                        <td>Check</td>
+                        <td>80%+</td>
+                        <td>±5% to +15%</td>
+                        <td>"Final accounting?"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 2: 8 STEPS -->
+        <div id="steps" class="tab-content">
+            <div class="card">
+                <h2>🔧 8-Step Process for Developing Sponsor Briefs</h2>
+                <p>Follow these steps sequentially to ensure your brief meets all guardrail standards.</p>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="step">
+                <h3><span class="step-number">1</span>Determine Project Classification & Definition Maturity</h3>
+                <p><strong>Before writing any sponsor brief, explicitly classify the project.</strong></p>
+                
+                <h4>Identify Project Type:</h4>
+                <ul class="checklist">
+                    <li>☐ Software/Application Development</li>
+                    <li>☐ Technology Infrastructure (cloud, networks, platforms)</li>
+                    <li>☐ Construction/Capital Project</li>
+                    <li>☐ Hybrid (multiple components)</li>
+                </ul>
+
+                <h4>Assess Project Definition Maturity (Composite Score):</h4>
+                
+                <p><strong>For Software/Application Development:</strong></p>
+                <div class="formula">
+Requirements Clarity: ___% (0% = conceptual, 100% = complete user stories)<br>
+Architecture/Technology Decisions: ___% (0% = undecided, 100% = finalized)<br>
+Team Composition: ___% (0% = unknown, 100% = assigned and qualified)<br>
+Risk Understanding: ___% (0% = unidentified, 100% = documented with mitigations)<br>
+<br>
+Average Definition = (___% + ___% + ___% + ___%) ÷ 4 = <strong>___% MATURITY</strong>
+                </div>
+
+                <p><strong>For Infrastructure:</strong></p>
+                <div class="formula">
+Capacity Requirements: ___% defined (users, transactions, storage)<br>
+Architecture/Platform Selected: ___% (% of systems/components decided)<br>
+Integration Scope: ___% defined<br>
+<br>
+Average Definition = (___% + ___% + ___%) ÷ 3 = <strong>___% MATURITY</strong>
+                </div>
+
+                <p><strong>For Construction/Capital:</strong></p>
+                <div class="formula">
+Schematic Design: ___% complete<br>
+Design Development: ___% complete<br>
+Construction Documents: ___% complete<br>
+<br>
+Average Definition = (___% + ___% + ___%) ÷ 3 = <strong>___% MATURITY</strong>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <h3><span class="step-number">2</span>Select Appropriate Estimate Class & Accuracy Range</h3>
+                <p><strong>Map definition maturity to project class and corresponding accuracy range.</strong></p>
+                
+                <table>
+                    <tr>
+                        <th>Definition Maturity</th>
+                        <th>Project Class</th>
+                        <th>Governance Phase</th>
+                        <th>Accuracy Range</th>
+                    </tr>
+                    <tr>
+                        <td>0-5%</td>
+                        <td><strong>Class 5</strong></td>
+                        <td>Concept Screening / FEL 1</td>
+                        <td><strong>±50% to +100%</strong></td>
+                    </tr>
+                    <tr>
+                        <td>5-20%</td>
+                        <td><strong>Class 4</strong></td>
+                        <td>Feasibility / FEL 2</td>
+                        <td><strong>±30% to +50%</strong></td>
+                    </tr>
+                    <tr>
+                        <td>20-50%</td>
+                        <td><strong>Class 3</strong></td>
+                        <td>Budget / FEL 3</td>
+                        <td><strong>±20% to +30%</strong></td>
+                    </tr>
+                    <tr>
+                        <td>50-80%</td>
+                        <td><strong>Class 2</strong></td>
+                        <td>Control / Execution</td>
+                        <td><strong>±15% to +20%</strong></td>
+                    </tr>
+                    <tr>
+                        <td>80%+</td>
+                        <td><strong>Class 1</strong></td>
+                        <td>Check / Final</td>
+                        <td><strong>±5% to +15%</strong></td>
+                    </tr>
+                </table>
+
+                <h4>Document Your Selection:</h4>
+                <div class="formula">
+Selected Class: _____ (based on ____% definition maturity)<br>
+Accuracy Range: ±_____% to +_____%<br>
+<br>
+Interpretation: "This estimate could reasonably range from $[low] to $[high]<br>
+depending on decisions made in the next phase"
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <h3><span class="step-number">3</span>Calculate Base Estimate Using Appropriate Methodology</h3>
+                <p><strong>Choose estimation method based on project class and available information.</strong></p>
+                
+                <h4>Class 5 Estimates (Concept Stage) - Parametric Method:</h4>
+                <div class="formula">
+Base Estimate = [Project Scope Parameter] × [Historical Cost-Per-Unit]<br>
+              × [Location/Market Adjustment Factor]<br>
+              × [Quality/Complexity Adjustment Factor]
+                </div>
+                <p><strong>Examples:</strong></p>
+                <ul>
+                    <li><strong>Software:</strong> (Estimated Function Points) × ($6,500/FP) × 0.95 (location) × 1.1 (mobile complexity)</li>
+                    <li><strong>Infrastructure:</strong> (Users) × ($250/user) × 1.05 (cloud premium)</li>
+                    <li><strong>Construction:</strong> (Square Meters) × ($180/m²) × 1.08 (premium finishes)</li>
+                </ul>
+
+                <h4>Class 4 Estimates (Feasibility) - Partially Detailed:</h4>
+                <ul>
+                    <li><strong>Software:</strong> Function point analysis on 60-80% of detailed requirements</li>
+                    <li><strong>Infrastructure:</strong> Preliminary capacity design with identified system components</li>
+                    <li><strong>Construction:</strong> Schematic design with elemental cost breakdown</li>
+                </ul>
+
+                <h4>Class 3+ Estimates (Budget/Control) - Detailed Bottom-Up:</h4>
+                <ul>
+                    <li><strong>Software:</strong> User story point estimation with team velocity data</li>
+                    <li><strong>Infrastructure:</strong> Line-item specification with vendor quotes</li>
+                    <li><strong>Construction:</strong> Detailed material takeoffs and labor rates</li>
+                </ul>
+
+                <h4>Document Your Method:</h4>
+                <div class="formula">
+Estimation Method: [Parametric / Analogous / Function Points / Story Points / Detailed]<br>
+Historical Basis: [List 2-3 comparable projects or data sources]<br>
+Adjustment Factors Applied: [Specific factors and rationale]<br>
+<br>
+<strong>Base Estimate (excluding contingency): $[_________]</strong>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <h3><span class="step-number">4</span>Develop Risk-Based Contingency (NOT Arbitrary Percentages)</h3>
+                <p><strong>⚠️ CRITICAL: Never use flat contingency percentages. Identify specific risks instead.</strong></p>
+                
+                <h4>Risk Identification Template:</h4>
+                <table>
+                    <tr>
+                        <th>Risk Description</th>
+                        <th>Probability</th>
+                        <th>Potential Impact</th>
+                        <th>Contingency (Prob × Impact)</th>
+                    </tr>
+                    <tr>
+                        <td>[Risk 1: technology decision not finalized]</td>
+                        <td>____%</td>
+                        <td>$___K</td>
+                        <td>= ___% × $___K = $___K</td>
+                    </tr>
+                    <tr>
+                        <td>[Risk 2: scope emergence in requirements]</td>
+                        <td>____%</td>
+                        <td>$___K</td>
+                        <td>= ___% × $___K = $___K</td>
+                    </tr>
+                    <tr>
+                        <td>[Risk 3: team composition changes]</td>
+                        <td>____%</td>
+                        <td>$___K</td>
+                        <td>= ___% × $___K = $___K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Risk-Based Contingency</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong>$___K</strong></td>
+                    </tr>
+                </table>
+
+                <h4>Guideline Check (Reasonableness Test):</h4>
+                <div class="formula">
+Contingency / Base Estimate = ___% (Check against guidelines below)<br>
+<br>
+Class 5: Contingency typically 30-50% of base estimate<br>
+Class 4: Contingency typically 20-35% of base estimate<br>
+Class 3: Contingency typically 15-25% of base estimate<br>
+Class 2: Contingency typically 10-15% of base estimate<br>
+Class 1: Contingency typically 5-10% of base estimate
+                </div>
+
+                <div class="callout success">
+                    <strong>✓ IF contingency falls within guideline range:</strong><br>
+                    "Contingency is 42% (within guideline) due to: technology platform still being evaluated, team not yet assigned, and regulatory requirements under review"
+                </div>
+
+                <div class="callout warning">
+                    <strong>⚠️ IF contingency is below guideline range:</strong><br>
+                    Likely underestimating risk. Either increase contingency, add more identified risks, or reconsider project viability.
+                </div>
+
+                <div class="callout error">
+                    <strong>✗ IF contingency is significantly above guideline range:</strong><br>
+                    "Contingency is 75% (above guideline)" - Revise base estimate or clearly explain why this project warrants higher contingency.
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step">
+                <h3><span class="step-number">5</span>Explicit Scope Management Statement</h3>
+                <p><strong>Always distinguish these budget components—do not lump them together.</strong></p>
+                
+                <div class="example-box good">
+                    <strong>BASELINE SCOPE BUDGET:</strong><br>
+Clearly defined functional scope (requirements list, user stories, specifications)<br>
+Baseline Estimate: $[amount]<br>
+"If requirements remain exactly as defined and no unexpected technical complexity emerges, we estimate this cost"
+                </div>
+
+                <div class="example-box good">
+                    <strong>SCOPE EMERGENCE ALLOWANCE:</strong><br>
+Typical range: 10-20% of baseline for well-defined, up to 30% for exploratory<br>
+Scope Emergence Budget: $[amount] (____% of baseline)<br>
+"During development, we typically discover requirements not apparent during initial analysis.<br>
+This budget covers reasonable requirement additions within this allowance."
+                </div>
+
+                <div class="example-box good">
+                    <strong>SCOPE CHANGE RESERVE:</strong><br>
+Separate from scope emergence<br>
+Scope Change Reserve: $[amount]<br>
+"This budget is for stakeholder-requested scope changes outside the baseline and emergence<br>
+allowance, managed through formal change control."
+                </div>
+
+                <div class="example-box good">
+                    <strong>CONTINGENCY RESERVE:</strong><br>
+Tied to identified risks only<br>
+Contingency Reserve: $[amount]<br>
+"This budget covers specific identified risks: [list]. If these risks don't materialize,<br>
+contingency is not consumed."
+                </div>
+
+                <div class="formula">
+TOTAL PROJECT BUDGET = Baseline + Emergence + Change + Contingency = $[total]
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step">
+                <h3><span class="step-number">6</span>Governance & Decision Criteria</h3>
+                <p><strong>Align estimate class with appropriate governance intensity.</strong></p>
+                
+                <h4>Class 5 (Concept):</h4>
+                <ul>
+                    <li><strong>Decision Gate:</strong> "Should we invest in detailed feasibility analysis?"</li>
+                    <li><strong>Approval Authority:</strong> [Business Unit Manager]</li>
+                    <li><strong>Next Steps:</strong> Complete detailed requirements analysis and preliminary architecture (12 weeks, $150K investment)</li>
+                    <li><strong>Success Criteria:</strong> Technical feasibility confirmed and budget estimate narrowed to ±30% range</li>
+                </ul>
+
+                <h4>Class 4 (Feasibility):</h4>
+                <ul>
+                    <li><strong>Decision Gate:</strong> "Should we fund project development?"</li>
+                    <li><strong>Approval Authority:</strong> [VP / Investment Committee]</li>
+                    <li><strong>Resource Commitment:</strong> [X developers][Y infrastructure engineers][Z QA specialists]</li>
+                    <li><strong>Next Steps:</strong> Detailed design and development planning (8 weeks)</li>
+                    <li><strong>Success Criteria:</strong> Detailed requirements finalized, architecture approved, risk mitigations planned</li>
+                </ul>
+
+                <h4>Class 3 (Budget):</h4>
+                <ul>
+                    <li><strong>Decision Gate:</strong> Formal project authorization and funding commitment</li>
+                    <li><strong>Approval Authority:</strong> [CFO / Board]</li>
+                    <li><strong>Budget Authority:</strong> Spend up to $[amount]; exceeding requires formal change control and re-authorization</li>
+                    <li><strong>Next Steps:</strong> Begin execution with bi-weekly steering committee reviews</li>
+                    <li><strong>Success Criteria:</strong> Deliver committed scope within budget and schedule or formally change scope/budget</li>
+                </ul>
+
+                <h4>Class 2+ (Execution):</h4>
+                <ul>
+                    <li><strong>Monitoring:</strong> Weekly actual cost tracking and burn-down reporting</li>
+                    <li><strong>Control:</strong> Monthly forecast updates; re-baseline if forecast exceeds ±10% of plan</li>
+                    <li><strong>Escalation:</strong> Notify sponsor immediately if forecast exceeds contingency reserve</li>
+                </ul>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step">
+                <h3><span class="step-number">7</span>Stakeholder Communication</h3>
+                <p><strong>Translate technical estimate details into executive language.</strong></p>
+                
+                <div class="example-box good">
+                    <strong>✓ EFFECTIVE Executive Summary:</strong><br><br>
+"Our analysis indicates this project will likely cost between $1.8M and $3.2M depending on<br>
+final requirements and technical decisions. We're currently at 25% project definition maturity.<br><br>
+<strong>Base Estimate (fixed scope):</strong> $2.2M<br>
+<strong>Scope Emergence Allowance (15%):</strong> $330K<br>
+<strong>Contingency (identified risks):</strong> $480K<br>
+<strong>Total Budget for Approval:</strong> $3M<br><br>
+If your approval budget is $3M, we have approximately 60% confidence we can deliver all<br>
+planned functionality within that budget. If you need 85% confidence, we recommend<br>
+budgeting $3.5M.<br><br>
+In the next 12 weeks, we'll complete detailed requirements and architecture design, which<br>
+will reduce the estimate uncertainty range to ±20%. At that point, we'll provide a refined<br>
+budget recommendation.<br><br>
+Any scope changes outside the baseline will be managed through formal change control<br>
+and will be communicated with cost/schedule impact."
+                </div>
+
+                <div class="example-box bad">
+                    <strong>✗ INEFFECTIVE Communications (Avoid):</strong><br><br>
+❌ "This project costs $2.5M" — No accuracy range, false precision<br>
+❌ "Budget is $2.5M plus 30% contingency" — Treats contingency as hidden reserve<br>
+❌ "We can't estimate until design is done" — Abdicates planning responsibility<br>
+❌ "Initial estimate was $2M, now it's $3.5M" — No scope change communication<br>
+❌ "Estimate could be $1M to $5M" — Too wide, no explanation
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="step">
+                <h3><span class="step-number">8</span>Validation Checklist</h3>
+                <p><strong>Before finalizing sponsor brief, verify all items below.</strong></p>
+                
+                <h4>Clarity & Transparency:</h4>
+                <ul class="checklist">
+                    <li>☐ Project definition maturity percentage is explicitly stated and explained</li>
+                    <li>☐ Estimate accuracy range is shown as interval (e.g., ±50% to +100%), not single number</li>
+                    <li>☐ Contingency is tied to specific identified risks, not arbitrary percentage</li>
+                    <li>☐ Scope components (baseline, emergence, change, contingency) are separately identified</li>
+                    <li>☐ Executive summary is 1 page; detailed backup is appendix</li>
+                </ul>
+
+                <h4>Methodological Rigor:</h4>
+                <ul class="checklist">
+                    <li>☐ Estimate class (1-5) is clearly identified with rationale</li>
+                    <li>☐ Estimation method (parametric/analogous/bottom-up) is documented</li>
+                    <li>☐ Historical comparable projects or data sources are cited</li>
+                    <li>☐ All adjustment factors are documented and justified</li>
+                    <li>☐ Risk identification follows project-specific workshop (not generic checklist)</li>
+                </ul>
+
+                <h4>Governance Alignment:</h4>
+                <ul class="checklist">
+                    <li>☐ Decision criteria are clear (e.g., "approve if budget ceiling is $3.5M")</li>
+                    <li>☐ Next gate is defined (when will estimate be refined?)</li>
+                    <li>☐ Resource and approval authorities are identified</li>
+                    <li>☐ Stakeholder responsibilities are clear</li>
+                </ul>
+
+                <h4>Realistic Expectations:</h4>
+                <ul class="checklist">
+                    <li>☐ Contingency guideline check is performed (within expected range for project class?)</li>
+                    <li>☐ Scope management strategy is documented</li>
+                    <li>☐ Change control process is referenced</li>
+                    <li>☐ Monitoring and control approach is outlined</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 3: RULES & FLAGS -->
+        <div id="rules" class="tab-content">
+            <div class="card">
+                <h2>⚖️ Guardrail Rules and Flags</h2>
+                <p>These rules enforce guardrail standards. Violations indicate problems with the estimate or brief.</p>
+            </div>
+
+            <div class="card error">
+                <h3>🛑 MANDATORY RULES (Enforce Strictly)</h3>
+                <p>Violations of these rules indicate the brief is not ready for sponsor approval.</p>
+
+                <h4>Rule 1: Never Omit Contingency</h4>
+                <p><strong>All estimates must explicitly include contingency with documented risk basis.</strong></p>
+                <p><span class="badge error">VIOLATION</span> "Budget: $2.5M" — No contingency mentioned</p>
+                <p><span class="badge error">VIOLATION</span> "Budget: $2.5M + 'to be determined'" — Contingency is vague</p>
+                <p><span class="badge success">COMPLIANT</span> "Budget: $2.5M base + $600K contingency (identified risks: technology selection, team availability, scope emergence)"</p>
+
+                <h4>Rule 2: Never Present False Precision</h4>
+                <p><strong>Class 5 estimates must show accuracy range; never present single-point estimates for early-stage projects.</strong></p>
+                <p><span class="badge error">VIOLATION</span> "Class 5 Estimate: $2,456,783" — False precision for concept stage</p>
+                <p><span class="badge error">VIOLATION</span> "Estimate is $2.5M ±$100K" — Too narrow for Class 5</p>
+                <p><span class="badge success">COMPLIANT</span> "Class 5 Estimate: $2.5M with accuracy range ±50% to +100% (meaning $1.25M to $5.0M)"</p>
+
+                <h4>Rule 3: Always Distinguish Scope Categories</h4>
+                <p><strong>Baseline scope, emergence allowance, scope change, and contingency must be separately identified.</strong></p>
+                <p><span class="badge error">VIOLATION</span> "Total Project Budget: $3.2M" — No breakdown of components</p>
+                <p><span class="badge error">VIOLATION</span> "Budget: $2.5M + 30% buffer" — Doesn't distinguish scope from risk</p>
+                <p><span class="badge success">COMPLIANT</span></p>
+                <div class="formula">
+Baseline: $2.0M<br>
+Emergence (15%): $300K<br>
+Scope Change Reserve: $200K<br>
+Contingency (identified risks): $400K<br>
+TOTAL: $2.9M
+                </div>
+
+                <h4>Rule 4: Always Document Methodology</h4>
+                <p><strong>Every estimate must cite historical basis or comparable projects; never rely solely on "expert judgment."</strong></p>
+                <p><span class="badge error">VIOLATION</span> "Our team estimates this will cost $2.5M"</p>
+                <p><span class="badge error">VIOLATION</span> "Based on experience, we believe..." — Vague, not documented</p>
+                <p><span class="badge success">COMPLIANT</span> "Using function point analysis (300 FP × $6,500/FP = $1.95M), calibrated against 2023-2025 internal software projects in financial services sector"</p>
+
+                <h4>Rule 5: Always Align Governance to Project Class</h4>
+                <p><strong>Higher project classes require correspondingly more rigorous governance and approval authorities.</strong></p>
+                <p><span class="badge error">VIOLATION</span> "Class 5 estimate approved by department manager; requires board approval"</p>
+                <p><span class="badge success">COMPLIANT</span> "Class 5 estimate approved by Business Unit Manager; Class 3 (after feasibility study) approved by Investment Committee; Class 2 (execution) monitored by Steering Committee"</p>
+            </div>
+
+            <div class="card warning">
+                <h3>⚠️ CAUTION FLAGS (Investigate Before Proceeding)</h3>
+                <p>These patterns suggest problems. Don't proceed until you understand and resolve them.</p>
+
+                <h4>🚩 FLAG 1: Contingency is ≤10% when project definition maturity is &lt;25%</h4>
+                <div class="callout warning">
+                    <strong>What This Means:</strong> You're likely underestimating risk.<br>
+                    <strong>Action:</strong> Either increase contingency or reconsider project viability. For Class 5/4 projects, contingency should be 20-50%.
+                </div>
+
+                <h4>🚩 FLAG 2: Estimate uses single-point cost without accuracy range</h4>
+                <div class="callout warning">
+                    <strong>What This Means:</strong> Creates false impression of precision at early stages.<br>
+                    <strong>Action:</strong> Add accuracy range (e.g., "±50% to +100%") or clearly explain why range is inappropriate.
+                </div>
+
+                <h4>🚩 FLAG 3: Multiple adjustment factors >1.5× or &lt;0.7× applied</h4>
+                <div class="callout warning">
+                    <strong>What This Means:</strong> Adjustment factors are compounding incorrectly or base estimate is poorly selected.<br>
+                    <strong>Action:</strong> Recalibrate individual factors or select different base estimate (comparable project).
+                </div>
+
+                <h4>🚩 FLAG 4: Scope categories total >50% of base estimate</h4>
+                <div class="callout warning">
+                    <strong>What This Means:</strong> Either base estimate is too low or scope definition is inadequate.<br>
+                    <strong>Action:</strong> Resolve before gate approval. If $2M base + $1M scope reserve, reconsider if baseline should be $3M.
+                </div>
+
+                <h4>🚩 FLAG 5: No historical project data cited for estimate</h4>
+                <div class="callout warning">
+                    <strong>What This Means:</strong> Estimate lacks credibility and is not reproducible.<br>
+                    <strong>Action:</strong> Identify and analyze comparable projects or conduct structured expert panel (with documented rationale).
+                </div>
+
+                <h4>🚩 FLAG 6: Project classification differs from organizational standard</h4>
+                <div class="callout warning">
+                    <strong>What This Means:</strong> Inconsistency may indicate misclassification or special circumstances.<br>
+                    <strong>Action:</strong> Ensure deviation is intentional and documented. Standardization improves consistency.
+                </div>
+            </div>
+
+            <div class="card error">
+                <h3>❌ PROHIBITED PATTERNS (Never Include)</h3>
+                <p>These phrases appear in briefs that violate guardrail standards. Eliminate them.</p>
+
+                <table>
+                    <tr>
+                        <th>❌ Prohibited Phrase</th>
+                        <th>Why It's Wrong</th>
+                        <th>✓ Use Instead</th>
+                    </tr>
+                    <tr>
+                        <td>"The estimate has 30% contingency built in"</td>
+                        <td>Vague; doesn't specify identified risks</td>
+                        <td>"30% contingency for identified risks: [list specifically]"</td>
+                    </tr>
+                    <tr>
+                        <td>"Schedule confidence is 80%"</td>
+                        <td>Without explaining basis, meaningless</td>
+                        <td>"80% confidence based on historical data from X comparable projects"</td>
+                    </tr>
+                    <tr>
+                        <td>"We can reduce cost by 20% if requirements are cut"</td>
+                        <td>Confuses scope reduction with estimation</td>
+                        <td>"If baseline scope is reduced by X, estimated cost decreases by $Y"</td>
+                    </tr>
+                    <tr>
+                        <td>"This is a rough estimate of $2.5M"</td>
+                        <td>Vague; use AACE class terminology</td>
+                        <td>"Class 5 estimate: $2.5M ±50% to +100%"</td>
+                    </tr>
+                    <tr>
+                        <td>"Actual cost will be within ±$100K of estimate"</td>
+                        <td>Specific dollar ranges less meaningful than percentages</td>
+                        <td>"Accuracy range: ±15% to +20% of estimated $2.5M"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 4: TEMPLATES -->
+        <div id="templates" class="tab-content">
+            <div class="card">
+                <h2>📝 Ready-to-Use Templates</h2>
+                <p>Customize these templates for your specific projects.</p>
+            </div>
+
+            <!-- Template 1 -->
+            <div class="card">
+                <h3>Template 1: Class 5 Software Project Brief</h3>
+                
+                <h4>Header:</h4>
+                <div class="formula">
+PROJECT: [Name] | CLASS: 5 (Concept Screening) | MATURITY: _____%
+                </div>
+
+                <h4>1. Project Definition Maturity</h4>
+                <div class="formula">
+Requirements Clarity: ___% (high-level business requirements only)<br>
+Architecture/Technology: ___% (preliminary options identified)<br>
+Team Composition: ___% (key roles identified, not assigned)<br>
+Risk Understanding: ___% (major risks brainstormed)<br>
+<br>
+Average Definition Maturity: _____%
+                </div>
+
+                <h4>2. Cost Estimate</h4>
+                <div class="formula">
+Base Estimate (parametric): [calculation shown]<br>
+= $[amount]<br>
+<br>
+Accuracy Range: ±____% to +_____%<br>
+Estimate Interval: $[low] (low scenario) to $[high] (high scenario)
+                </div>
+
+                <h4>3. Contingency Analysis</h4>
+                <table>
+                    <tr>
+                        <th>Risk</th>
+                        <th>Probability</th>
+                        <th>Impact</th>
+                        <th>Contingency</th>
+                    </tr>
+                    <tr>
+                        <td>[Risk 1]</td>
+                        <td>____%</td>
+                        <td>$___K</td>
+                        <td>$___K</td>
+                    </tr>
+                    <tr>
+                        <td>[Risk 2]</td>
+                        <td>____%</td>
+                        <td>$___K</td>
+                        <td>$___K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong>$___K</strong></td>
+                    </tr>
+                </table>
+                <p><em>Contingency Check: ____% of base. Guideline for Class 5: 30-50%</em></p>
+
+                <h4>4. Scope Statement</h4>
+                <div class="formula">
+Baseline Scope: [Description of defined scope]<br>
+<br>
+Scope Emergence Allowance (___% of baseline): $___K<br>
+"Covers requirements discovery during analysis phase"<br>
+<br>
+Scope Change Reserve: $___K<br>
+"For stakeholder-requested additions outside baseline"<br>
+<br>
+Total Budget Request: $[Baseline + Emergence + Change + Contingency]
+                </div>
+
+                <h4>5. Next Phase & Decision Criteria</h4>
+                <div class="formula">
+Next Gate: [Feasibility Study / Requirements Definition / other]<br>
+Duration: _____ weeks | Investment: $___K<br>
+<br>
+Success Criteria: [Define what success looks like; e.g.]["Requirements defined to 60%][architecture chosen][risks identified with mitigation plans"]<br>
+<br>
+Decision Question: "Do we have sufficient budget ceiling? If [amount], proceed. If less, assess risk."
+                </div>
+            </div>
+
+            <!-- Template 2 -->
+            <div class="card">
+                <h3>Template 2: Class 3 Infrastructure Project Brief</h3>
+                
+                <h4>Header:</h4>
+                <div class="formula">
+PROJECT: [Name] | CLASS: 3 (Budget/FEL 3) | MATURITY: _____%
+                </div>
+
+                <h4>1. Project Definition Maturity</h4>
+                <div class="formula">
+Workload Analysis: ___% complete<br>
+Platform Architecture: ___% defined<br>
+Integration Strategy: ___% designed<br>
+<br>
+Average Definition Maturity: _____%
+                </div>
+
+                <h4>2. Cost Estimate (Multi-Year if Applicable)</h4>
+                <div class="formula">
+Infrastructure Costs (annual/project):
+• Compute: $___K
+• Storage: $___K
+• Data Transfer: $___K
+• Managed Services: $___K
+Subtotal Infrastructure: $___K<br>
+<br>
+Implementation Costs:
+• Professional Services: $___K
+• Custom Development: $___K
+• Migration/Deployment: $___K
+Subtotal Implementation: $___K<br>
+<br>
+First-Year Total: $___K<br>
+<br>
+Accuracy Range: ±____% to +_____%<br>
+Estimate Interval: $[low] to $[high]
+                </div>
+
+                <h4>3. Contingency Analysis</h4>
+                <table>
+                    <tr>
+                        <th>Risk</th>
+                        <th>Probability</th>
+                        <th>Impact</th>
+                        <th>Contingency</th>
+                    </tr>
+                    <tr>
+                        <td>[Risk 1]</td>
+                        <td>____%</td>
+                        <td>$___K</td>
+                        <td>$___K</td>
+                    </tr>
+                    <tr>
+                        <td>[Risk 2]</td>
+                        <td>____%</td>
+                        <td>$___K</td>
+                        <td>$___K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong>$___K</strong></td>
+                    </tr>
+                </table>
+                <p><em>Contingency Check: ____% of total. Guideline for Class 3: 15-25%</em></p>
+
+                <h4>4. Scope Statement</h4>
+                <div class="formula">
+Baseline Scope: [Specific systems/applications][functionality][SLAs]<br>
+Baseline Estimate: $___K<br>
+<br>
+Scope Emergence Allowance (____% of infrastructure, ____% of implementation): $___K<br>
+<br>
+Scope Change Reserve: $___K<br>
+"Additional workloads or systems for migration"<br>
+<br>
+Total First-Year Budget Request: $___K
+                </div>
+
+                <h4>5. Next Phase & Decision Criteria</h4>
+                <div class="formula">
+Next Gate: Migration Execution (Month 1-3)<br>
+<br>
+Success Criteria: Pilot migration completed with <2% performance degradation<br>
+<br>
+Decision Question: "Approve $[amount] first-year budget?"<br>
+Establish monthly burn-rate review (target: $[monthly] ±10%)
+                </div>
+            </div>
+
+            <!-- Template 3 -->
+            <div class="card">
+                <h3>Template 3: Executive Summary (1-Page)</h3>
+                
+                <div class="example-box good">
+                    <h4>PROJECT EXECUTIVE SUMMARY</h4>
+                    <p><strong>Project Name:</strong> [Name]<br>
+                    <strong>Classification:</strong> Class <citation href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices" title="Skill authoring best practices - Claude Platform Docs">5/4/3</citation> | Definition Maturity: _____%<br>
+                    <strong>Decision Gate:</strong> [What decision is being made?]<br>
+                    <strong>Prepared By:</strong> [Name/Role] | Date: [YYYY-MM-DD]</p>
+
+                    <h4>Budget Overview</h4>
+                    <p><strong>Base Estimate (fixed scope):</strong> $[X]M<br>
+                    <strong>Accuracy Range:</strong> ±__% to +___%<br>
+                    <strong>Forecast Range:</strong> $[low]M to $[high]M</p>
+
+                    <h4>Budget Breakdown</h4>
+                    <p>Baseline Scope: $[X]M<br>
+                    Scope Emergence (___%) : $[Y]M<br>
+                    Scope Change Reserve: $[Z]M<br>
+                    Contingency (identified risks): $[C]M<br>
+                    <strong>TOTAL BUDGET REQUEST: $[TOTAL]M</strong></p>
+
+                    <h4>Confidence Level</h4>
+                    <p>"If your approval budget is $[TOTAL]M, we have approximately  confidence we can deliver all planned functionality. If you need  confidence, we recommend budgeting $[HIGHER]M."</p>
+
+                    <h4>Key Identified Risks</h4>
+                    <p><citation href="https://www.firecrawl.dev/blog/best-claude-code-skills" title="Best Claude Code Skills to Try in 2026">1. Risk with mitigation strategy</citation><br>
+                    <citation href="https://code.claude.com/docs/en/skills" title="Extend Claude with skills - Claude Code Docs">2. Risk with mitigation strategy</citation><br>
+                    <citation href="https://github.com/ComposioHQ/awesome-claude-skills" title="GitHub - ComposioHQ/awesome-claude-skills: A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows · GitHub">3. Risk with mitigation strategy</citation></p>
+
+                    <h4>Next Steps & Timeline</h4>
+                    <p>Phase: [Feasibility Study / Detailed Design / Execution]<br>
+                    Duration: ___ weeks | Investment: $___K<br>
+                    <br>
+                    "In [X weeks], we will provide refined estimate with accuracy range ±[Y%] to +[Z%]."</p>
+
+                    <h4>Decision Criteria</h4>
+                    <p>Approve if:<br>
+                    ☐ Budget ceiling is $[TOTAL]M or higher<br>
+                    ☐ Risk mitigation strategies are acceptable<br>
+                    ☐ Resource availability confirmed<br>
+                    <br>
+                    Do not approve if:<br>
+                    ☐ Budget ceiling is below $[low range]M<br>
+                    ☐ Technical feasibility in question</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: QUICK REFERENCE -->
+        <div id="reference" class="tab-content">
+            <div class="card">
+                <h2>📊 Quick Reference Guide</h2>
+                <p>Use this when you have limited time. It provides essential information in compressed format.</p>
+            </div>
+
+            <div class="card">
+                <h3>AACE Classification Quick Reference</h3>
+                <table>
+                    <tr>
+                        <th>Class</th>
+                        <th>Phase</th>
+                        <th>Definition</th>
+                        <th>Accuracy</th>
+                        <th>Contingency Guideline</th>
+                        <th>When to Use</th>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Concept</td>
+                        <td>0-5%</td>
+                        <td>±50% to +100%</td>
+                        <td>30-50% of base</td>
+                        <td>"Should we explore?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Feasibility</td>
+                        <td>5-20%</td>
+                        <td>±30% to +50%</td>
+                        <td>20-35% of base</td>
+                        <td>"Should we fund?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Budget</td>
+                        <td>20-50%</td>
+                        <td>±20% to +30%</td>
+                        <td>15-25% of base</td>
+                        <td>"Can we commit?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Control</td>
+                        <td>50-80%</td>
+                        <td>±15% to +20%</td>
+                        <td>10-15% of base</td>
+                        <td>"On track?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Check</td>
+                        <td>80%+</td>
+                        <td>±5% to +15%</td>
+                        <td>5-10% of base</td>
+                        <td>"Final cost?"</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Definition Maturity Assessment (30-Second Version)</h3>
+                <table>
+                    <tr>
+                        <th>Software</th>
+                        <th>Infrastructure</th>
+                        <th>Construction</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Requirements:</strong> 0% = none, 100% = complete user stories<br>
+                            <strong>Architecture:</strong> 0% = undecided, 100% = finalized<br>
+                            <strong>Team:</strong> 0% = unknown, 100% = assigned<br>
+                            <strong>Risks:</strong> 0% = unidentified, 100% = documented<br>
+                            <br>
+                            Average = Class
+                        </td>
+                        <td>
+                            <strong>Capacity:</strong> 0% = unknown, 100% = defined<br>
+                            <strong>Platform:</strong> 0% = undecided, 100% = selected<br>
+                            <strong>Integration:</strong> 0% = unclear, 100% = designed<br>
+                            <br>
+                            Average = Class
+                        </td>
+                        <td>
+                            <strong>Schematic:</strong> % complete<br>
+                            <strong>Design Dev:</strong> % complete<br>
+                            <strong>Const. Docs:</strong> % complete<br>
+                            <br>
+                            Average = Class
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card success">
+                <h3>✅ The 5 Essential Questions for Every Sponsor Brief</h3>
+                <p>Before approving any brief, answer these:</p>
+                <ol>
+                    <li><strong>Is project definition maturity percentage clearly stated and justified?</strong><br>
+                    If not, estimate is premature.</li>
+                    
+                    <li><strong>Is accuracy range shown as interval (e.g., ±50% to +100%), not a single number?</strong><br>
+                    Single numbers suggest false precision.</li>
+                    
+                    <li><strong>Is contingency tied to specifically identified risks with probability/impact, not arbitrary percentage?</strong><br>
+                    "We always add 20%" is not acceptable.</li>
+                    
+                    <li><strong>Are scope components (baseline, emergence, change, contingency) separately identified?</strong><br>
+                    Lumping them together obscures where money is going.</li>
+                    
+                    <li><strong>Is the historical basis for the estimate documented (comparable projects or data sources)?</strong><br>
+                    "Our team estimates..." without evidence is not credible.</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h3>Common Mistakes & Fixes (Quick Reference)</h3>
+                <table>
+                    <tr>
+                        <th>❌ Mistake</th>
+                        <th>Why It's Wrong</th>
+                        <th>✓ Fix</th>
+                    </tr>
+                    <tr>
+                        <td>"$2.5M estimate"</td>
+                        <td>No accuracy range, false precision</td>
+                        <td>"$2.5M ±50% to +100%"</td>
+                    </tr>
+                    <tr>
+                        <td>"20% contingency"</td>
+                        <td>Percentage without basis or identified risks</td>
+                        <td>"20% contingency for: technology selection (35% × $300K), team changes (20% × $250K), ..."</td>
+                    </tr>
+                    <tr>
+                        <td>"Budget: $2.5M + 30% buffer"</td>
+                        <td>Doesn't distinguish scope from risk</td>
+                        <td>Base $2M + Emergence $250K + Change $150K + Contingency $400K = $2.8M</td>
+                    </tr>
+                    <tr>
+                        <td>"Our experts think..."</td>
+                        <td>Not reproducible or verifiable</td>
+                        <td>"Based on 2024 internal projects in [industry], cost-per-FP is $X"</td>
+                    </tr>
+                    <tr>
+                        <td>"We can reduce cost by 20%"</td>
+                        <td>Conflates scope reduction with estimation</td>
+                        <td>"If baseline scope is reduced by [description], cost decreases by $Y"</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card warning">
+                <h3>🚨 Red Flags Checklist (Stop and Review If...)</h3>
+                <ul class="checklist">
+                    <li>☐ Contingency is <10% for Class 5 projects</li>
+                    <li>☐ Multiple adjustment factors >1.5× or <0.7×</li>
+                    <li>☐ Scope reserves >50% of base estimate</li>
+                    <li>☐ No historical data or comparable projects cited</li>
+                    <li>☐ Estimate presented as single-point cost with no range</li>
+                    <li>☐ Governance/approval authority not aligned to project class</li>
+                    <li>☐ No documented scope management strategy</li>
+                    <li>☐ "Buffer" or "contingency" mentioned but not quantified</li>
+                    <li>☐ Definition maturity percentage not stated</li>
+                    <li>☐ Risk mitigation strategies not documented</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>50-Second Risk Brainstorm (For Quick Contingency Estimation)</h3>
+                <p>If you don't have time for full risk workshop, quickly identify risks in these categories:</p>
+                
+                <h4>Software/Technology Projects:</h4>
+                <ul>
+                    <li>Technology/Platform: "Is technology platform finalized? (Prob: __%, Impact: $__K)"</li>
+                    <li>Requirements: "Will requirements emerge during development? (Prob: __%, Impact: $__K)"</li>
+                    <li>Team: "Will key people become unavailable? (Prob: __%, Impact: $__K)"</li>
+                    <li>Integration: "Are third-party integrations well-understood? (Prob: __%, Impact: $__K)"</li>
+                    <li>Compliance: "Will regulatory requirements change? (Prob: __%, Impact: $__K)"</li>
+                </ul>
+
+                <h4>Infrastructure Projects:</h4>
+                <ul>
+                    <li>Capacity: "Is workload assessment complete? (Prob: __%, Impact: $__K)"</li>
+                    <li>Complexity: "Are integration challenges fully identified? (Prob: __%, Impact: $__K)"</li>
+                    <li>Vendor: "Will vendor services/pricing remain stable? (Prob: __%, Impact: $__K)"</li>
+                    <li>Migration: "Will legacy system migration be more complex? (Prob: __%, Impact: $__K)"</li>
+                    <li>Performance: "Will performance tuning require more effort? (Prob: __%, Impact: $__K)"</li>
+                </ul>
+
+                <p><strong>Total Contingency = Sum of (Probability × Impact) for all identified risks</strong></p>
+            </div>
+
+            <div class="card">
+                <h3>Vocabulary: What Each Estimate Class Means to Stakeholders</h3>
+                <table>
+                    <tr>
+                        <th>When Sponsor Hears...</th>
+                        <th>They Should Understand...</th>
+                    </tr>
+                    <tr>
+                        <td>"Class 5 estimate"</td>
+                        <td>This is preliminary; we've done high-level analysis but haven't designed the solution. Cost could be significantly different once we understand requirements better.</td>
+                    </tr>
+                    <tr>
+                        <td>"Class 4 estimate"</td>
+                        <td>We've done feasibility analysis and have reasonable confidence in the approach, but detailed design is still being done. Cost could change as we refine requirements.</td>
+                    </tr>
+                    <tr>
+                        <td>"Class 3 estimate"</td>
+                        <td>We're ready for budget authorization. We've done detailed requirements and design. Cost is unlikely to change significantly unless scope changes.</td>
+                    </tr>
+                    <tr>
+                        <td>"Class 2 estimate"</td>
+                        <td>We're executing the project and tracking actual costs. We'll notify you if we forecast going beyond budget.</td>
+                    </tr>
+                    <tr>
+                        <td>"Class 1 estimate"</td>
+                        <td>Project is nearly complete. This is the final accounting of what it actually cost.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>📚 <strong>Based on:</strong> AACE International 17R-97, AACE 18R-97, AACE 56R-08, and DoD Adaptive Acquisition Framework</p>
+            <p>🔄 <strong>Version:</strong> 1.0 | <strong>Last Updated:</strong> 2026 | <strong>Status:</strong> Active</p>
+            <p><em>Use this skill to develop project sponsor briefs that accurately communicate cost estimation uncertainty and ensure transparent governance.</em></p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Tab Navigation -->
+    <script>
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
