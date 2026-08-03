@@ -91,6 +91,9 @@ Report:
 - Risk register path: `output/Risks-<ProjectName>.xlsx`
 - **Every remaining `[bracketed]` item** the user still needs to confirm (ask amount,
   dates, milestone months, links, tier score)
+- Any cost figure still missing its Class 5 range, estimate basis or contingency —
+  call these out separately, since a brief that shows bare numbers fails the
+  cost guardrail regardless of how complete the rest of it is
 
 ## Deck structure
 
@@ -401,6 +404,10 @@ single most useful supporting detail on it rather than leaving it empty.
 - **Respect the word budgets.** The layouts have no autofit — overlong text overflows
   its panel rather than shrinking.
 - **10 slides always.** `[N/A]` where a section does not apply.
+- **Cost figures follow the Class 5 rules** in
+  [.claude/rules/cost_estimate_guidelines.html](../rules/cost_estimate_guidelines.html):
+  a range on every estimate except the ask, a named-risk contingency, a stated basis, and
+  no "rough" or bare percentages. See the slide 6 guide.
 - Brand colours and typography: see
   [.claude/rules/MINRES_Content_Guidelines.html](../rules/MINRES_Content_Guidelines.html).
   Icons: [.claude/rules/Icon_Reference.html](../rules/Icon_Reference.html) — use the
