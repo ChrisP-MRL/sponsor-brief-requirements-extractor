@@ -410,8 +410,12 @@ single most useful supporting detail on it rather than leaving it empty.
   no "rough" or bare percentages. See the slide 6 guide.
 - Brand colours and typography: see
   [.claude/rules/MINRES_Content_Guidelines.html](../rules/MINRES_Content_Guidelines.html).
-  Icons: [.claude/rules/Icon_Reference.html](../rules/Icon_Reference.html) — use the
-  existing library, don't generate new icons.
+- **This deck needs no icons.** The 10 slides are text placeholders plus slide 5's
+  rectangle and table, all already in the template. If a visual genuinely earns its place,
+  take it from the existing library
+  ([.claude/rules/Icon_Reference.html](../rules/Icon_Reference.html), 60 icons across 8
+  categories — a large file, open it only when actually placing an icon) rather than
+  generating a new one.
 
 ## Manual population steps
 
