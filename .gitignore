@@ -10,6 +10,12 @@
 *.docx
 *.doc
 
+# PowerPoint documents
+*.pptx
+
+# ...but the skill templates are the point of this repo - keep them tracked
+!.claude/skills/code-review/templates/*.pptx
+
 # Generated output
 requirements/
 raw data/
