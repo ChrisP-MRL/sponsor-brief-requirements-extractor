@@ -16,6 +16,11 @@
 # ...but the skill templates are the point of this repo - keep them tracked
 !.claude/skills/code-review/templates/*.pptx
 
+# Per-concept working files - source notes in, generated deliverables out.
+# This repo tracks the skills and scripts, not the artefacts they consume or produce.
+input/
+output/
+
 # Generated output
 requirements/
 raw data/
