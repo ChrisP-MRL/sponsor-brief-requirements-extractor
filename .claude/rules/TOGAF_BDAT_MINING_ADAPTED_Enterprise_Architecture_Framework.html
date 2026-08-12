@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOGAF BDAT Mining-Adapted Enterprise Architecture Framework</title>
+<style>
+:root {
+  /* MinRes brand palette - see MINRES_Content_Guidelines.html */
+  --minres-red: #CE372F;      /* Coral 400 - primary */
+  --dark-teal: #00444C;       /* secondary */
+  --bg: #FFFFFF;
+  --surface: #F1EDE7;         /* Brown 100 */
+  --border: #D1D1D1;          /* Grey 200 */
+  --text: #000000;
+  --muted: #5C5C5C;           /* Grey 500 */
+  --accent: #CE372F;
+  --accent-soft: #F9E5E3;     /* Coral 100 */
+  --teal-100: #E3F2F4;        /* Teal 100 */
+  --teal-300: #3F939C;        /* Teal 300 */
+  --teal-400: #2D686F;        /* Teal 400 */
+  --olive-100: #F0F2E5;       /* Olive 100 */
+  --olive-300: #878C56;       /* Olive 300 */
+  --terra-100: #F5E5DD;       /* Terra Cotta 100 */
+  --terra-300: #C37556;       /* Terra Cotta 300 */
+  --wine-400: #8B2E45;        /* Wine 400 */
+  --measure: 74ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Century Gothic', 'Avenir', -apple-system, BlinkMacSystemFont,
+               'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.page { max-width: 1400px; margin: 0 auto; padding: 40px 24px 80px; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
+@media (min-width: 1024px) {
+  .layout { grid-template-columns: 17rem minmax(0, 1fr); align-items: start; }
+  .toc { position: sticky; top: 32px; max-height: calc(100vh - 64px); overflow-y: auto; }
+}
+main { max-width: var(--measure); }
+
+/* headings */
+h1, h2, h3, h4, h5 { line-height: 1.25; }
+h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #CE372F 0%, #00444C 100%);
+  padding: 32px 40px;
+  border-radius: 8px;
+  margin: 0 0 16px;
+}
+h1 .sub {
+  display: block;
+  font-size: 0.42em;
+  font-weight: 300;
+  margin-top: 12px;
+  opacity: 0.95;
+}
+h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--minres-red);
+  margin: 40px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--minres-red);
+}
+h3 { font-size: 1.25em; font-weight: 600; color: var(--dark-teal); margin: 32px 0 8px; }
+h4 { font-size: 1em; font-weight: 600; color: var(--text); margin: 24px 0 8px; }
+h5 { font-size: 0.925em; font-weight: 600; color: var(--muted); margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+p { margin: 0 0 16px; }
+ul, ol { margin: 0 0 16px; padding-left: 24px; }
+li { margin-bottom: 8px; }
+li > ul, li > ol { margin-top: 8px; }
+hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+code {
+  font: 0.875em/1.4 'Courier New', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+a { color: var(--minres-red); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+/* rule metadata bar */
+.meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 40px;
+}
+.chip {
+  display: inline-block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--dark-teal);
+}
+.chip.active { background: var(--minres-red); border-color: var(--minres-red); color: #FFFFFF; }
+
+/* lead paragraph */
+.lead { font-size: 1.05em; color: var(--muted); margin-bottom: 32px; }
+
+/* definition / relationship blocks */
+.def {
+  background: var(--surface);
+  border-left: 5px solid var(--minres-red);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin: 0 0 16px;
+}
+.def p:last-child { margin-bottom: 0; }
+.def .label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--minres-red);
+  margin-bottom: 6px;
+}
+.def.rule { border-left-color: var(--dark-teal); background: var(--teal-100); }
+.def.rule .label { color: var(--dark-teal); }
+
+/* numbered principle cards */
+.principle {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--minres-red);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 24px;
+  margin: 24px 0;
+}
+.principle h3 { margin-top: 0; color: var(--minres-red); }
+.principle .num {
+  display: inline-block;
+  min-width: 1.9em;
+  margin-right: 10px;
+  padding: 2px 0;
+  border-radius: 4px;
+  background: var(--minres-red);
+  color: #FFFFFF;
+  font-size: 0.8em;
+  text-align: center;
+  vertical-align: 2px;
+}
+
+/* Claude commitment / responsibility box */
+.commit {
+  background: var(--teal-100);
+  border-left: 5px solid var(--dark-teal);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin: 16px 0 24px;
+}
+.commit .label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--dark-teal);
+  margin-bottom: 10px;
+}
+.commit ul, .commit ol { margin-bottom: 0; }
+
+/* marker lists */
+ul.check, ul.tick, ul.cross, ul.arrow { list-style: none; padding-left: 0; }
+ul.check > li, ul.tick > li, ul.cross > li, ul.arrow > li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 8px;
+}
+ul.check > li::before {
+  content: "\2610";
+  position: absolute; left: 0; top: 0;
+  color: var(--dark-teal); font-weight: 700;
+}
+ul.tick > li::before {
+  content: "\2713";
+  position: absolute; left: 0; top: 0;
+  color: var(--olive-300); font-weight: 700;
+}
+ul.cross > li::before {
+  content: "\2717";
+  position: absolute; left: 0; top: 0;
+  color: var(--minres-red); font-weight: 700;
+}
+ul.arrow > li::before {
+  content: "\2192";
+  position: absolute; left: 0; top: 0;
+  color: var(--minres-red); font-weight: 700;
+}
+
+/* scope: do / do-not grid */
+.scope-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 24px 0; }
+@media (min-width: 700px) { .scope-grid { grid-template-columns: 1fr 1fr; } }
+.scope-box { border-radius: 8px; padding: 20px; border-left: 5px solid var(--border); }
+.scope-box h4 { margin-top: 0; }
+.scope-box.apply { background: var(--olive-100); border-left-color: var(--olive-300); }
+.scope-box.apply h4 { color: #5E623C; }
+.scope-box.avoid { background: var(--accent-soft); border-left-color: var(--minres-red); }
+.scope-box.avoid h4 { color: var(--minres-red); }
+.scope-box ul { margin-bottom: 0; }
+
+/* challenge / solution pairs */
+.challenge {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.challenge h4 { margin-top: 0; color: var(--wine-400); }
+.challenge .problem, .challenge .solution { margin: 0 0 16px; }
+.challenge .problem > .label, .challenge .solution > .label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.challenge .problem > .label { color: var(--minres-red); }
+.challenge .solution > .label { color: var(--teal-400); }
+.challenge .solution {
+  background: var(--teal-100);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.challenge .solution ul:last-child, .challenge .solution p:last-child { margin-bottom: 0; }
+
+/* two-stream (IT / OT) comparison */
+.streams { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 24px 0; }
+@media (min-width: 700px) { .streams { grid-template-columns: 1fr 1fr; } }
+.stream {
+  border-radius: 8px;
+  padding: 20px;
+  border-top: 5px solid var(--border);
+  background: var(--surface);
+}
+.stream h4 { margin-top: 0; }
+.stream.it { border-top-color: var(--teal-300); background: var(--teal-100); }
+.stream.it h4 { color: var(--teal-400); }
+.stream.ot { border-top-color: var(--terra-300); background: var(--terra-100); }
+.stream.ot h4 { color: #8E5239; }
+.stream .traits { font-size: 0.925em; color: var(--muted); margin-bottom: 0; }
+.stream ul { margin-bottom: 12px; }
+
+/* template / traceability blocks */
+.template {
+  background: var(--surface);
+  border: 2px solid var(--minres-red);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0 24px;
+}
+.template h4 { margin: 0 0 12px; color: var(--minres-red); }
+.template pre {
+  margin: 0;
+  font: 0.85rem/1.7 'Courier New', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.template .alt {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+/* callout */
+.callout {
+  background: var(--olive-100);
+  border-left: 5px solid var(--olive-300);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin: 24px 0;
+}
+.callout p:last-child, .callout ul:last-child { margin-bottom: 0; }
+.callout .label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #5E623C;
+  margin-bottom: 6px;
+}
+
+/* validation question */
+.question {
+  background: var(--accent-soft);
+  border-left: 5px solid var(--minres-red);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin: 24px 0;
+}
+.question .label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--minres-red);
+  margin-bottom: 6px;
+}
+.question blockquote {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.question p:last-child { margin-bottom: 0; }
+
+/* verification checklist columns */
+.checklist-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 24px 0; }
+@media (min-width: 760px) { .checklist-grid { grid-template-columns: 1fr 1fr; } }
+.check-card {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--dark-teal);
+  border-radius: 8px;
+  padding: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.check-card h4 { margin-top: 0; color: var(--dark-teal); }
+.check-card ul { margin-bottom: 0; font-size: 0.95em; }
+
+/* priority bands */
+.priority {
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+  background: var(--surface);
+  border-left: 5px solid var(--minres-red);
+}
+.priority h4 { margin-top: 0; color: var(--minres-red); }
+.priority.p2 { border-left-color: var(--terra-300); }
+.priority.p2 h4 { color: #8E5239; }
+.priority.p3 { border-left-color: var(--teal-300); }
+.priority.p3 h4 { color: var(--teal-400); }
+.priority ul { margin-bottom: 0; }
+
+/* numbered instruction list */
+ol.instructions { list-style: none; padding-left: 0; counter-reset: instr; }
+ol.instructions > li {
+  counter-increment: instr;
+  position: relative;
+  padding: 20px 20px 20px 64px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+ol.instructions > li::before {
+  content: counter(instr);
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--minres-red);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ol.instructions > li > .head {
+  display: block;
+  font-weight: 700;
+  color: var(--dark-teal);
+  margin-bottom: 8px;
+}
+ol.instructions > li > :last-child { margin-bottom: 0; }
+
+/* tables */
+.table-wrap { overflow-x: auto; margin: 0 0 24px; }
+table { border-collapse: collapse; width: 100%; margin: 24px 0; font-size: 0.925rem; }
+th, td {
+  border: 1px solid var(--border);
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--minres-red); color: #FFFFFF; font-weight: 700; }
+tbody tr:nth-child(even) { background: var(--surface); }
+
+/* contents */
+.toc {
+  font-size: 0.875rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--minres-red);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 24px 24px 16px;
+}
+.toc h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--dark-teal);
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0; }
+.toc a {
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+}
+.toc a:hover { background: var(--accent-soft); color: var(--minres-red); }
+.toc .lvl3 a { padding-left: 24px; color: var(--muted); font-size: 0.84rem; }
+
+/* status footer */
+.status {
+  margin-top: 48px;
+  padding: 24px;
+  border-top: 2px solid var(--minres-red);
+  background: var(--surface);
+  border-radius: 0 0 8px 8px;
+}
+.status p:last-child { margin-bottom: 0; }
+.status .title { font-weight: 700; color: var(--minres-red); }
+
+@media print {
+  .toc { display: none; }
+  body { font-size: 11pt; }
+  .layout { display: block; }
+  main { max-width: none; }
+  h1 { background: none; color: var(--minres-red); padding: 0; }
+  a { color: inherit; text-decoration: none; }
+  h2, h3 { page-break-after: avoid; }
+  table, .table-wrap, .principle, .challenge, .check-card, .template { page-break-inside: avoid; }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 1.8em; padding: 24px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="layout">
+
+<nav class="toc" aria-label="Contents">
+<h2>Contents</h2>
+<ul>
+<li class="lvl2"><a href="#activation">Activation Triggers &amp; Scope</a></li>
+<li class="lvl2"><a href="#principles">Foundational Principles</a></li>
+<li class="lvl3"><a href="#p1">1. Bidirectional Strategy Flow</a></li>
+<li class="lvl3"><a href="#p2">2. Co-Equal IT/OT Architecture</a></li>
+<li class="lvl3"><a href="#p3">3. Safety and Reliability First</a></li>
+<li class="lvl3"><a href="#p4">4. Distributed Operations Governance</a></li>
+<li class="lvl3"><a href="#p5">5. Mining Environment Constraints</a></li>
+<li class="lvl3"><a href="#p6">6. Governance Earned Through Value</a></li>
+<li class="lvl2"><a href="#tier1">Tier 1: Business Architecture</a></li>
+<li class="lvl2"><a href="#tier2a">Tier 2A: Data Architecture</a></li>
+<li class="lvl3"><a href="#data-domains">Mining Data Domains</a></li>
+<li class="lvl3"><a href="#data-governance">Data Governance Challenges</a></li>
+<li class="lvl3"><a href="#data-quality">Data Quality &amp; Observability</a></li>
+<li class="lvl2"><a href="#tier2b">Tier 2B: Application Architecture</a></li>
+<li class="lvl3"><a href="#dual-streams">Dual Application Streams</a></li>
+<li class="lvl3"><a href="#probabilistic-apps">Probabilistic Systems</a></li>
+<li class="lvl3"><a href="#integration-challenges">Integration Challenges</a></li>
+<li class="lvl3"><a href="#portfolio-governance">Portfolio Governance</a></li>
+<li class="lvl2"><a href="#tier3">Tier 3: Technology Architecture</a></li>
+<li class="lvl3"><a href="#feasibility">Feasibility Constraints</a></li>
+<li class="lvl3"><a href="#patterns">Standards &amp; Patterns</a></li>
+<li class="lvl3"><a href="#bidirectional">Bidirectional Traceability</a></li>
+<li class="lvl3"><a href="#tech-governance">Technology Governance</a></li>
+<li class="lvl3"><a href="#investment">Investment Justification</a></li>
+<li class="lvl2"><a href="#cross-domain">Cross-Domain Coherence</a></li>
+<li class="lvl2"><a href="#governance">Governance &amp; Decision-Making</a></li>
+<li class="lvl2"><a href="#lifecycle">Lifecycle &amp; Iterative Dimension</a></li>
+<li class="lvl2"><a href="#ai">AI &amp; Probabilistic Systems</a></li>
+<li class="lvl2"><a href="#verification">Traceability Verification Checklist</a></li>
+<li class="lvl2"><a href="#scope">Rule Application Scope</a></li>
+<li class="lvl2"><a href="#special-instructions">Special Instructions for Claude</a></li>
+<li class="lvl2"><a href="#citations">Citations and Sources</a></li>
+</ul>
+</nav>
+
+<main>
+
+<h1>TOGAF BDAT Mining-Adapted Enterprise Architecture Framework
+<span class="sub">Mining-industry-specific modifications to the standard BDAT framework</span></h1>
+
+<div class="meta-bar">
+  <span class="chip active">Status: Active for mining organisations</span>
+  <span class="chip">Version 2.0</span>
+  <span class="chip">Created 10 August 2026</span>
+  <span class="chip">Last updated 10 August 2026</span>
+</div>
+
+<p class="lead">This rule adapts the TOGAF Business, Data, Application and Technology (BDAT)
+hierarchy for mining organisations. It preserves BDAT's architectural discipline while
+addressing geographic distribution, IT/OT convergence, safety-critical operations,
+distributed governance, and the operational realities of mine sites.</p>
+
+<!-- ACTIVATION -->
+<h2 id="activation">Activation Triggers &amp; Scope</h2>
+
+<p>This rule activates when Claude receives queries, requests, or discussions involving
+mining enterprise architecture. It is deliberately scoped to enterprise-level architecture
+work, not tactical operations or engineering decisions.</p>
+
+<div class="scope-grid">
+  <div class="scope-box apply">
+    <h4>Activates for</h4>
+    <ul class="tick">
+      <li>Mining enterprise architecture design, analysis, or assessment</li>
+      <li>Mining business transformation or digital modernisation initiatives</li>
+      <li>Mining technology strategy or decisions addressing mining-specific constraints</li>
+      <li>Mining data governance or data strategy addressing remote operations and regulatory complexity</li>
+      <li>Mining application portfolio management spanning IT and OT systems</li>
+      <li>IT-business alignment in mining organisations</li>
+      <li>Mining operational technology convergence (IT/OT integration)</li>
+      <li>Risk management related to mining enterprise systems</li>
+      <li>Mining change management addressing field operations culture</li>
+      <li>Mining architecture governance balancing corporate standardisation with site autonomy</li>
+      <li>Mine site digital transformation initiatives</li>
+    </ul>
+  </div>
+  <div class="scope-box avoid">
+    <h4>Out of scope</h4>
+    <ul class="cross">
+      <li>Single system or application-only technical decisions, unless part of mining enterprise architecture</li>
+      <li>Tactical mining operations (shift-by-shift production decisions)</li>
+      <li>Vendor product evaluation for specific mining equipment</li>
+      <li>Mine engineering or geological decisions — these inform architecture but do not constitute it</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PRINCIPLES -->
+<h2 id="principles">Foundational Principles for Mining BDAT</h2>
+
+<p>These six principles distinguish mining-adapted BDAT from generic enterprise architecture.
+Each carries an explicit commitment that Claude applies when the principle is in play.</p>
+
+<div class="principle" id="p1">
+<h3><span class="num">1</span>Bidirectional Strategy Flow</h3>
+<p>Mining business architecture is <strong>not</strong> unidirectional top-down strategy
+deployment. Corporate strategy flows down; site-level constraints flow up. Effective mining
+business architecture integrates corporate strategy with site-level operational realities
+through iterative planning.</p>
+<div class="commit">
+<span class="label">Claude commitment</span>
+<ul class="check">
+  <li>Identify both corporate-level <strong>and</strong> site-level business drivers</li>
+  <li>Acknowledge site-level operational knowledge as legitimate input to corporate strategy</li>
+  <li>Map where corporate standardisation is required versus where site flexibility applies</li>
+  <li>Define escalation pathways for corporate/site disagreements</li>
+</ul>
+</div>
+</div>
+
+<div class="principle" id="p2">
+<h3><span class="num">2</span>Co-Equal IT/OT Architecture</h3>
+<p>Mining does not have a single "Technology Architecture" domain. Mining architecture
+explicitly recognises two:</p>
+<ul>
+  <li><strong>Information Technology (IT):</strong> supporting enterprise functions — ERP, analytics, reporting</li>
+  <li><strong>Operational Technology (OT):</strong> controlling mine operations — drilling, extraction, processing</li>
+</ul>
+<p>These domains have different governance requirements, change management practices, and
+risk profiles. BDAT architecture must address both with equal rigour.</p>
+<div class="commit">
+<span class="label">Claude commitment</span>
+<ul class="check">
+  <li>When discussing technology, explicitly identify IT domain, OT domain, or IT/OT convergence</li>
+  <li>Acknowledge that IT and OT have incompatible philosophies (agility versus reliability)</li>
+  <li>For convergence points, explicitly address cultural and technical integration challenges</li>
+  <li>Preserve OT autonomy for operational technology; do not force OT to adopt IT practices</li>
+</ul>
+</div>
+</div>
+
+<div class="principle" id="p3">
+<h3><span class="num">3</span>Safety and Reliability Before Agility and Innovation</h3>
+<p>Mining cannot adopt modern enterprise architecture's prioritisation of continuous
+innovation and rapid iteration. Mining operations are safety-critical; failures can cause
+worker injury or death. This requires conservative technology choices and extensive
+validation even when this constrains innovation velocity.</p>
+<div class="commit">
+<span class="label">Claude commitment</span>
+<ul class="check">
+  <li>For safety-critical systems, prioritise deterministic behaviour over probabilistic AI</li>
+  <li>Require extensive validation before production deployment of OT systems</li>
+  <li>Flag when innovations create safety risks requiring management decision</li>
+  <li>Balance efficiency improvements against safety risk increases</li>
+</ul>
+</div>
+</div>
+
+<div class="principle" id="p4">
+<h3><span class="num">4</span>Distributed Operations Governance</h3>
+<p>Mining operates with geographically dispersed sites requiring semi-autonomous
+decision-making. Architecture governance must balance corporate standardisation with
+site-level autonomy through federated governance models, not centralised control.</p>
+<div class="commit">
+<span class="label">Claude commitment</span>
+<ul class="check">
+  <li>Distinguish corporate-level architecture decisions from site-level decisions</li>
+  <li>Identify corporate standards versus acceptable site-level variations</li>
+  <li>Define federated governance with corporate oversight and site autonomy</li>
+  <li>Acknowledge that one-size-fits-all solutions often fail in mining</li>
+</ul>
+</div>
+</div>
+
+<div class="principle" id="p5">
+<h3><span class="num">5</span>Mining-Specific Environment Constraints</h3>
+<p>Mining environments impose technology constraints rare in conventional enterprises:
+remote connectivity, harsh operating conditions, safety-critical equipment, commodity price
+volatility, and a specialised workforce. Architecture decisions must acknowledge these
+constraints flowing upward to guide application and data design.</p>
+<div class="commit">
+<span class="label">Claude commitment</span>
+<ul class="check">
+  <li>Identify mining environment constraints affecting architecture decisions</li>
+  <li>Map how constraints flow upward from environment to technology to application to data</li>
+  <li>Document bidirectional traceability — downward requirements plus upward constraints</li>
+  <li>Validate feasibility assumptions with mining operational personnel</li>
+</ul>
+</div>
+</div>
+
+<div class="principle" id="p6">
+<h3><span class="num">6</span>Governance Earned Through Demonstrated Value</h3>
+<p>Mining organisations have experienced technology disappointment. Framework adoption
+requires proving the framework helps solve recognised operational challenges. Governance
+processes imposed without demonstrating value will fail.</p>
+<div class="commit">
+<span class="label">Claude commitment</span>
+<ul class="check">
+  <li>Connect BDAT governance to specific mining operational challenges</li>
+  <li>Demonstrate how the framework helps address problems field operations have experienced</li>
+  <li>Celebrate early wins and visible operational improvements</li>
+  <li>Adapt governance based on field feedback; remain open to modifications</li>
+</ul>
+</div>
+</div>
+
+<!-- TIER 1 -->
+<h2 id="tier1">Mining-Adapted Tier 1: Business Architecture</h2>
+
+<div class="def">
+<span class="label">Definition</span>
+<p>Defines business strategy, governance, organisation, and key business processes at
+<strong>both</strong> corporate and site levels, with explicit integration between levels.</p>
+</div>
+
+<div class="def rule">
+<span class="label">Relationship rule</span>
+<p>Business Architecture must acknowledge both corporate strategy <strong>and</strong>
+site-level operational constraints. Neither dominates; both inform architecture.</p>
+</div>
+
+<h3>Key modifications from standard BDAT</h3>
+
+<h4>1. Dual-level business planning</h4>
+<ul>
+  <li><strong>Corporate level:</strong> strategic direction, financial targets, ESG commitments,
+    portfolio decisions, enterprise-wide capability standards</li>
+  <li><strong>Site level:</strong> local production targets, geological reality,
+    equipment and personnel capacity, site-specific operational excellence initiatives</li>
+  <li><strong>Integration:</strong> iterative planning cycles where corporate strategy
+    accommodates site-level realities, and site operations implement corporate strategy with
+    local adaptations within approved parameters</li>
+</ul>
+
+<h4>2. Mining business capability reference model</h4>
+<p>Use The Open Group EMMM (Exploration, Mining, Metals and Minerals) Forum's Business
+Capability Reference Map as the foundation:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Capability</th><th>Coverage</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Discover</strong></td><td>Exploration processes</td></tr>
+<tr><td><strong>Establish</strong></td><td>Mine development and permitting</td></tr>
+<tr><td><strong>Exploit</strong></td><td>Production operations</td></tr>
+<tr><td><strong>Beneficiate</strong></td><td>Mineral processing</td></tr>
+<tr><td><strong>Sell</strong></td><td>Market sales and customer relationships</td></tr>
+<tr><td><strong>Support</strong></td><td>Environmental, safety, HR and compliance functions</td></tr>
+</tbody>
+</table>
+</div>
+<p>Tailor this reference model to the specific mining company portfolio and operations.</p>
+
+<h4>3. Federated governance structure</h4>
+<ul>
+  <li><strong>Corporate governance:</strong> sets architectural principles, approved platforms,
+    and standardised processes applying enterprise-wide</li>
+  <li><strong>Regional/site governance:</strong> makes site-specific adaptations within
+    corporate principles; selects approved technologies; implements processes adapted to
+    local conditions</li>
+  <li><strong>Escalation pathway:</strong> a clear process for site-level decisions requiring
+    corporate approval when site operations cannot meet corporate targets</li>
+</ul>
+
+<h4>4. Mining-specific success metrics</h4>
+<p>Business Architecture defines success across multiple dimensions:</p>
+<ul class="check">
+  <li>Production targets (ore extraction, processing, beneficiation)</li>
+  <li>Cost control (operating within budget despite commodity volatility)</li>
+  <li>Safety performance (LTI rates, near-miss tracking)</li>
+  <li>Environmental compliance (regulatory adherence, ESG targets)</li>
+  <li>Equipment reliability (uptime, MTBF)</li>
+  <li>Workforce retention (addressing labour market constraints)</li>
+</ul>
+<p>Success requires achievement across all dimensions, not maximising any single metric at
+the expense of others.</p>
+
+<div class="commit">
+<span class="label">Claude responsibility</span>
+<ul>
+  <li>Establish business architecture at the appropriate scope (corporate, regional, or site)</li>
+  <li>Document both corporate strategy <strong>and</strong> site-level operational realities</li>
+  <li>Identify where corporate standardisation is required versus site flexibility</li>
+  <li>Map how site-level constraints and knowledge inform corporate strategy</li>
+  <li>Reference the EMMM Business Capability Reference Model for mining-specific capabilities</li>
+  <li>Define success metrics across mining-specific dimensions</li>
+  <li>Identify a governance structure balancing corporate oversight with site autonomy</li>
+</ul>
+</div>
+
+<div class="question">
+<span class="label">Validation question for Claude</span>
+<blockquote>"What business strategy or capability does this architecture serve —
+at corporate level, at site level, or at both with integration? What site-level operational
+constraints inform corporate strategy?"</blockquote>
+<p>If this cannot be answered clearly, signal that Business Architecture clarification is
+needed at both levels before proceeding.</p>
+</div>
+
+<!-- TIER 2A -->
+<h2 id="tier2a">Mining-Adapted Tier 2A: Data Architecture</h2>
+
+<div class="def">
+<span class="label">Definition</span>
+<p>Models, regulations, rules, and standards determining which data will be gathered, stored,
+structured, integrated, and used. Explicitly addresses mining's unique data challenges:
+remote collection with intermittent connectivity, regulatory complexity across jurisdictions,
+and siloed operations.</p>
+</div>
+
+<div class="def rule">
+<span class="label">Relationship rule</span>
+<p>Data Architecture must directly map to and support Business Architecture requirements
+while addressing mining-specific data collection and governance challenges.</p>
+</div>
+
+<h3 id="data-domains">1. Mining data domains</h3>
+<p>Structure data architecture around mining business domains:</p>
+<ul class="tick">
+  <li><strong>Exploration data:</strong> geological surveys, assay results, prospect mapping,
+    resource estimation. Sparse point data, scientifically intensive, strategically sensitive.</li>
+  <li><strong>Production operations data:</strong> real-time sensor data from drilling,
+    blasting, loading, transportation. High-velocity continuous data from remote sites with
+    intermittent connectivity. Requires edge curation before transmission.</li>
+  <li><strong>Processing data:</strong> mineral processing parameters, throughput, grade
+    recovery, waste generation. Reflects process optimisation opportunities; requires
+    integration across processing stations.</li>
+  <li><strong>Environmental and safety data:</strong> air quality, water usage, waste,
+    incident reports, near-miss tracking. Supports regulatory compliance; spans multiple
+    external regulatory frameworks varying by jurisdiction.</li>
+  <li><strong>Supply chain and logistics data:</strong> ore routing, energy consumption,
+    equipment and personnel logistics. Enables supply chain optimisation; requires
+    coordination across geographically dispersed operations.</li>
+</ul>
+
+<h3 id="data-governance">2. Mining data governance addressing specific challenges</h3>
+
+<div class="challenge">
+<h4>Challenge A: Remote site data collection with limited connectivity</h4>
+<div class="problem">
+<span class="label">Problem</span>
+<p>Mining generates massive data volumes at remote sites with unreliable connectivity.
+Traditional data governance assumes centralised repositories. Mining's reality differs
+fundamentally.</p>
+</div>
+<div class="solution">
+<span class="label">Mining-adapted solution — layered architecture</span>
+<ul>
+  <li><strong>Edge data curation:</strong> data filtered, validated and pre-processed at the
+    mine site to reduce transmission volume</li>
+  <li><strong>Layered storage:</strong> hot data (immediate needs) at site; warm data
+    (recent history) in regional centres; cold data (archive) in the enterprise repository</li>
+  <li><strong>Asynchronous synchronisation:</strong> data synchronises during connectivity
+    windows rather than requiring continuous real-time access</li>
+</ul>
+<p>This architecture acknowledges mining's connectivity constraints while maintaining data
+consistency and traceability.</p>
+</div>
+</div>
+
+<div class="challenge">
+<h4>Challenge B: Data ownership ambiguity in siloed operations</h4>
+<div class="problem">
+<span class="label">Problem</span>
+<p>Mining data spans ownership boundaries — exploration to drilling to production to
+beneficiation. Each function maintains separate systems, resulting in unclear data
+stewardship, quality gaps, and siloed analytics.</p>
+</div>
+<div class="solution">
+<span class="label">Mining-adapted solution — three-tier stewardship model</span>
+<ul>
+  <li><strong>Data producer stewardship:</strong> the function generating data maintains
+    initial quality, validation and documentation (for example, drilling operations)</li>
+  <li><strong>Data consumer stewardship:</strong> functions using data validate
+    fitness-for-purpose and flag quality issues (for example, production planning)</li>
+  <li><strong>Enterprise data stewardship:</strong> corporate governance ensures cross-domain
+    consistency, enforces regulatory compliance, and maintains lineage</li>
+</ul>
+<p>This model acknowledges shared responsibility; data quality is a collective effort.</p>
+</div>
+</div>
+
+<div class="challenge">
+<h4>Challenge C: Regulatory complexity across jurisdictions</h4>
+<div class="problem">
+<span class="label">Problem</span>
+<p>Mining operates across multiple jurisdictions with conflicting requirements — 10-year
+versus 25-year retention, conflicting data collection rules, and different tax standards.</p>
+</div>
+<div class="solution">
+<span class="label">Mining-adapted solution — regulatory compliance mapping</span>
+<ul>
+  <li><strong>Regulatory data mapping:</strong> document which data elements support which
+    regulatory requirements in which jurisdictions</li>
+  <li><strong>Retention policy management:</strong> track regulatory minimums and maximums
+    by jurisdiction</li>
+  <li><strong>Compliance audit trails:</strong> data lineage and transformation tracking
+    enables regulatory verification</li>
+</ul>
+<p>This architecture enables compliance across a complex regulatory landscape.</p>
+</div>
+</div>
+
+<h3 id="data-quality">3. Data quality and observability</h3>
+<p>Mining-adapted data architecture treats data quality as an operational capability critical
+to decision-making.</p>
+<h5>Data quality dimensions for mining</h5>
+<ul class="check">
+  <li><strong>Completeness:</strong> is data present from all relevant sensors and operations?</li>
+  <li><strong>Accuracy:</strong> does sensor data reflect actual conditions, or equipment malfunction?</li>
+  <li><strong>Timeliness:</strong> is data current enough for operational decisions?</li>
+  <li><strong>Consistency:</strong> do multiple sources reporting the same phenomenon agree?</li>
+  <li><strong>Traceability:</strong> can data be traced from source through processing to final use?</li>
+</ul>
+<p>Each dimension requires monitoring and alerting so quality issues surface before impacting
+operational decisions.</p>
+
+<div class="commit">
+<span class="label">Claude responsibility</span>
+<ul>
+  <li>Identify mining data domains — exploration, production, processing, environmental, supply chain</li>
+  <li>Address data collection challenges specific to remote sites (connectivity, harsh environments)</li>
+  <li>Document regulatory jurisdictions affecting data requirements and retention</li>
+  <li>Assign data stewardship at producer, consumer and enterprise levels</li>
+  <li>Design for asynchronous data synchronisation where needed</li>
+  <li>Include data quality monitoring and observability mechanisms</li>
+  <li>Map data flows between business domains with integration points</li>
+  <li>Identify data governance challenges arising from silos, connectivity, or regulatory complexity</li>
+</ul>
+</div>
+
+<div class="template">
+<h4>Traceability requirement — data architecture</h4>
+<pre>This data model/strategy supports business capability: [X]
+at [corporate / regional / site level]
+and addresses mining data challenge:
+  [remote connectivity / regulatory compliance / siloed operations / other]
+Data quality monitoring includes:
+  [completeness / accuracy / timeliness / consistency / traceability]</pre>
+<p class="alt">Or explicitly state: "Data capability mapping needed" —
+"Governance challenge clarification required".</p>
+</div>
+
+<!-- TIER 2B -->
+<h2 id="tier2b">Mining-Adapted Tier 2B: Application Architecture</h2>
+
+<div class="def">
+<span class="label">Definition</span>
+<p>Describes systems delivering business capabilities. Explicitly recognises that mining
+applications span Information Technology (IT) systems and Operational Technology (OT) systems
+with fundamentally different governance, change management, and cultural contexts.</p>
+</div>
+
+<div class="def rule">
+<span class="label">Relationship rule</span>
+<p>Application Architecture must map to Business Architecture requirements while acknowledging
+IT/OT convergence challenges and preserving OT operational autonomy for safety-critical
+systems.</p>
+</div>
+
+<h3 id="dual-streams">1. Dual application streams with integration points</h3>
+<p>Mining-adapted application architecture explicitly structures two parallel application
+domains that <strong>must</strong> integrate:</p>
+
+<div class="streams">
+<div class="stream it">
+<h4>Enterprise information systems (IT-centric)</h4>
+<ul>
+  <li>ERP systems — financial, HR, supply chain</li>
+  <li>Business intelligence and analytics platforms</li>
+  <li>Corporate reporting and compliance systems</li>
+  <li>Communication and collaboration platforms</li>
+</ul>
+<p class="traits"><strong>Characteristics:</strong> prioritise data consistency, audit trails,
+financial accuracy, regulatory compliance. Operate in controlled environments — offices and
+regional centres — with reliable connectivity and standardised procedures.</p>
+</div>
+<div class="stream ot">
+<h4>Operational technology systems (OT-centric)</h4>
+<ul>
+  <li>Industrial control systems — drilling, blasting, extraction, processing</li>
+  <li>Real-time data acquisition and monitoring systems</li>
+  <li>Automation and robotics systems</li>
+  <li>Safety systems with interlock controls and emergency shutdown</li>
+</ul>
+<p class="traits"><strong>Characteristics:</strong> prioritise deterministic behaviour,
+equipment safety, production continuity, rapid response to changing conditions. Operate in
+harsh environments with limited connectivity; require conservative change management.</p>
+</div>
+</div>
+
+<h5>Integration points where IT and OT connect</h5>
+<ul class="tick">
+  <li>Production data flows from OT systems to IT analytics, enabling forecasting</li>
+  <li>Maintenance scheduling integrates OT equipment condition with IT supply chain</li>
+  <li>Safety data flows from OT to IT compliance and reporting systems</li>
+  <li>Remote Operations Centres (ROCs) integrate real-time OT data with enterprise decision-making</li>
+</ul>
+
+<h3 id="probabilistic-apps">2. Probabilistic systems in safety-critical mining</h3>
+<p>The BDAT rule addresses probabilistic systems (AI/ML) requiring special governance.
+Mining's specific challenge is deploying probabilistic systems in safety-critical operations.</p>
+
+<div class="callout">
+<span class="label">Mining's challenge</span>
+<p>AI-enabled predictive maintenance could improve reliability, and predictive grade
+estimation could optimise processing. However, ML produces probabilistic outputs — for example,
+"equipment may fail in next shift (78% confidence)" creates uncertainty. Mining operations
+cannot risk shutting down equipment based on uncertain predictions if the shutdown
+consequences are severe.</p>
+</div>
+
+<h5>Mining-adapted governance for probabilistic systems</h5>
+<ul class="tick">
+  <li><strong>Supervised autonomy:</strong> ML provides recommendations; humans retain
+    authority. Equipment does not shut down automatically based on ML predictions; operators
+    receive alerts and make decisions. Preserves human judgement while leveraging AI.</li>
+  <li><strong>Confidence thresholds with escalation:</strong> probabilistic systems trigger
+    automated actions only when confidence exceeds defined thresholds. Below thresholds,
+    systems alert humans for decision-making — a graduated response matching system confidence
+    to action consequence.</li>
+  <li><strong>Continuous validation and retraining:</strong> ML models deployed in mining
+    require continuous performance monitoring. Models retrain regularly as operational
+    conditions change. Architecture explicitly includes monitoring systems tracking accuracy
+    and identifying model drift.</li>
+  <li><strong>Fallback and failure modes:</strong> architecture explicitly defines what
+    happens when probabilistic systems malfunction. Fallback mechanisms ensure operations
+    continue safely if AI fails — predictive maintenance fails, revert to time-based; grade
+    prediction fails, revert to conservative processing defaults.</li>
+  <li><strong>Audit trails for probabilistic decisions:</strong> when ML influences
+    operational decisions, capture audit trails — what prediction was made, why (input data,
+    model version), what the human decided, and the actual outcome. Enables post-hoc analysis
+    of accuracy and governance oversight.</li>
+  <li><strong>Governance checkpoints:</strong> high-consequence ML (safety, shutdown
+    recommendations) requires governance approval and periodic review. Low-consequence ML
+    (maintenance optimisation suggestions) carries lighter governance. Architecture defines
+    the governance gradient.</li>
+</ul>
+
+<h3 id="integration-challenges">3. Application integration challenges and governance</h3>
+<p>Mining-adapted application architecture must address IT/OT integration while acknowledging
+the barriers.</p>
+
+<div class="challenge">
+<h4>Challenge A: Incompatible technology philosophies</h4>
+<div class="problem">
+<span class="label">Problem</span>
+<p>IT platforms — cloud, microservices, rapid iteration — are designed for flexibility and
+scalability. OT systems — industrial controllers, legacy equipment — are designed for
+reliability and determinism. Forcing alignment often fails because the objectives differ
+fundamentally.</p>
+</div>
+<div class="solution">
+<span class="label">Mining-adapted governance</span>
+<ul>
+  <li><strong>Preserve OT autonomy:</strong> core OT systems retain operational independence.
+    IT cannot mandate cloud-based operation or continuous deployment of mine equipment. OT
+    operates according to OT principles.</li>
+  <li><strong>Manage integration boundaries:</strong> data flows between OT and IT at defined
+    integration points with translations. OT produces data per OT requirements; IT consumes it
+    and manages storage, analysis and history.</li>
+  <li><strong>Hybrid architecture:</strong> mining applications adopt hybrid models where OT
+    maintains core operational control (deterministic) and IT systems provide analytics,
+    forecasting and recommendations (probabilistic).</li>
+</ul>
+</div>
+</div>
+
+<div class="challenge">
+<h4>Challenge B: IT/OT convergence cultural barriers</h4>
+<div class="problem">
+<span class="label">Problem</span>
+<p>OT teams view IT proposals as threatening operational stability. IT teams view OT
+resistance as opposing necessary modernisation. These perspectives are not reconcilable
+through confrontation; they require structural acknowledgment.</p>
+</div>
+<div class="solution">
+<span class="label">Mining-adapted governance</span>
+<ul>
+  <li><strong>Cross-functional teams:</strong> create integrated teams with IT and OT
+    professionals and distribute decision authority appropriately. IT technical decisions need
+    OT input; OT operational decisions need IT input.</li>
+  <li><strong>Shared success metrics:</strong> define success metrics both teams contribute to
+    and benefit from. Shared accountability reduces adversarial dynamics.</li>
+  <li><strong>"Purple people" development:</strong> invest in professionals who understand
+    both IT and OT and can translate between domains.</li>
+  <li><strong>Third-party facilitation:</strong> when cultural barriers prove difficult,
+    engage neutral parties — systems integrators, consultants — to facilitate IT/OT
+    collaboration.</li>
+</ul>
+</div>
+</div>
+
+<h3 id="portfolio-governance">4. Application portfolio governance</h3>
+<p>Mining-adapted architecture establishes governance appropriate to application significance:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Class</th><th>Examples</th><th>Governance</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Strategic</strong><br>Core to business</td>
+  <td>ERP, production planning, safety systems</td>
+  <td>Formal architecture review, governance approval, coordinated deployment across the enterprise</td>
+</tr>
+<tr>
+  <td><strong>Operational</strong><br>Support specific functions</td>
+  <td>Drilling optimisation, grade estimation, maintenance scheduling</td>
+  <td>Governance review at regional or site level; may vary by location based on local conditions</td>
+</tr>
+<tr>
+  <td><strong>Tactical</strong><br>Solve specific problems</td>
+  <td>Local spreadsheets, point solutions addressing specific site challenges</td>
+  <td>May be used locally without enterprise approval; must not conflict with strategic or operational applications</td>
+</tr>
+<tr>
+  <td><strong>Legacy</strong><br>Pre-dating modern architecture</td>
+  <td>Older systems maintained for continuity, not extended</td>
+  <td>Continue operating with explicit retirement dates and migration pathways to modern replacements</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="commit">
+<span class="label">Claude responsibility</span>
+<ul>
+  <li>Identify whether the application serves the IT domain (enterprise), the OT domain
+    (operations), or spans both (convergence)</li>
+  <li>Address IT/OT convergence challenges; acknowledge cultural and technical barriers</li>
+  <li>For AI/ML in safety-critical contexts, define monitoring strategy, fallback mechanisms,
+    governance controls, confidence thresholds and audit trails</li>
+  <li>Document application integration points and dependencies</li>
+  <li>Classify applications (strategic, operational, tactical, legacy) and the appropriate
+    governance level</li>
+  <li>Flag IT/OT cultural barriers requiring management attention</li>
+</ul>
+</div>
+
+<div class="template">
+<h4>Traceability requirement — application architecture</h4>
+<pre>This application delivers business capability: [X]
+at [corporate / regional / site level]
+operates in [IT domain / OT domain / integrated IT/OT]
+
+For OT systems: this preserves
+  [deterministic behaviour / safety criticality / operational autonomy]
+For AI/ML systems: this system accounts for uncertainty through
+  [monitoring strategy / fallback mechanisms / governance controls / confidence thresholds]
+
+Integration with other systems: [list dependencies]</pre>
+<p class="alt">Or explicitly state: "Business capability mapping needed" —
+"IT/OT convergence strategy clarification required".</p>
+</div>
+
+<!-- TIER 3 -->
+<h2 id="tier3">Mining-Adapted Tier 3: Technology Architecture</h2>
+
+<div class="def">
+<span class="label">Definition</span>
+<p>Provides foundational infrastructure and technical platforms supporting Data and
+Application architectures. Acknowledges that technology feasibility constraints in mining flow
+<strong>upward</strong> to guide application and data design, not only downward.</p>
+</div>
+
+<div class="def rule">
+<span class="label">Relationship rule</span>
+<p>Technology decisions should be justified by requirements flowing down from higher tiers
+(Business to Application/Data to Technology). Additionally, mining environment constraints
+flow upward, imposing feasibility limitations on application and data architectures. This
+bidirectional flow is explicit in mining.</p>
+</div>
+
+<h3 id="feasibility">1. Technology feasibility constraints specific to mining</h3>
+<p>Generic enterprise architecture assumes cloud computing provides the optimal foundation.
+Mining's constraints require different technology strategies by operational context.</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+  <th>Operational context</th>
+  <th>Technology constraints</th>
+  <th>Technology strategy</th>
+  <th>Upward impact on data and application architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Remote mine sites</strong><br>Limited connectivity, harsh environments, limited local IT support</td>
+  <td>Cannot depend on cloud connectivity; must employ edge computing with local data processing and storage</td>
+  <td>Deploy ruggedised industrial computers with local mining applications; synchronise data to cloud during connectivity windows; maintain autonomous operational capability even if cloud is unavailable</td>
+  <td><strong>Data:</strong> design for asynchronous synchronisation, not real-time cloud access.<br><strong>Application:</strong> applications operate independently of corporate connectivity</td>
+</tr>
+<tr>
+  <td><strong>Processing plants</strong><br>More infrastructure, critical continuity requirements, ERP integration</td>
+  <td>Must support deterministic operational control; requires OT/IT integration; needs redundancy for high availability</td>
+  <td>Hybrid cloud and on-premises architectures with critical OT on-premises for reliability and latency; non-critical analytics to cloud; integration through well-defined APIs</td>
+  <td><strong>Data:</strong> support synchronisation between on-premises and cloud systems.<br><strong>Application:</strong> local-first design where critical operations do not depend on cloud availability</td>
+</tr>
+<tr>
+  <td><strong>Corporate and regional centres</strong><br>Reliable infrastructure, full connectivity</td>
+  <td>Minimal constraints; standard enterprise technologies apply</td>
+  <td>Cloud-first approach with standard enterprise applications; leverage cloud scalability and cost efficiency</td>
+  <td>Minimal constraints; standard cloud-native approaches feasible</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="patterns">2. Mining-specific technology standards and patterns</h3>
+<p>Mining-adapted architecture establishes standards reflecting mining-specific requirements.</p>
+
+<div class="challenge">
+<h4>Industrial robustness pattern</h4>
+<ul>
+  <li><strong>Standard:</strong> prioritise industrial-grade equipment proven in mining
+    environments over consumer-grade computing products</li>
+  <li><strong>Pattern:</strong> deploy equipment with multi-year warranties and manufacturer
+    support commitments, accepting higher initial cost for operational certainty</li>
+  <li><strong>Governance:</strong> OT input required in technology procurement; IT cannot
+    procure lowest-cost consumer options</li>
+  <li><strong>Examples:</strong> ruggedised industrial tablets replacing standard laptops at
+    mine sites; industrial sensors replacing consumer IoT devices</li>
+</ul>
+</div>
+
+<div class="challenge">
+<h4>Connectivity resilience pattern</h4>
+<ul>
+  <li><strong>Standard:</strong> technology must operate reliably with intermittent or limited
+    connectivity</li>
+  <li><strong>Pattern:</strong> edge computing and local caching; minimise real-time cloud
+    dependency; design for asynchronous data synchronisation; graceful degradation when
+    connectivity fails</li>
+  <li><strong>Governance:</strong> connectivity assumptions validated at site before
+    production deployment</li>
+  <li><strong>Examples:</strong> local edge computing clusters at mine sites; offline-first
+    mobile applications; scheduled batch synchronisation to central systems</li>
+</ul>
+</div>
+
+<div class="challenge">
+<h4>Safety-first pattern</h4>
+<ul>
+  <li><strong>Standard:</strong> technology must never create safety risks; OT changes require
+    safety review</li>
+  <li><strong>Pattern:</strong> layered safety controls — hardware interlocks backed by
+    software backed by procedures; never rely on software alone for safety-critical functions</li>
+  <li><strong>Governance:</strong> safety professionals approve OT changes; safety testing
+    required before production deployment</li>
+  <li><strong>Examples:</strong> equipment with mechanical safety interlocks even where
+    software controls exist; dual safety systems for mission-critical equipment; proven
+    technologies prioritised over innovations in safety-critical areas</li>
+</ul>
+</div>
+
+<div class="challenge">
+<h4>Environmental compliance pattern</h4>
+<ul>
+  <li><strong>Standard:</strong> technology deployment demonstrates regulatory compliance and
+    ESG alignment</li>
+  <li><strong>Pattern:</strong> prefer technologies enabling environmental monitoring, waste
+    reduction and energy efficiency; measure deployments against ESG targets</li>
+  <li><strong>Governance:</strong> sustainability professionals review technology
+    recommendations; ESG alignment factors into technology selection</li>
+  <li><strong>Examples:</strong> water-efficient processing technologies; energy-efficient
+    crushing and grinding equipment; monitoring systems tracking environmental metrics</li>
+</ul>
+</div>
+
+<h3 id="bidirectional">3. Technology decision traceability in mining (bidirectional)</h3>
+<p>Standard BDAT principle: technology decisions require traceability to application and data
+requirements. Mining adds upward-flowing constraints.</p>
+
+<div class="template">
+<h4>Downward traceability (standard BDAT)</h4>
+<pre>This technology component enables: [application/data requirement]
+Which ultimately supports business capability: [X]</pre>
+</div>
+
+<div class="template">
+<h4>Upward traceability (mining addition — environment constraints)</h4>
+<pre>This mining environment constraint requires:
+  [connectivity resilience / industrial robustness / safety-first / environmental compliance]
+Therefore technology choices must:
+  [employ edge computing / use industrial-grade equipment /
+   implement safety interlocks / measure environmental impact]
+These constraints flow upward to application/data architecture, requiring:
+  [specific design patterns / specific technical approaches]</pre>
+</div>
+
+<div class="callout">
+<span class="label">Bidirectional traceability — the mining reality</span>
+<ul>
+  <li><strong>Downward:</strong> business strategy &rarr; data/application requirements &rarr;
+    technology implementation</li>
+  <li><strong>Upward:</strong> environment constraints &rarr; technology requirements &rarr;
+    application/data design impact</li>
+</ul>
+<p>This bidirectional flow acknowledges mining's unique characteristic: technology constraints
+do not flow only downward from business requirements; they also flow upward from operational
+environment constraints.</p>
+</div>
+
+<h3 id="tech-governance">4. Technology architecture governance for mining</h3>
+<p>Mining-adapted governance balances site-level autonomy with enterprise standards.</p>
+
+<h5>Corporate technology standards (enterprise-wide)</h5>
+<ul class="check">
+  <li>Approved ERP systems and versions</li>
+  <li>Approved cloud platforms and service providers</li>
+  <li>Data centre and infrastructure standards</li>
+  <li>Security and compliance frameworks</li>
+</ul>
+
+<h5>Site-level technology flexibility (within corporate standards)</h5>
+<ul class="check">
+  <li>Mining equipment and sensors — site-specific choices based on ore body and compatibility</li>
+  <li>Processing automation — customised to local processing methods</li>
+  <li>Connectivity infrastructure — designed for site-specific geographic constraints</li>
+  <li>Local support staffing — adapted to site-specific technical requirements</li>
+</ul>
+
+<h5>Governance framework — what requires approval</h5>
+<ul class="tick">
+  <li><strong>Corporate approval:</strong> changes to approved platforms, major infrastructure
+    investments, enterprise security changes</li>
+  <li><strong>Regional approval:</strong> implementation variations within corporate
+    standards, technology upgrades within approved platforms</li>
+  <li><strong>Site-level authority:</strong> local equipment selection, local staffing and
+    training, local configuration within corporate standards</li>
+</ul>
+
+<h3 id="investment">5. Technology investment justification in mining</h3>
+<p>Mining technology decisions are justified across multiple mining-specific criteria.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Criterion</th><th>Question</th><th>Quantified by</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Production improvement</strong></td>
+  <td>Increased ore extraction, processing efficiency or throughput?</td>
+  <td>Ore mined per unit energy/cost; grade recovery; processing time</td>
+</tr>
+<tr>
+  <td><strong>Cost reduction</strong></td>
+  <td>Reduced operational costs?</td>
+  <td>Cost per tonne produced; equipment utilisation; workforce productivity</td>
+</tr>
+<tr>
+  <td><strong>Safety enhancement</strong></td>
+  <td>Reduced worker risk or improved safety outcomes?</td>
+  <td>Lost Time Injury rates; near-miss reduction; safety-related downtime</td>
+</tr>
+<tr>
+  <td><strong>Environmental compliance</strong></td>
+  <td>Regulatory compliance or ESG target achievement enabled?</td>
+  <td>Violations prevented; water consumption; energy efficiency; waste recycling</td>
+</tr>
+<tr>
+  <td><strong>Workforce capability</strong></td>
+  <td>Addresses labour market constraints or improves retention?</td>
+  <td>Worker retention rates; training effectiveness; skilled talent attraction; reduction in manual data entry</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Technology investments demonstrate value across <strong>multiple</strong> mining-specific
+criteria, not just cost reduction or an isolated capability improvement.</p>
+
+<div class="commit">
+<span class="label">Claude responsibility</span>
+<ul>
+  <li>Justify technology solutions against application and data requirements flowing down</li>
+  <li>Additionally identify mining environment constraints flowing upward</li>
+  <li>Document how the technology choice reflects mining standards and patterns</li>
+  <li>Identify the technology governance level (corporate, regional, site)</li>
+  <li>Demonstrate value across mining-specific criteria</li>
+  <li>Ensure technology choices are supportable and maintainable in mining environments</li>
+  <li>For remote site deployments, validate connectivity requirements and edge strategy</li>
+  <li>Flag technology constraints flowing upward to data and application architecture</li>
+</ul>
+</div>
+
+<div class="template">
+<h4>Traceability requirement — technology architecture</h4>
+<pre>This technology component enables: [application/data requirement]
+Which ultimately supports business capability: [X]
+at [corporate / regional / site level]
+
+This technology addresses mining constraint:
+  [connectivity / environmental / safety / ESG / operational autonomy / other]
+
+Mining design pattern applied:
+  [industrial robustness / connectivity resilience / safety-first / environmental compliance]
+
+Governance level:
+  [corporate standard / regional variation / site flexibility / requires corporate approval]
+
+Mining-specific value:
+  [production impact / cost impact / safety impact / environmental impact / workforce impact]
+
+Upward constraints this technology imposes on application/data architecture:
+  [connectivity requirements / data model implications / application operational assumptions]</pre>
+<p class="alt">Or explicitly state: "Mining environment constraints clarification required" —
+"Mining-specific value criteria not yet established".</p>
+</div>
+
+<!-- CROSS-DOMAIN -->
+<h2 id="cross-domain">Cross-Domain Coherence Principle (Mining-Adapted)</h2>
+
+<div class="def">
+<span class="label">Core principle</span>
+<p>Mining architectures must not be developed or evaluated in isolation.</p>
+</div>
+
+<p>When any single BDAT domain is discussed in a mining context, the following questions are
+mandatory.</p>
+
+<h3>When data architecture is discussed alone</h3>
+<ul class="arrow">
+  <li>What business processes, at corporate or site level, does this data strategy serve?</li>
+  <li>Which applications will consume this data — IT systems or OT systems?</li>
+  <li>What mining environment constraints affect data collection, storage and transmission?
+    (Connectivity limitations, harsh environment sensor requirements, regulatory complexity.)</li>
+</ul>
+
+<h3>When application architecture is discussed alone</h3>
+<ul class="arrow">
+  <li>What business capabilities does this application deliver, and at what level — corporate,
+    site or regional?</li>
+  <li>What data does this application require and produce?</li>
+  <li>Does this application operate in the IT domain, OT domain, or integrated IT/OT — and
+    what are the implications?</li>
+  <li>What technology platforms will this application run on, and do these platforms reflect
+    mining environment constraints?</li>
+</ul>
+
+<h3>When technology architecture is discussed alone</h3>
+<ul class="arrow">
+  <li>What business needs does this technology address, and at which organisational level?</li>
+  <li>What applications and data will this technology support?</li>
+  <li>How does this technology reflect mining-specific constraints — connectivity,
+    environment, safety, ESG?</li>
+  <li>How does this align with corporate standards versus site flexibility?</li>
+</ul>
+
+<h3>When IT/OT convergence is discussed</h3>
+<ul class="arrow">
+  <li>What business capability requires IT/OT convergence?</li>
+  <li>What cultural barriers between IT and OT teams exist?</li>
+  <li>How is operational autonomy preserved for OT systems?</li>
+  <li>What data flows between IT and OT domains?</li>
+  <li>What governance structure manages IT/OT conflicts and decisions?</li>
+</ul>
+
+<div class="callout">
+<span class="label">Rationale</span>
+<p>BDAT creates a shared taxonomy enabling traceability from business strategy to
+infrastructure. Mining requires explicit cross-domain traceability while acknowledging that
+some domains — OT systems in particular — maintain significant autonomy and different
+governance.</p>
+</div>
+
+<!-- GOVERNANCE -->
+<h2 id="governance">Governance and Decision-Making Integration (Mining-Adapted)</h2>
+
+<h3>Mining-specific governance principles</h3>
+<ul>
+  <li>Standardised structure and governance processes enhance decision-making, collaboration
+    and scalability</li>
+  <li>Governance has become an increasingly visible requirement for organisational management</li>
+  <li>Mining governance must balance <strong>corporate standardisation</strong> with
+    <strong>site-level autonomy</strong></li>
+  <li>Governance effectiveness depends on <strong>demonstrated value</strong> to field
+    operations, not just process rigour</li>
+</ul>
+
+<h3>Claude responsibilities for mining governance</h3>
+
+<h4>1. Identify stakeholders (with mining-specific roles)</h4>
+<p>When recommending architecture changes, identify:</p>
+<ul class="check">
+  <li>Corporate stakeholders — C-suite, corporate IT, corporate strategy</li>
+  <li>Site-level stakeholders — Site Operations Manager, site OT staff, site safety</li>
+  <li>Regional coordinators — Regional Operations Centres, multi-site coordinators</li>
+  <li>IT and OT representatives, who often have conflicting perspectives</li>
+  <li>Who needs visibility? Different stakeholders need different architecture views</li>
+  <li>Who has approval authority? Corporate for standards; sites for implementations</li>
+  <li>What escalation path exists when site operations conflict with corporate targets?</li>
+</ul>
+
+<h4>2. Apply mining-specific governance criteria</h4>
+<p>Evaluate decisions against:</p>
+<ul class="check">
+  <li>Established architectural principles — corporate standards for consistency</li>
+  <li>Approved patterns and standards — EMMM reference models where applicable</li>
+  <li>Organisational rules and constraints — corporate standards versus site flexibility</li>
+  <li>Risk acceptance criteria — safety risks are rarely acceptable; production and cost risks
+    are managed; ESG and regulatory risks require compliance</li>
+  <li>Mining-specific operational realities — commodity price volatility, labour constraints,
+    geographic dispersion, equipment reliability requirements</li>
+</ul>
+
+<h4>3. Document decision rationale (with mining-specific context)</h4>
+<p>Ensure audit trails exist for:</p>
+<ul class="check">
+  <li>Why this architectural decision was made, for which business capability, at which
+    organisational level</li>
+  <li>What site-level operational constraints informed the decision</li>
+  <li>Who approved it — corporate, regional or site level as appropriate</li>
+  <li>What alternatives were considered, and why mining context eliminated some</li>
+  <li>What risks were accepted or mitigated — business, data, application, technology</li>
+</ul>
+
+<h4>4. Risk classification (mining-adapted)</h4>
+<p>When discussing risks, classify by architecture domain <strong>and</strong> mining context.</p>
+
+<div class="checklist-grid">
+<div class="check-card">
+<h4>Business risks</h4>
+<ul class="check">
+  <li>Customer satisfaction — product quality, delivery, reliability</li>
+  <li>Market impact — commodity price volatility, competitive positioning</li>
+  <li>Capability gaps — inability to meet production targets despite best efforts</li>
+  <li>ESG target achievement — environmental, social and governance commitments</li>
+</ul>
+</div>
+<div class="check-card">
+<h4>Data risks</h4>
+<ul class="check">
+  <li>Data quality — inaccurate production forecasting impacts corporate decisions</li>
+  <li>Regulatory compliance — data retention failures create regulatory violations</li>
+  <li>Data loss — loss of critical operational data impairs production</li>
+  <li>Silos — isolated data systems prevent integrated decision-making</li>
+</ul>
+</div>
+<div class="check-card">
+<h4>Application risks</h4>
+<ul class="check">
+  <li>System performance — slow systems impair operational response</li>
+  <li>Feature delivery — lack of required functionality limits optimisation</li>
+  <li>Integration failures — IT/OT disconnects prevent end-to-end visibility</li>
+  <li>OT system outage — loss of operational technology halts production or creates safety risk</li>
+</ul>
+</div>
+<div class="check-card">
+<h4>Technology risks</h4>
+<ul class="check">
+  <li>Infrastructure failure — equipment downtime halts operations</li>
+  <li>Obsolescence — technology no longer supported; no vendor available for repairs</li>
+  <li>Support gaps — technology requires specialised skills unavailable in the labour market</li>
+  <li>Safety risk — technology deployment creates worker safety risk</li>
+</ul>
+</div>
+</div>
+
+<div class="template">
+<h4>Governance language for mining</h4>
+<pre>Governance consideration: this decision requires approval from
+  [corporate / regional / site]
+based on [governance criterion], and affects [stakeholders].
+
+Site-level considerations:
+  [site-specific operational constraints affecting implementation]
+
+IT/OT convergence: [if applicable]
+  [integration challenges and governance approach]</pre>
+</div>
+
+<!-- LIFECYCLE -->
+<h2 id="lifecycle">Lifecycle and Iterative Dimension (Mining-Adapted)</h2>
+
+<div class="def">
+<span class="label">Core principle</span>
+<p>BDAT defines the "what" of architecture; the ADM (Architecture Development Method) defines
+the "how". In mining, the architecture lifecycle must acknowledge iterative refinement cycles
+and also address the reality that mining operations may reduce or halt operations if commodity
+prices drop, disrupting architecture implementation timelines.</p>
+</div>
+
+<div class="callout">
+<span class="label">Mining-specific context</span>
+<p>The ADM is a structured, iterative process for developing enterprise architecture and
+managing its lifecycle. It cycles through Business, Data, Application and Technology
+architectures, developing the current state ("as-is") and desired future state ("to-be").</p>
+<p>Mining's specific challenge: capital-intensive architecture investments may be justified
+during commodity price peaks but become unfeasible during downturns. Architecture timelines
+must accommodate this volatility.</p>
+</div>
+
+<h3>1. Phase awareness (mining-adapted)</h3>
+<p>When discussing architecture, acknowledge which ADM phase applies.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>ADM phase</th><th>Focus</th><th>Mining consideration</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Preliminary</strong></td>
+  <td>Framework establishment, governance, resource planning</td>
+  <td>Align with current commodity price environment and business outlook</td>
+</tr>
+<tr>
+  <td><strong>Architecture Vision</strong></td>
+  <td>Strategy alignment, stakeholder engagement</td>
+  <td>Ensure site-level operational input; address geographic distribution</td>
+</tr>
+<tr>
+  <td><strong>Business / Data / Application / Technology Architecture</strong></td>
+  <td>Detailed design</td>
+  <td>Address mining-specific business capabilities (EMMM model); plan for IT/OT convergence
+    challenges; include edge computing where needed</td>
+</tr>
+<tr>
+  <td><strong>Implementation &amp; Migration</strong></td>
+  <td>Execution, transition</td>
+  <td>Phase implementations across sites and regions; manage IT/OT change management
+    challenges; celebrate early wins to build governance adoption</td>
+</tr>
+<tr>
+  <td><strong>Governance &amp; Change Management</strong></td>
+  <td>Operational maintenance</td>
+  <td>Maintain dual corporate/site governance; continue demonstrating value to earn field
+    operations buy-in; adapt governance based on feedback</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>2. Iterative refinement expectation (mining-adapted)</h3>
+<ul class="check">
+  <li>Architectures are <strong>not</strong> one-time deliverables</li>
+  <li>Architecture undergoes continuous iteration and refinement</li>
+  <li>Feedback loops drive improvement cycles</li>
+  <li><strong>Mining-specific:</strong> commodity price volatility may accelerate or delay
+    iterations; architecture must be structured to handle pauses and resumptions</li>
+  <li><strong>Mining-specific:</strong> field operations feedback is essential to iterative
+    refinement; governance frameworks that ignore field input fail</li>
+</ul>
+
+<h3>3. Lifecycle governance scope (mining-adapted)</h3>
+<p>Architecture governance must span the complete lifecycle, from vision through
+implementation and operation.</p>
+<ul class="check">
+  <li><strong>Vision phase:</strong> corporate sets direction; sites provide operational
+    constraints</li>
+  <li><strong>Design phase:</strong> corporate standards drive design; sites identify local
+    variations</li>
+  <li><strong>Implementation phase:</strong> coordinated rollout across sites and regions;
+    phased approach managing IT/OT convergence challenges</li>
+  <li><strong>Operation phase:</strong> continuous monitoring; feedback loops inform the next
+    iteration</li>
+  <li><strong>Governance at all phases:</strong> corporate oversight with site-level autonomy</li>
+</ul>
+
+<div class="template">
+<h4>Iteration language for mining</h4>
+<pre>This represents [specific ADM phase] of architecture development.
+Design will be refined through [next steps / iteration cycles].
+
+Mining-specific considerations:
+  [commodity price impact on timeline / site-level feedback needed /
+   IT/OT integration challenges requiring phased approach / governance evolution needed]</pre>
+</div>
+
+<!-- AI -->
+<h2 id="ai">Modern Adaptations: AI and Probabilistic Systems in Mining</h2>
+
+<div class="def">
+<span class="label">Context shift</span>
+<p>Traditional architecture assumes deterministic application behaviour. With AI systems,
+behaviour becomes probabilistic. Mining's specific challenge is deploying probabilistic
+systems in safety-critical operations where deterministic behaviour is foundational to worker
+safety.</p>
+</div>
+
+<p>When discussing AI-enabled or probabilistic applications in mining, Claude applies the
+following.</p>
+
+<h3>1. Acknowledge the shift</h3>
+<div class="template">
+<pre>This application introduces probabilistic behaviour because [AI/ML component / reason].
+Mining-specific consideration:
+  [how probabilistic behaviour affects safety / operational reliability]</pre>
+</div>
+
+<h3>2. Design for uncertainty (mining-specific approach)</h3>
+<p>Ensure the architecture includes:</p>
+<ul class="check">
+  <li>Monitoring and observability as first-class concerns</li>
+  <li>Explicit fallback and recovery strategies — critical for safety-critical mining</li>
+  <li>Governance checkpoints for probabilistic outcomes, especially for OT decisions</li>
+  <li>Performance SLAs accounting for variability, with safety margins</li>
+  <li>Confidence thresholds triggering human decision-making, not automated OT action</li>
+  <li>Continuous model performance validation with retraining</li>
+</ul>
+
+<h3>3. Governance adaptation (mining-specific)</h3>
+<p>Probabilistic systems in mining require:</p>
+<ul class="check">
+  <li>Continuous monitoring and feedback loops</li>
+  <li>Decision audit trails — what the system recommended, why, what the human decided, and
+    what happened</li>
+  <li>Human-in-the-loop checkpoints where decisions impact safety or production</li>
+  <li>Rapid rollback capabilities if probabilistic behaviour diverges from expectations</li>
+  <li>Explicit confidence thresholds; alerts rather than automated actions below thresholds</li>
+</ul>
+
+<h3>Probabilistic systems mining-specific checklist</h3>
+<p>When Claude recommends AI/ML applications in mining, include:</p>
+<ul class="check">
+  <li><strong>Monitoring strategy defined</strong> — what metrics matter for mining operations?</li>
+  <li><strong>Fallback approach documented</strong> — if AI fails, operations revert to what?</li>
+  <li><strong>Governance controls identified</strong> — who oversees AI-influenced decisions?</li>
+  <li><strong>Confidence thresholds defined</strong> — when does the system alert versus
+    recommend versus act?</li>
+  <li><strong>Safety impact assessment completed</strong> — how does probabilistic behaviour
+    affect worker safety?</li>
+  <li><strong>Audit trail capability embedded</strong> — can AI decisions and outcomes be traced?</li>
+  <li><strong>Performance SLAs acknowledge probabilistic behaviour</strong> — expected accuracy
+    rates and variability</li>
+  <li><strong>Continuous validation framework</strong> — how do we know if model accuracy is
+    degrading?</li>
+</ul>
+
+<!-- VERIFICATION -->
+<h2 id="verification">Traceability Verification Checklist for Mining</h2>
+
+<p>When presenting or evaluating mining architecture, Claude must verify the following.</p>
+
+<div class="checklist-grid">
+
+<div class="check-card">
+<h4>Business alignment</h4>
+<ul class="check">
+  <li>Is business strategy clearly articulated at <strong>both</strong> corporate and site levels?</li>
+  <li>Are business capabilities identified using the EMMM reference model?</li>
+  <li>Are success metrics defined across mining-specific dimensions — production, cost, safety,
+    environment, workforce?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Domain coverage</h4>
+<ul class="check">
+  <li>Is Business Architecture addressed at corporate and site levels?</li>
+  <li>Is Data Architecture addressed or explicitly scoped out? If scoped out, note mining data
+    challenges — connectivity, regulatory, silos</li>
+  <li>Is Application Architecture addressed or scoped out? If addressed, is IT/OT convergence
+    explicitly managed?</li>
+  <li>Is Technology Architecture addressed or scoped out? If addressed, do technology choices
+    reflect mining constraints?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Cross-domain traceability</h4>
+<ul class="check">
+  <li>Can decisions be traced from business strategy to data model to applications to technology?</li>
+  <li>Does each domain reference its supporting domains?</li>
+  <li>Are dependencies and relationships documented?</li>
+  <li>Are upward-flowing constraints — environment to technology to data/application — explicit?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>IT/OT convergence (if applicable)</h4>
+<ul class="check">
+  <li>Is IT/OT separation acknowledged?</li>
+  <li>Are OT system operational autonomy and safety criticality preserved?</li>
+  <li>Are integration points and data flows documented?</li>
+  <li>Are IT/OT cultural barriers and governance mechanisms addressed?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Mining-specific considerations</h4>
+<ul class="check">
+  <li>Are geographic distribution and site-level autonomy acknowledged?</li>
+  <li>Are mining environment constraints — connectivity, safety, environment, equipment —
+    explicitly addressed?</li>
+  <li>Are mining-specific business capabilities mapped using the EMMM model?</li>
+  <li>Is data governance addressing mining challenges — remote collection, regulatory, siloed
+    operations?</li>
+  <li>Are mining-specific success metrics included — production, safety, environment, workforce?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Gap analysis</h4>
+<ul class="check">
+  <li>What gaps exist between current state ("as-is") and target state ("to-be")?</li>
+  <li>Are transition steps clearly mapped?</li>
+  <li>Are risks and mitigation strategies identified?</li>
+  <li>Does the timeline acknowledge commodity price volatility?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Governance</h4>
+<ul class="check">
+  <li>Are corporate and site-level governance structures defined?</li>
+  <li>Are decision-making authorities documented?</li>
+  <li>Are architectural principles referenced?</li>
+  <li>Are approvals and escalation paths clear?</li>
+  <li>Is audit trail capability embedded?</li>
+  <li>Does the governance structure maintain site-level autonomy?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Risk classification</h4>
+<ul class="check">
+  <li>Are risks categorised by domain type — business, data, application, technology?</li>
+  <li>Are mining-specific risks identified — safety, commodity volatility, labour market?</li>
+  <li>Are risk acceptance criteria defined?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Implementation readiness</h4>
+<ul class="check">
+  <li>If discussing implementation, is a detailed plan developed?</li>
+  <li>Are resource requirements identified?</li>
+  <li>Are dependencies mapped?</li>
+  <li>Is a phased approach across sites and regions documented?</li>
+  <li>Are IT/OT implementation challenges acknowledged?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Non-isolation check (mining-adapted)</h4>
+<ul class="check">
+  <li>Are any components discussed in isolation?</li>
+  <li>If yes, is the broader context explicitly noted?</li>
+  <li>For OT systems, is the relationship to business capability documented?</li>
+  <li>For data architecture, are consuming applications and business processes identified?</li>
+</ul>
+</div>
+
+<div class="check-card">
+<h4>Mining value demonstration</h4>
+<ul class="check">
+  <li>Is the connection to specific mining operational challenges clear?</li>
+  <li>Does the proposed architecture solve recognised field operations problems?</li>
+  <li>Will governance changes help address operational difficulties?</li>
+  <li>Are early wins and demonstrations planned to build adoption?</li>
+</ul>
+</div>
+
+</div>
+
+<div class="callout">
+<span class="label">Verification process</span>
+<p>Before finalising mining architecture recommendations, Claude should mentally run through
+this checklist and flag gaps to the user.</p>
+</div>
+
+<!-- SCOPE -->
+<h2 id="scope">Rule Application Scope for Mining</h2>
+
+<div class="priority">
+<h4>Priority 1 — always apply (mining-specific EA contexts)</h4>
+<ul class="tick">
+  <li>Mining enterprise architecture design or analysis</li>
+  <li>Mining business transformation or modernisation initiatives</li>
+  <li>Mining technology strategy addressing mining-specific constraints</li>
+  <li>Mining enterprise-wide data strategy addressing remote operations and regulatory complexity</li>
+  <li>Mining application portfolio management spanning IT and OT</li>
+  <li>Mining IT-business alignment discussions</li>
+  <li>Mining governance frameworks balancing standardisation with site autonomy</li>
+  <li>Mining IT/OT convergence and integration challenges</li>
+  <li>Mining digital transformation of operations, for example remote operations centres</li>
+  <li>Mining safety-critical technology deployments</li>
+</ul>
+</div>
+
+<div class="priority p2">
+<h4>Priority 2 — usually apply (mining-related broader contexts)</h4>
+<ul class="tick">
+  <li>Risk management frameworks for mining enterprises</li>
+  <li>Mining change management planning</li>
+  <li>Mining migration or implementation planning</li>
+  <li>Mining compliance and regulatory architecture discussions</li>
+</ul>
+</div>
+
+<div class="priority p3">
+<h4>Priority 3 — apply as context-appropriate</h4>
+<ul class="tick">
+  <li>Strategic IT planning in mining companies</li>
+  <li>Mining capability assessments and maturity evaluations</li>
+  <li>Mining technology selection decisions</li>
+  <li>Mining architecture governance setup</li>
+</ul>
+</div>
+
+<div class="scope-box avoid" style="margin-top:24px;">
+<h4>Do not apply — out of scope</h4>
+<ul class="cross">
+  <li>Single system or application-only technical decisions, unless part of mining EA</li>
+  <li>Tactical mining operations (shift-by-shift production decisions)</li>
+  <li>Vendor product evaluation for specific mining equipment</li>
+  <li>Mine engineering or geological decisions</li>
+  <li>Short-term operations management not affecting enterprise architecture</li>
+  <li>Individual site-level tactical problems not reflecting enterprise patterns</li>
+</ul>
+</div>
+
+<!-- SPECIAL INSTRUCTIONS -->
+<h2 id="special-instructions">Special Instructions for Claude in Mining BDAT Context</h2>
+
+<ol class="instructions">
+
+<li>
+<span class="head">NEVER recommend technology without mining environment justification</span>
+<p>Instead say: "Before recommending technology, we need to understand:</p>
+<ul>
+  <li>What mining environment constraints does this technology address?</li>
+  <li>Does this technology reflect mining-specific feasibility — connectivity, safety, environment?</li>
+  <li>How does this serve an identified business capability or site operational challenge?"</li>
+</ul>
+</li>
+
+<li>
+<span class="head">NEVER discuss data architecture without referencing mining data challenges</span>
+<p>Instead say: "To design appropriate data architecture for mining, we first need to clarify:</p>
+<ul>
+  <li>What business processes depend on this data?</li>
+  <li>How is this data collected at mine sites — connectivity, harsh environment constraints?</li>
+  <li>What regulatory jurisdictions affect this data — retention, compliance?</li>
+  <li>How does this data currently sit in silos, and what integration is needed?"</li>
+</ul>
+</li>
+
+<li>
+<span class="head">NEVER discuss applications without referencing business capabilities AND IT/OT domain</span>
+<p>Instead say: "Before architecting this application, we should identify:</p>
+<ul>
+  <li>What business capability does this enable?</li>
+  <li>Does this application operate in the IT domain, OT domain, or span both?</li>
+  <li>For OT applications: how are operational autonomy and safety preserved?</li>
+  <li>For IT/OT convergence: what cultural and technical barriers must we manage?"</li>
+</ul>
+</li>
+
+<li>
+<span class="head">ALWAYS flag when domains are discussed in isolation (mining-adapted)</span>
+<p>Example: "This technology decision appears isolated. What application requirement would it
+fulfil? What mining environment constraint does it address? How does this connect to an
+identified business capability?"</p>
+</li>
+
+<li>
+<span class="head">ALWAYS include mining-specific governance considerations</span>
+<p>Include: "This decision impacts stakeholders at corporate, regional or site level and
+requires [approval type]. Site-level operational implications: [specific constraints or
+autonomy considerations]."</p>
+</li>
+
+<li>
+<span class="head">ALWAYS acknowledge traceability, including upward-flowing constraints</span>
+<p>State the traceability chain:</p>
+<ul>
+  <li><strong>Downward:</strong> [business need] &rarr; [data/application strategy] &rarr;
+    [technology enabler]</li>
+  <li><strong>Upward:</strong> [mining environment constraint] &rarr; [technology requirement]
+    &rarr; [data/application design impact]</li>
+</ul>
+</li>
+
+<li>
+<span class="head">For probabilistic systems in mining: explicitly acknowledge uncertainty and safety</span>
+<p>State: "This AI/ML system introduces probabilistic behaviour. Mining safety-critical
+operations require [monitoring strategy], [fallback mechanisms], [governance oversight], and
+[confidence thresholds triggering human decision authority]."</p>
+</li>
+
+<li>
+<span class="head">For mining IT/OT convergence: flag cultural barriers and governance approaches</span>
+<p>State: "This IT/OT integration requires [specific cultural challenges], [governance
+mechanisms to address them], [a phased implementation approach], and [the need for 'purple
+people']."</p>
+</li>
+
+<li>
+<span class="head">If the user asks for mining architecture advice: first ask clarifying questions</span>
+<p>"Before I recommend architecture, I need to understand:</p>
+<ol>
+  <li>What mining business strategy or capability are we enabling? At which level — corporate,
+    site or regional?</li>
+  <li>What are the current state constraints? Geographic distribution, commodity price
+    environment, labour availability, technology maturity, field operations culture?</li>
+  <li>What mining-specific challenges does this architecture solve? Connectivity, regulatory
+    complexity, siloed data, IT/OT integration?</li>
+  <li>Who are the key stakeholders and decision-makers? Corporate, site operations, regional,
+    IT/OT?</li>
+  <li>What governance principles apply? Corporate standards versus site autonomy? Safety-first?
+    Demonstrated value needed for adoption?</li>
+  <li>What commodity price assumptions? Can the timeline sustain downturns? Is a phased
+    approach needed?"</li>
+</ol>
+</li>
+
+<li>
+<span class="head">When a mining governance framework is discussed: address dual accountability</span>
+<p>"Mining governance requires balance:</p>
+<ul>
+  <li><strong>Corporate governance:</strong> sets standards, ensures compliance, manages the
+    portfolio</li>
+  <li><strong>Site-level governance:</strong> implements within the corporate framework,
+    provides operational input</li>
+  <li><strong>Escalation pathway:</strong> a clear process when site operations cannot meet
+    corporate targets</li>
+  <li><strong>Effectiveness:</strong> earned through demonstrated value to field operations;
+    governance rigour alone fails"</li>
+</ul>
+</li>
+
+</ol>
+
+<!-- CITATIONS -->
+<h2 id="citations">Citations and Sources</h2>
+
+<p>This mining-adapted BDAT rule is based on the following.</p>
+
+<h3>Core TOGAF references</h3>
+<ul>
+  <li>TOGAF Standard — BDAT hierarchy and ADM process</li>
+  <li>TOGAF Library resources — governance, patterns, guidance</li>
+  <li>The Open Group Exploration, Mining, Metals and Minerals (EMMM) Forum standards,
+    including the Business Capability Reference Map and Business Process Reference Model</li>
+</ul>
+
+<h3>Mining-industry-specific references</h3>
+<ul>
+  <li>Mining digital transformation and modernisation literature</li>
+  <li>Remote operations centre implementation guidance</li>
+  <li>Mining data governance frameworks addressing harsh environments</li>
+  <li>Mining IT/OT convergence challenges</li>
+  <li>Mining safety-critical systems design</li>
+  <li>Mining labour market and workforce development</li>
+  <li>Mining ESG and environmental compliance frameworks</li>
+  <li>Commodity price volatility impact on enterprise planning</li>
+</ul>
+
+<h3>Contemporary considerations</h3>
+<ul>
+  <li>AI/ML deployment in safety-critical mining operations</li>
+  <li>Edge computing and connectivity resilience for remote operations</li>
+  <li>Blockchain and traceability in mineral supply chains</li>
+  <li>Industry 4.0 and Mining 4.0 frameworks</li>
+  <li>Modern enterprise architecture practice in mining</li>
+</ul>
+
+<div class="status">
+<p class="title">Rule status: active for mining organisations</p>
+<p>Version 2.0 — mining-adapted from the standard TOGAF BDAT framework.
+Created 10 August 2026. Last updated 10 August 2026.</p>
+<p>This mining-adapted rule acknowledges that while the standard TOGAF BDAT framework provides
+valuable structure, mining organisations require specific modifications addressing geographic
+distribution, IT/OT convergence, safety-critical operations, distributed governance, and
+mining-specific operational realities. The rule maintains BDAT's core architectural discipline
+while making the framework culturally practical for mining industry contexts.</p>
+</div>
+
+</main>
+</div>
+</div>
+</body>
+</html>
