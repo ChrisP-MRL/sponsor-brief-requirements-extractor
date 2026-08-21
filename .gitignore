@@ -20,6 +20,7 @@
 # This repo tracks the skills and scripts, not the artefacts they consume or produce.
 input/
 output/
+build/
 
 # Generated output
 requirements/
