@@ -1,0 +1,2938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCOR Model for Demand Planning in Mining Technology Projects</title>
+    <style>
+        /* MinRes brand palette - see MINRES_Content_Guidelines.html */
+        :root {
+            --minres-red: #CE372F;      /* Coral 400 - primary */
+            --dark-teal: #00444C;       /* secondary */
+            --surface: #F1EDE7;         /* Brown 100 */
+            --surface-alt: #E8E8E8;     /* Grey 100 */
+            --border: #D1D1D1;          /* Grey 200 */
+            --muted: #5C5C5C;           /* Grey 500 */
+            --accent-soft: #F9E5E3;     /* Coral 100 */
+            /* status accents drawn from brand accent families */
+            --warn: #C37556;            /* Terra Cotta 300 */
+            --warn-soft: #F5E5DD;       /* Terra Cotta 100 */
+            --error: #8B2E45;           /* Wine 400 */
+            --error-soft: #F4D9DD;      /* Wine 100 */
+            --success: #5E623C;         /* Olive 400 */
+            --success-soft: #F0F2E5;    /* Olive 100 */
+            --info: #2D686F;            /* Teal 400 */
+            --info-soft: #E3F2F4;       /* Teal 100 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', 'Avenir', -apple-system, BlinkMacSystemFont,
+                         'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #CE372F 0%, #00444C 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .metadata {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .metadata-item {
+            font-size: 0.9em;
+        }
+
+        .metadata-label {
+            opacity: 0.8;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .metadata-value {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .nav-tabs button {
+            background: white;
+            border: 2px solid var(--border);
+            color: #000000;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 6px 6px 0 0;
+            transition: all 0.2s ease;
+        }
+
+        .nav-tabs button:hover {
+            background: var(--surface);
+            border-color: var(--minres-red);
+        }
+
+        .nav-tabs button.active {
+            background: var(--minres-red);
+            color: white;
+            border-color: var(--minres-red);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.2s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--minres-red);
+        }
+
+        .card.warning {
+            border-left-color: var(--warn);
+        }
+
+        .card.error {
+            border-left-color: var(--error);
+        }
+
+        .card.success {
+            border-left-color: var(--success);
+        }
+
+        .card.info {
+            border-left-color: var(--info);
+        }
+
+        h2 {
+            color: var(--minres-red);
+            margin: 24px 0 16px 0;
+            font-size: 2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--surface);
+            padding-bottom: 10px;
+        }
+
+        .card h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--dark-teal);
+            margin: 24px 0 16px 0;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .card h3:first-child {
+            margin-top: 0;
+        }
+
+        h4 {
+            color: var(--dark-teal);
+            margin: 24px 0 8px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        h5 {
+            color: #000000;
+            margin: 16px 0 8px 0;
+            font-size: 1.05em;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #000000;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #000000;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .checklist li:before {
+            content: "\2610";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            color: var(--minres-red);
+        }
+
+        .checklist li.checked:before {
+            content: "\2611";
+            color: var(--success);
+        }
+
+        .step {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 6px;
+            margin: 16px 0;
+            border-left: 4px solid var(--minres-red);
+        }
+
+        .step h4:first-child,
+        .step h3:first-child {
+            margin-top: 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--minres-red);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+
+        .step-number.teal {
+            background: var(--dark-teal);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: white;
+        }
+
+        th {
+            background: var(--minres-red);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            border: 1px solid var(--minres-red);
+        }
+
+        td {
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            color: #000000;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: var(--surface);
+        }
+
+        tr:hover {
+            background: var(--accent-soft);
+        }
+
+        tfoot td {
+            background: var(--dark-teal);
+            color: white;
+            font-weight: 700;
+            border-color: var(--dark-teal);
+        }
+
+        tfoot tr:hover td {
+            background: var(--dark-teal);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .badge.primary {
+            background: var(--minres-red);
+            color: white;
+        }
+
+        .badge.warning {
+            background: var(--warn);
+            color: white;
+        }
+
+        .badge.error {
+            background: var(--error);
+            color: white;
+        }
+
+        .badge.success {
+            background: var(--success);
+            color: white;
+        }
+
+        .badge.info {
+            background: var(--info);
+            color: white;
+        }
+
+        .badge.neutral {
+            background: var(--muted);
+            color: white;
+        }
+
+        .matrix {
+            overflow-x: auto;
+        }
+
+        .callout {
+            background: var(--surface);
+            border-left: 4px solid var(--minres-red);
+            padding: 16px 24px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+
+        .callout.warning {
+            background: var(--warn-soft);
+            border-left-color: var(--warn);
+        }
+
+        .callout.error {
+            background: var(--error-soft);
+            border-left-color: var(--error);
+        }
+
+        .callout.success {
+            background: var(--success-soft);
+            border-left-color: var(--success);
+        }
+
+        .callout.info {
+            background: var(--info-soft);
+            border-left-color: var(--info);
+        }
+
+        .callout p:last-child,
+        .callout ul:last-child,
+        .callout ol:last-child {
+            margin-bottom: 0;
+        }
+
+        .example-box {
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 16px;
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            overflow-x: auto;
+        }
+
+        .formula {
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            margin: 16px 0;
+            color: #000000;
+            overflow-x: auto;
+        }
+
+        /* SCOR process map / phase flow */
+        .process-map {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .process-card {
+            background: var(--surface);
+            border-top: 4px solid var(--dark-teal);
+            border-radius: 6px;
+            padding: 16px;
+        }
+
+        .process-card .process-name {
+            font-weight: 700;
+            color: var(--dark-teal);
+            font-size: 1.1em;
+            margin-bottom: 6px;
+        }
+
+        .process-card .process-ref {
+            font-size: 0.85em;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .flow-item {
+            background: var(--dark-teal);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .flow-arrow {
+            color: var(--minres-red);
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        /* Metric blocks for the SCOR dashboard */
+        .metric {
+            background: white;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--dark-teal);
+            border-radius: 6px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .metric h4:first-child {
+            margin-top: 0;
+        }
+
+        .metric-fields {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .metric-field {
+            font-size: 0.9em;
+        }
+
+        .metric-field .label {
+            display: block;
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .metric-field .value {
+            font-weight: 700;
+            color: var(--dark-teal);
+        }
+
+        .components {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .components li {
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .components li:before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* Inline citation links */
+        .cite {
+            font-size: 0.75em;
+            vertical-align: super;
+            color: var(--info);
+            text-decoration: none;
+            font-weight: 700;
+            margin-left: 2px;
+            white-space: nowrap;
+        }
+
+        .cite:hover {
+            text-decoration: underline;
+        }
+
+        .source-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .source-list li {
+            padding: 10px 12px;
+            background: var(--surface);
+            border-left: 3px solid var(--info);
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+
+        .source-list a {
+            color: var(--minres-red);
+            font-weight: 600;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--muted);
+            font-size: 0.9em;
+            border-top: 2px solid var(--minres-red);
+            margin-top: 50px;
+        }
+
+        .print-button {
+            background: var(--minres-red);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: background 0.2s ease;
+        }
+
+        .print-button:hover {
+            background: #7A1F18;
+        }
+
+        @media print {
+            .nav-tabs, .print-button {
+                display: none;
+            }
+
+            .tab-content {
+                display: block !important;
+            }
+
+            body {
+                background: white;
+            }
+
+            .header {
+                background: none;
+                color: #000000;
+                box-shadow: none;
+            }
+
+            .header h1 {
+                color: var(--minres-red);
+            }
+
+            .card, .step, .example-box, .metric {
+                page-break-inside: avoid;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 24px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .metadata {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>SCOR Model for Demand Planning</h1>
+            <p>Mining Technology Project Demand Planning Analysis &mdash; Claude Code Rule</p>
+            <div class="metadata">
+                <div class="metadata-item">
+                    <span class="metadata-label">Framework</span>
+                    <span class="metadata-value">SCOR (Supply Chain Operations Reference)</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Domain</span>
+                    <span class="metadata-value">Mining Technology Projects</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Supply Model</span>
+                    <span class="metadata-value">Engineer-to-Order (ETO)</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Project Horizon</span>
+                    <span class="metadata-value">3&ndash;10 years typical</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Print Button -->
+        <button class="print-button" onclick="window.print()">&#128424; Print This Page</button>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="tab-button active" data-tab="overview">Overview &amp; Context</button>
+            <button class="tab-button" data-tab="plan">2. Plan</button>
+            <button class="tab-button" data-tab="source">3. Source</button>
+            <button class="tab-button" data-tab="make">4. Make</button>
+            <button class="tab-button" data-tab="deliver">5. Deliver</button>
+            <button class="tab-button" data-tab="return-process">6. Return</button>
+            <button class="tab-button" data-tab="enable">7. Enable &amp; KPIs</button>
+            <button class="tab-button" data-tab="risk">8. Risk</button>
+            <button class="tab-button" data-tab="technology">9. Technology</button>
+            <button class="tab-button" data-tab="improve">10. Improve</button>
+            <button class="tab-button" data-tab="execute">11&ndash;12. Execute</button>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- OVERVIEW & SECTION 1: PROJECT CONTEXT DEFINITION             -->
+        <!-- ============================================================ -->
+        <div id="overview" class="tab-content active">
+            <div class="card">
+                <h2>Purpose</h2>
+                <p>Evaluate and analyze demand requirements for mining technology projects using SCOR (Supply Chain Operations Reference) framework principles, enabling structured demand forecasting, risk assessment, and supply chain optimization for complex, geographically distributed mining operations.</p>
+            </div>
+
+            <div class="card info">
+                <h2>Applicability</h2>
+                <p>This rule applies to mining technology projects characterized by:</p>
+                <ul class="checklist">
+                    <li>Complex, customized equipment deployments (Engineer-to-Order model)</li>
+                    <li>Multi-year development timelines (3&ndash;10 years typical)</li>
+                    <li>Geographic remoteness and environmental challenges</li>
+                    <li>High capital intensity and commodity price volatility</li>
+                    <li>Integration of emerging technologies (electrification, autonomy, digital integration)</li>
+                    <li>Multiple stakeholder coordination (mining operators, equipment manufacturers, logistics providers)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>SCOR Process Coverage</h2>
+                <p>The framework maps the five SCOR processes plus Enable onto the sections of this rule.</p>
+                <div class="process-map">
+                    <div class="process-card">
+                        <div class="process-name">Plan</div>
+                        <p>Multi-scenario demand forecasting, capacity and resource planning, business rules.</p>
+                        <div class="process-ref">Section 2</div>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-name">Source</div>
+                        <p>Supplier identification, qualification, agreements, performance monitoring.</p>
+                        <div class="process-ref">Section 3</div>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-name">Make</div>
+                        <p>Equipment customization, quality assurance, production schedule optimization.</p>
+                        <div class="process-ref">Section 4</div>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-name">Deliver</div>
+                        <p>Transportation mode analysis, logistics partners, delivery milestone tracking.</p>
+                        <div class="process-ref">Section 5</div>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-name">Return</div>
+                        <p>Maintenance, spare parts, reverse logistics, end-of-life management.</p>
+                        <div class="process-ref">Section 6</div>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-name">Enable</div>
+                        <p>Governance structure, KPI dashboard, risk management and mitigation.</p>
+                        <div class="process-ref">Sections 7&ndash;8</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Section 1: Project Context Definition</h2>
+                <p><strong>Request Information</strong> &mdash; capture the following before any demand analysis begins.</p>
+
+                <div class="step">
+                    <h4><span class="step-number">1</span>Project Identification</h4>
+                    <ul>
+                        <li>Project Name &amp; Unique Identifier</li>
+                        <li>Geographic Location (Country, Region, GPS Coordinates if available)</li>
+                        <li>Mining Type Classification:
+                            <ul>
+                                <li>Open-pit (specify ore type: copper, gold, iron, lithium, cobalt, other)</li>
+                                <li>Underground (specify depth and geological characteristics)</li>
+                                <li>Mixed/Specialized extraction method (describe)</li>
+                            </ul>
+                        </li>
+                        <li>Current Project Phase &amp; Estimated Timeline to Full Production</li>
+                        <li>Operating Organization &amp; Key Stakeholders</li>
+                    </ul>
+                    <h5>Project Life Phase</h5>
+                    <div class="flow">
+                        <span class="flow-item">Exploration</span>
+                        <span class="flow-arrow">&rarr;</span>
+                        <span class="flow-item">Development</span>
+                        <span class="flow-arrow">&rarr;</span>
+                        <span class="flow-item">Construction</span>
+                        <span class="flow-arrow">&rarr;</span>
+                        <span class="flow-item">Production</span>
+                        <span class="flow-arrow">&rarr;</span>
+                        <span class="flow-item">Operations</span>
+                        <span class="flow-arrow">&rarr;</span>
+                        <span class="flow-item">Closure</span>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">2</span>Mining Operation Characteristics</h4>
+                    <ul>
+                        <li>Estimated Annual Production Volume (metric tons of ore per year)</li>
+                        <li>Ore Grade &amp; Mineral Composition (percentage target minerals in ore)</li>
+                        <li>Geographic/Climatic Challenges (altitude, temperature extremes, rainfall, accessibility)</li>
+                        <li>Infrastructure Maturity (existing roads, ports, processing facilities, power availability)</li>
+                        <li>Workforce Availability &amp; Skills Profile (local labor, expatriate requirements)</li>
+                        <li>Environmental &amp; Regulatory Constraints (permits, environmental compliance, labor laws)</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">3</span>Project Scope &amp; Technology Integration</h4>
+                    <ul>
+                        <li>Primary Mining Technology Needs:
+                            <ul>
+                                <li>Extraction equipment (primary, secondary, specialized)</li>
+                                <li>Processing technology (crushing, grinding, separation, refining)</li>
+                                <li>Transportation (haul trucks, conveyor systems, rail, autonomous systems)</li>
+                                <li>Ancillary equipment (ventilation, power, water management, environmental controls)</li>
+                            </ul>
+                        </li>
+                        <li>Emerging Technology Integration (electrification, automation, digital systems, zero-entry mining)</li>
+                        <li>Equipment Customization Requirements (site-specific modifications, climate adaptation)</li>
+                        <li>Total Project Capital Cost (CAPEX) &amp; Budget Constraints</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">4</span>Market Context &amp; External Factors</h4>
+                    <ul>
+                        <li>Commodity Price Outlook (current prices, price sensitivity analysis, volatility assessment)</li>
+                        <li>Demand Market Analysis (primary customers, market growth drivers, competitive landscape)</li>
+                        <li>Regulatory Changes Anticipated (environmental, labor, technology standards)</li>
+                        <li>Supply Chain Disruption Risk Assessment (geopolitical, pandemic preparedness, climate resilience)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 2: SCOR PLANNING PROCESS APPLICATION                 -->
+        <!-- ============================================================ -->
+        <div id="plan" class="tab-content">
+            <div class="card">
+                <h2>Section 2: SCOR Planning Process Application</h2>
+                <p>Analyze demand through the SCOR Plan process framework, addressing demand forecasting, capacity and resource planning, and business rules alignment.</p>
+            </div>
+
+            <div class="card">
+                <h3>2.1 Demand Forecasting &amp; Production Planning</h3>
+                <h4>Methodology: Multi-Scenario Demand Forecasting</h4>
+                <p>Develop three distinct demand scenarios reflecting commodity price and operational uncertainty inherent to mining:</p>
+
+                <div class="step">
+                    <h4><span class="step-number">A</span>Base Case Scenario</h4>
+                    <ul>
+                        <li><strong>Methodology:</strong> Historical commodity price trends + industry analyst forecasts</li>
+                        <li><strong>Assumptions:</strong>
+                            <ul>
+                                <li>Commodity price range: [Low], [Middle], [High]</li>
+                                <li>Market share assumption: [X]%</li>
+                                <li>Production ramp-up timeline: [Y] months to full capacity</li>
+                                <li>Equipment utilization rate: [Z]%</li>
+                            </ul>
+                        </li>
+                        <li><strong>Demand Output:</strong> Annual production volumes for years 1&ndash;10 of operation</li>
+                        <li><strong>Equipment Deployment Timeline:</strong> Specify equipment quantities and deployment windows</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">B</span>Upside Scenario (High Demand Case)</h4>
+                    <ul>
+                        <li><strong>Driver:</strong> Stronger-than-expected commodity prices or market demand surge</li>
+                        <li><strong>Assumptions:</strong>
+                            <ul>
+                                <li>Commodity price: +[X]% above base case</li>
+                                <li>Market share: +[Y]% upside</li>
+                                <li>Production acceleration: [Z] months earlier than base case</li>
+                            </ul>
+                        </li>
+                        <li><strong>Implications:</strong> Accelerated equipment deployment, increased working capital, potential bottlenecks in supplier capacity</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">C</span>Downside Scenario (Low Demand Case)</h4>
+                    <ul>
+                        <li><strong>Driver:</strong> Weaker commodity prices or market demand contraction</li>
+                        <li><strong>Assumptions:</strong>
+                            <ul>
+                                <li>Commodity price: &minus;[X]% below base case</li>
+                                <li>Market share: &minus;[Y]% downside</li>
+                                <li>Production delay: [Z] months later than base case</li>
+                            </ul>
+                        </li>
+                        <li><strong>Implications:</strong> Deferred equipment deployment, reduced working capital requirements, potential extended equipment storage</li>
+                    </ul>
+                </div>
+
+                <h4>Forecast Accuracy Assessment</h4>
+                <ul>
+                    <li>Historical forecasting accuracy (if project is expansion of existing operation):
+                        <ul>
+                            <li>Actual vs. forecast variance for previous projects: [X]%</li>
+                            <li>MAPE (Mean Absolute Percentage Error) benchmark for mining sector: <strong>15&ndash;25%</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="callout warning">
+                    <p><strong>Factors degrading forecast accuracy:</strong></p>
+                    <ul>
+                        <li>Commodity price volatility (primary driver for mining)</li>
+                        <li>Geographic/operational discovery (unexpected geological conditions)</li>
+                        <li>Technology evolution (equipment specifications may require updating)</li>
+                        <li>Market timing unpredictability</li>
+                        <li>Regulatory changes affecting viability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>2.2 Capacity &amp; Resource Planning</h3>
+                <h4>Resource Requirements Analysis</h4>
+                <p>Complete the following for each equipment category needed.</p>
+
+                <div class="step">
+                    <h4><span class="step-number">A</span>Equipment-Specific Planning</h4>
+                    <p><strong>Equipment Category:</strong> [Name]</p>
+
+                    <h5>Functional Requirements</h5>
+                    <ul>
+                        <li>Performance specifications (capacity, power requirements, environmental specifications)</li>
+                        <li>Availability requirement (uptime %, backup/redundancy needs)</li>
+                        <li>Customization needs (site-specific modifications, climate adaptation)</li>
+                        <li>Expected service life (years)</li>
+                        <li>Maintenance &amp; spare parts requirements</li>
+                    </ul>
+
+                    <h5>Deployment Timing</h5>
+                    <ul>
+                        <li>Required operational date: [Date]</li>
+                        <li>Lead time from order to operational: [Months]</li>
+                        <li>Procurement start date: [Date]</li>
+                        <li>Installation &amp; commissioning duration: [Months]</li>
+                        <li>Testing &amp; ramp-up duration: [Months]</li>
+                        <li>Pre-deployment storage requirements: [Duration at site]</li>
+                    </ul>
+                    <div class="formula">
+Procurement start date = Required operational date &minus; Lead time &minus; Buffer
+                    </div>
+
+                    <h5>Quantity Requirements</h5>
+                    <ul>
+                        <li>Primary units required: [N]</li>
+                        <li>Backup/redundant units: [N]</li>
+                        <li>Spare components (critical path items): [Quantities &amp; timing]</li>
+                        <li>Total equipment value: $[Amount]</li>
+                    </ul>
+
+                    <h5>Supply Chain Configuration</h5>
+                    <ul>
+                        <li>Supplier selection: [Make/Buy/Lease decision]</li>
+                        <li>Geographic sourcing: [Primary locations]</li>
+                        <li>Logistics routing: [Manufacturer &rarr; Intermediate storage &rarr; Mine site]</li>
+                        <li>Transportation mode: [Ocean freight][air freight][land transport][combination]</li>
+                        <li>Import/export requirements: [Customs][tariffs][permits]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">B</span>Workforce Planning</h4>
+                    <ul>
+                        <li>Permanent staff required: [Number]</li>
+                        <li>Specialist/expatriate requirements: [Positions]</li>
+                        <li>Training timeline &amp; requirements: [Duration]</li>
+                        <li>Contractor/temporary labor: [Quantities]</li>
+                        <li>Workforce availability risk: [Low/Medium/High]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">C</span>Supporting Infrastructure</h4>
+                    <ul>
+                        <li>Power availability &amp; generation requirements: [MW capacity needed]</li>
+                        <li>Water management: [Million liters/day]</li>
+                        <li>Transportation access: [Road condition][capacity][accessibility]</li>
+                        <li>Storage &amp; warehousing: [Square meters]</li>
+                        <li>Communication &amp; digital infrastructure: [Network requirements]</li>
+                        <li>Environmental management systems: [Emissions control][waste management]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>2.3 Business Rules &amp; Alignment Processes</h3>
+                <p>Document supply chain decision rules.</p>
+
+                <h4>Decision Rule 1: Equipment Sourcing Strategy</h4>
+                <ul>
+                    <li>Make vs. Buy vs. Lease decision framework: [Specify decision criteria]</li>
+                    <li>Single vs. multiple sourcing: [Strategy rationale]</li>
+                    <li>Risk concentration assessment: [High/Medium/Low supplier risk]</li>
+                </ul>
+                <h5>Supplier Selection Criteria</h5>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Criterion</th>
+                                <th>Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Quality/technical capability</td><td>[Weight X%]</td></tr>
+                            <tr><td>Delivery reliability</td><td>[Weight X%]</td></tr>
+                            <tr><td>Cost competitiveness</td><td>[Weight X%]</td></tr>
+                            <tr><td>Financial stability</td><td>[Weight X%]</td></tr>
+                            <tr><td>Sustainability/ESG compliance</td><td>[Weight X%]</td></tr>
+                            <tr><td>Local content requirements</td><td>[Weight X%]</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Decision Rule 2: Inventory Optimization</h4>
+                <ul>
+                    <li>Raw materials/components inventory policy:
+                        <ul>
+                            <li>Days of Supply target: [X] days</li>
+                            <li>Safety stock formula: [Z-score method][standard deviation parameters]</li>
+                            <li>Reorder point calculation: [Lead time + safety stock]</li>
+                            <li><em>Justification:</em> Balance stockout risk vs. carrying costs in remote location</li>
+                        </ul>
+                    </li>
+                    <li>Equipment/spare parts strategy:
+                        <ul>
+                            <li>Critical-path equipment backup requirements: [%]</li>
+                            <li>Spare parts inventory: [Location][quantities]</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="callout">
+                    <p><strong>Justification:</strong> Mining site remoteness means stockouts have amplified consequences.</p>
+                </div>
+
+                <h4>Decision Rule 3: Transportation &amp; Logistics</h4>
+                <ul>
+                    <li>Transportation mode selection (for each equipment category):
+                        <ul>
+                            <li>Ocean freight: [When used][shipping routes]</li>
+                            <li>Air freight: [When used][urgency thresholds]</li>
+                            <li>Land transport: [Routes][lead times][cost trade-offs]</li>
+                            <li>Intermodal: [Combination strategy and transition points]</li>
+                        </ul>
+                    </li>
+                    <li>Consolidation strategy:
+                        <ul>
+                            <li>Consolidated shipments: [Batch size][frequency]</li>
+                            <li>Just-in-time delivery: [Minimum viable buffer before site]</li>
+                        </ul>
+                    </li>
+                    <li>Logistics partner selection:
+                        <ul>
+                            <li>Geographic expertise: [Routes][regional knowledge]</li>
+                            <li>Capacity &amp; equipment: [Specialized handling capabilities]</li>
+                            <li>Contingency capacity: [Alternative routing capability]</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>Decision Rule 4: External Risk Management</h4>
+                <ul>
+                    <li>Commodity price hedging:
+                        <ul>
+                            <li>Hedging strategy: [Natural hedge through sales contracts vs. financial instruments]</li>
+                            <li>Trigger points for strategy adjustment: [Price levels]</li>
+                            <li>Hedging cost tolerance: [% of operating margin]</li>
+                        </ul>
+                    </li>
+                    <li>Supply disruption contingency:
+                        <ul>
+                            <li>Supplier dual-sourcing: [Secondary suppliers identified for critical items]</li>
+                            <li>Strategic inventory reserves: [High-value items held as protection]</li>
+                            <li>Alternative routing: [Geographic alternatives for critical shipments]</li>
+                        </ul>
+                    </li>
+                    <li>Regulatory/geopolitical risk:
+                        <ul>
+                            <li>Compliance monitoring: [Regulatory tracking system]</li>
+                            <li>Permit contingency: [Timeline buffers][alternative operations scenarios]</li>
+                            <li>Trade agreement monitoring: [Tariff/import duty changes]</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 3: SCOR SOURCE PROCESS                               -->
+        <!-- ============================================================ -->
+        <div id="source" class="tab-content">
+            <div class="card">
+                <h2>Section 3: SCOR Source Process &mdash; Supplier Evaluation</h2>
+                <p>Apply the following for each critical equipment category or major supplier relationship.</p>
+            </div>
+
+            <div class="card">
+                <h3>3.1 Supplier Identification &amp; Qualification</h3>
+
+                <h4>Supplier Profile</h4>
+                <ul>
+                    <li>Company Name &amp; Location</li>
+                    <li>Years in business / Financial stability (Dun &amp; Bradstreet rating or equivalent)</li>
+                    <li>Key technical capabilities (certifications, manufacturing capacity, track record)</li>
+                    <li>Geographic reach (manufacturing locations, shipping networks)</li>
+                    <li>References (previous projects, customer testimonials, case studies)</li>
+                    <li>Financial capacity to support project needs (line of credit, working capital)</li>
+                </ul>
+
+                <h4>Supplier Evaluation Matrix</h4>
+                <p>Weighted scorecard (sample weights; adjust per organization priorities):</p>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Criterion</th>
+                                <th>Weight</th>
+                                <th>Supplier A</th>
+                                <th>Supplier B</th>
+                                <th>Supplier C</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Quality/Technical Capability</td>
+                                <td>25%</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                            </tr>
+                            <tr>
+                                <td>On-Time Delivery Performance</td>
+                                <td>20%</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                            </tr>
+                            <tr>
+                                <td>Cost Competitiveness</td>
+                                <td>20%</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                            </tr>
+                            <tr>
+                                <td>Financial Stability &amp; Capacity</td>
+                                <td>15%</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                            </tr>
+                            <tr>
+                                <td>Sustainability/ESG Compliance</td>
+                                <td>10%</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                            </tr>
+                            <tr>
+                                <td>Local Content / Regional Support</td>
+                                <td>10%</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                                <td>Score/10</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Weighted Total Score</td>
+                                <td>100%</td>
+                                <td>Final/100</td>
+                                <td>Final/100</td>
+                                <td>Final/100</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <h4>Supplier Selection Rationale</h4>
+                <ul>
+                    <li>Selected Supplier: [Name]</li>
+                    <li>Justification: [Rationale for selection]</li>
+                    <li>Risk factors: [Specific risks with this supplier]</li>
+                    <li>Mitigation measures: [Contractual terms][monitoring][contingencies]</li>
+                    <li>Backup supplier: [Identified secondary source]</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>3.2 Supplier Agreements &amp; Terms</h3>
+                <h4>Key Contract Elements</h4>
+
+                <h5>Scope of Supply</h5>
+                <ul>
+                    <li>[Detailed specifications][quantities][delivery terms]</li>
+                </ul>
+
+                <h5>Price &amp; Payment Terms</h5>
+                <ul>
+                    <li>Unit pricing: $[Amount]</li>
+                    <li>Volume discounts: [Applicable at quantities X][Y][Z]</li>
+                    <li>Escalation clauses: [Price adjustment mechanisms]</li>
+                    <li>Payment schedule: [% advance][% on delivery][% on acceptance]</li>
+                    <li>Currency: [Specify][consider FX exposure]</li>
+                </ul>
+
+                <h5>Delivery &amp; Performance</h5>
+                <ul>
+                    <li>Delivery schedule: [Dates][locations][milestones]</li>
+                    <li>On-time delivery penalty: [% discount or liquidated damages]</li>
+                    <li>Quality acceptance criteria: [Specifications][testing protocols]</li>
+                    <li>Warranty: [Duration][coverage][remedy terms]</li>
+                </ul>
+
+                <h5>Liability &amp; Insurance</h5>
+                <ul>
+                    <li>Supplier insurance requirements: [Coverage types][limits]</li>
+                    <li>Liability caps: [Limitation of liability clause]</li>
+                    <li>Indemnification: [Mutual indemnification for IP][safety][environmental]</li>
+                </ul>
+
+                <h5>Risk Allocation</h5>
+                <ul>
+                    <li>Commodity price escalation: [Passthrough mechanisms or fixed pricing]</li>
+                    <li>Delivery delays: [Force majeure provisions][mitigation obligations]</li>
+                    <li>Quality failures: [Rework][replacement][penalty provisions]</li>
+                    <li>Technology obsolescence: [Update obligations][upgrade options]</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>3.3 Supplier Performance Monitoring</h3>
+                <p>Establish KPIs for ongoing supplier management.</p>
+
+                <h4>Monitoring Dashboard</h4>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Target</th>
+                                <th>Current</th>
+                                <th>Variance</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>On-Time Delivery Rate</td>
+                                <td>95%</td>
+                                <td>[X]%</td>
+                                <td>[&plusmn;Y]%</td>
+                                <td>&uarr;&darr;</td>
+                            </tr>
+                            <tr>
+                                <td>Quality Acceptance Rate (first-pass)</td>
+                                <td>98%</td>
+                                <td>[X]%</td>
+                                <td>[&plusmn;Y]%</td>
+                                <td>&uarr;&darr;</td>
+                            </tr>
+                            <tr>
+                                <td>Price Competitiveness vs. Market</td>
+                                <td>[Target]</td>
+                                <td>[X]</td>
+                                <td>[&plusmn;Y]</td>
+                                <td>&uarr;&darr;</td>
+                            </tr>
+                            <tr>
+                                <td>Response Time to Inquiries/Changes</td>
+                                <td>48 hrs</td>
+                                <td>[X] hrs</td>
+                                <td>[&plusmn;Y] hrs</td>
+                                <td>&uarr;&darr;</td>
+                            </tr>
+                            <tr>
+                                <td>Financial Health Indicators (D&amp;B score)</td>
+                                <td>[Target]</td>
+                                <td>[Score]</td>
+                                <td>[Change]</td>
+                                <td>&uarr;&darr;</td>
+                            </tr>
+                            <tr>
+                                <td>Compliance: Safety, Environmental, Labor</td>
+                                <td>100%</td>
+                                <td>[X]%</td>
+                                <td>[&plusmn;Y]%</td>
+                                <td>&uarr;&darr;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Monthly Supplier Review Process</h4>
+                <ol>
+                    <li>Collect performance data</li>
+                    <li>Analyze variances vs. targets</li>
+                    <li>Identify improvement opportunities</li>
+                    <li>Escalate issues above threshold</li>
+                    <li>Adjust orders/forecasts as needed</li>
+                    <li>Communicate results to supplier</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 4: SCOR MAKE PROCESS                                 -->
+        <!-- ============================================================ -->
+        <div id="make" class="tab-content">
+            <div class="card">
+                <h2>Section 4: SCOR Make Process &mdash; Customization &amp; Quality</h2>
+                <p>For Engineer-to-Order (ETO) mining equipment, document customization needs, acceptance criteria, and the production schedule.</p>
+            </div>
+
+            <div class="card">
+                <h3>4.1 Equipment Customization Requirements</h3>
+
+                <div class="step">
+                    <h4><span class="step-number">1</span>Site-Specific Modifications</h4>
+                    <ul>
+                        <li>Geographic adaptation (altitude, temperature, humidity specifications)</li>
+                        <li>Ore-type optimization (performance tuning for specific mineral properties)</li>
+                        <li>Integration with existing equipment (interfaces, compatibility)</li>
+                        <li>Power/utility requirements (electrical specifications, backup generation)</li>
+                        <li>Environmental specifications (dust control, emissions, noise limits)</li>
+                    </ul>
+                    <p><span class="badge warning">Timeline impact</span> [+X days for customization]
+                       <span class="badge warning">Cost impact</span> [+X% to base equipment cost]</p>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">2</span>Technology Integration</h4>
+                    <ul>
+                        <li>Digital integration (IoT sensors, real-time monitoring, remote operation)</li>
+                        <li>Autonomous capability (advanced autonomy requirements, control systems)</li>
+                        <li>Safety systems (emergency shutdown, worker protection, hazard mitigation)</li>
+                        <li>Environmental controls (zero-discharge requirements, emission standards)</li>
+                        <li>Cybersecurity (data protection, system security, network isolation)</li>
+                    </ul>
+                    <p><span class="badge warning">Timeline impact</span> [+X days for integration]
+                       <span class="badge warning">Cost impact</span> [+X% to base equipment cost]</p>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">3</span>Regulatory &amp; Compliance</h4>
+                    <ul>
+                        <li>Local manufacturing content requirements (% by value)</li>
+                        <li>Labor standards compliance (equipment enabling safe work practices)</li>
+                        <li>Environmental compliance (emissions, waste handling, water management)</li>
+                        <li>Safety certifications (local country standards, international standards)</li>
+                        <li>Documentation &amp; training (manuals in local language, trainer availability)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>4.2 Quality Assurance &amp; Acceptance Criteria</h3>
+                <p>Define acceptance criteria for each major equipment category. <strong>Equipment:</strong> [Name]</p>
+
+                <h4>Performance Specifications</h4>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Specification</th>
+                                <th>Description</th>
+                                <th>Acceptance Test</th>
+                                <th>Pass/Fail Threshold</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Specification 1</td><td>[Description]</td><td>[Method]</td><td>[Value]</td></tr>
+                            <tr><td>Specification 2</td><td>[Description]</td><td>[Method]</td><td>[Value]</td></tr>
+                            <tr><td colspan="4"><em>[Additional specifications as applicable]</em></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Quality Standards</h4>
+                <ul>
+                    <li>Manufacturing defect rate acceptable: [X%]</li>
+                    <li>Component quality levels: [IEC/ISO/local standards]</li>
+                    <li>Surface finish, dimensional tolerance: [Specifications]</li>
+                    <li>Documentation completeness: [Manuals][drawings][certifications]</li>
+                </ul>
+
+                <div class="two-col">
+                    <div class="step">
+                        <h4>Factory Acceptance Test (FAT)</h4>
+                        <ul>
+                            <li><strong>Location:</strong> [Supplier facility]</li>
+                            <li><strong>Duration:</strong> [X days]</li>
+                            <li><strong>Attendees:</strong> [Your technical team + supplier representatives]</li>
+                            <li><strong>Test procedures:</strong> [Detailed test plan with acceptance criteria]</li>
+                            <li><strong>Defect resolution:</strong> [Rework schedule][retesting protocol]</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h4>Site Acceptance Test (SAT)</h4>
+                        <ul>
+                            <li><strong>Location:</strong> [Mining site]</li>
+                            <li><strong>Duration:</strong> [X days after arrival]</li>
+                            <li><strong>Commissioning phase:</strong> [Integration with site systems]</li>
+                            <li><strong>Performance verification:</strong> [Under actual operating conditions]</li>
+                            <li><strong>Final acceptance:</strong> [Handover to operations]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>4.3 Production Schedule Optimization</h3>
+                <p>Create an equipment delivery schedule aligned with project milestones.</p>
+                <h4>Project Milestone Timeline</h4>
+
+                <div class="step">
+                    <h4>Infrastructure Development Phase: [Month X &ndash; Month Y]</h4>
+                    <ul>
+                        <li>Mining site preparation complete: [Month X]</li>
+                        <li>Access roads &amp; utilities operational: [Month Y]</li>
+                        <li>Primary facility construction complete: [Month Z]</li>
+                    </ul>
+                    <div class="callout info">
+                        <p><strong>&rarr; Equipment requirement:</strong> Pre-delivery inspection equipment, site prep tools</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h4>Equipment Arrival Phase: [Month Y+6 &ndash; Month Z+6]</h4>
+                    <ul>
+                        <li>Critical-path equipment arrivals: [Specify dates]</li>
+                        <li>Installation crew mobilization: [Dates]</li>
+                        <li>Factory Acceptance Test completions: [Dates]</li>
+                    </ul>
+                    <div class="callout info">
+                        <p><strong>&rarr; Equipment requirement:</strong> All major mining equipment deployed</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h4>Commissioning Phase: [Month Z &ndash; Month Z+3]</h4>
+                    <ul>
+                        <li>Equipment installation complete: [Month Z]</li>
+                        <li>System integration complete: [Month Z+1]</li>
+                        <li>Factory Acceptance Testing complete: [Month Z+2]</li>
+                        <li>Site Acceptance Testing complete: [Month Z+3]</li>
+                    </ul>
+                    <div class="callout info">
+                        <p><strong>&rarr; Equipment requirement:</strong> All systems operational</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h4>Production Ramp-Up Phase: [Month Z+3 &ndash; Month Z+12]</h4>
+                    <div class="matrix">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Capacity Milestone</th>
+                                    <th>Target Month</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Operating at 50% capacity</td><td>[Month Z+3]</td></tr>
+                                <tr><td>Operating at 75% capacity</td><td>[Month Z+6]</td></tr>
+                                <tr><td>Operating at 90% capacity</td><td>[Month Z+9]</td></tr>
+                                <tr><td>Full production capacity</td><td>[Month Z+12]</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 5: SCOR DELIVER PROCESS                              -->
+        <!-- ============================================================ -->
+        <div id="deliver" class="tab-content">
+            <div class="card">
+                <h2>Section 5: SCOR Deliver Process &mdash; Logistics Optimization</h2>
+                <p>Analyze transportation alternatives, evaluate logistics partners, and track delivery against project milestones.</p>
+            </div>
+
+            <div class="card">
+                <h3>5.1 Transportation Mode Analysis</h3>
+                <p>For each equipment category, analyze transportation alternatives.</p>
+                <div class="formula">
+Equipment: [Name] | Quantity: [N] | Total Weight: [Tons] | Dimensions: [L&times;W&times;H meters]
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">1</span>Ocean Freight</h4>
+                    <ul>
+                        <li><strong>Route:</strong> [Origin port] &rarr; [Destination port]</li>
+                        <li><strong>Transit time:</strong> [X] days ocean transit + [Y] days port handling</li>
+                        <li><strong>Total lead time:</strong> [Z] days from shipment</li>
+                        <li><strong>Cost:</strong> $[Amount] per unit / $[Total]</li>
+                        <li><strong>Shipping lines available:</strong> [Names]</li>
+                        <li><strong>Consolidation:</strong> [Full container load (FCL) or Less than Container Load (LCL)]</li>
+                        <li><strong>Vessel requirements:</strong> [Size][specialized equipment (break bulk][heavy lift cranes)]</li>
+                        <li><strong>Port constraints:</strong> [Berth capacity][crane availability][weather window]</li>
+                        <li><strong>Customs &amp; import:</strong> [Documentation][tariffs][import duty: X%]</li>
+                        <li><strong>Risk factors:</strong> [Weather delays][port congestion][geopolitical risks on shipping route]</li>
+                        <li><strong>Contingency:</strong> [Alternative shipping routes][backup carriers]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">2</span>Air Freight</h4>
+                    <ul>
+                        <li><strong>Route:</strong> [Origin airport] &rarr; [Destination airport]</li>
+                        <li><strong>Transit time:</strong> [X] days flight + [Y] days ground handling</li>
+                        <li><strong>Total lead time:</strong> [Z] days from shipment</li>
+                        <li><strong>Cost:</strong> $[Amount] per unit / $[Total]</li>
+                        <li><strong>Suitability:</strong> [High cost][used only for critical emergency shipments]</li>
+                        <li><strong>Weight limit per aircraft:</strong> [Tons]</li>
+                        <li><strong>Equipment handling:</strong> [Special loading procedures required]</li>
+                        <li><strong>Last-mile delivery:</strong> [Ground transport from destination airport to mine site]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">3</span>Land Transport</h4>
+                    <ul>
+                        <li><strong>Route:</strong> [Geographic routing through countries]</li>
+                        <li><strong>Transit time:</strong> [X] days driving + [Y] days customs/border delays</li>
+                        <li><strong>Total lead time:</strong> [Z] days from pickup</li>
+                        <li><strong>Cost:</strong> $[Amount] per unit / $[Total]</li>
+                        <li><strong>Road quality:</strong> [Current condition][seasonal accessibility]</li>
+                        <li><strong>Border crossings:</strong> [Number][documentation requirements]</li>
+                        <li><strong>Special permits:</strong> [Heavy load permits][wide load permits][movement permits]</li>
+                        <li><strong>Seasonal constraints:</strong> [Rainy season impassable: Month X&ndash;Month Y]</li>
+                        <li><strong>Vehicle requirements:</strong> [Heavy duty trucks][specialized trailers]</li>
+                        <li><strong>Insurance &amp; liability:</strong> [Cargo insurance][damage protection]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">4</span>Intermodal (Combination)</h4>
+                    <ul>
+                        <li><strong>Recommended routing:</strong> [Primary mode] &rarr; [Secondary mode] &rarr; [Final delivery]<br>
+                            <em>Example:</em> Ocean freight to coastal port + Land transport via truck to mine site</li>
+                        <li><strong>Transition points:</strong> [Port facility][consolidation center][inland depot]</li>
+                        <li><strong>Total transit time:</strong> [X] days</li>
+                        <li><strong>Total cost:</strong> $[Amount]</li>
+                        <li><strong>Consolidation opportunities:</strong> [Batch multiple units in single shipment]</li>
+                        <li><strong>Contingency routing:</strong> [Alternative if primary route unavailable]</li>
+                    </ul>
+                </div>
+
+                <div class="callout success">
+                    <h4 style="margin-top:0;">Transportation Selection Decision</h4>
+                    <ul>
+                        <li><strong>Selected mode:</strong> [Specify]</li>
+                        <li><strong>Justification:</strong> [Cost-benefit analysis][lead time requirements][risk factors]</li>
+                        <li><strong>Risk factors:</strong> [Geographic][political][environmental risks]</li>
+                        <li><strong>Backup/contingency mode:</strong> [Secondary option if primary fails]</li>
+                        <li><strong>Lead time buffer:</strong> [X days buffer for contingencies]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>5.2 Logistics Partner Evaluation</h3>
+                <p>Select logistics providers (freight forwarders, shipping lines, trucking companies).</p>
+                <div class="formula">
+Partner Name: [Company]
+Service Type: [Ocean freight / Air freight / Land transport / Intermodal / Full 3PL]
+                </div>
+
+                <h4>Evaluation Criteria</h4>
+                <ul>
+                    <li>Experience on mining routes: [Years][number of similar shipments]</li>
+                    <li>Geographic coverage: [Routes served][network strength]</li>
+                    <li>Capacity availability: [Current utilization][spare capacity for surge]</li>
+                    <li>Technology/Tracking: [Real-time tracking capability][EDI integration]</li>
+                    <li>Financial stability: [Credit rating][insurance coverage]</li>
+                    <li>References: [Past mining clients][testimonials]</li>
+                    <li>Cost competitiveness: [Quote analysis vs. market rates]</li>
+                    <li>Contingency planning: [Backup routes][alternative logistics solutions]</li>
+                </ul>
+
+                <h4>Performance Guarantees</h4>
+                <ul>
+                    <li>On-time delivery commitment: [X% reliability]</li>
+                    <li>Damage protection: [Insurance level][liability limit]</li>
+                    <li>Tracking/visibility: [Real-time updates][reporting frequency]</li>
+                    <li>Escalation: [Contact points][issue resolution timeline]</li>
+                </ul>
+
+                <h4>Contract Terms</h4>
+                <ul>
+                    <li>Service scope: [Detailed list of included services]</li>
+                    <li>Pricing: [Unit rates][volume discounts][surcharge policies]</li>
+                    <li>Performance penalties: [Reduction for delays or damage]</li>
+                    <li>Cancellation terms: [Flexibility if shipment needs adjustment]</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>5.3 Delivery Schedule &amp; Milestone Tracking</h3>
+                <p>Create a detailed delivery schedule coordinating logistics with project milestones.</p>
+
+                <h4>Equipment Delivery Schedule</h4>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Equipment</th>
+                                <th>Qty</th>
+                                <th>Supplier</th>
+                                <th>Order Date</th>
+                                <th>Est. Ship</th>
+                                <th>Est. Arrival</th>
+                                <th>Actual Arrival</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Primary Excavator</td><td>2</td><td>[Supplier A]</td>
+                                <td>[Date]</td><td>[Date]</td><td>[Date]</td><td>[Date]</td><td>[Status]</td>
+                            </tr>
+                            <tr>
+                                <td>Haul Trucks</td><td>15</td><td>[Supplier B]</td>
+                                <td>[Date]</td><td>[Date]</td><td>[Date]</td><td>[Date]</td><td>[Status]</td>
+                            </tr>
+                            <tr>
+                                <td>Conveyor System</td><td>1</td><td>[Supplier C]</td>
+                                <td>[Date]</td><td>[Date]</td><td>[Date]</td><td>[Date]</td><td>[Status]</td>
+                            </tr>
+                            <tr>
+                                <td>Processing Equipment</td><td>1</td><td>[Supplier D]</td>
+                                <td>[Date]</td><td>[Date]</td><td>[Date]</td><td>[Date]</td><td>[Status]</td>
+                            </tr>
+                            <tr>
+                                <td>Ancillary Equipment</td><td>Various</td><td>Various</td>
+                                <td>[Dates]</td><td>[Dates]</td><td>[Dates]</td><td>[Dates]</td><td>[Status]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Tracking &amp; Escalation</h4>
+                <p>Weekly delivery status review meeting: [Day][time][participants]</p>
+                <div class="callout error">
+                    <p><strong>Alert triggers</strong></p>
+                    <ul>
+                        <li>Delivery delay &gt; 5 days: Escalation to supplier management level</li>
+                        <li>Delivery delay &gt; 10 days: Escalation to executive sponsor</li>
+                        <li>Damage/quality issues: Escalation to technical authority</li>
+                    </ul>
+                </div>
+                <div class="callout">
+                    <p><strong>Contingency actions</strong></p>
+                    <ul>
+                        <li>Expedited shipping arrangement: [Secondary supplier activation]</li>
+                        <li>Timeline adjustment: [Project milestone rescheduling authority]</li>
+                        <li>Financial impact: [Cost absorption vs. supplier recovery]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 6: SCOR RETURN PROCESS                               -->
+        <!-- ============================================================ -->
+        <div id="return-process" class="tab-content">
+            <div class="card">
+                <h2>Section 6: SCOR Return Process &mdash; Maintenance &amp; Reverse Logistics</h2>
+                <p>Plan for equipment maintenance and reverse logistics of failed components.</p>
+            </div>
+
+            <div class="card">
+                <h3>6.1 Maintenance &amp; Spare Parts Planning</h3>
+                <p><strong>Equipment Category:</strong> [Name] &nbsp;|&nbsp; <strong>Expected Service Life:</strong> [X] years</p>
+
+                <h4>Planned Maintenance Schedule</h4>
+                <ul>
+                    <li>Preventive maintenance interval: [Every X hours/months]</li>
+                    <li>Major overhaul interval: [Every X hours/years]</li>
+                    <li>Expected component failure rate: [X% annually]</li>
+                </ul>
+
+                <h4>Spare Parts Strategy</h4>
+                <p>Critical components requiring pre-positioning:</p>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Expected Failure Rate</th>
+                                <th>Replacement Lead Time</th>
+                                <th>Inventory Strategy</th>
+                                <th>Cost per Unit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Component 1: [Name]</td>
+                                <td>[X% annually]</td>
+                                <td>[Y] weeks</td>
+                                <td>[Stock X units on-site]</td>
+                                <td>$[Amount]</td>
+                            </tr>
+                            <tr>
+                                <td>Component 2: [Name]</td>
+                                <td>[X% annually]</td>
+                                <td>[Y] weeks</td>
+                                <td>[Stock X units on-site]</td>
+                                <td>$[Amount]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Maintenance &amp; Repair Logistics</h4>
+                <ul>
+                    <li>Local repair capability: [Assess local service providers]</li>
+                    <li>Return logistics: [Shipped failed components to supplier/service center]</li>
+                    <li>Lead time: [Repair turnaround: X weeks]</li>
+                    <li>Cost: [Annual maintenance cost estimate: $X]</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>6.2 End-of-Life Management</h3>
+                <p>Plan for equipment decommissioning and environmental disposal.</p>
+                <h4>Equipment End-of-Life</h4>
+                <ul>
+                    <li>Expected decommissioning date: [Date]</li>
+                    <li>Residual value: [Estimated $X for resale/recycling]</li>
+                    <li>Environmental considerations: [Hazardous materials][disposal requirements]</li>
+                    <li>Recycling strategy: [Metal content value][environmental responsibility]</li>
+                    <li>Salvage logistics: [Site removal][transportation][final destination]</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 7: SCOR ENABLE PROCESS                               -->
+        <!-- ============================================================ -->
+        <div id="enable" class="tab-content">
+            <div class="card">
+                <h2>Section 7: SCOR Enable Process &mdash; Governance &amp; Risk Management</h2>
+                <p>Define governance, decision authority, and the performance measurement framework.</p>
+            </div>
+
+            <div class="card">
+                <h3>7.1 Supply Chain Governance Structure</h3>
+                <h4>Governance Roles &amp; Responsibilities</h4>
+
+                <div class="step">
+                    <h4>Steering Committee <span class="badge primary">Strategic Level</span></h4>
+                    <p><strong>Composition:</strong> [Project sponsor][CFO][COO][mining operations director]</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Strategic alignment of supply chain with project goals</li>
+                        <li>Major capital decisions (supplier selection, transportation mode)</li>
+                        <li>Risk escalation and crisis response</li>
+                        <li>Executive reporting and stakeholder communication</li>
+                    </ul>
+                    <p><strong>Frequency:</strong> Quarterly or as needed for major decisions</p>
+                </div>
+
+                <div class="step">
+                    <h4>Supply Chain Management Team <span class="badge info">Operational Level</span></h4>
+                    <p><strong>Composition:</strong> [Supply chain director][procurement manager][logistics manager][supplier quality manager]</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Day-to-day supply chain execution</li>
+                        <li>Supplier management and performance monitoring</li>
+                        <li>Demand forecasting and schedule management</li>
+                        <li>Issue identification and problem-solving</li>
+                    </ul>
+                    <p><strong>Frequency:</strong> Weekly operational reviews</p>
+                </div>
+
+                <div class="step">
+                    <h4>Project Execution Team <span class="badge success">Tactical Level</span></h4>
+                    <p><strong>Composition:</strong> [Project manager][equipment engineers][site engineers][installation coordinators]</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Equipment specifications and customization oversight</li>
+                        <li>Quality assurance and acceptance testing</li>
+                        <li>Installation planning and execution</li>
+                        <li>Site integration and commissioning</li>
+                    </ul>
+                    <p><strong>Frequency:</strong> Daily or as dictated by project phase</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>7.2 Key Performance Indicators (KPIs) &mdash; SCOR Dashboard</h3>
+                <p>Establish the performance measurement framework using the SCOR metrics hierarchy.</p>
+
+                <h4>Level 1 Metrics &mdash; Strategic Supply Chain Health</h4>
+
+                <div class="metric">
+                    <h4>Metric 1: Perfect Order Fulfillment Rate</h4>
+                    <p><strong>Definition:</strong> Percentage of orders delivered on-time, in-full, damage-free, with accurate invoicing.</p>
+                    <p><strong>Components:</strong></p>
+                    <ul class="components">
+                        <li>On-Time Delivery (delivered by promised date)</li>
+                        <li>In-Full Delivery (complete quantity ordered)</li>
+                        <li>Damage-Free (no damage in transportation or handling)</li>
+                        <li>Accurate Documentation (correct invoice, specifications, packaging)</li>
+                    </ul>
+                    <div class="formula">
+(Orders meeting all 4 criteria) &divide; (Total orders) &times; 100
+                    </div>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target for mining</span>
+                            <span class="value">95%+</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">[X]%</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Variance</span>
+                            <span class="value">[&plusmn;Y]%</span>
+                        </div>
+                    </div>
+                    <p style="margin-top:12px;"><em>Challenging given customization and geographic complexity.</em></p>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 2: Overall Supply Chain Cycle Time</h4>
+                    <p><strong>Definition:</strong> Time from order placement to equipment operational at mine site.</p>
+                    <p><strong>Components:</strong></p>
+                    <ul class="components">
+                        <li>Procurement lead time (order to supplier confirmation)</li>
+                        <li>Manufacturing time (production and customization)</li>
+                        <li>Transportation time (shipping and logistics)</li>
+                        <li>Installation time (site preparation, assembly, commissioning)</li>
+                    </ul>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target for mining equipment</span>
+                            <span class="value">18&ndash;24 months typical<a class="cite" href="https://www.cips.org/intelligence-hub/procurement/kpis/scor-model" title="SCOR Model - Supply Chain Operations Reference | CIPS" target="_blank" rel="noopener">[1]</a></span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">[X] months</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Variance</span>
+                            <span class="value">[&plusmn;Y] months</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 3: Supply Chain Cost</h4>
+                    <p><strong>Definition:</strong> Total landed cost of equipment deployed (equipment + freight + installation + contingency).</p>
+                    <p><strong>Components:</strong></p>
+                    <ul class="components">
+                        <li>Equipment cost</li>
+                        <li>Transportation &amp; logistics cost</li>
+                        <li>Customization/integration cost</li>
+                        <li>Installation &amp; commissioning cost</li>
+                        <li>Contingency reserve</li>
+                    </ul>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Total project supply chain cost</span>
+                            <span class="value">$[X]</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Cost per ton of annual capacity</span>
+                            <span class="value">$[Y]/ton</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Variance vs. budget</span>
+                            <span class="value">[&plusmn;Z]%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 4: Supply Chain Flexibility/Responsiveness</h4>
+                    <p><strong>Definition:</strong> Ability to accommodate demand changes without major disruption.</p>
+                    <p><strong>Measured by:</strong></p>
+                    <ul class="components">
+                        <li>Maximum capability to increase production: [+X% in Y months]</li>
+                        <li>Maximum capability to decrease production: [&minus;X% in Y months]</li>
+                        <li>Lead time to activate backup equipment: [X] weeks</li>
+                    </ul>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Assessment</span>
+                            <span class="value">[High/Medium/Low flexibility]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 5: Supply Chain Risk Index</h4>
+                    <p><strong>Definition:</strong> Composite measure of supply chain vulnerability to disruption.</p>
+                    <div class="matrix">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Risk Component</th>
+                                    <th>Score (0&ndash;10)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Supplier concentration risk</td><td>[Score 0&ndash;10]</td></tr>
+                                <tr><td>Geographic supply route risk</td><td>[Score 0&ndash;10]</td></tr>
+                                <tr><td>Technology obsolescence risk</td><td>[Score 0&ndash;10]</td></tr>
+                                <tr><td>Commodity price volatility risk</td><td>[Score 0&ndash;10]</td></tr>
+                                <tr><td>Regulatory/geopolitical risk</td><td>[Score 0&ndash;10]</td></tr>
+                                <tr><td>Environmental/climate risk</td><td>[Score 0&ndash;10]</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><td>Risk Index (average)</td><td>[Score 0&ndash;10] &mdash; Risk Level: [Low/Medium/High]</td></tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <h4>Level 2 Metrics &mdash; Diagnostic Metrics</h4>
+
+                <div class="metric">
+                    <h4>Metric 2A: On-Time Delivery Performance (by supplier)</h4>
+                    <div class="matrix">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Supplier Name</th>
+                                    <th>On-Time Deliveries</th>
+                                    <th>Late Deliveries</th>
+                                    <th>Performance %</th>
+                                    <th>Target</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>[Supplier A]</td><td>[X]</td><td>[Y]</td><td>[%]</td><td>95%</td><td>&#10003;/&#10007;</td></tr>
+                                <tr><td>[Supplier B]</td><td>[X]</td><td>[Y]</td><td>[%]</td><td>95%</td><td>&#10003;/&#10007;</td></tr>
+                                <tr><td>[Supplier C]</td><td>[X]</td><td>[Y]</td><td>[%]</td><td>95%</td><td>&#10003;/&#10007;</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 2B: Forecast Accuracy</h4>
+                    <p><strong>Definition:</strong> Accuracy of demand forecasts vs. actual equipment requirements.</p>
+                    <p><strong>Calculation:</strong> Mean Absolute Percentage Error (MAPE)</p>
+                    <div class="formula">
+MAPE = (Average absolute difference between forecast and actual) &divide; (Average actual) &times; 100
+                    </div>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target</span>
+                            <span class="value">15&ndash;20% for mining projects</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">[X]%</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Trend</span>
+                            <span class="value">[Improving/Stable/Degrading]</span>
+                        </div>
+                    </div>
+                    <p style="margin-top:12px;"><em>Target is high due to commodity price volatility.</em></p>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 2C: Inventory Days of Supply</h4>
+                    <p><strong>Definition:</strong> Number of days of equipment/spare parts inventory on hand.</p>
+                    <div class="formula">
+(Inventory value) &divide; (Daily consumption rate)
+                    </div>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target</span>
+                            <span class="value">[X] days</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">[X] days</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Trend</span>
+                            <span class="value">[Increasing/Stable/Decreasing]</span>
+                        </div>
+                    </div>
+                    <p style="margin-top:12px;"><em>Balance sheet optimized between stockout risk and carrying cost.</em></p>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 2D: Supplier Quality Performance</h4>
+                    <p><strong>Definition:</strong> Percentage of deliveries meeting quality acceptance criteria.</p>
+                    <p><strong>Components:</strong></p>
+                    <ul class="components">
+                        <li>Defect rate (first-pass quality)</li>
+                        <li>Rework requirement percentage</li>
+                        <li>Safety compliance</li>
+                    </ul>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target</span>
+                            <span class="value">98%+ acceptance</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">[X]%</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Supplier breakdown</span>
+                            <span class="value">[Individual supplier scores]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 2E: Supply Chain Cost as % of Total Project Cost</h4>
+                    <p><strong>Definition:</strong> Equipment + logistics + installation cost &divide; Total project cost.</p>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target</span>
+                            <span class="value">[X]%</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">[X]%</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Variance</span>
+                            <span class="value">[&plusmn;Y]%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Level 3 Metrics &mdash; Process Element Metrics</h4>
+
+                <div class="metric">
+                    <h4>Metric 3A: Procurement Cycle Time (by category)</h4>
+                    <div class="matrix">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Equipment Category</th>
+                                    <th>Lead Time Target</th>
+                                    <th>Current Lead Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Primary Excavators</td>
+                                    <td>18 months<a class="cite" href="https://www.cips.org/intelligence-hub/procurement/kpis/scor-model" title="SCOR Model - Supply Chain Operations Reference | CIPS" target="_blank" rel="noopener">[1]</a></td>
+                                    <td>[X months]</td>
+                                    <td>&#10003;/&#10007;</td>
+                                </tr>
+                                <tr>
+                                    <td>Haul Trucks</td>
+                                    <td>16 months<a class="cite" href="https://www.ascm.org/corporate-solutions/standards-tools/scor-ds/" title="SCOR Digital Standard | ASCM" target="_blank" rel="noopener">[2]</a></td>
+                                    <td>[X months]</td>
+                                    <td>&#10003;/&#10007;</td>
+                                </tr>
+                                <tr>
+                                    <td>Processing Equipment</td>
+                                    <td>20 months<a class="cite" href="https://www.coursera.org/articles/scor-model" title="What Is the SCOR Model? | Coursera" target="_blank" rel="noopener">[3]</a></td>
+                                    <td>[X months]</td>
+                                    <td>&#10003;/&#10007;</td>
+                                </tr>
+                                <tr>
+                                    <td>Ancillary Systems</td>
+                                    <td>12 months<a class="cite" href="https://www.sciencedirect.com/science/article/pii/S295055502600025X" title="Modern mining sustainability: An integrated framework for technology innovation, operational trade-offs, and implementation barriers - ScienceDirect" target="_blank" rel="noopener">[4]</a></td>
+                                    <td>[X months]</td>
+                                    <td>&#10003;/&#10007;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 3B: Logistics Cost per Ton Shipped</h4>
+                    <p><strong>Definition:</strong> Transportation cost &divide; Total tons shipped.</p>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target</span>
+                            <span class="value">$[X]/ton</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">$[X]/ton</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Variance</span>
+                            <span class="value">[&plusmn;Y]%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 3C: Customization Rework Rate</h4>
+                    <p><strong>Definition:</strong> Percentage of customized equipment requiring rework.</p>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target</span>
+                            <span class="value">&lt;5%</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">[X]%</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Rework items</span>
+                            <span class="value">[Specific issues identified]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <h4>Metric 3D: Installation Cycle Time</h4>
+                    <p><strong>Definition:</strong> Time from equipment arrival at site to operational status.</p>
+                    <p><strong>Components:</strong></p>
+                    <ul class="components">
+                        <li>Site preparation</li>
+                        <li>Installation/assembly</li>
+                        <li>System integration</li>
+                        <li>Factory Acceptance Test</li>
+                        <li>Site Acceptance Test</li>
+                        <li>Commissioning &amp; ramp-up</li>
+                    </ul>
+                    <div class="metric-fields">
+                        <div class="metric-field">
+                            <span class="label">Target</span>
+                            <span class="value">[X] weeks from arrival to operations</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Current</span>
+                            <span class="value">[X] weeks</span>
+                        </div>
+                        <div class="metric-field">
+                            <span class="label">Status</span>
+                            <span class="value">[On track/At risk/Behind schedule]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 8: RISK ASSESSMENT & MITIGATION                      -->
+        <!-- ============================================================ -->
+        <div id="risk" class="tab-content">
+            <div class="card error">
+                <h2>Section 8: Risk Assessment &amp; Mitigation</h2>
+                <p>Systematically identify risks across SCOR processes and develop detailed mitigation plans for high-priority items.</p>
+            </div>
+
+            <div class="card">
+                <h3>8.1 Supply Chain Risk Identification</h3>
+                <h4>Risk Register</h4>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Risk ID</th>
+                                <th>Risk Category</th>
+                                <th>Risk Description</th>
+                                <th>Probability</th>
+                                <th>Impact</th>
+                                <th>Priority</th>
+                                <th>Mitigation Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SCR-001</td>
+                                <td>Supplier Concentration Risk</td>
+                                <td>Single supplier unable to deliver critical equipment</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="badge error">High</span></td>
+                                <td>Develop secondary supplier relationship</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-002</td>
+                                <td>Commodity Price Volatility</td>
+                                <td>Copper price decline &gt;20% reduces project viability</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="badge error">High</span></td>
+                                <td>Natural hedge via sales contracts; commodity hedging</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-003</td>
+                                <td>Transportation Delay</td>
+                                <td>Port congestion at origin causes 30-day shipment delay</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="badge warning">Medium</span></td>
+                                <td>Alternative shipping routes; expedited air freight contingency</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-004</td>
+                                <td>Geopolitical Risk</td>
+                                <td>Trade sanctions on shipping route or equipment import</td>
+                                <td>Low</td>
+                                <td>Very High</td>
+                                <td><span class="badge error">High</span></td>
+                                <td>Geographic diversification; political risk insurance</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-005</td>
+                                <td>Technical Obsolescence</td>
+                                <td>New competing technology makes equipment spec obsolete before delivery</td>
+                                <td>Low&ndash;Medium</td>
+                                <td>High</td>
+                                <td><span class="badge warning">Medium</span></td>
+                                <td>Technology monitoring; upgrade contractual options</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-006</td>
+                                <td>Regulatory Change</td>
+                                <td>Environmental permit requirements tighten unexpectedly</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="badge warning">Medium</span></td>
+                                <td>Early engagement with regulators; contingency equipment specs</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-007</td>
+                                <td>Workforce Availability</td>
+                                <td>Skilled technician shortage delays commissioning</td>
+                                <td>High</td>
+                                <td>High</td>
+                                <td><span class="badge error">High</span></td>
+                                <td>Early recruitment; training partnerships; expatriate availability</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-008</td>
+                                <td>Quality Defect</td>
+                                <td>Equipment customization creates unexpected defects</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="badge warning">Medium</span></td>
+                                <td>Robust FAT/SAT protocols; supplier audit rights</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-009</td>
+                                <td>Environmental Disruption</td>
+                                <td>Extreme weather delays land transport (rainy season)</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="badge warning">Medium</span></td>
+                                <td>Seasonal logistics planning; alternative routes</td>
+                            </tr>
+                            <tr>
+                                <td>SCR-010</td>
+                                <td>Equipment Failure</td>
+                                <td>Critical component fails during ramp-up, halting production</td>
+                                <td>Low&ndash;Medium</td>
+                                <td>Very High</td>
+                                <td><span class="badge warning">Medium</span></td>
+                                <td>Spare parts pre-positioning; dual sourcing of critical components</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="callout">
+                    <p><em>[Continue with additional risks specific to project]</em></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>8.2 Risk Mitigation Strategies</h3>
+                <p>For high-priority risks, develop detailed mitigation plans. The worked example below covers SCR-002.</p>
+
+                <h4>Risk Mitigation Plan &mdash; SCR-002: Commodity Price Volatility</h4>
+
+                <div class="callout error">
+                    <p><strong>Risk Description:</strong> Copper price decline exceeds 20%, reducing project NPV below acceptable threshold and threatening equipment purchase authorization.</p>
+                    <p>
+                        <span class="badge neutral">Probability: Medium (30% based on commodity price volatility analysis)</span>
+                        <span class="badge error">Impact: High (Project could become uneconomical)</span>
+                        <span class="badge error">Priority: High</span>
+                    </p>
+                </div>
+
+                <h5>Current Exposure</h5>
+                <div class="formula">
+Equipment cost (60% of CAPEX)   = $[X]M
+Price decline risk              = 20% &times; $[X]M = $[Y]M exposure
+Annual production volume        = [Z] thousand tons
+Annual revenue exposure         = [Z] &times; [Current price] = $[Revenue]
+Break-even price                = $[X]/ton
+                </div>
+
+                <h4>Mitigation Strategy &mdash; Three-Pronged Approach</h4>
+
+                <div class="step">
+                    <h4><span class="step-number">1</span>Natural Hedge via Sales Contracts</h4>
+                    <ul>
+                        <li><strong>Long-term sales contracts:</strong> Secure off-take agreements locking in [X]% of production at floor price of $[Price]/ton</li>
+                        <li><strong>Contract duration:</strong> [Y] years, matching project ramp-up and equipment payback period</li>
+                        <li><strong>Partners:</strong> Identified end-customer negotiations in progress</li>
+                        <li><strong>Status:</strong> [In negotiation / Contracted for X% / Pending]</li>
+                        <li><strong>Residual risk after hedging:</strong> [X]% unhedged production volume</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">2</span>Commodity Price Hedging</h4>
+                    <ul>
+                        <li><strong>Hedging instruments:</strong> [Specify futures contracts][options][swaps]</li>
+                        <li><strong>Hedging horizon:</strong> [Years 1&ndash;5 of production]</li>
+                        <li><strong>Hedge ratio:</strong> [X]% of production volume hedged</li>
+                        <li><strong>Strike price:</strong> $[X]/ton</li>
+                        <li><strong>Hedging cost:</strong> [X% of revenue as hedging premium]</li>
+                        <li><strong>Counterparties:</strong> [Commodity trading firms]</li>
+                        <li><strong>Accounting treatment:</strong> [Cash flow hedge vs. cost of goods sold]</li>
+                        <li><strong>Trigger points for strategy adjustment:</strong> [Price levels at which hedging is reassessed]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">3</span>Contingency Operating Model</h4>
+                    <ul>
+                        <li><strong>Break-even production level:</strong> [X] thousand tons annually</li>
+                        <li><strong>Contingency OPEX reduction:</strong> [Y]% cost reduction if prices decline</li>
+                        <li><strong>Deferred equipment strategy:</strong> [Optional phase 2 equipment deployment deferred if prices weak]</li>
+                        <li><strong>Timeline extension:</strong> [X year production extension at lower throughput]</li>
+                        <li><strong>Project NPV floor:</strong> $[Minimum acceptable NPV threshold]</li>
+                    </ul>
+                </div>
+
+                <h5>Decision Rule</h5>
+                <div class="formula">
+IF copper price falls below $[X]/ton
+   &darr;
+   Activate commodity hedging strategy (if not already in place)
+   Review project viability vs. NPV floor
+   IF NPV &lt; floor:
+      Consider contingency operating model or project delay
+                </div>
+
+                <h5>Monitoring &amp; Escalation</h5>
+                <ul>
+                    <li>Weekly commodity price monitoring: [Data source and responsibility]</li>
+                    <li>Monthly hedging strategy review: [Portfolio value][rebalancing needs]</li>
+                    <li>Quarterly risk assessment: [Project viability review]</li>
+                </ul>
+                <div class="callout warning">
+                    <p><strong>Escalation trigger:</strong> If price trend &gt; 15% decline from baseline forecast &rarr; escalate to Steering Committee for strategy decision.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 9: EMERGING TECHNOLOGY INTEGRATION                   -->
+        <!-- ============================================================ -->
+        <div id="technology" class="tab-content">
+            <div class="card info">
+                <h2>Section 9: Emerging Technology Integration</h2>
+                <h3>9.1 Mining 4.0 &amp; Digital Transformation</h3>
+                <p>Plan integration of emerging technologies improving demand planning accuracy and supply chain agility.</p>
+            </div>
+
+            <div class="card">
+                <h3>Technology Category 1: AI-Powered Demand Forecasting</h3>
+
+                <h4>Current Forecasting Approach</h4>
+                <ul>
+                    <li><strong>Method:</strong> [Describe current approach: manual][spreadsheet-based][simple statistical models]</li>
+                    <li><strong>Accuracy:</strong> MAPE = [X]%</li>
+                    <li><strong>Limitations:</strong> [Identify forecast blind spots]</li>
+                </ul>
+
+                <h4>AI Enhancement Roadmap</h4>
+
+                <div class="step">
+                    <h4><span class="step-number">1</span>Data Integration <span class="badge info">Months 1&ndash;3</span></h4>
+                    <p><strong>Objective:</strong> Consolidate historical data from multiple sources (ERP, sales systems, operational databases).</p>
+                    <p><strong>Data inputs:</strong></p>
+                    <ul>
+                        <li>Historical commodity prices (5&ndash;10 years)</li>
+                        <li>Demand patterns from previous mining projects</li>
+                        <li>Equipment delivery performance data</li>
+                        <li>External data: economic indicators, mining industry trends, regulatory changes</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Data quality:</strong> [Cleansing and validation procedures]</li>
+                        <li><strong>Technology:</strong> [SQL database][data lake][or cloud analytics platform]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">2</span>Model Development <span class="badge info">Months 4&ndash;6</span></h4>
+                    <ul>
+                        <li><strong>Objective:</strong> Develop machine learning models for demand forecasting</li>
+                        <li><strong>Algorithms:</strong> [Specify: ARIMA][Prophet][XGBoost][LSTM neural networks][ensemble methods]</li>
+                        <li><strong>Model inputs:</strong> [Commodity prices][production capacity][capacity utilization][market signals]</li>
+                        <li><strong>Model outputs:</strong> Monthly demand forecasts for next [X] years with confidence intervals</li>
+                        <li><strong>Accuracy target:</strong> MAPE &lt; 15% (improvement from current [X]%)</li>
+                        <li><strong>Validation:</strong> [Backtesting against historical data]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">3</span>Pilot Implementation <span class="badge info">Months 7&ndash;9</span></h4>
+                    <ul>
+                        <li><strong>Pilot scope:</strong> [Specific equipment category or project]</li>
+                        <li><strong>Stakeholders:</strong> [Demand planning][procurement][finance teams]</li>
+                        <li><strong>Comparison:</strong> Run AI forecasts alongside current method for [X] months</li>
+                        <li><strong>Performance metrics:</strong> [Accuracy][timeliness][usability]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">4</span>Full Implementation &amp; Continuous Learning <span class="badge info">Months 10+</span></h4>
+                    <ul>
+                        <li><strong>Rollout:</strong> [Expand AI forecasting across all equipment categories and projects]</li>
+                        <li><strong>Feedback loops:</strong> [Monthly forecast accuracy review][model retraining quarterly]</li>
+                        <li><strong>Governance:</strong> [Ownership][decision authority][override procedures]</li>
+                    </ul>
+                </div>
+
+                <div class="callout success">
+                    <p><strong>Expected Benefits</strong></p>
+                    <ul>
+                        <li>Forecast accuracy improvement: MAPE reduction from [X]% to [Y]%</li>
+                        <li>Working capital optimization: $[X]M inventory reduction</li>
+                        <li>Lead time optimization: [X] weeks reduction through better timing</li>
+                        <li>Risk mitigation: Earlier identification of demand shocks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Technology Category 2: IoT &amp; Real-Time Supply Chain Visibility</h3>
+
+                <h4>Sensors &amp; Real-Time Tracking</h4>
+                <ul>
+                    <li><strong>Equipment location tracking:</strong> GPS tracking on all high-value equipment during transportation and at site</li>
+                    <li><strong>Environmental monitoring:</strong> Temperature, humidity, vibration sensors during transportation</li>
+                    <li><strong>Equipment performance monitoring:</strong> Real-time data on equipment operating conditions once deployed</li>
+                    <li><strong>Inventory visibility:</strong> Asset tracking system for spare parts and consumables</li>
+                </ul>
+
+                <h4>Data Integration</h4>
+                <p><strong>Supply chain control tower</strong> &mdash; centralized visibility platform showing:</p>
+                <ul>
+                    <li>In-transit shipment location and ETA</li>
+                    <li>Equipment condition and performance metrics</li>
+                    <li>Inventory levels and turnover rates</li>
+                    <li>Supplier performance in real-time</li>
+                </ul>
+                <div class="callout warning">
+                    <p><strong>Alert system</strong> &mdash; automated notifications for:</p>
+                    <ul>
+                        <li>Delay &gt; [X] days</li>
+                        <li>Environmental condition out of specification</li>
+                        <li>Equipment performance degradation</li>
+                        <li>Inventory level below safety threshold</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Technology Category 3: Blockchain for Supply Chain Transparency</h3>
+                <div class="two-col">
+                    <div>
+                        <h4>Applications</h4>
+                        <ul>
+                            <li><strong>Supplier verification:</strong> Immutable record of supplier credentials, certifications, and compliance history</li>
+                            <li><strong>Equipment provenance:</strong> Track equipment manufacturing, customization, and deployment</li>
+                            <li><strong>Environmental compliance:</strong> Transparent record of environmental impact mitigation</li>
+                            <li><strong>Supply chain partner authentication:</strong> Verify legitimacy and relationships in multi-tier supply chain</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Benefits</h4>
+                        <ul>
+                            <li>Reduced counterfeiting risk</li>
+                            <li>Enhanced regulatory compliance documentation</li>
+                            <li>Improved supply chain partner trust</li>
+                            <li>Traceability for equipment recall/updates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Technology Category 4: Autonomous &amp; Robotic Systems</h3>
+                <div class="two-col">
+                    <div>
+                        <h4>Integration Planning</h4>
+                        <ul>
+                            <li><strong>Autonomous haul trucks:</strong> [Deployment timeline][% of fleet by phase]</li>
+                            <li><strong>Autonomous equipment operation:</strong> [Reduce on-site workforce requirements]</li>
+                            <li><strong>Robotic maintenance:</strong> [Reduce hazardous maintenance work]</li>
+                            <li><strong>Drone surveying:</strong> [Eliminate manual surveying in hazardous areas]</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Implications for Demand Planning</h4>
+                        <ul>
+                            <li><strong>Training infrastructure:</strong> [New training systems required]</li>
+                            <li><strong>Spare parts demand:</strong> [Different failure modes for autonomous equipment]</li>
+                            <li><strong>Maintenance services:</strong> [Different skills required; some internal][some outsourced]</li>
+                            <li><strong>Technology evolution:</strong> [Rapid changes; upgrade paths and compatibility management required]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 10: CONTINUOUS IMPROVEMENT & OPTIMIZATION            -->
+        <!-- ============================================================ -->
+        <div id="improve" class="tab-content">
+            <div class="card success">
+                <h2>Section 10: Continuous Improvement &amp; Optimization</h2>
+                <p>Assess current maturity of supply chain processes, plan progression, and track benefits realization.</p>
+            </div>
+
+            <div class="card">
+                <h3>10.1 SCOR Maturity Progression</h3>
+                <h4>Maturity Assessment &mdash; Process Evaluation</h4>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Process Element</th>
+                                <th>Current Maturity Level</th>
+                                <th>Target Maturity (Year 3)</th>
+                                <th>Gap</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Plan: Demand Forecasting</td><td>Level 2 (Repeatable)</td><td>Level 4 (Managed)</td><td>2</td></tr>
+                            <tr><td>Plan: Capacity Planning</td><td>Level 2 (Repeatable)</td><td>Level 4 (Managed)</td><td>2</td></tr>
+                            <tr><td>Source: Supplier Management</td><td>Level 2 (Repeatable)</td><td>Level 4 (Managed)</td><td>2</td></tr>
+                            <tr><td>Source: Procurement</td><td>Level 2 (Repeatable)</td><td>Level 3 (Defined)</td><td>1</td></tr>
+                            <tr><td>Make: Equipment Customization</td><td>Level 3 (Defined)</td><td>Level 4 (Managed)</td><td>1</td></tr>
+                            <tr><td>Deliver: Logistics</td><td>Level 2 (Repeatable)</td><td>Level 4 (Managed)</td><td>2</td></tr>
+                            <tr><td>Deliver: Installation</td><td>Level 2 (Repeatable)</td><td>Level 3 (Defined)</td><td>1</td></tr>
+                            <tr><td>Return: Maintenance Planning</td><td>Level 1 (Ad-Hoc)</td><td>Level 3 (Defined)</td><td>2</td></tr>
+                            <tr><td>Enable: Risk Management</td><td>Level 1 (Ad-Hoc)</td><td>Level 3 (Defined)</td><td>2</td></tr>
+                            <tr><td>Enable: Performance Metrics</td><td>Level 2 (Repeatable)</td><td>Level 4 (Managed)</td><td>2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Maturity Levels Definition</h4>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Name</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Ad-Hoc</td><td>Processes are unpredictable, poorly controlled, reactive</td></tr>
+                            <tr><td>2</td><td>Repeatable</td><td>Processes are characterized by some degree of discipline</td></tr>
+                            <tr><td>3</td><td>Defined</td><td>Processes are characterized by documentation, standardization, well-defined procedures</td></tr>
+                            <tr><td>4</td><td>Managed</td><td>Processes are measured and controlled, enabling proactive optimization</td></tr>
+                            <tr><td>5</td><td>Optimized</td><td>Processes are refined and optimized through continuous improvement and innovation</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>10.2 Improvement Initiatives</h3>
+                <h4>Improvement Roadmap &mdash; 12-Month Plan</h4>
+
+                <h4>Quarter 1: Foundation &amp; Governance</h4>
+
+                <div class="step">
+                    <h4>Initiative 1A: Establish SCOR Governance Structure</h4>
+                    <ul>
+                        <li><strong>Deliverable:</strong> [Governance charter][role definitions][decision rights]</li>
+                        <li><strong>Owner:</strong> [Supply chain director]</li>
+                        <li><strong>Timeline:</strong> [Weeks 1&ndash;4]</li>
+                        <li><strong>Investment:</strong> [Staffing: X FTE]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Initiative 1B: Baseline Performance Measurement</h4>
+                    <ul>
+                        <li><strong>Deliverable:</strong> [Current state SCOR metrics dashboard]</li>
+                        <li><strong>Owner:</strong> [Performance management team]</li>
+                        <li><strong>Timeline:</strong> [Weeks 1&ndash;8]</li>
+                        <li><strong>Investment:</strong> [Analytics tools][data integration]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Initiative 1C: Supply Chain Risk Assessment</h4>
+                    <ul>
+                        <li><strong>Deliverable:</strong> [Risk register with mitigation plans for top 10 risks]</li>
+                        <li><strong>Owner:</strong> [Supply chain + operations teams]</li>
+                        <li><strong>Timeline:</strong> [Weeks 1&ndash;12]</li>
+                        <li><strong>Investment:</strong> [Risk assessment workshop][external consulting]</li>
+                    </ul>
+                </div>
+
+                <h4>Quarter 2: Supplier Management &amp; Sourcing Excellence</h4>
+
+                <div class="step">
+                    <h4>Initiative 2A: Strategic Supplier Development</h4>
+                    <ul>
+                        <li><strong>Objective:</strong> Transition from transactional to strategic supplier relationships</li>
+                        <li><strong>Deliverable:</strong> [Tiered supplier strategy][performance management framework]</li>
+                        <li><strong>Owner:</strong> [Procurement director]</li>
+                        <li><strong>Timeline:</strong> [Months 4&ndash;6]</li>
+                        <li><strong>Investment:</strong> [Supplier development program]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Initiative 2B: Procurement Process Standardization</h4>
+                    <ul>
+                        <li><strong>Objective:</strong> Standardize procurement across equipment categories</li>
+                        <li><strong>Deliverable:</strong> [Procurement playbook][templates][automation]</li>
+                        <li><strong>Owner:</strong> [Procurement team]</li>
+                        <li><strong>Timeline:</strong> [Months 5&ndash;7]</li>
+                        <li><strong>Investment:</strong> [Process design][system integration]</li>
+                    </ul>
+                </div>
+
+                <h4>Quarter 3: Demand Planning &amp; Forecasting Excellence</h4>
+
+                <div class="step">
+                    <h4>Initiative 3A: AI-Powered Demand Forecasting Implementation</h4>
+                    <ul>
+                        <li><strong>Objective:</strong> [Phases 1&ndash;3 of AI roadmap from Section 9.1]</li>
+                        <li><strong>Deliverable:</strong> [Deployed forecasting model][user interface]</li>
+                        <li><strong>Owner:</strong> [Data science team + demand planning]</li>
+                        <li><strong>Timeline:</strong> [Months 7&ndash;9]</li>
+                        <li><strong>Investment:</strong> [AI/ML talent][cloud infrastructure][training]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Initiative 3B: Sales &amp; Operations Planning (S&amp;OP) Process</h4>
+                    <ul>
+                        <li><strong>Objective:</strong> Integrate sales, operations, and finance planning</li>
+                        <li><strong>Deliverable:</strong> [Documented S&amp;OP process][monthly cadence established]</li>
+                        <li><strong>Owner:</strong> [Supply chain director][CFO]</li>
+                        <li><strong>Timeline:</strong> [Months 8&ndash;10]</li>
+                        <li><strong>Investment:</strong> [Process design][planning software]</li>
+                    </ul>
+                </div>
+
+                <h4>Quarter 4: Logistics &amp; Delivery Optimization</h4>
+
+                <div class="step">
+                    <h4>Initiative 4A: Logistics Network Optimization</h4>
+                    <ul>
+                        <li><strong>Objective:</strong> Identify cost-efficient logistics routes and consolidation opportunities</li>
+                        <li><strong>Deliverable:</strong> [Optimized transportation plan] &mdash; 10%+ cost savings identified<a class="cite" href="https://symbios-consulting.com/consulting/process-mining.html?view=article&amp;id=293&amp;catid=99" title="SCOR Digital Standard" target="_blank" rel="noopener">[5]</a></li>
+                        <li><strong>Owner:</strong> [Logistics manager]</li>
+                        <li><strong>Timeline:</strong> [Months 10&ndash;12]</li>
+                        <li><strong>Investment:</strong> [Optimization modeling tools][supplier negotiations]</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Initiative 4B: Supply Chain Visibility Platform</h4>
+                    <ul>
+                        <li><strong>Objective:</strong> Implement end-to-end supply chain tracking</li>
+                        <li><strong>Deliverable:</strong> [Control tower dashboard][real-time visibility]</li>
+                        <li><strong>Owner:</strong> [IT + supply chain]</li>
+                        <li><strong>Timeline:</strong> [Months 9&ndash;12]</li>
+                        <li><strong>Investment:</strong> [IoT sensors][data integration][software]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>10.3 Benefits Realization &amp; ROI Measurement</h3>
+                <h4>Expected Benefits &amp; ROI Analysis</h4>
+                <div class="matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Benefit Category</th>
+                                <th>Baseline</th>
+                                <th>Target (Year 1)</th>
+                                <th>Target (Year 3)</th>
+                                <th>Realized (Actual)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Perfect Order Rate</td><td>[X]%</td><td>[Y]%</td><td>[Z]%</td><td>[Actual]%</td></tr>
+                            <tr><td>Forecast Accuracy (MAPE)</td><td>[X]%</td><td>[Y]%</td><td>[Z]%</td><td>[Actual]%</td></tr>
+                            <tr><td>Procurement Cycle Time</td><td>[X] months</td><td>[Y] months</td><td>[Z] months</td><td>[Actual]</td></tr>
+                            <tr><td>Logistics Cost per Ton</td><td>$[X]</td><td>$[Y]</td><td>$[Z]</td><td>$[Actual]</td></tr>
+                            <tr><td>Working Capital (Inventory)</td><td>$[X]M</td><td>$[Y]M</td><td>$[Z]M</td><td>$[Actual]M</td></tr>
+                            <tr><td>Equipment Quality (Defects)</td><td>[X]%</td><td>[Y]%</td><td>[Z]%</td><td>[Actual]%</td></tr>
+                            <tr><td>Supplier On-Time Performance</td><td>[X]%</td><td>[Y]%</td><td>[Z]%</td><td>[Actual]%</td></tr>
+                            <tr><td>Supply Chain Risk Index</td><td>[X]</td><td>[Y]</td><td>[Z]</td><td>[Actual]</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Financial Impact</h4>
+                <div class="formula">
+Total CAPEX Savings:      $[X]M   (equipment procurement efficiency)
+Annual OPEX Savings:      $[Y]M   (working capital reduction, logistics optimization)
+Risk Mitigation Value:    $[Z]M   (prevented supply disruption costs)
+Total 3-Year Benefit:     $[X+Y+Z]M
+Program Investment Cost:  $[A]M
+Net ROI:                  [%] or [X]% return
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTIONS 11-12: IMPLEMENTATION & CONCLUSION                  -->
+        <!-- ============================================================ -->
+        <div id="execute" class="tab-content">
+            <div class="card">
+                <h2>Section 11: Implementation Execution Guidance</h2>
+                <h3>11.1 Getting Started</h3>
+
+                <div class="step">
+                    <h4><span class="step-number">1</span>Project Kickoff</h4>
+                    <ul class="checklist">
+                        <li>Conduct SCOR framework orientation workshop with project team</li>
+                        <li>Establish governance structure and decision authority</li>
+                        <li>Align on success metrics and KPI targets</li>
+                        <li>Secure executive sponsorship and resource commitment</li>
+                        <li>Create detailed project plan with milestones</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">2</span>Baseline Assessment</h4>
+                    <ul class="checklist">
+                        <li>Map current state supply chain processes to SCOR level 1&ndash;3</li>
+                        <li>Assess current performance vs. industry benchmarks</li>
+                        <li>Identify gaps between current and desired maturity levels</li>
+                        <li>Document root causes of performance gaps</li>
+                        <li>Prioritize improvement opportunities</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">3</span>Stakeholder Alignment</h4>
+                    <ul class="checklist">
+                        <li>Engage all functional areas: mining operations, engineering, procurement, logistics, finance, HR</li>
+                        <li>Clarify responsibilities and decision rights</li>
+                        <li>Establish communication cadence (daily operations, weekly management, monthly steering)</li>
+                        <li>Build shared understanding of supply chain strategy</li>
+                        <li>Create psychological commitment to improvement initiatives</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">4</span>Tool Implementation</h4>
+                    <ul class="checklist">
+                        <li>Deploy enterprise resource planning (ERP) system for integrated data</li>
+                        <li>Implement supply chain visibility platform (control tower)</li>
+                        <li>Enable analytics tools for performance monitoring and forecasting</li>
+                        <li>Configure SCOR metrics dashboards for real-time visibility</li>
+                        <li>Establish data governance and quality standards</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4><span class="step-number">5</span>Continuous Improvement Cadence</h4>
+                    <div class="matrix">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cadence</th>
+                                    <th>Focus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Daily</td><td>Operational issue resolution</td></tr>
+                                <tr><td>Weekly</td><td>Performance review and replanning</td></tr>
+                                <tr><td>Monthly</td><td>SCOR metrics review and variance analysis</td></tr>
+                                <tr><td>Quarterly</td><td>Strategic review and maturity assessment</td></tr>
+                                <tr><td>Annually</td><td>Full supply chain strategy review and target setting</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card warning">
+                <h3>11.2 Common Pitfalls &amp; Mitigation</h3>
+
+                <h4>Pitfall 1: Treating SCOR as Checklist Rather Than Strategic Framework</h4>
+                <div class="callout error">
+                    <p><strong>Risk:</strong> Implementing processes superficially without driving real business value.</p>
+                </div>
+                <p><strong>Mitigation:</strong></p>
+                <ul>
+                    <li>Start with strategic imperatives (cost reduction, risk mitigation, timeline acceleration)</li>
+                    <li>Map supply chain improvements directly to strategic objectives</li>
+                    <li>Focus on end-to-end value chains, not individual processes in isolation</li>
+                    <li>Measure outcomes (business results), not just process compliance</li>
+                </ul>
+
+                <h4>Pitfall 2: One-Size-Fits-All Process Definition</h4>
+                <div class="callout error">
+                    <p><strong>Risk:</strong> Applying same processes to all products/suppliers despite significant differences.</p>
+                </div>
+                <p><strong>Mitigation:</strong></p>
+                <ul>
+                    <li>Segment products/equipment by characteristics (volume, value, complexity)</li>
+                    <li>Apply different SCOR configurations to different segments</li>
+                    <li>Ensure level 2 and 3 processes reflect actual business model differences</li>
+                    <li>Avoid &ldquo;averaging away issues&rdquo; through excessive generalization</li>
+                </ul>
+
+                <h4>Pitfall 3: KPI Overload &amp; Focus Dilution</h4>
+                <div class="callout error">
+                    <p><strong>Risk:</strong> Measuring too many metrics without clear prioritization.</p>
+                </div>
+                <p><strong>Mitigation:</strong></p>
+                <ul>
+                    <li>Limit to 8&ndash;15 key demand planning KPIs (research shows this is optimal)</li>
+                    <li>Ensure each KPI connects to strategic priority</li>
+                    <li>Balance multiple attributes (reliability, responsiveness, agility, cost, asset efficiency)</li>
+                    <li>Review quarterly to eliminate metrics that no longer drive decisions</li>
+                </ul>
+
+                <h4>Pitfall 4: Insufficient Data Quality</h4>
+                <div class="callout error">
+                    <p><strong>Risk:</strong> Using poor-quality data for forecasting and decision-making.</p>
+                </div>
+                <p><strong>Mitigation:</strong></p>
+                <ul>
+                    <li>Invest in master data governance (products, suppliers, locations)</li>
+                    <li>Implement data validation and cleansing procedures</li>
+                    <li>Reconcile data across systems before analysis</li>
+                    <li>Establish data ownership and accountability</li>
+                </ul>
+
+                <h4>Pitfall 5: Resistance to Change &amp; Lack of Buy-In</h4>
+                <div class="callout error">
+                    <p><strong>Risk:</strong> People continue old practices despite new processes.</p>
+                </div>
+                <p><strong>Mitigation:</strong></p>
+                <ul>
+                    <li>Secure executive sponsorship and visible commitment</li>
+                    <li>Engage teams early in process design</li>
+                    <li>Provide comprehensive training on new processes and tools</li>
+                    <li>Create incentives aligned with SCOR metrics and improvement targets</li>
+                    <li>Celebrate early wins to build momentum</li>
+                </ul>
+            </div>
+
+            <div class="card success">
+                <h2>Section 12: Conclusion &amp; Next Steps</h2>
+                <p>This comprehensive rule provides a structured framework for evaluating and analyzing demand for mining technology projects using SCOR principles. The framework addresses:</p>
+                <ul class="components">
+                    <li><strong>Project context definition</strong> &mdash; understanding mining operation characteristics, technology requirements, and market drivers</li>
+                    <li><strong>SCOR planning process</strong> &mdash; multi-scenario demand forecasting, capacity planning, and business rules alignment</li>
+                    <li><strong>Supplier evaluation</strong> &mdash; rigorous supplier selection, contract management, and performance monitoring</li>
+                    <li><strong>Quality &amp; customization</strong> &mdash; Engineer-to-Order process management and acceptance criteria</li>
+                    <li><strong>Logistics optimization</strong> &mdash; transportation mode analysis, partner evaluation, and delivery scheduling</li>
+                    <li><strong>Maintenance &amp; reverse logistics</strong> &mdash; spare parts planning and end-of-life management</li>
+                    <li><strong>Governance &amp; risk management</strong> &mdash; organizational structure, KPIs, and risk mitigation</li>
+                    <li><strong>Emerging technology integration</strong> &mdash; AI-powered forecasting, IoT visibility, blockchain, autonomous systems</li>
+                    <li><strong>Continuous improvement</strong> &mdash; maturity progression, improvement roadmap, benefits realization</li>
+                </ul>
+
+                <h3>Implementation Success Factors</h3>
+                <ol>
+                    <li>Executive sponsorship and commitment of resources</li>
+                    <li>Cross-functional team engagement and stakeholder alignment</li>
+                    <li>Clear linkage between SCOR processes and strategic business objectives</li>
+                    <li>Investment in technology enablers (ERP, analytics, visibility platforms)</li>
+                    <li>Disciplined performance management with meaningful KPIs</li>
+                    <li>Continuous improvement culture with regular process reviews</li>
+                    <li>Adaptation to mining industry specifics (remoteness, customization, commodity volatility)</li>
+                </ol>
+
+                <h3>Next Steps</h3>
+                <ol>
+                    <li>Conduct project-specific assessment using this framework</li>
+                    <li>Facilitate stakeholder alignment workshop on SCOR strategy</li>
+                    <li>Baseline current performance against SCOR metrics</li>
+                    <li>Prioritize top 3&ndash;5 improvement initiatives</li>
+                    <li>Establish governance structure and decision authority</li>
+                    <li>Develop detailed 12-month implementation roadmap</li>
+                    <li>Secure budget and resource allocation</li>
+                    <li>Begin execution with quick wins and early momentum-building</li>
+                </ol>
+
+                <div class="callout success">
+                    <p>For specialized mining technology projects, this framework enables organizations to optimize demand planning, reduce supply chain costs, improve equipment delivery reliability, and enhance overall project success through systematic application of proven SCOR principles and best practices.</p>
+                </div>
+            </div>
+
+            <div class="card info">
+                <h3>Sources</h3>
+                <p>Benchmark figures cited inline in Sections 7 and 10 come from the following references.</p>
+                <ol class="source-list">
+                    <li>[1] <a href="https://www.cips.org/intelligence-hub/procurement/kpis/scor-model" target="_blank" rel="noopener">SCOR Model &mdash; Supply Chain Operations Reference</a> &mdash; CIPS</li>
+                    <li>[2] <a href="https://www.ascm.org/corporate-solutions/standards-tools/scor-ds/" target="_blank" rel="noopener">SCOR Digital Standard</a> &mdash; ASCM</li>
+                    <li>[3] <a href="https://www.coursera.org/articles/scor-model" target="_blank" rel="noopener">What Is the SCOR Model?</a> &mdash; Coursera</li>
+                    <li>[4] <a href="https://www.sciencedirect.com/science/article/pii/S295055502600025X" target="_blank" rel="noopener">Modern mining sustainability: An integrated framework for technology innovation, operational trade-offs, and implementation barriers</a> &mdash; ScienceDirect</li>
+                    <li>[5] <a href="https://symbios-consulting.com/consulting/process-mining.html?view=article&amp;id=293&amp;catid=99" target="_blank" rel="noopener">SCOR Digital Standard</a> &mdash; Symbios Consulting</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&#128218; <strong>Based on:</strong> SCOR (Supply Chain Operations Reference) framework &mdash; Plan, Source, Make, Deliver, Return, Enable</p>
+            <p>&#128260; <strong>Source:</strong> SCOR Model for Demand Planning in Mining Technology Projects (Claude Code Rule) | <strong>Status:</strong> Active</p>
+            <p><em>Styled to the MinRes brand standards defined in MINRES_Content_Guidelines.html</em></p>
+            <p style="margin-top: 15px;">&copy; Mineral Resources Limited</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Tab Navigation -->
+    <script>
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
