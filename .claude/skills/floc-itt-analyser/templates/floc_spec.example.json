@@ -1,0 +1,6163 @@
+{
+ "project": {
+  "key": "ROOT",
+  "name": "Winu Project - Australian Contractor Construction Works (Tender WIN-CON-EPC-001)",
+  "status": "In scope",
+  "disciplines": [
+   "All"
+  ],
+  "responsibility": "Contractor - SP1 and SP2",
+  "children": [
+   {
+    "key": "PRE",
+    "name": "Site-wide Preliminaries and Shared Services",
+    "status": "In scope",
+    "disciplines": [],
+    "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+    "children": [
+     {
+      "key": "PRE_PM",
+      "name": "Project management, engineering, survey, geotechnical interface, QA/QC and reporting",
+      "status": "In scope",
+      "disciplines": [
+       "Project management",
+       "Survey",
+       "QA/QC"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 214,
+       "kw": "management, engineering, supervision"
+      },
+      "maps": [
+       {
+        "pages": [
+         214,
+         217
+        ]
+       },
+       {
+        "pages": [
+         306,
+         307
+        ]
+       },
+       {
+        "pages": [
+         313,
+         314
+        ]
+       }
+      ]
+     },
+     {
+      "key": "PRE_MOB",
+      "name": "Mobilisation, travel and Site establishment",
+      "status": "In scope",
+      "disciplines": [
+       "Logistics"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 218,
+       "kw": "Mobilisation includes all airfares"
+      },
+      "maps": [
+       {
+        "pages": [
+         218,
+         219
+        ],
+        "kw": "5\\.1|5\\.2|Flights|Mobilisation"
+       },
+       {
+        "pages": [
+         358,
+         360
+        ],
+        "kw": "Flights"
+       },
+       {
+        "pages": [
+         397,
+         397
+        ],
+        "kw": "Flights|air|Perth"
+       }
+      ]
+     },
+     {
+      "key": "PRE_CAMP",
+      "name": "Construction and fly camps, and accommodation",
+      "status": "In scope",
+      "disciplines": [
+       "Accommodation"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [
+       {
+        "key": "CAMP_EXIST",
+        "name": "Existing 175-person camp (125 rooms available to the Contractor at start-up)",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Company operates; Contractor occupies and pays A$200 per person per day",
+        "children": [],
+        "primary": {
+         "page": 214,
+         "kw": "existing camp"
+        },
+        "maps": [
+         {
+          "pages": [
+           214,
+           214
+          ],
+          "kw": "Accommodation|camp"
+         }
+        ]
+       },
+       {
+        "key": "CAMP_FLY",
+        "name": "Fly camp(s) on Mine Access Road",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 219,
+         "kw": "Fly camp"
+        }
+       },
+       {
+        "key": "CAMP_ADJ",
+        "name": "Construction camp adjacent to Permanent Village",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 219,
+         "kw": "adjacent to Permanent Village"
+        }
+       },
+       {
+        "key": "CAMP_A",
+        "name": "Option A - Company free-issued camps (priced option)",
+        "status": "Provisional",
+        "disciplines": [],
+        "responsibility": "Company / Offshore EPF Contractor supplies; Contractor installs and maintains",
+        "children": [],
+        "primary": {
+         "page": 220,
+         "kw": "Option A: Company free-issued camps"
+        },
+        "maps": [
+         {
+          "pages": [
+           220,
+           222
+          ],
+          "kw": "Option A|5\\.3\\.1"
+         }
+        ]
+       },
+       {
+        "key": "CAMP_B",
+        "name": "Option B - Contractor-provided camps (priced option)",
+        "status": "Provisional",
+        "disciplines": [],
+        "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+        "children": [],
+        "primary": {
+         "page": 220,
+         "kw": "Option B: Contractor-provided"
+        },
+        "maps": [
+         {
+          "pages": [
+           220,
+           222
+          ],
+          "kw": "Option B|5\\.3\\.2"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 220,
+       "kw": "Option B: Contractor-provided"
+      },
+      "maps": [
+       {
+        "pages": [
+         219,
+         222
+        ]
+       },
+       {
+        "pages": [
+         334,
+         334
+        ],
+        "kw": "Camp"
+       },
+       {
+        "pages": [
+         356,
+         358
+        ],
+        "kw": "ccommodation|Camp"
+       },
+       {
+        "pages": [
+         394,
+         397
+        ],
+        "kw": "ccommodation|camp|Camp|room|messing|Messing"
+       }
+      ]
+     },
+     {
+      "key": "PRE_TEMP",
+      "name": "Laydown areas and temporary construction facilities",
+      "status": "In scope",
+      "disciplines": [
+       "Temporary facilities"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [
+       {
+        "key": "TEMP_LAY",
+        "name": "Laydown areas",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 222,
+         "kw": "Company designates laydown areas"
+        },
+        "maps": [
+         {
+          "pages": [
+           222,
+           223
+          ],
+          "kw": "Laydown"
+         }
+        ]
+       },
+       {
+        "key": "TEMP_OFF",
+        "name": "Contractor and Company site offices, workshops and operational facilities",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 223,
+         "kw": "temporary construction facilities"
+        },
+        "maps": [
+         {
+          "pages": [
+           223,
+           224
+          ],
+          "kw": "5\\.6\\.[1-4]|Office|Workshop"
+         }
+        ]
+       },
+       {
+        "key": "TEMP_FUEL",
+        "name": "Fuel storage and distribution",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 222,
+         "kw": "Company supplies fuel free of charge"
+        },
+        "maps": [
+         {
+          "pages": [
+           222,
+           222
+          ],
+          "kw": "Fuel|5\\.4"
+         },
+         {
+          "pages": [
+           346,
+           347
+          ],
+          "kw": "Fuel"
+         },
+         {
+          "pages": [
+           103,
+           105
+          ],
+          "kw": "Fuel"
+         }
+        ]
+       },
+       {
+        "key": "TEMP_EXP",
+        "name": "Temporary explosives magazine and ANFO storage",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 225,
+         "kw": "explosives, detonators"
+        },
+        "maps": [
+         {
+          "pages": [
+           225,
+           225
+          ],
+          "kw": "5\\.6\\.5|xplosive"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 223,
+       "kw": "All temporary construction facilities and utilities"
+      },
+      "maps": [
+       {
+        "pages": [
+         222,
+         225
+        ],
+        "kw": "5\\.[456]|Laydown|Fuel|Temporary|Site Office|Workshop|Equipment Assembly|Explosives"
+       }
+      ]
+     },
+     {
+      "key": "PRE_WATER",
+      "name": "Construction water supply and management",
+      "status": "In scope",
+      "disciplines": [
+       "Water"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 225,
+       "kw": "Defects, leaks, erosion"
+      },
+      "maps": [
+       {
+        "pages": [
+         225,
+         227
+        ],
+        "kw": "5\\.7|[Cc]onstruction [Ww]ater|[Bb]ore"
+       },
+       {
+        "pages": [
+         339,
+         339
+        ],
+        "kw": "[Ww]ater"
+       }
+      ]
+     },
+     {
+      "key": "PRE_COMMS",
+      "name": "Temporary communications, IT and radio",
+      "status": "In scope",
+      "disciplines": [
+       "Communications",
+       "IT"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 227,
+       "kw": "TETRA"
+      },
+      "maps": [
+       {
+        "pages": [
+         227,
+         228
+        ],
+        "kw": "5\\.8|Radio|Internet|IT,"
+       }
+      ]
+     },
+     {
+      "key": "PRE_FLEET",
+      "name": "Plant and equipment fleet (pre-strip HME and construction fleet options)",
+      "status": "In scope",
+      "disciplines": [
+       "Plant and equipment"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [
+       {
+        "key": "FLEET_HME",
+        "name": "Pre-strip heavy mining equipment fleet (Company free-issue; Contractor operates and maintains)",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Company supplies; Contractor operates, maintains, fuels",
+        "children": [],
+        "primary": {
+         "page": 302,
+         "kw": "Pre-Strip heavy mining equipment fleet is Company free-issue"
+        },
+        "maps": [
+         {
+          "pages": [
+           302,
+           304
+          ],
+          "kw": "10\\.2|Pre-Strip|HME|Go-Line|Acceptance"
+         },
+         {
+          "pages": [
+           332,
+           333
+          ],
+          "kw": "HME"
+         }
+        ]
+       },
+       {
+        "key": "FLEET_OPT1",
+        "name": "Construction fleet - Option 1 (Contractor-supplied, priced option)",
+        "status": "Provisional",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 304,
+         "kw": "Option 1 - Contractor-Supplied Construction Fleet"
+        },
+        "maps": [
+         {
+          "pages": [
+           304,
+           304
+          ],
+          "kw": "Option 1"
+         },
+         {
+          "pages": [
+           332,
+           332
+          ],
+          "kw": "Option 1"
+         }
+        ]
+       },
+       {
+        "key": "FLEET_OPT2",
+        "name": "Construction fleet - Option 2 (Company free-issued, priced option)",
+        "status": "Provisional",
+        "disciplines": [],
+        "responsibility": "Company / Offshore EPF Contractor supplies; Contractor operates",
+        "children": [],
+        "primary": {
+         "page": 304,
+         "kw": "Option 2 - Company Free-Issued Construction Fleet"
+        },
+        "maps": [
+         {
+          "pages": [
+           304,
+           306
+          ],
+          "kw": "Option 2|10\\.[456]"
+         },
+         {
+          "pages": [
+           332,
+           333
+          ],
+          "kw": "Option 2"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 302,
+       "kw": "Contractor supplies, mobilises, operates"
+      },
+      "maps": [
+       {
+        "pages": [
+         302,
+         306
+        ],
+        "default": true
+       }
+      ]
+     },
+     {
+      "key": "PRE_TL",
+      "name": "Transport, logistics and materials management",
+      "status": "In scope",
+      "disciplines": [
+       "Logistics"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [
+       {
+        "key": "TL_ONSHORE",
+        "name": "Onshore transport and logistics (Port Hedland port battery limit to Site)",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 297,
+         "kw": "Route surveys"
+        },
+        "maps": [
+         {
+          "pages": [
+           296,
+           301
+          ],
+          "kw": "9\\.[2-9]|9\\.1[0-5]|Port|INCOTERM|Route|Traffic|Vessel|Customs"
+         }
+        ]
+       },
+       {
+        "key": "TL_MAT",
+        "name": "Materials management, storage, spares and surplus",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 301,
+         "kw": "Contractor provides storage facilities"
+        },
+        "maps": [
+         {
+          "pages": [
+           301,
+           302
+          ],
+          "kw": "9\\.16|Storage|Surplus|Spares"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 295,
+       "kw": "Transport/logistics for all Project materials"
+      },
+      "maps": [
+       {
+        "pages": [
+         295,
+         302
+        ],
+        "kw": "^9|\\s9\\.|Transport|Logistics|Port|Storage|Surplus|Spares|Materials|Customs|Traffic"
+       },
+       {
+        "pages": [
+         625,
+         631
+        ]
+       }
+      ]
+     },
+     {
+      "key": "PRE_SITE",
+      "name": "Site management, security, signage, lighting and waste",
+      "status": "In scope",
+      "disciplines": [
+       "Site management"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [
+       {
+        "key": "SITE_SEC",
+        "name": "Site security and access control",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 310,
+         "kw": "Contractor secures its facilities"
+        },
+        "maps": [
+         {
+          "pages": [
+           309,
+           311
+          ],
+          "kw": "12\\.7|Security|Gate|Access control"
+         }
+        ]
+       },
+       {
+        "key": "SITE_WASTE",
+        "name": "Waste management and off-Site disposal",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 312,
+         "kw": "Off-Site removal of construction"
+        },
+        "maps": [
+         {
+          "pages": [
+           311,
+           312
+          ],
+          "kw": "12\\.9|Waste"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 307,
+       "kw": "Contractor plans, establishes, operates, secures"
+      },
+      "maps": [
+       {
+        "pages": [
+         307,
+         313
+        ],
+        "default": true
+       }
+      ]
+     },
+     {
+      "key": "PRE_TW",
+      "name": "Temporary works",
+      "status": "In scope",
+      "disciplines": [
+       "Temporary works"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 313,
+       "kw": "Contractor designs and provides all temporary works"
+      },
+      "maps": [
+       {
+        "pages": [
+         313,
+         313
+        ],
+        "kw": "12\\.10|Temporary"
+       }
+      ]
+     },
+     {
+      "key": "PRE_IFACE",
+      "name": "Interface management and simultaneous operations (SIMOPS)",
+      "status": "In scope",
+      "disciplines": [
+       "Interface"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 292,
+       "kw": "Interface management meetings"
+      },
+      "maps": [
+       {
+        "pages": [
+         292,
+         295
+        ]
+       }
+      ]
+     },
+     {
+      "key": "PRE_HSE",
+      "name": "Health, safety, environment, security and community (HSESC)",
+      "status": "In scope",
+      "disciplines": [
+       "HSE"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 314,
+       "kw": "HSE"
+      },
+      "maps": [
+       {
+        "pages": [
+         314,
+         320
+        ]
+       },
+       {
+        "pages": [
+         407,
+         595
+        ]
+       }
+      ]
+     },
+     {
+      "key": "PRE_COMM",
+      "name": "Pre-commissioning, commissioning support and handover",
+      "status": "In scope",
+      "disciplines": [
+       "Commissioning"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 321,
+       "kw": "Support Company/Others commissioning"
+      },
+      "maps": [
+       {
+        "pages": [
+         320,
+         321
+        ],
+        "kw": "(?:^|\\s)15(?:\\.\\d)?\\s"
+       }
+      ]
+     },
+     {
+      "key": "PRE_DEMOB",
+      "name": "Demobilisation and rehabilitation",
+      "status": "In scope",
+      "disciplines": [
+       "Demobilisation"
+      ],
+      "responsibility": "Contractor - Preliminaries (Schedule A.1, apportioned SP1/SP2)",
+      "children": [],
+      "primary": {
+       "page": 322,
+       "kw": "Demobilise all personnel, plant, tools"
+      },
+      "maps": [
+       {
+        "pages": [
+         321,
+         322
+        ],
+        "kw": "(?:^|\\s)16\\s"
+       },
+       {
+        "pages": [
+         218,
+         218
+        ],
+        "kw": "4\\.8|Progressive"
+       },
+       {
+        "pages": [
+         516,
+         518
+        ],
+        "kw": "ehabilitation"
+       }
+      ]
+     },
+     {
+      "key": "PRE_FREE",
+      "name": "Company Supplied Items - receipt, custody, storage and installation (supply by Company)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Company supplies; Contractor handles and installs",
+      "children": [],
+      "primary": {
+       "page": 215,
+       "kw": "Receipt, custody, storage and installation of Company Supplied Items"
+      },
+      "maps": [
+       {
+        "pages": [
+         322,
+         322
+        ],
+        "kw": "17 Company|Company supplies|Company provides"
+       },
+       {
+        "pages": [
+         196,
+         198
+        ]
+       }
+      ],
+      "notes": "Supply is by the Company (excluded from Contract Price); handling and installation costs sit with the Contractor."
+     },
+     {
+      "key": "PRE_CONC",
+      "name": "Concrete supply, reinforcement and cast-in items (site-wide shared)",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Concrete"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [
+       {
+        "key": "CONC_BATCH",
+        "name": "Concrete batch plant (adjacent to MPP/MSA)",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 262,
+         "kw": "Concrete batch plant"
+        },
+        "maps": [
+         {
+          "pages": [
+           262,
+           263
+          ],
+          "kw": "[Bb]atch"
+         }
+        ]
+       },
+       {
+        "key": "CONC_REBAR",
+        "name": "Reinforcing, cast-in items and consumables (Company free-issues rebar, mesh, conduit, earth bonds, piping)",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - SP1 and SP2",
+        "children": [],
+        "primary": {
+         "page": 263,
+         "kw": "Company supplies all reinforcing bar"
+        },
+        "maps": [
+         {
+          "pages": [
+           263,
+           265
+          ],
+          "kw": "6\\.4\\.[4-9]|6\\.4\\.1[0-2]|[Rr]ebar|Reinforc|Cast-in|Holding|Bollard|Consumable"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 262,
+       "kw": "batch plant"
+      },
+      "maps": [
+       {
+        "pages": [
+         260,
+         266
+        ],
+        "default": true
+       }
+      ],
+      "notes": "Shared concrete supply pool; allocate to area FLOCs by concrete volume (Allocation_Rules AR-07)."
+     },
+     {
+      "key": "PRE_SP2GEN",
+      "name": "SP2 general requirements (common structural, mechanical, piping and E&I scope, welding, cable, earthing, battery limits)",
+      "status": "In scope",
+      "disciplines": [
+       "Structural",
+       "Mechanical",
+       "Electrical"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 268,
+       "kw": "SP2 facilities"
+      },
+      "maps": [
+       {
+        "pages": [
+         268,
+         292
+        ],
+        "default": true
+       }
+      ]
+     },
+     {
+      "key": "PRE_EXCL",
+      "name": "Excluded scope - non-physical (design, survey control, geotechnical support, third-party battery limits)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Others (not the Contractor)",
+      "children": [],
+      "primary": {
+       "page": 322,
+       "kw": "Excluded: permanent works design"
+      },
+      "maps": [
+       {
+        "pages": [
+         322,
+         323
+        ],
+        "kw": "Excluded|18 Work Excluded|Work Excluded"
+       },
+       {
+        "pages": [
+         322,
+         323
+        ],
+        "default": true
+       }
+      ]
+     },
+     {
+      "key": "PRE_COMMERCIAL",
+      "name": "Contract, commercial and administration (non-physical)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 53,
+       "kw": "Schedule A.1"
+      },
+      "maps": [
+       {
+        "pages": [
+         1,
+         46
+        ]
+       },
+       {
+        "pages": [
+         47,
+         156
+        ]
+       },
+       {
+        "pages": [
+         324,
+         391
+        ]
+       },
+       {
+        "pages": [
+         392,
+         406
+        ]
+       },
+       {
+        "pages": [
+         596,
+         638
+        ]
+       },
+       {
+        "pages": [
+         157,
+         198
+        ]
+       }
+      ],
+      "notes": "Tender requirements, contract conditions, securities, insurance, LDs, price adjustment, payment, pricing schedules and appendices. Carries no physical scope."
+     }
+    ],
+    "primary": {
+     "page": 328,
+     "kw": "SP1 - Preliminaries"
+    },
+    "notes": "Cross-cutting indirects priced in Schedule A.1 Table A.1.1 (SP1 and SP2 Preliminaries). Allocated to physical FLOCs by Allocation_Rules; do not double-count in area FLOCs."
+   },
+   {
+    "key": "SITE",
+    "name": "Site Development - Clearing, Topsoil and Borrow (site-wide earthworks)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Earthworks"
+    ],
+    "responsibility": "Contractor - Separable Part 1",
+    "children": [
+     {
+      "key": "SITE_CLEAR",
+      "name": "Clearing, grubbing and topsoil removal",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 238,
+       "kw": "Clearing, grubbing and topsoil stripping measured"
+      },
+      "maps": [
+       {
+        "pages": [
+         238,
+         239
+        ],
+        "kw": "6\\.1\\.3|Clearing|Grubbing"
+       }
+      ]
+     },
+     {
+      "key": "SITE_TOP",
+      "name": "Topsoil stripping and stockpiling",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 239,
+       "kw": "opsoil"
+      },
+      "maps": [
+       {
+        "pages": [
+         239,
+         240
+        ],
+        "kw": "6\\.1\\.4|Topsoil"
+       }
+      ]
+     },
+     {
+      "key": "SITE_BORROW",
+      "name": "Borrow development (borrow pits)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 240,
+       "kw": "Borrow pits within Mine"
+      },
+      "maps": [
+       {
+        "pages": [
+         240,
+         240
+        ],
+        "kw": "6\\.1\\.5|Borrow"
+       },
+       {
+        "pages": [
+         183,
+         183
+        ],
+        "kw": "Borrow"
+       }
+      ]
+     }
+    ],
+    "primary": {
+     "page": 238,
+     "kw": "Clearing, grubbing and topsoil stripping measured"
+    },
+    "maps": [
+     {
+      "pages": [
+       228,
+       240
+      ],
+      "default": true
+     },
+     {
+      "pages": [
+       238,
+       240
+      ],
+      "kw": "6\\.1\\.[345]|Clearing|Topsoil|Borrow"
+     }
+    ]
+   },
+   {
+    "key": "MAR",
+    "name": "Mine Access Road and Site Access (Company WBS 5100/5150)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Earthworks"
+    ],
+    "responsibility": "Contractor - Separable Part 1",
+    "children": [
+     {
+      "key": "MAR_ROAD",
+      "name": "Mine Access Road - 182 km sealed road (earthworks and pavement)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 230,
+       "kw": "Work Area 1 - Mine Access Road, 182 km sealed"
+      },
+      "maps": [
+       {
+        "pages": [
+         230,
+         231
+        ],
+        "kw": "Work Area 1|Mine Access Road"
+       },
+       {
+        "pages": [
+         170,
+         181
+        ],
+        "kw": "Access Road"
+       }
+      ]
+     },
+     {
+      "key": "MAR_INT",
+      "name": "Highway intersections (Great Northern Highway / Nyangumarta Highway)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 230,
+       "kw": "Great Northern Highway intersection"
+      },
+      "maps": [
+       {
+        "pages": [
+         180,
+         180
+        ],
+        "kw": "intersection"
+       }
+      ]
+     },
+     {
+      "key": "MAR_REST",
+      "name": "Access road rest areas 1 to 3",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 181,
+       "kw": "Rest Areas"
+      }
+     },
+     {
+      "key": "MAR_DRAIN",
+      "name": "Drainage structures - culverts and floodways",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 181,
+       "kw": "culvert schedule"
+      }
+     },
+     {
+      "key": "MAR_WEED",
+      "name": "Weed and seed facility and weighbridge (WBS 5100 mechanical and E&I)",
+      "status": "In scope",
+      "disciplines": [
+       "Mechanical",
+       "Electrical"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 279,
+       "kw": "Weed and seed facility"
+      },
+      "maps": [
+       {
+        "pages": [
+         279,
+         279
+        ],
+        "kw": "Mine Access Road"
+       },
+       {
+        "pages": [
+         283,
+         284
+        ],
+        "kw": "Mine Access Road|Weigh|Weed"
+       }
+      ]
+     },
+     {
+      "key": "MAR_EXIST",
+      "name": "Existing Site Access Road, tracks and dune crossings (use, maintenance and reinstatement)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 213,
+       "kw": "Existing tracks, two dune crossings"
+      },
+      "maps": [
+       {
+        "pages": [
+         213,
+         214
+        ]
+       }
+      ]
+     },
+     {
+      "key": "MAR_CONC",
+      "name": "Concrete - Mine Access Road (WBS 5100 series)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 261,
+       "kw": "Concrete work area - Mine Access Road"
+      },
+      "maps": [
+       {
+        "pages": [
+         261,
+         261
+        ],
+        "kw": "Mine Access Road"
+       }
+      ]
+     }
+    ],
+    "primary": {
+     "page": 230,
+     "kw": "Work Area 1 - Mine Access Road"
+    },
+    "maps": [
+     {
+      "pages": [
+       230,
+       231
+      ],
+      "kw": "Work Area 1"
+     },
+     {
+      "pages": [
+       170,
+       181
+      ],
+      "kw": "5150|Access Road"
+     },
+     {
+      "pages": [
+       213,
+       214
+      ],
+      "kw": "Access Road|[Tt]rack|[Dd]une"
+     }
+    ]
+   },
+   {
+    "key": "VIL",
+    "name": "Permanent Village (Company WBS 5600 series)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Structural",
+     "Mechanical",
+     "Electrical"
+    ],
+    "responsibility": "Contractor - SP1 and SP2",
+    "children": [
+     {
+      "key": "VIL_EW",
+      "name": "Village bulk earthworks, access roads and laydown (WA2; Company WBS 5610)",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Earthworks"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [
+       {
+        "key": "VIL_ROAD",
+        "name": "Camp Access Road and waste management facilities layout",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - Separable Part 1",
+        "children": [],
+        "primary": {
+         "page": 232,
+         "kw": "Camp Access Road and Waste Management Facilities layout"
+        }
+       },
+       {
+        "key": "VIL_GRAVEL",
+        "name": "Unsealed gravel access road between Mine Access Road and Village",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - Separable Part 1",
+        "children": [],
+        "primary": {
+         "page": 231,
+         "kw": "Unsealed gravel access road"
+        }
+       },
+       {
+        "key": "VIL_PED",
+        "name": "Pedestrian access track to sacred tree grove",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - Separable Part 1",
+        "children": [],
+        "primary": {
+         "page": 231,
+         "kw": "Pedestrian access track"
+        }
+       }
+      ],
+      "primary": {
+       "page": 231,
+       "kw": "Work Area 2 - Permanent Village bulk earthworks"
+      },
+      "maps": [
+       {
+        "pages": [
+         231,
+         232
+        ],
+        "kw": "Village|Camp Access|Pedestrian"
+       },
+       {
+        "pages": [
+         182,
+         185
+        ],
+        "kw": "5610|Permanent Camp|Camp Access"
+       }
+      ]
+     },
+     {
+      "key": "VIL_ACCOM",
+      "name": "Village accommodation modules",
+      "status": "In scope",
+      "disciplines": [
+       "Structural",
+       "Architectural"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "VIL_ACC_1",
+        "name": "Village item 1: Single Accommodation, 4-Bedroom Module & Veranda",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "Village item 1:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           273
+          ],
+          "kw": "\\bVillage item 1:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_ACC_2",
+        "name": "Village item 2: Universal Access Accommodation, 2-Bedroom Module & Veranda",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "Village item 2:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           273
+          ],
+          "kw": "\\bVillage item 2:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_ACC_3",
+        "name": "Village item 3: Double Accommodation Module & Veranda",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "Village item 3:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           273
+          ],
+          "kw": "\\bVillage item 3:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 272,
+       "kw": "Village item 1:"
+      }
+     },
+     {
+      "key": "VIL_CENTRAL",
+      "name": "Village central, administration, mess and support facilities",
+      "status": "In scope",
+      "disciplines": [
+       "Structural",
+       "Architectural"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "VIL_CEN_4",
+        "name": "Village item 4: Administration Facilities (offices, stores, medic, mess etc.)",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 4:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 4:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_5",
+        "name": "Village item 5: Dry & Wet Mess Facilities",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 5:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 5:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_6",
+        "name": "Village item 6: Maintenance Workshop (Shed)",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 6:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 6:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_7",
+        "name": "Village item 7: Commercial Laundry & Chemical Store",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 7:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 7:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_8",
+        "name": "Village item 8: Domestic Laundry & Store",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 8:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 8:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_9",
+        "name": "Village item 9: Gymnasium",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 9:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 9:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_10",
+        "name": "Village item 10: Music Room",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 10:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 10:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_11",
+        "name": "Village item 11: Theatre Room",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 11:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 11:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_12",
+        "name": "Village item 12: Ice Room",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 12:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 12:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_13",
+        "name": "Village item 13: Welcome to Country Shelter",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 13:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 13:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_14",
+        "name": "Village item 14: Shade Structure - Smoking Shelter",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 14:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 14:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_15",
+        "name": "Village item 15: Shade Structure - BBQ Area",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 15:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 15:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_CEN_16",
+        "name": "Village item 16: Ablutions Module",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 16:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 16:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 273,
+       "kw": "Village item 4:"
+      }
+     },
+     {
+      "key": "VIL_EXTERNAL",
+      "name": "Village external works (court, yarning circle, parking, walking track)",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Structural"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "VIL_EXT_17",
+        "name": "Village item 17: Multi-Purpose Sports Court",
+        "status": "In scope",
+        "disciplines": [
+         "Civil",
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 17:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 17:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_EXT_18",
+        "name": "Village item 18: Yarning Circle",
+        "status": "In scope",
+        "disciplines": [
+         "Civil",
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 18:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 18:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_EXT_25",
+        "name": "Village item 25: Bus Parking, Drop Off and Charging Bays",
+        "status": "In scope",
+        "disciplines": [
+         "Civil",
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 25:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 25:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_EXT_26",
+        "name": "Village item 26: LME Parking and Charging Bays",
+        "status": "In scope",
+        "disciplines": [
+         "Civil",
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 26:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 26:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_EXT_27",
+        "name": "Village item 27: Walking Track",
+        "status": "In scope",
+        "disciplines": [
+         "Civil",
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 27:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 27:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 273,
+       "kw": "Village item 17:"
+      }
+     },
+     {
+      "key": "VIL_WATER",
+      "name": "Village potable and fire water (treatment, storage, distribution)",
+      "status": "In scope",
+      "disciplines": [
+       "Mechanical",
+       "Piping"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "VIL_WTR_19",
+        "name": "Village item 19: Potable Water Treatment Plant, Storage and Distribution System",
+        "status": "In scope",
+        "disciplines": [
+         "Mechanical",
+         "Piping"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 19:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 19:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_WTR_20",
+        "name": "Village item 20: Fire Water Storage and Pumps, distribution system",
+        "status": "In scope",
+        "disciplines": [
+         "Mechanical",
+         "Piping"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 20:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 20:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 273,
+       "kw": "Village item 19:"
+      },
+      "maps": [
+       {
+        "pages": [
+         271,
+         271
+        ],
+        "kw": "Water Treatment Plant"
+       },
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Village Water Treatment"
+       },
+       {
+        "pages": [
+         283,
+         283
+        ],
+        "kw": "Village Water Treatment"
+       },
+       {
+        "pages": [
+         186,
+         188
+        ],
+        "kw": "P-GAD|hydraulic"
+       }
+      ]
+     },
+     {
+      "key": "VIL_SEWAGE",
+      "name": "Village wastewater collection, treatment plant and spray field",
+      "status": "In scope",
+      "disciplines": [
+       "Mechanical",
+       "Piping"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "VIL_WW_21",
+        "name": "Village item 21: Wastewater Collection System incl below ground pumping station",
+        "status": "In scope",
+        "disciplines": [
+         "Mechanical",
+         "Piping"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 21:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 21:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_WW_22",
+        "name": "Village item 22: Waste Water Treatment Plant and Spray Field",
+        "status": "In scope",
+        "disciplines": [
+         "Mechanical",
+         "Piping"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 22:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 22:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 273,
+       "kw": "Village item 21:"
+      },
+      "maps": [
+       {
+        "pages": [
+         271,
+         271
+        ],
+        "kw": "Sewage"
+       },
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Sewage"
+       },
+       {
+        "pages": [
+         283,
+         283
+        ],
+        "kw": "Sewage"
+       },
+       {
+        "pages": [
+         231,
+         231
+        ],
+        "kw": "Spray"
+       },
+       {
+        "pages": [
+         265,
+         265
+        ],
+        "kw": "[Ss]pray"
+       },
+       {
+        "pages": [
+         185,
+         185
+        ],
+        "kw": "5684|Sewerage"
+       }
+      ]
+     },
+     {
+      "key": "VIL_POWER",
+      "name": "Village power distribution, emergency back-up power and communications network",
+      "status": "In scope",
+      "disciplines": [
+       "Electrical",
+       "Communications"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "VIL_PWR_23",
+        "name": "Village item 23: Low Voltage Distribution Network",
+        "status": "In scope",
+        "disciplines": [
+         "Electrical",
+         "Communications"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 23:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 23:"
+         }
+        ]
+       },
+       {
+        "key": "VIL_PWR_24",
+        "name": "Village item 24: Communications Network",
+        "status": "In scope",
+        "disciplines": [
+         "Electrical",
+         "Communications"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 273,
+         "kw": "Village item 24:"
+        },
+        "maps": [
+         {
+          "pages": [
+           272,
+           274
+          ],
+          "kw": "\\bVillage item 24:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 273,
+       "kw": "Village item 23:"
+      },
+      "maps": [
+       {
+        "pages": [
+         283,
+         283
+        ],
+        "kw": "back-up power|Permanent Village"
+       },
+       {
+        "pages": [
+         187,
+         187
+        ],
+        "kw": "electrical|comms|415V"
+       }
+      ]
+     },
+     {
+      "key": "VIL_MOD",
+      "name": "Village modular building structural works (factory versus on-site fit-out split)",
+      "status": "In scope",
+      "disciplines": [
+       "Structural"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 273,
+       "kw": "factory vs on-site split"
+      },
+      "maps": [
+       {
+        "pages": [
+         273,
+         275
+        ],
+        "kw": "factory|Factory|HVAC|modular|Modular"
+       },
+       {
+        "pages": [
+         186,
+         189
+        ],
+        "kw": "Village|Accommodation|structural|chassis"
+       }
+      ]
+     },
+     {
+      "key": "VIL_ME",
+      "name": "Village mechanical (HVAC) and E&I areas",
+      "status": "In scope",
+      "disciplines": [
+       "Mechanical",
+       "Electrical"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 280,
+       "kw": "Permanent Village (WBS 5600) mechanical areas"
+      },
+      "maps": [
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Village|5600"
+       },
+       {
+        "pages": [
+         283,
+         283
+        ],
+        "kw": "Village|5600"
+       }
+      ]
+     },
+     {
+      "key": "VIL_CONC",
+      "name": "Concrete - Permanent Village (WBS 5600 series)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 261,
+       "kw": "Concrete work area - Permanent Village"
+      },
+      "maps": [
+       {
+        "pages": [
+         261,
+         261
+        ],
+        "kw": "Village|Communications Towers"
+       }
+      ]
+     },
+     {
+      "key": "VIL_BU",
+      "name": "Village buried utilities (incl. tie-in at IPP battery limit)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 265,
+       "kw": "Permanent Village - utilities"
+      },
+      "maps": [
+       {
+        "pages": [
+         265,
+         265
+        ],
+        "kw": "Village"
+       }
+      ]
+     }
+    ],
+    "primary": {
+     "page": 231,
+     "kw": "Work Area 2 - Permanent Village bulk earthworks"
+    },
+    "maps": [
+     {
+      "pages": [
+       231,
+       232
+      ],
+      "kw": "Work Area 2"
+     },
+     {
+      "pages": [
+       182,
+       190
+      ],
+      "kw": "5650|5610|5680|5684|Camp|Village|Accommodation"
+     },
+     {
+      "pages": [
+       261,
+       261
+      ],
+      "kw": "Village"
+     },
+     {
+      "pages": [
+       265,
+       265
+      ],
+      "kw": "Village"
+     }
+    ]
+   },
+   {
+    "key": "MSA",
+    "name": "Mine Services Area - MSA (Company WBS 2900 series)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Structural",
+     "Mechanical",
+     "Electrical"
+    ],
+    "responsibility": "Contractor - SP1 and SP2",
+    "children": [
+     {
+      "key": "MSA_EW",
+      "name": "MSA bulk earthworks (WBS 2810)",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Earthworks"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 232,
+       "kw": "Work Area 3 - Mine Services Area bulk earthworks"
+      },
+      "maps": [
+       {
+        "pages": [
+         182,
+         184
+        ],
+        "kw": "MSA|Mine Services"
+       }
+      ]
+     },
+     {
+      "key": "MSA_WORK",
+      "name": "MSA workshops, tool storage and tyre change facilities",
+      "status": "In scope",
+      "disciplines": [
+       "Structural"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "MSA_WRK_1",
+        "name": "MSA item 1: HME Workshop",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 271,
+         "kw": "MSA item 1:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 1:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WRK_2",
+        "name": "MSA item 2: HME Office",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 271,
+         "kw": "MSA item 2:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 2:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WRK_3",
+        "name": "MSA item 3: HME Tool Storage",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 271,
+         "kw": "MSA item 3:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 3:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WRK_4",
+        "name": "MSA item 4: LME Workshop, LTE Trailer & Fixed Plant Workshop",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 271,
+         "kw": "MSA item 4:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 4:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WRK_7",
+        "name": "MSA item 7: HME Tyre Change",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 271,
+         "kw": "MSA item 7:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 7:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WRK_8",
+        "name": "MSA item 8: LME Tyre Change",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 8:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 8:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WRK_9",
+        "name": "MSA item 9: LME Tyre Change - Office",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 9:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 9:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 271,
+       "kw": "MSA item 1:"
+      }
+     },
+     {
+      "key": "MSA_STORE",
+      "name": "MSA warehouse, storage yards and laydown",
+      "status": "In scope",
+      "disciplines": [
+       "Structural"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "MSA_WH_5",
+        "name": "MSA item 5: Mine Warehouse",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 271,
+         "kw": "MSA item 5:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 5:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WH_11",
+        "name": "MSA item 11: Mines Goods Receival & Storage Yard",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 11:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 11:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WH_17",
+        "name": "MSA item 17: Core Storage Shed and Laydown Yard",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 17:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 17:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WH_25",
+        "name": "MSA item 25: Laboratory - Sample Storage",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 25:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 25:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_WH_26",
+        "name": "MSA item 26: Plant Reagent Storage",
+        "status": "In scope",
+        "disciplines": [
+         "Structural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 26:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 26:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 271,
+       "kw": "MSA item 5:"
+      }
+     },
+     {
+      "key": "MSA_FUELS",
+      "name": "MSA fuel facilities (bulk fuel storage and refuelling office)",
+      "status": "In scope",
+      "disciplines": [
+       "Structural",
+       "Mechanical"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "MSA_FUEL_6",
+        "name": "MSA item 6: HME Refuelling - Office",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Mechanical"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 271,
+         "kw": "MSA item 6:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 6:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_FUEL_10",
+        "name": "MSA item 10: Bulk Fuel Storage",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Mechanical"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 10:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 10:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 271,
+       "kw": "MSA item 6:"
+      }
+     },
+     {
+      "key": "MSA_OPSF",
+      "name": "MSA operations, administration and amenities",
+      "status": "In scope",
+      "disciplines": [
+       "Structural",
+       "Architectural"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "MSA_OPS_12",
+        "name": "MSA item 12: Change House, incl showers and ablutions",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 12:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 12:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_13",
+        "name": "MSA item 13: Ice Room",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 13:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 13:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_14",
+        "name": "MSA item 14: Prestart / PSI Room",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 14:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 14:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_15",
+        "name": "MSA item 15: Crib Room",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 15:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 15:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_16",
+        "name": "MSA item 16: Shade Structure",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 16:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 16:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_18",
+        "name": "MSA item 18: Operations & Main Administration Building",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 18:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 18:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_19",
+        "name": "MSA item 19: Ambulance Shed",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 19:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 19:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_20",
+        "name": "MSA item 20: Bus Shelter",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 20:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 20:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_21",
+        "name": "MSA item 21: Fire Truck Shed",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 21:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 21:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_OPS_23",
+        "name": "MSA item 23: Office",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Architectural"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 23:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 23:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 272,
+       "kw": "MSA item 12:"
+      }
+     },
+     {
+      "key": "MSA_DCLAB",
+      "name": "MSA data centre and laboratory (excluding laboratory equipment)",
+      "status": "In scope",
+      "disciplines": [
+       "Structural",
+       "Electrical"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "MSA_DC_22",
+        "name": "MSA item 22: Data Centre, including kiosk substation",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Electrical"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 22:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 22:"
+         }
+        ]
+       },
+       {
+        "key": "MSA_DC_24",
+        "name": "MSA item 24: Laboratory - excluding laboratory equipment",
+        "status": "In scope",
+        "disciplines": [
+         "Structural",
+         "Electrical"
+        ],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 272,
+         "kw": "MSA item 24:"
+        },
+        "maps": [
+         {
+          "pages": [
+           271,
+           272
+          ],
+          "kw": "\\bMSA item 24:"
+         }
+        ]
+       }
+      ],
+      "primary": {
+       "page": 272,
+       "kw": "MSA item 22:"
+      }
+     },
+     {
+      "key": "MSA_MECH",
+      "name": "MSA mechanical and piping systems (workshops, tyre change, bulk fuel, warehouse, oily water separators, containerised WWTP)",
+      "status": "In scope",
+      "disciplines": [
+       "Mechanical",
+       "Piping"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 279,
+       "kw": "MSA sub-area - HME Workshop"
+      },
+      "maps": [
+       {
+        "pages": [
+         279,
+         279
+        ],
+        "kw": "MSA sub-area"
+       }
+      ]
+     },
+     {
+      "key": "MSA_EI",
+      "name": "MSA electrical and instrumentation (sub-area E&I)",
+      "status": "In scope",
+      "disciplines": [
+       "Electrical",
+       "Instrumentation"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 283,
+       "kw": "E&I MSA sub-area - HME Workshop"
+      },
+      "maps": [
+       {
+        "pages": [
+         283,
+         283
+        ],
+        "kw": "MSA sub-area"
+       }
+      ]
+     },
+     {
+      "key": "MSA_BU",
+      "name": "MSA buried utilities",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Piping"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 265,
+       "kw": "Mining Services Area (MSA) - utilities work area"
+      }
+     },
+     {
+      "key": "MSA_CONC",
+      "name": "Concrete - MSA (WBS 2900 series)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 261,
+       "kw": "Concrete work area - Mine Services Area"
+      }
+     },
+     {
+      "key": "MSA_LABEQ",
+      "name": "MSA laboratory equipment (Company; excluded)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Company",
+      "children": [],
+      "primary": {
+       "page": 272,
+       "kw": "Laboratory equipment excluded"
+      },
+      "maps": [
+       {
+        "pages": [
+         323,
+         323
+        ],
+        "kw": "aboratory"
+       }
+      ]
+     },
+     {
+      "key": "MSA_COMMS_EX",
+      "name": "MSA communications systems designed by others",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Others (not the Contractor)",
+      "children": [],
+      "primary": {
+       "page": 286,
+       "kw": "MSA communications systems designed by others"
+      }
+     }
+    ],
+    "primary": {
+     "page": 270,
+     "kw": "Mine Services Area (WBS 2900 series)"
+    },
+    "maps": [
+     {
+      "pages": [
+       189,
+       190
+      ],
+      "kw": "2900|2910|2920|2940|2970|Mine Services|MSA"
+     },
+     {
+      "pages": [
+       232,
+       232
+      ],
+      "kw": "Mine Services Area"
+     },
+     {
+      "pages": [
+       265,
+       265
+      ],
+      "kw": "Mining Services Area|MSA"
+     },
+     {
+      "pages": [
+       261,
+       261
+      ],
+      "kw": "Mine Services Area"
+     }
+    ]
+   },
+   {
+    "key": "MPP",
+    "name": "Mineral Processing Plant - MPP enabling works (Company WBS 2000/2810)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Earthworks"
+    ],
+    "responsibility": "Contractor - Separable Part 1",
+    "children": [
+     {
+      "key": "MPP_EW",
+      "name": "MPP bulk earthworks and in-plant roads (WBS 2810)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 232,
+       "kw": "Work Area 3 - Mineral Processing Plant bulk earthworks"
+      },
+      "maps": [
+       {
+        "pages": [
+         182,
+         184
+        ],
+        "kw": "2810|Process Plant"
+       }
+      ]
+     },
+     {
+      "key": "MPP_LOOP",
+      "name": "Concentrate loop road",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 182,
+       "kw": "concentrate loop road"
+      },
+      "maps": [
+       {
+        "pages": [
+         182,
+         182
+        ],
+        "kw": "Concentrate"
+       }
+      ]
+     },
+     {
+      "key": "MPP_ROM",
+      "name": "ROM pad, ROM wall and dump pocket (earthworks)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 233,
+       "kw": "ROM Wall (proposed) and dump pocket"
+      },
+      "maps": [
+       {
+        "pages": [
+         233,
+         233
+        ],
+        "kw": "ROM"
+       },
+       {
+        "pages": [
+         252,
+         252
+        ],
+        "kw": "ROM|skyway|[Ss]tockpile fingers"
+       },
+       {
+        "pages": [
+         257,
+         257
+        ],
+        "kw": "ROM"
+       }
+      ]
+     },
+     {
+      "key": "MPP_CONC",
+      "name": "Concrete - MPP (WBS 2000 series)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 261,
+       "kw": "Concrete work area - Mineral Process Plant"
+      }
+     },
+     {
+      "key": "MPP_BU",
+      "name": "MPP buried utilities",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Piping"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 265,
+       "kw": "Mineral Processing Plant (MPP) - utilities work area"
+      }
+     },
+     {
+      "key": "MPP_EX",
+      "name": "Process plant above top of concrete incl. ROM pocket mechanical (by MPP EPC Contractor)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Others (not the Contractor)",
+      "children": [],
+      "primary": {
+       "page": 322,
+       "kw": "top-of-concrete MPP process plant"
+      },
+      "maps": [
+       {
+        "pages": [
+         269,
+         269
+        ],
+        "kw": "Mineral process plant excluded"
+       },
+       {
+        "pages": [
+         233,
+         233
+        ],
+        "kw": "mechanical equipment install"
+       }
+      ]
+     },
+     {
+      "key": "MPP_EI_EX",
+      "name": "MPP electrical, instrumentation and communications systems (excluded)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Others (not the Contractor)",
+      "children": [],
+      "primary": {
+       "page": 323,
+       "kw": "MPP electrical, instrumentation and communications"
+      }
+     },
+     {
+      "key": "MPP_CRUSH_EX",
+      "name": "Primary crusher select-fill pocket (completed by others)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Others (not the Contractor)",
+      "children": [],
+      "primary": {
+       "page": 252,
+       "kw": "Primary Crusher select-fill pocket excluded"
+      }
+     }
+    ],
+    "primary": {
+     "page": 232,
+     "kw": "Work Area 3 - Mineral Processing Plant bulk earthworks"
+    },
+    "maps": [
+     {
+      "pages": [
+       232,
+       232
+      ],
+      "kw": "Mineral Processing Plant|Process Plant"
+     },
+     {
+      "pages": [
+       182,
+       184
+      ],
+      "kw": "2810|Process Plant|Concentrate"
+     },
+     {
+      "pages": [
+       252,
+       252
+      ],
+      "kw": "ROM|[Cc]rusher"
+     },
+     {
+      "pages": [
+       233,
+       233
+      ],
+      "kw": "ROM"
+     },
+     {
+      "pages": [
+       261,
+       261
+      ],
+      "kw": "Mineral Process Plant"
+     }
+    ]
+   },
+   {
+    "key": "IPP",
+    "name": "Power Generation Area - IPP enabling earthworks (thermal power station, wind farm, solar and BESS)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Earthworks"
+    ],
+    "responsibility": "Contractor - Separable Part 1",
+    "children": [
+     {
+      "key": "IPP_PAD",
+      "name": "Power station (thermal) pad",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 233,
+       "kw": "Power Station (thermal generation facility) pad"
+      },
+      "maps": [
+       {
+        "pages": [
+         233,
+         233
+        ],
+        "kw": "Power Station"
+       }
+      ]
+     },
+     {
+      "key": "IPP_WIND",
+      "name": "Wind farm development areas and road corridors (WBS 5500)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 233,
+       "kw": "Wind farm development areas"
+      },
+      "maps": [
+       {
+        "pages": [
+         185,
+         185
+        ],
+        "kw": "Wind"
+       }
+      ]
+     },
+     {
+      "key": "IPP_SOLAR",
+      "name": "Solar farm and BESS development areas",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 233,
+       "kw": "Solar farm and BESS development areas"
+      },
+      "maps": [
+       {
+        "pages": [
+         237,
+         237
+        ],
+        "kw": "Solar"
+       }
+      ]
+     },
+     {
+      "key": "IPP_CONC",
+      "name": "Concrete supply to the IPP Contractor (recharge model to be established)",
+      "status": "Provisional",
+      "disciplines": [],
+      "responsibility": "Contractor supplies; IPP Contractor recharged",
+      "children": [],
+      "primary": {
+       "page": 263,
+       "kw": "Recharge model to be established for IPP concrete"
+      }
+     },
+     {
+      "key": "IPP_EX",
+      "name": "IPP final site preparation, internal roads and equipment (by IPP Contractor)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "IPP Contractor",
+      "children": [],
+      "primary": {
+       "page": 234,
+       "kw": "IPP Contractor completes final site prep"
+      },
+      "maps": [
+       {
+        "pages": [
+         234,
+         234
+        ],
+        "kw": "IPP"
+       }
+      ]
+     },
+     {
+      "key": "IPP_COND_EX",
+      "name": "Conduits for incoming power from the IPP (excluded)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "IPP Contractor",
+      "children": [],
+      "primary": {
+       "page": 268,
+       "kw": "Conduits for incoming power from the IPP excluded"
+      }
+     }
+    ],
+    "primary": {
+     "page": 232,
+     "kw": "Independent Power Provider (IPP) area earthworks"
+    },
+    "maps": [
+     {
+      "pages": [
+       233,
+       237
+      ],
+      "kw": "IPP|Power Station|Wind|Solar|BESS|[Pp]ower"
+     },
+     {
+      "pages": [
+       185,
+       185
+      ],
+      "kw": "5500|Wind"
+     },
+     {
+      "pages": [
+       232,
+       232
+      ],
+      "kw": "IPP"
+     }
+    ]
+   },
+   {
+    "key": "STK",
+    "name": "Ore Stockpiles and Surface Water Management (Company WBS 1810; WA4)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Earthworks"
+    ],
+    "responsibility": "Contractor - Separable Part 1",
+    "children": [
+     {
+      "key": "STK_PS8",
+      "name": "Primary sulphides stockpile (< 8 years)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 234,
+       "kw": "Primary Sulphides stockpile (< 8 years storage)"
+      }
+     },
+     {
+      "key": "STK_PS8P",
+      "name": "Primary sulphides stockpile (> 8 years) incl. HDPE liner",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 234,
+       "kw": "Primary Sulphides stockpile \\(> 8 years\\)"
+      }
+     },
+     {
+      "key": "STK_LG",
+      "name": "Low grade primary sulphides stockpile (> 8 years) incl. HDPE liner",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 234,
+       "kw": "Low grade primary sulphides stockpile"
+      }
+     },
+     {
+      "key": "STK_LEACH",
+      "name": "Leach cap stockpile",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 234,
+       "kw": "Leach cap stockpile"
+      }
+     },
+     {
+      "key": "STK_BUND",
+      "name": "Clean water bunds",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 234,
+       "kw": "Clean Water bunds"
+      }
+     },
+     {
+      "key": "STK_MUD",
+      "name": "Mudstone stockpile bases",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 254,
+       "kw": "Mudstone"
+      },
+      "maps": [
+       {
+        "pages": [
+         254,
+         254
+        ],
+        "kw": "Mudstone|6\\.2\\.12"
+       }
+      ]
+     },
+     {
+      "key": "STK_DET",
+      "name": "Mine stockpile detention ponds 1 and 2 (HDPE lined)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 234,
+       "kw": "Mine Stockpile Detention Ponds 1 and 2"
+      }
+     },
+     {
+      "key": "STK_STORM",
+      "name": "Process plant and MSA stormwater ponds",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 235,
+       "kw": "Process Plant Stormwater Pond"
+      },
+      "maps": [
+       {
+        "pages": [
+         235,
+         235
+        ],
+        "kw": "MSA Stormwater|Stormwater Pond"
+       },
+       {
+        "pages": [
+         232,
+         232
+        ],
+        "kw": "Stormwater"
+       }
+      ]
+     },
+     {
+      "key": "STK_CWP",
+      "name": "Clean Water Pond / Clean Water Dam",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 235,
+       "kw": "Clean Water Dam"
+      },
+      "maps": [
+       {
+        "pages": [
+         232,
+         233
+        ],
+        "kw": "Clean Water"
+       }
+      ]
+     },
+     {
+      "key": "STK_PDP",
+      "name": "Pit (Mine) Dewatering Pond",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 235,
+       "kw": "Pit Dewatering Pond"
+      },
+      "maps": [
+       {
+        "pages": [
+         254,
+         254
+        ],
+        "kw": "Dewatering Pond"
+       }
+      ]
+     }
+    ],
+    "primary": {
+     "page": 234,
+     "kw": "Work Area 4 - Stockpiles and Surface Water Management"
+    },
+    "maps": [
+     {
+      "pages": [
+       234,
+       235
+      ],
+      "kw": "Work Area 4|Pond|Dam|stockpile|Stockpile"
+     },
+     {
+      "pages": [
+       184,
+       184
+      ],
+      "kw": "Stockpile Berms|1810"
+     },
+     {
+      "pages": [
+       254,
+       254
+      ],
+      "kw": "Mudstone|6\\.2\\.1[234]"
+     },
+     {
+      "pages": [
+       183,
+       183
+      ],
+      "kw": "Stockpile"
+     }
+    ]
+   },
+   {
+    "key": "AER",
+    "name": "Aerodrome (Company WBS 5800/5880; WA5)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Structural",
+     "Electrical"
+    ],
+    "responsibility": "Contractor - SP1 and SP2",
+    "children": [
+     {
+      "key": "AER_ROAD",
+      "name": "Aerodrome access and loop roads (WBS 5880)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 235,
+       "kw": "Aerodrome access road"
+      },
+      "maps": [
+       {
+        "pages": [
+         182,
+         185
+        ],
+        "kw": "5880|Airport access|Aerodrome access"
+       }
+      ]
+     },
+     {
+      "key": "AER_AIR",
+      "name": "Runway, taxiway and apron earthworks and pavements",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Earthworks"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 236,
+       "kw": "Runway, taxiway and apron pavements"
+      },
+      "maps": [
+       {
+        "pages": [
+         236,
+         236
+        ]
+       },
+       {
+        "pages": [
+         191,
+         194
+        ],
+        "kw": "runway|Runway|taxiway|apron|Apron|clearing|GA"
+       }
+      ]
+     },
+     {
+      "key": "AER_LAY",
+      "name": "Aerodrome laydown and temporary construction camp area",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 235,
+       "kw": "Aerodrome laydown areas"
+      },
+      "maps": [
+       {
+        "pages": [
+         235,
+         235
+        ],
+        "kw": "laydown|camp"
+       }
+      ]
+     },
+     {
+      "key": "AER_MARK",
+      "name": "Aerodrome line marking and perimeter fencing",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 193,
+       "kw": "line marking"
+      },
+      "maps": [
+       {
+        "pages": [
+         193,
+         193
+        ],
+        "kw": "marking|fencing"
+       }
+      ]
+     },
+     {
+      "key": "AER_BLD",
+      "name": "Aerodrome terminal facility and ancillary buildings",
+      "status": "In scope",
+      "disciplines": [
+       "Structural"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [
+       {
+        "key": "AER_TERM",
+        "name": "Aerodrome terminal facility (40 ft modular building)",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 275,
+         "kw": "Aerodrome Terminal Facility"
+        }
+       },
+       {
+        "key": "AER_ABL",
+        "name": "Aerodrome ablutions facility",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 275,
+         "kw": "Aerodrome ablutions facility"
+        }
+       },
+       {
+        "key": "AER_SHADE",
+        "name": "Aerodrome passenger shade structure (steel frame)",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 275,
+         "kw": "passenger shade structure"
+        }
+       },
+       {
+        "key": "AER_SHED",
+        "name": "Aerodrome shade structure and equipment storage shed (steel frame)",
+        "status": "In scope",
+        "disciplines": [],
+        "responsibility": "Contractor - Separable Part 2",
+        "children": [],
+        "primary": {
+         "page": 275,
+         "kw": "equipment storage shed"
+        }
+       }
+      ],
+      "primary": {
+       "page": 275,
+       "kw": "Aerodrome Terminal Facility"
+      },
+      "maps": [
+       {
+        "pages": [
+         275,
+         275
+        ]
+       },
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Terminal"
+       }
+      ]
+     },
+     {
+      "key": "AER_LIGHT",
+      "name": "Aerodrome airfield lighting, aids and electrical (PAPI, wind direction indicator, control switchboard)",
+      "status": "In scope",
+      "disciplines": [
+       "Electrical"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 194,
+       "kw": "PAPI"
+      },
+      "maps": [
+       {
+        "pages": [
+         284,
+         284
+        ],
+        "kw": "Aerodrome"
+       },
+       {
+        "pages": [
+         194,
+         194
+        ],
+        "kw": "PAPI|lighting|LGHTING|WDI"
+       }
+      ]
+     },
+     {
+      "key": "AER_CONC",
+      "name": "Concrete - Aerodrome (WBS 5800 series)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 261,
+       "kw": "Concrete work area - Aerodrome"
+      }
+     }
+    ],
+    "primary": {
+     "page": 235,
+     "kw": "Work Area 5 - Aerodrome (air and land side)"
+    },
+    "maps": [
+     {
+      "pages": [
+       235,
+       236
+      ],
+      "kw": "Work Area 5|Aerodrome|Runway|Taxiway"
+     },
+     {
+      "pages": [
+       190,
+       194
+      ],
+      "kw": "Aerodrome|Airport|Runway|Taxiway|PAPI|0000-G-DRG"
+     },
+     {
+      "pages": [
+       182,
+       185
+      ],
+      "kw": "5880|Aerodrome|Airport"
+     },
+     {
+      "pages": [
+       261,
+       261
+      ],
+      "kw": "Aerodrome"
+     },
+     {
+      "pages": [
+       275,
+       275
+      ],
+      "kw": "Aerodrome"
+     },
+     {
+      "pages": [
+       284,
+       284
+      ],
+      "kw": "Aerodrome"
+     },
+     {
+      "pages": [
+       265,
+       265
+      ],
+      "kw": "Aerodrome"
+     },
+     {
+      "pages": [
+       280,
+       280
+      ],
+      "kw": "Aerodrome"
+     }
+    ]
+   },
+   {
+    "key": "TSF",
+    "name": "Tailings Storage Facility - TSF Stage 0 (Company WBS 2300; WA6)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Earthworks",
+     "Geosynthetics"
+    ],
+    "responsibility": "Contractor - Separable Part 1",
+    "children": [
+     {
+      "key": "TSF_EW",
+      "name": "TSF Stage 0 impoundment earthworks (LST Cell 1B, HST Cells 1A/1B, dune fill)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 260,
+       "kw": "Stage 0 impoundment"
+      },
+      "maps": [
+       {
+        "pages": [
+         257,
+         258
+        ],
+        "kw": "Detailed Scope|Stage 0|earthworks|Dune|dune|Zones|haul"
+       }
+      ]
+     },
+     {
+      "key": "TSF_LINER",
+      "name": "TSF liner system (HDPE) and construction quality assurance interface",
+      "status": "In scope",
+      "disciplines": [
+       "Geosynthetics"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 259,
+       "kw": "Liner price basis"
+      },
+      "maps": [
+       {
+        "pages": [
+         259,
+         260
+        ],
+        "kw": "[Ll]iner|CQA|Testing|6\\.3\\.7"
+       }
+      ]
+     },
+     {
+      "key": "TSF_DRAIN",
+      "name": "TSF drainage (toe trench drains, underdrainage, LST1-B sump and riser)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 258,
+       "kw": "Over-liner underdrainage"
+      },
+      "maps": [
+       {
+        "pages": [
+         258,
+         258
+        ],
+        "kw": "[Dd]rain|sump|riser"
+       }
+      ]
+     },
+     {
+      "key": "TSF_CORR",
+      "name": "Tailings pipeline corridors, collection sumps and LST thickener area",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 257,
+       "kw": "HDPE-lined pipeline corridors"
+      },
+      "maps": [
+       {
+        "pages": [
+         257,
+         257
+        ],
+        "kw": "pipeline|corridor|sump|thickener"
+       },
+       {
+        "pages": [
+         232,
+         232
+        ],
+        "kw": "Tailings Corridor"
+       },
+       {
+        "pages": [
+         265,
+         265
+        ],
+        "kw": "LST Thickener"
+       },
+       {
+        "pages": [
+         184,
+         184
+        ],
+        "kw": "Tailings|decant"
+       }
+      ]
+     },
+     {
+      "key": "TSF_FILL",
+      "name": "Material supply to TSF (pit to transfer node; pricing split with Mine Pre-Strip)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 253,
+       "kw": "TSF Pricing Schedule covers haul beyond node"
+      },
+      "maps": [
+       {
+        "pages": [
+         253,
+         254
+        ],
+        "kw": "TSF|Tailings"
+       },
+       {
+        "pages": [
+         260,
+         260
+        ],
+        "kw": "[Hh]aulage|battery limit"
+       }
+      ]
+     },
+     {
+      "key": "TSF_CONC",
+      "name": "Concrete - TSF and tailings corridor (WBS 2300; riser rings, sump bases)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 261,
+       "kw": "Concrete work area - Tailings Storage Facility"
+      },
+      "maps": [
+       {
+        "pages": [
+         261,
+         261
+        ],
+        "kw": "Tailings"
+       }
+      ]
+     },
+     {
+      "key": "TSF_PROC_EX",
+      "name": "TSF process and delivery systems (excluded)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Others (not the Contractor)",
+      "children": [],
+      "primary": {
+       "page": 322,
+       "kw": "TSF process and delivery systems and future TSF stages"
+      }
+     },
+     {
+      "key": "TSF_LATER_EX",
+      "name": "TSF Stage 1 (Years 4-5) and later stages (by others in operations)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Others (not the Contractor)",
+      "children": [],
+      "primary": {
+       "page": 257,
+       "kw": "TSF Stage 1 (Years 4-5) and later stages excluded"
+      }
+     }
+    ],
+    "primary": {
+     "page": 257,
+     "kw": "Tailings Storage Facility (TSF) designed by WWL"
+    },
+    "maps": [
+     {
+      "pages": [
+       257,
+       260
+      ]
+     },
+     {
+      "pages": [
+       237,
+       237
+      ],
+      "kw": "Tailings"
+     },
+     {
+      "pages": [
+       166,
+       170
+      ],
+      "kw": "TSF|2300|Tailings"
+     },
+     {
+      "pages": [
+       261,
+       261
+      ],
+      "kw": "Tailings"
+     },
+     {
+      "pages": [
+       232,
+       232
+      ],
+      "kw": "[Tt]ailings"
+     },
+     {
+      "pages": [
+       254,
+       254
+      ],
+      "kw": "6\\.2\\.11|Tailings"
+     }
+    ]
+   },
+   {
+    "key": "EXP",
+    "name": "Explosives Facility (Company WBS 1950; WA7)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Structural",
+     "Mechanical",
+     "Electrical"
+    ],
+    "responsibility": "Contractor - SP1 and SP2",
+    "children": [
+     {
+      "key": "EXP_EW",
+      "name": "Explosives area earthworks, access road and pond",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Earthworks"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 237,
+       "kw": "Explosives Area access road"
+      },
+      "maps": [
+       {
+        "pages": [
+         237,
+         238
+        ],
+        "kw": "Explosives"
+       },
+       {
+        "pages": [
+         181,
+         184
+        ],
+        "kw": "[Ee]xplosives"
+       }
+      ]
+     },
+     {
+      "key": "EXP_DET",
+      "name": "Detonator and booster storage (containerised)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 271,
+       "kw": "Detonator and booster storage"
+      }
+     },
+     {
+      "key": "EXP_PRILL",
+      "name": "AN prill storage (steel frame building, 250 t bulka bags)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 271,
+       "kw": "AN Prill storage"
+      }
+     },
+     {
+      "key": "EXP_EMUL",
+      "name": "AN emulsion and AN inhibitor storage",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 271,
+       "kw": "AN emulsion and AN inhibitor storage"
+      }
+     },
+     {
+      "key": "EXP_ME",
+      "name": "Explosives Area mechanical and E&I (WBS 1950)",
+      "status": "In scope",
+      "disciplines": [
+       "Mechanical",
+       "Electrical"
+      ],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 279,
+       "kw": "Mechanical work area - Explosives Area"
+      },
+      "maps": [
+       {
+        "pages": [
+         279,
+         279
+        ],
+        "kw": "Explosives"
+       },
+       {
+        "pages": [
+         283,
+         283
+        ],
+        "kw": "Explosives"
+       }
+      ]
+     },
+     {
+      "key": "EXP_CONC",
+      "name": "Concrete - Explosives Area (WBS 1950)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 261,
+       "kw": "Concrete work area - Explosives Area"
+      }
+     },
+     {
+      "key": "EXP_BU",
+      "name": "Explosives Area buried utilities",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 265,
+       "kw": "Explosives Facility work area (utilities)"
+      }
+     },
+     {
+      "key": "EXP_FIRE_EX",
+      "name": "Explosive Facility firefighting and emergency rescue equipment (Company supplied)",
+      "status": "Excluded",
+      "disciplines": [],
+      "responsibility": "Company",
+      "children": [],
+      "primary": {
+       "page": 271,
+       "kw": "firefighting and emergency rescue equipment"
+      }
+     }
+    ],
+    "primary": {
+     "page": 237,
+     "kw": "Explosives Area"
+    },
+    "maps": [
+     {
+      "pages": [
+       237,
+       238
+      ],
+      "kw": "Explosives"
+     },
+     {
+      "pages": [
+       181,
+       184
+      ],
+      "kw": "[Ee]xplosives|1810-Y|1950"
+     },
+     {
+      "pages": [
+       270,
+       271
+      ],
+      "kw": "Explosive"
+     },
+     {
+      "pages": [
+       261,
+       261
+      ],
+      "kw": "Explosives"
+     },
+     {
+      "pages": [
+       265,
+       265
+      ],
+      "kw": "Explosives"
+     },
+     {
+      "pages": [
+       279,
+       279
+      ],
+      "kw": "Explosives"
+     },
+     {
+      "pages": [
+       283,
+       283
+      ],
+      "kw": "Explosives"
+     }
+    ]
+   },
+   {
+    "key": "MIN",
+    "name": "Mine Pre-Strip, Waste Rock Landform and Mine Roads (first two pit cutbacks)",
+    "status": "In scope",
+    "disciplines": [
+     "Mining",
+     "Earthworks"
+    ],
+    "responsibility": "Contractor - Separable Part 1",
+    "children": [
+     {
+      "key": "MIN_PLAN",
+      "name": "Mine planning and production control",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 242,
+       "kw": "6.2.3|production"
+      },
+      "maps": [
+       {
+        "pages": [
+         242,
+         243
+        ],
+        "kw": "6\\.2\\.3|Mine Planning|production"
+       }
+      ]
+     },
+     {
+      "key": "MIN_DB",
+      "name": "Drill and blast (overburden)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 243,
+       "kw": "blast"
+      },
+      "maps": [
+       {
+        "pages": [
+         243,
+         245
+        ],
+        "kw": "6\\.2\\.4|[Dd]rill|[Bb]last|Stemming"
+       }
+      ]
+     },
+     {
+      "key": "MIN_OB",
+      "name": "Overburden mining and excavation requirements",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 245,
+       "kw": "overburden"
+      },
+      "maps": [
+       {
+        "pages": [
+         245,
+         246
+        ],
+        "kw": "6\\.2\\.[56]|[Oo]verburden|[Ee]xcavation"
+       }
+      ]
+     },
+     {
+      "key": "MIN_ROAD",
+      "name": "Mine haul roads (~17 km permanent) and roads to topsoil stockpiles",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 252,
+       "kw": "Permanent and long-term mine haul roads"
+      },
+      "maps": [
+       {
+        "pages": [
+         247,
+         248
+        ],
+        "kw": "6\\.2\\.7|Road"
+       },
+       {
+        "pages": [
+         252,
+         252
+        ],
+        "kw": "6\\.2\\.10|[Hh]aul road"
+       }
+      ]
+     },
+     {
+      "key": "MIN_WRL",
+      "name": "Waste Rock Landform (WRL) incl. PAF repository",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 248,
+       "kw": "Waste Rock Landform (WRL) incl PAF repository"
+      },
+      "maps": [
+       {
+        "pages": [
+         248,
+         252
+        ],
+        "kw": "WRL|Waste Rock|6\\.2\\.8|PAF"
+       }
+      ]
+     },
+     {
+      "key": "MIN_MEA",
+      "name": "Mining exclusion area, MIA zone and drill-and-blast facilities",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 256,
+       "kw": "Mining Exclusion Area"
+      },
+      "maps": [
+       {
+        "pages": [
+         255,
+         257
+        ],
+        "kw": "6\\.2\\.1[78]|Exclusion|MIA|Battery|Interface"
+       }
+      ]
+     },
+     {
+      "key": "MIN_FMS",
+      "name": "Fleet management system (FMS) integration",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 255,
+       "kw": "FMS"
+      },
+      "maps": [
+       {
+        "pages": [
+         255,
+         255
+        ],
+        "kw": "6\\.2\\.16|FMS|Fleet Management"
+       }
+      ]
+     },
+     {
+      "key": "MIN_DRAIN",
+      "name": "Mine drainage, dewatering and spillage protection (pre-strip)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 254,
+       "kw": "Mine Dewatering Pond"
+      },
+      "maps": [
+       {
+        "pages": [
+         254,
+         255
+        ],
+        "kw": "6\\.2\\.1[45]|[Dd]ewater|Spillage|Drainage"
+       }
+      ]
+     }
+    ],
+    "primary": {
+     "page": 240,
+     "kw": "Mine Pre-Strip (overburden removal above ore body)"
+    },
+    "maps": [
+     {
+      "pages": [
+       240,
+       257
+      ]
+     }
+    ]
+   },
+   {
+    "key": "UTL",
+    "name": "Site-wide Utilities, Borefields and IS&T (Company WBS 1500)",
+    "status": "In scope",
+    "disciplines": [
+     "Piping",
+     "Electrical",
+     "Communications"
+    ],
+    "responsibility": "Contractor - SP1 and SP2",
+    "children": [
+     {
+      "key": "UTL_DEW",
+      "name": "Mine dewatering and transfer water (in-pit and ex-pit), raw water pipelines (WBS 1500)",
+      "status": "In scope",
+      "disciplines": [
+       "Piping"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 280,
+       "kw": "Site Wide Utilities - Dewatering and transfer water"
+      },
+      "maps": [
+       {
+        "pages": [
+         284,
+         284
+        ],
+        "kw": "Dewatering and transfer"
+       },
+       {
+        "pages": [
+         183,
+         183
+        ],
+        "kw": "1500|Dewatering"
+       },
+       {
+        "pages": [
+         227,
+         227
+        ],
+        "kw": "[Bb]ore"
+       }
+      ]
+     },
+     {
+      "key": "UTL_MAR",
+      "name": "Managed aquifer recharge (MAR) injection and recharge system",
+      "status": "In scope",
+      "disciplines": [
+       "Piping"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 280,
+       "kw": "MAR injection and recharge"
+      },
+      "maps": [
+       {
+        "pages": [
+         284,
+         284
+        ],
+        "kw": "MAR"
+       }
+      ]
+     },
+     {
+      "key": "UTL_RAW",
+      "name": "Raw water feed to Permanent Village; raw and process water",
+      "status": "In scope",
+      "disciplines": [
+       "Piping"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 280,
+       "kw": "Raw water feed to Permanent Village"
+      },
+      "maps": [
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Raw water"
+       },
+       {
+        "pages": [
+         284,
+         284
+        ],
+        "kw": "Raw water"
+       }
+      ]
+     },
+     {
+      "key": "UTL_POT",
+      "name": "Potable and fire water distribution",
+      "status": "In scope",
+      "disciplines": [
+       "Piping"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 280,
+       "kw": "Site Wide Utilities - Potable water"
+      },
+      "maps": [
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Potable|Fire water"
+       }
+      ]
+     },
+     {
+      "key": "UTL_SEW",
+      "name": "Sewer and wastewater (pumped and gravity)",
+      "status": "In scope",
+      "disciplines": [
+       "Piping"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 280,
+       "kw": "Pumped and gravity sewer"
+      }
+     },
+     {
+      "key": "UTL_FUEL",
+      "name": "Diesel and fuel transfer; plant and instrument air",
+      "status": "In scope",
+      "disciplines": [
+       "Piping"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 280,
+       "kw": "Diesel and fuel transfer"
+      },
+      "maps": [
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Plant and instrument air"
+       }
+      ]
+     },
+     {
+      "key": "UTL_PWR",
+      "name": "Site-wide electrical power reticulation, E&I and lighting",
+      "status": "In scope",
+      "disciplines": [
+       "Electrical",
+       "Instrumentation"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 284,
+       "kw": "E&I area - Site Wide Utilities"
+      },
+      "maps": [
+       {
+        "pages": [
+         284,
+         292
+        ],
+        "kw": "Site Wide|Lighting|light pole|Cable|Earthing"
+       }
+      ]
+     },
+     {
+      "key": "UTL_TOWER",
+      "name": "Communications towers - 40 m and 80 m (Village and MSA)",
+      "status": "In scope",
+      "disciplines": [
+       "Structural",
+       "Communications"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 288,
+       "kw": "80 m communications tower"
+      },
+      "maps": [
+       {
+        "pages": [
+         271,
+         271
+        ],
+        "kw": "Communications Tower"
+       },
+       {
+        "pages": [
+         276,
+         276
+        ],
+        "kw": "Tower"
+       },
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Communications Tower"
+       },
+       {
+        "pages": [
+         284,
+         284
+        ],
+        "kw": "Communications Tower"
+       },
+       {
+        "pages": [
+         288,
+         291
+        ],
+        "kw": "[Tt]ower"
+       }
+      ]
+     },
+     {
+      "key": "UTL_DC",
+      "name": "Data centres DC1 and DC2 (IS&T infrastructure)",
+      "status": "In scope",
+      "disciplines": [
+       "Communications",
+       "Electrical"
+      ],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 287,
+       "kw": "Data centres (DC1 and DC2)"
+      },
+      "maps": [
+       {
+        "pages": [
+         284,
+         284
+        ],
+        "kw": "Data Centres"
+       },
+       {
+        "pages": [
+         287,
+         289
+        ],
+        "kw": "[Dd]ata [Cc]entre|IS&T"
+       }
+      ]
+     },
+     {
+      "key": "UTL_TRACK",
+      "name": "Borefield and topsoil access tracks",
+      "status": "In scope",
+      "disciplines": [
+       "Civil"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 238,
+       "kw": "Borefield access track network"
+      },
+      "maps": [
+       {
+        "pages": [
+         237,
+         238
+        ],
+        "kw": "[Bb]orefield|[Tt]opsoil and borefield"
+       }
+      ]
+     },
+     {
+      "key": "UTL_BU",
+      "name": "Buried utilities - common requirements (common service trenches, quantity survey, battery limits)",
+      "status": "In scope",
+      "disciplines": [
+       "Civil",
+       "Piping"
+      ],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 265,
+       "kw": "Buried utilities consolidated into common service trenches"
+      },
+      "maps": [
+       {
+        "pages": [
+         265,
+         268
+        ]
+       }
+      ]
+     }
+    ],
+    "primary": {
+     "page": 280,
+     "kw": "Site Wide Utilities - Dewatering and transfer water"
+    },
+    "maps": [
+     {
+      "pages": [
+       265,
+       268
+      ]
+     },
+     {
+      "pages": [
+       277,
+       292
+      ],
+      "kw": "Site Wide|Site-wide|Utilities|Tower|Data Centre|IS&T|Borefield|MAR|tower|Communications"
+     },
+     {
+      "pages": [
+       183,
+       183
+      ],
+      "kw": "1500|Dewatering"
+     },
+     {
+      "pages": [
+       227,
+       227
+      ],
+      "kw": "[Bb]ore"
+     },
+     {
+      "pages": [
+       238,
+       238
+      ],
+      "kw": "[Bb]orefield|Topsoil and borefield"
+     }
+    ]
+   },
+   {
+    "key": "WST",
+    "name": "Landfill and Waste Management Area (Company WBS 5400)",
+    "status": "In scope",
+    "disciplines": [
+     "Civil",
+     "Mechanical"
+    ],
+    "responsibility": "Contractor - SP1 and SP2",
+    "children": [
+     {
+      "key": "WST_EW",
+      "name": "Waste management area bulk earthworks (WBS 5400)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 1",
+      "children": [],
+      "primary": {
+       "page": 182,
+       "kw": "Waste Management area (5400) bulk earthworks"
+      },
+      "maps": [
+       {
+        "pages": [
+         182,
+         184
+        ],
+        "kw": "5400|Waste Management"
+       }
+      ]
+     },
+     {
+      "key": "WST_SWMF",
+      "name": "Solids waste management facility (mechanical, E&I, concrete)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - Separable Part 2",
+      "children": [],
+      "primary": {
+       "page": 280,
+       "kw": "Solids Waste Management Facility"
+      },
+      "maps": [
+       {
+        "pages": [
+         280,
+         280
+        ],
+        "kw": "Solids Waste"
+       },
+       {
+        "pages": [
+         283,
+         283
+        ],
+        "kw": "Solids Waste"
+       },
+       {
+        "pages": [
+         261,
+         261
+        ],
+        "kw": "Solids Waste"
+       }
+      ]
+     },
+     {
+      "key": "WST_LF",
+      "name": "On-Site landfill (operated by the Contractor until handover)",
+      "status": "In scope",
+      "disciplines": [],
+      "responsibility": "Contractor - SP1 and SP2",
+      "children": [],
+      "primary": {
+       "page": 312,
+       "kw": "On-Site landfill"
+      }
+     }
+    ],
+    "primary": {
+     "page": 212,
+     "kw": "Landfill and waste management area"
+    },
+    "maps": [
+     {
+      "pages": [
+       182,
+       184
+      ],
+      "kw": "5400|Waste Management"
+     },
+     {
+      "pages": [
+       232,
+       232
+      ],
+      "kw": "Waste Management"
+     },
+     {
+      "pages": [
+       280,
+       280
+      ],
+      "kw": "Solids Waste"
+     },
+     {
+      "pages": [
+       283,
+       283
+      ],
+      "kw": "Solids Waste"
+     },
+     {
+      "pages": [
+       261,
+       261
+      ],
+      "kw": "Solids Waste"
+     }
+    ]
+   }
+  ],
+  "primary": {
+   "page": 211,
+   "kw": "Mine: pre-strip"
+  },
+  "maps": [
+   {
+    "pages": [
+     209,
+     212
+    ]
+   },
+   {
+    "pages": [
+     207,
+     208
+    ]
+   },
+   {
+    "pages": [
+     199,
+     206
+    ],
+    "default": true
+   }
+  ]
+ },
+ "pricing": [
+  {
+   "schedule": "A",
+   "item_no": "Summary A.1",
+   "description": "Lump Sum (Preliminaries SP1 + SP2)",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 327,
+   "kw": "A.1 Lump Sum",
+   "floc_keys": [
+    "PRE"
+   ]
+  },
+  {
+   "schedule": "A",
+   "item_no": "Summary A.2.1",
+   "description": "Schedule of Rates SP1 - Bulk Earthworks, Mine Pre-strip, TSF, Concrete, Buried Utilities",
+   "unit": "Not stated",
+   "basis": "Schedule of rates (remeasure)",
+   "page": 327,
+   "kw": "A.2.1 Schedule of Rates SP1",
+   "floc_keys": [
+    "SITE",
+    "MAR",
+    "MIN",
+    "TSF",
+    "STK",
+    "PRE_CONC",
+    "UTL_BU",
+    "AER_AIR"
+   ]
+  },
+  {
+   "schedule": "A",
+   "item_no": "Summary A.2.2",
+   "description": "Schedule of Rates SP2 - Above-ground SMP / EIC",
+   "unit": "Not stated",
+   "basis": "Schedule of rates (remeasure)",
+   "page": 327,
+   "kw": "A.2.2 Schedule of Rates SP2",
+   "floc_keys": [
+    "VIL_CENTRAL",
+    "MSA_WORK",
+    "MSA_MECH",
+    "MSA_EI",
+    "AER_BLD",
+    "UTL_PWR"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "A.1.1 SP1",
+   "description": "SP1 Preliminaries (lump sum line)",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 328,
+   "kw": "SP1 - Preliminaries",
+   "floc_keys": [
+    "PRE_PM",
+    "PRE_MOB",
+    "PRE_CAMP",
+    "PRE_TEMP",
+    "PRE_WATER",
+    "PRE_COMMS",
+    "PRE_TL",
+    "PRE_SITE",
+    "PRE_TW",
+    "PRE_IFACE",
+    "PRE_HSE",
+    "PRE_COMM",
+    "PRE_DEMOB"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "A.1.1 SP2",
+   "description": "SP2 Preliminaries (lump sum line)",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 328,
+   "kw": "SP2 - Preliminaries",
+   "floc_keys": [
+    "PRE_PM",
+    "PRE_MOB",
+    "PRE_CAMP",
+    "PRE_TEMP",
+    "PRE_WATER",
+    "PRE_COMMS",
+    "PRE_TL",
+    "PRE_SITE",
+    "PRE_TW",
+    "PRE_IFACE",
+    "PRE_HSE",
+    "PRE_COMM",
+    "PRE_DEMOB"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "Prelim (a)",
+   "description": "Project management and administration",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 328,
+   "kw": "Prelim \\(a\\) Project management",
+   "floc_keys": [
+    "PRE_PM"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "Prelim (b)",
+   "description": "Terms and conditions - securities, insurance, finance",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 329,
+   "kw": "Prelim \\(b\\)",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "Prelim (c)",
+   "description": "Mobilisation and Site establishment",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 329,
+   "kw": "Prelim \\(c\\)",
+   "floc_keys": [
+    "PRE_MOB"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "Prelim (d)",
+   "description": "Site facilities (workshops, offices, power, fuel)",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 329,
+   "kw": "Prelim \\(d\\)",
+   "floc_keys": [
+    "PRE_TEMP",
+    "PRE_CAMP"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "Prelim (e)",
+   "description": "Demobilisation incl. laydown rehabilitation",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 330,
+   "kw": "Prelim \\(e\\)",
+   "floc_keys": [
+    "PRE_DEMOB"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "Prelim (f)",
+   "description": "Management, staff, administration and indirect labour",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 330,
+   "kw": "Prelim \\(f\\)",
+   "floc_keys": [
+    "PRE_PM",
+    "PRE_SITE"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "Prelim (g)",
+   "description": "Plant and equipment mobilisation, set-up and maintenance",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 330,
+   "kw": "Prelim \\(g\\)",
+   "floc_keys": [
+    "PRE_FLEET"
+   ]
+  },
+  {
+   "schedule": "A.1",
+   "item_no": "Prelim (h)",
+   "description": "Close-out documentation",
+   "unit": "Lump sum",
+   "basis": "Lump sum",
+   "page": 330,
+   "kw": "Prelim \\(h\\)",
+   "floc_keys": [
+    "PRE_COMM"
+   ]
+  },
+  {
+   "schedule": "A.2",
+   "item_no": "HME/CME Option 1",
+   "description": "Construction fleet - Contractor-supplied (Base Case per Schedule A.2; SoW s10.3 differs)",
+   "unit": "Not stated",
+   "basis": "Option (unit rates)",
+   "page": 332,
+   "kw": "Option 1 \\(Base Case\\)",
+   "floc_keys": [
+    "FLEET_OPT1"
+   ]
+  },
+  {
+   "schedule": "A.2",
+   "item_no": "HME/CME Option 2",
+   "description": "Construction fleet - Company free-issued (Alternative)",
+   "unit": "Not stated",
+   "basis": "Option (unit rates)",
+   "page": 332,
+   "kw": "Option 2 \\(Alternative\\)",
+   "floc_keys": [
+    "FLEET_OPT2",
+    "FLEET_HME"
+   ]
+  },
+  {
+   "schedule": "A.2",
+   "item_no": "Camp Option B / 1B",
+   "description": "Contractor-provided Construction / Fly Camp (Base Case per Schedule A.2); pricing line SP1/SP2-1.13 is in the Company Pricing Schedule template, not in the pack",
+   "unit": "Not stated",
+   "basis": "Option (priced)",
+   "page": 334,
+   "kw": "Camp Option B",
+   "floc_keys": [
+    "CAMP_B"
+   ]
+  },
+  {
+   "schedule": "A.2",
+   "item_no": "Camp Option A",
+   "description": "Company free-issued Construction / Fly Camp (Alternative)",
+   "unit": "Not stated",
+   "basis": "Option (priced)",
+   "page": 334,
+   "kw": "Camp Option A",
+   "floc_keys": [
+    "CAMP_A"
+   ]
+  },
+  {
+   "schedule": "A.2",
+   "item_no": "Take-out 1A/2A/2B",
+   "description": "Priced take-out options 1A, 2A and 2B",
+   "unit": "Not stated",
+   "basis": "Option (take-out)",
+   "page": 334,
+   "kw": "take-out Option 1A",
+   "floc_keys": [
+    "CAMP_A",
+    "CAMP_B",
+    "FLEET_OPT1",
+    "FLEET_OPT2"
+   ]
+  },
+  {
+   "schedule": "A.6",
+   "item_no": "Table A.6.1",
+   "description": "Nominated Sub-contractors (price plus allowance cap)",
+   "unit": "Not stated",
+   "basis": "Nominated sub-contract",
+   "page": 338,
+   "kw": "Nominated Sub-contractors",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "schedule": "A.7",
+   "item_no": "Table A.7.1",
+   "description": "Variation unit rates",
+   "unit": "AUD per unit",
+   "basis": "Variation rates",
+   "page": 343,
+   "kw": "Table A.7.1",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "schedule": "A.7",
+   "item_no": "Table A.7.2",
+   "description": "Dayworks labour rates",
+   "unit": "AUD/hr",
+   "basis": "Dayworks",
+   "page": 343,
+   "kw": "Table A.7.2",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "schedule": "A.7",
+   "item_no": "Table A.7.3",
+   "description": "Dayworks materials mark-up",
+   "unit": "%",
+   "basis": "Dayworks",
+   "page": 343,
+   "kw": "Table A.7.3",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "schedule": "A.7",
+   "item_no": "Table A.7.4",
+   "description": "Dayworks plant and equipment rates",
+   "unit": "AUD/hr",
+   "basis": "Dayworks",
+   "page": 344,
+   "kw": "Table A.7.4",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "schedule": "A.9",
+   "item_no": "A.9 (1)-(4)",
+   "description": "Fuel consumption (litres by month) and equipment fuel estimate",
+   "unit": "Litres",
+   "basis": "Fuel (Company supplied)",
+   "page": 346,
+   "kw": "A.9\\(1\\)",
+   "floc_keys": [
+    "TEMP_FUEL"
+   ]
+  },
+  {
+   "schedule": "A.13",
+   "item_no": "Table A.13.1",
+   "description": "Milestone payments for Lump Sum Works",
+   "unit": "AUD",
+   "basis": "Milestone",
+   "page": 351,
+   "kw": "Table A.13.1",
+   "floc_keys": [
+    "PRE"
+   ]
+  },
+  {
+   "schedule": "C",
+   "item_no": "Table C.1",
+   "description": "Personnel deployment",
+   "unit": "Number / week",
+   "basis": "Information (blank)",
+   "page": 354,
+   "kw": "Table C.1",
+   "floc_keys": [
+    "PRE_PM"
+   ]
+  },
+  {
+   "schedule": "C",
+   "item_no": "Table C.3",
+   "description": "Man-hour requirements (manual direct, manual indirect, non-manual)",
+   "unit": "Hours",
+   "basis": "Information (blank)",
+   "page": 355,
+   "kw": "Table C.3",
+   "floc_keys": [
+    "PRE_PM"
+   ]
+  },
+  {
+   "schedule": "C",
+   "item_no": "Table C.4.1",
+   "description": "Accommodation beds per week (14/7 roster)",
+   "unit": "Beds / week",
+   "basis": "Information (blank); back-charged at A$200 per person per day",
+   "page": 356,
+   "kw": "Table C.4.1",
+   "floc_keys": [
+    "PRE_CAMP"
+   ]
+  },
+  {
+   "schedule": "C",
+   "item_no": "Table C.4.6",
+   "description": "Flights Perth to Site, per week",
+   "unit": "Flights / week",
+   "basis": "Information (blank); back-charged",
+   "page": 359,
+   "kw": "Table C.4.6",
+   "floc_keys": [
+    "PRE_MOB"
+   ]
+  },
+  {
+   "schedule": "D",
+   "item_no": "Table D.1",
+   "description": "Cash flow forecast (24 months)",
+   "unit": "AUD",
+   "basis": "Information (blank)",
+   "page": 364,
+   "kw": "Table D.1",
+   "floc_keys": [
+    "PRE"
+   ]
+  },
+  {
+   "schedule": "G.1",
+   "item_no": "Table G.1.1",
+   "description": "Priority work fronts and required dates (concrete)",
+   "unit": "Date",
+   "basis": "Programme",
+   "page": 369,
+   "kw": "G.1",
+   "floc_keys": [
+    "PRE_CONC"
+   ]
+  },
+  {
+   "schedule": "H",
+   "item_no": "Table H.1",
+   "description": "Proposed sub-contracts",
+   "unit": "AUD",
+   "basis": "Information (blank)",
+   "page": 371,
+   "kw": "Table H.1",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  }
+ ],
+ "allocation_rules": [
+  {
+   "rule_id": "AR-01",
+   "cost_pool": "Preliminaries (project management, supervision, indirect labour, close-out)",
+   "description": "Priced as Schedule A.1 lump sum Preliminaries, one line per Separable Part. Allocate each SP's preliminaries pool to the FLOCs of that SP.",
+   "driver": "Direct cost % within each Separable Part (alternative: direct manual work-hours per Appendix E)",
+   "applies_to": "SP1 and SP2 FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 328,
+     "kw": "SP1 - Preliminaries"
+    },
+    {
+     "page": 328,
+     "kw": "Preliminaries list is non-exhaustive"
+    }
+   ],
+   "notes": "Pack states the pools (Table A.1.1 SP1, SP2) but not the driver; driver is an assumption."
+  },
+  {
+   "rule_id": "AR-02",
+   "cost_pool": "Mobilisation and Site establishment",
+   "description": "Mobilisation includes airfares, ground travel, stopovers and R&R; indirect labour and plant set-up sit in Preliminaries; direct labour mobilisation sits in the unit rates (not Preliminaries).",
+   "driver": "Direct labour mobilisation: man-hours by FLOC; indirect mobilisation: direct cost %",
+   "applies_to": "All FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 218,
+     "kw": "Mobilisation includes all airfares"
+    },
+    {
+     "page": 330,
+     "kw": "Direct Labour mobilisation is in Unit Rates"
+    }
+   ],
+   "notes": "Split between prelim and rate mobilisation is stated; the allocation driver is an assumption."
+  },
+  {
+   "rule_id": "AR-03",
+   "cost_pool": "Construction camp and accommodation (incl. Company charge-back A$200 per person per day)",
+   "description": "Accommodation charged by the Company per occupied room-day up to the Table C.4.1 total; camp lines are priced in Preliminaries (Option A/B).",
+   "driver": "Man-hours (peak headcount x days) by FLOC; bed-days from Table C.4.1",
+   "applies_to": "All FLOCs with site labour",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 395,
+     "kw": "cost recovered by Company charge-back|Camp/accommodation cost"
+    },
+    {
+     "page": 334,
+     "kw": "Temp Construction Camp priced at line 1.13"
+    }
+   ],
+   "notes": "Rate (A$200/person/day) is stated at Appendix A; Table C.4.1 quantities are blank."
+  },
+  {
+   "rule_id": "AR-04",
+   "cost_pool": "Flights",
+   "description": "Flights Perth to Site are back-charged by the Company; mobilisation includes all airfares; the A$ rate wording is ambiguous.",
+   "driver": "Man-hours / roster headcount by FLOC",
+   "applies_to": "All FLOCs with site labour",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 359,
+     "kw": "Table C.4.6"
+    },
+    {
+     "page": 397,
+     "kw": "Project discounted air services"
+    }
+   ],
+   "notes": "See RFI on flight rate."
+  },
+  {
+   "rule_id": "AR-05",
+   "cost_pool": "Temporary works and temporary facilities (roads, hardstands, dewatering, fuel, explosives, crane pads, power and comms)",
+   "description": "All temporary works are Contractor-designed and Contractor-cost with no separate payment; deemed included in the Contract Price.",
+   "driver": "Direct cost % of the FLOC they serve; where a temporary work serves one area (e.g. aerodrome laydown/camp area) charge that FLOC directly",
+   "applies_to": "All FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 313,
+     "kw": "Contractor designs and provides all temporary works"
+    },
+    {
+     "page": 235,
+     "kw": "Temporary construction camp area priced within Aerodrome"
+    }
+   ],
+   "notes": "Open-ended 'any other temporary works' wording; driver is an assumption."
+  },
+  {
+   "rule_id": "AR-06",
+   "cost_pool": "Construction water, dust suppression, power, communications and IT",
+   "description": "Contractor self-sufficient; construction water drawn from nominated Company bores; all costs deemed included.",
+   "driver": "Earthworks volume (m3) for water; man-hours for power, IT and comms",
+   "applies_to": "SP1 earthworks FLOCs (water); all FLOCs (comms)",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 215,
+     "kw": "construction water and dust suppression"
+    },
+    {
+     "page": 224,
+     "kw": "self-sufficient for communications"
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "rule_id": "AR-07",
+   "cost_pool": "Concrete batch plant and concrete supply (shared)",
+   "description": "One batch plant near MPP/MSA serves all areas; delivery priced within 2 km of the batch plant; concrete to the IPP Contractor on a recharge model.",
+   "driver": "Concrete volume (m3) per area FLOC",
+   "applies_to": "Concrete FLOCs in each area; IPP recharge",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 262,
+     "kw": "Batch plant: supply, establish, operate"
+    },
+    {
+     "page": 263,
+     "kw": "Recharge model"
+    }
+   ],
+   "notes": "Volumes not in the pack (drawings/MTO not included)."
+  },
+  {
+   "rule_id": "AR-08",
+   "cost_pool": "Plant and equipment (construction fleet, Options 1 and 2; pre-strip HME)",
+   "description": "Equipment ownership cost is embedded in the SP1 Schedule of Rates run rates; free-issued fleet operating, maintenance, consumables and performance risk stay with the Contractor.",
+   "driver": "Equipment hours by FLOC (plant-hours per Schedule F / F.1)",
+   "applies_to": "SP1 earthworks and mining FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 334,
+     "kw": "Equipment ownership cost embedded"
+    },
+    {
+     "page": 333,
+     "kw": "Contractor bears operation, maintenance, consumables"
+    }
+   ],
+   "notes": "Two fleet options and four take-out scenarios must be priced separately."
+  },
+  {
+   "rule_id": "AR-09",
+   "cost_pool": "Survey, QA/QC testing and field laboratory",
+   "description": "Survey, quantity verification, all testing and the field laboratory are Contractor cost, deemed included.",
+   "driver": "Direct cost % (or number of tests / survey area where measured)",
+   "applies_to": "All FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 215,
+     "kw": "Survey, quantity verification"
+    },
+    {
+     "page": 217,
+     "kw": "All testing performed and paid for by Contractor"
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "rule_id": "AR-10",
+   "cost_pool": "HSESC, environmental, community and emergency response resources",
+   "description": "Dedicated HSESC Manager and staff at 1 HSESC professional per 50 workers; ERT of 20 personnel; waste management and landfill costs included.",
+   "driver": "Man-hours (headcount) by FLOC",
+   "applies_to": "All FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 410,
+     "kw": "HSESC"
+    },
+    {
+     "page": 312,
+     "kw": "All waste collection, transport, treatment and disposal costs"
+    }
+   ],
+   "notes": "Ratio stated; driver for allocation is an assumption."
+  },
+  {
+   "rule_id": "AR-11",
+   "cost_pool": "Transport and logistics (Port Hedland to Site) and materials management",
+   "description": "Onshore transport from the Port Battery Limit (FCA) to Site, OSOM movements, laydown and storage are Contractor scope; no pricing basis stated.",
+   "driver": "Mass/volume of goods delivered by FLOC (tonnes or m3) from the offshore EPF packing lists",
+   "applies_to": "SP2 FLOCs and Company Supplied Items",
+   "basis": "Assumption",
+   "sources": [
+    {
+     "page": 295,
+     "kw": "Transport/logistics for all Project materials"
+    }
+   ],
+   "notes": "Pack gives no quantities."
+  },
+  {
+   "rule_id": "AR-12",
+   "cost_pool": "Pre-commissioning, commissioning support and handover",
+   "description": "Pre-commissioning of all systems and commissioning support for Company/Others are in scope; duration of commissioning support is undefined.",
+   "driver": "Direct cost % of SP2 FLOCs (or number of systems/loops)",
+   "applies_to": "SP2 FLOCs (and SP1 pipework)",
+   "basis": "Assumption",
+   "sources": [
+    {
+     "page": 321,
+     "kw": "Support Company/Others commissioning"
+    },
+    {
+     "page": 321,
+     "kw": "Commissioning support duration"
+    }
+   ],
+   "notes": "Duration undefined."
+  },
+  {
+   "rule_id": "AR-13",
+   "cost_pool": "Spares, surplus materials and Company Supplied Items handling",
+   "description": "Contractor receives, stores, preserves, reconciles and installs all Company Supplied Items and spares through to handover; no quantities.",
+   "driver": "Value or tonnes of free-issued goods by FLOC",
+   "applies_to": "All FLOCs receiving free-issue goods",
+   "basis": "Assumption",
+   "sources": [
+    {
+     "page": 301,
+     "kw": "Contractor manages surplus materials"
+    },
+    {
+     "page": 215,
+     "kw": "Receipt, custody, storage and installation of Company Supplied Items"
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "rule_id": "AR-14",
+   "cost_pool": "Interface management and SIMOPS",
+   "description": "Interface coordination and SIMOPS participation are deemed priced in the Pricing Schedule; no separate payment.",
+   "driver": "Direct cost % within each Separable Part",
+   "applies_to": "All FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 292,
+     "kw": "Interface management meetings"
+    },
+    {
+     "page": 308,
+     "kw": "Interface/third-party coordination deemed priced"
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "rule_id": "AR-15",
+   "cost_pool": "Demobilisation and rehabilitation",
+   "description": "Demobilisation, reinstatement of laydowns and temporary facilities, and progressive rehabilitation are included in the price; demobilisation is a Preliminaries line (e).",
+   "driver": "Disturbed area (ha) by FLOC; otherwise direct cost %",
+   "applies_to": "All FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 330,
+     "kw": "Prelim \\(e\\)"
+    },
+    {
+     "page": 218,
+     "kw": "Progressive rehabilitation costs"
+    }
+   ],
+   "notes": "Disturbed areas are not in the pack."
+  },
+  {
+   "rule_id": "AR-16",
+   "cost_pool": "Securities, insurance, finance (terms and conditions)",
+   "description": "Securities, insurance and finance costs sit in Preliminaries item (b) and are carried by the Contractor.",
+   "driver": "Direct cost %",
+   "applies_to": "All FLOCs",
+   "basis": "Stated + assumption",
+   "sources": [
+    {
+     "page": 329,
+     "kw": "Prelim \\(b\\)"
+    }
+   ],
+   "notes": ""
+  }
+ ],
+ "rfis": [
+  {
+   "topic": "Pricing Schedule template missing",
+   "question": "The Pricing Schedule Template (C0007-0000-U-TMP-00006, XLS) and the camp lines SP1-1.13 / SP2-1.13 are not in the pack. Please issue it, or confirm that Schedule A.2 has no line items.",
+   "impact": "No pricing line items to map FLOCs to; cost model cannot be keyed to Company pricing codes.",
+   "priority": "High",
+   "type": "Missing document",
+   "page": 159,
+   "kw": "Pricing Schedule",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "topic": "Base case for construction fleet and camp",
+   "question": "SoW s10.3 and Table 4 describe Company free-issued options as the mandatory/base case, while Schedule A.2 calls the Contractor-supplied fleet (Option 1) and Contractor camp (Option B) the Base Case. Which is the conforming base case?",
+   "impact": "Changes which fleet and camp costs are in the base price and the Option/take-out pricing structure.",
+   "priority": "High",
+   "type": "Ambiguity",
+   "page": 332,
+   "kw": "Option 1 \\(Base Case\\)",
+   "floc_keys": [
+    "FLEET_OPT1",
+    "FLEET_OPT2",
+    "CAMP_A",
+    "CAMP_B"
+   ]
+  },
+  {
+   "topic": "Preliminaries versus rates boundary",
+   "question": "Table A.1.1 shows only SP1 and SP2 Preliminaries. Please confirm which indirects (supervision, plant maintenance, temporary works, camp) are in Preliminaries and which in Schedule of Rates, and confirm rates are fixed regardless of quantity.",
+   "impact": "Determines whether indirects are allocated by lump sum driver or embedded in unit rates.",
+   "priority": "High",
+   "type": "Clarification",
+   "page": 330,
+   "kw": "Direct Labour mobilisation is in Unit Rates",
+   "floc_keys": [
+    "PRE",
+    "PRE_PM"
+   ]
+  },
+  {
+   "topic": "Schedule of Rates structure",
+   "question": "Schedule A.2 has no itemised lines, units or quantities in the pack. Please provide the measured line items (SP1 and SP2) and the Rules of Credit.",
+   "impact": "Quantities and units are needed to cost FLOCs and test remeasurement exposure.",
+   "priority": "High",
+   "type": "Missing information",
+   "page": 331,
+   "kw": "SOR quantities are estimates",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "topic": "MPP in Separable Part 2",
+   "question": "2.4 lists the Mineral Processing Plant as a project facility, but SP2 (s7) names Village, Aerodrome, MSA, Explosive Facility and site-wide utilities only, and s18 excludes top-of-concrete MPP works. Confirm the MPP scope boundary for SP1 and SP2.",
+   "impact": "Whether any MPP above-ground cost is in the Contractor's FLOC structure.",
+   "priority": "High",
+   "type": "Ambiguity",
+   "page": 228,
+   "kw": "Separable Part 2",
+   "floc_keys": [
+    "MPP",
+    "MPP_EX"
+   ]
+  },
+  {
+   "topic": "Light pole footings split",
+   "question": "Light pole footings appear in Buried Utilities (SP1), Concrete (SP1) and SP2 lighting scope. Confirm which package carries footings, trenching and cable.",
+   "impact": "Double-count or gap at SP1/SP2 boundary.",
+   "priority": "Medium",
+   "type": "Ambiguity",
+   "page": 292,
+   "kw": "Light pole|light pole|footing",
+   "floc_keys": [
+    "UTL_PWR",
+    "UTL_BU"
+   ]
+  },
+  {
+   "topic": "Village emergency power configuration",
+   "question": "Village emergency back-up power is 3 x 500 kVA in 7.3.2 area list but 2 x 1000 kVA free-issued in 7.3.2.3. Which applies, and is the 'gas reticulation network' in scope?",
+   "impact": "Electrical cost and free-issue interface for Village power.",
+   "priority": "Medium",
+   "type": "Ambiguity",
+   "page": 283,
+   "kw": "back-up power",
+   "floc_keys": [
+    "VIL_POWER"
+   ]
+  },
+  {
+   "topic": "HVAC commissioning responsibility",
+   "question": "Village factory-versus-site table shows HVAC refrigerant piping and commissioning 'by others' while 7.1.2 has the Contractor installing HVAC. Who commissions HVAC?",
+   "impact": "Commissioning allocation for Village modular buildings.",
+   "priority": "Medium",
+   "type": "Ambiguity",
+   "page": 274,
+   "kw": "HVAC refrigerant",
+   "floc_keys": [
+    "VIL_MOD"
+   ]
+  },
+  {
+   "topic": "Pre-strip to TSF pricing split",
+   "question": "The transfer node / reference axis for the Pre-Strip versus TSF price split is not in the text provided. Please provide the node location drawing.",
+   "impact": "Splits haulage cost between Mine Pre-Strip and TSF FLOCs.",
+   "priority": "High",
+   "type": "Missing information",
+   "page": 253,
+   "kw": "Pre-Strip vs TSF Pricing Schedule split",
+   "floc_keys": [
+    "TSF_FILL",
+    "MIN"
+   ]
+  },
+  {
+   "topic": "Liner supply responsibilities",
+   "question": "TSF 2 mm HDPE is Contractor-procured; pipeline-corridor and sump liner is free-issue; supply for Clean Water Pond and stockpile detention ponds is not stated. Please confirm.",
+   "impact": "Materials cost ownership per FLOC (TSF, ponds, stockpiles).",
+   "priority": "Medium",
+   "type": "Ambiguity",
+   "page": 260,
+   "kw": "1.5 mm smooth HDPE liner",
+   "floc_keys": [
+    "TSF_LINER",
+    "STK_DET",
+    "STK_CWP"
+   ]
+  },
+  {
+   "topic": "Exclusion boundary versus pre-commissioning",
+   "question": "s18 excludes MPP E&I, backbone fibre, CCTV and access control, yet s15.2 requires pre-commissioning of all systems in every area. Clarify what must be pre-commissioned.",
+   "impact": "Commissioning allocation and scope gaps at the MPP boundary.",
+   "priority": "High",
+   "type": "Ambiguity",
+   "page": 323,
+   "kw": "MPP electrical, instrumentation and communications",
+   "floc_keys": [
+    "MPP_EI_EX",
+    "PRE_COMM"
+   ]
+  },
+  {
+   "topic": "Free-issue lists not in the pack",
+   "question": "Equipment list C-WN-0000-G-LST-00005, the Scope and Responsibility Matrices and Table 4 items 3 and 4 (MSA/NPI, camp - 'to be confirmed by Supplementary Tender Notice') are not in the pack. Please issue.",
+   "impact": "Free-issue versus Contractor-supply split cannot be costed; handling allocation unquantified.",
+   "priority": "High",
+   "type": "Missing document",
+   "page": 198,
+   "kw": "Table 4",
+   "floc_keys": [
+    "PRE_FREE",
+    "FLEET_HME"
+   ]
+  },
+  {
+   "topic": "Quantity documents not in the pack",
+   "question": "MTOs (REF-00318 Overall Bulk Earthworks, REF-00325 Prestrip, TSF MTO), the plot plan REF-00324 and the TSF Appendices 1 to 4 are referenced but not included. Please issue.",
+   "impact": "No quantities to cost earthworks, pre-strip or TSF FLOCs.",
+   "priority": "High",
+   "type": "Missing document",
+   "page": 160,
+   "kw": "MTO|Takeoff|Overall Bulk",
+   "floc_keys": [
+    "SITE",
+    "MIN",
+    "TSF"
+   ]
+  },
+  {
+   "topic": "Accommodation and flights rates",
+   "question": "Appendix A states A$650 for flights with '(return)' next to 'one way'; Table C.4.3-C.4.5 are missing from numbering. Confirm flight charge basis and the Schedule C table numbering.",
+   "impact": "Flight cost per head could differ by 2x; accommodation back-charge basis.",
+   "priority": "Medium",
+   "type": "Ambiguity",
+   "page": 397,
+   "kw": "A\\$650|flights|Flights",
+   "floc_keys": [
+    "PRE_MOB",
+    "PRE_CAMP"
+   ]
+  },
+  {
+   "topic": "Schedule O not used but Acceptance Tests apply",
+   "question": "Schedule O is 'NOT USED' but the General Conditions rely on it for Acceptance Tests, Guaranteed Performance Standards and performance LDs. Confirm intended position.",
+   "impact": "Uncapped general-damages exposure; contingency allocation.",
+   "priority": "High",
+   "type": "Ambiguity",
+   "page": 53,
+   "kw": "Schedule O|not used|NOT USED",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "topic": "Offer validity",
+   "question": "Clause 4.3 states 240 days; the Form of Tender states 90 days. Confirm validity.",
+   "impact": "Escalation exposure and price hold period.",
+   "priority": "Medium",
+   "type": "Ambiguity",
+   "page": 17,
+   "kw": "240 days|validity",
+   "floc_keys": [
+    "PRE_COMMERCIAL"
+   ]
+  },
+  {
+   "topic": "Landfill construction",
+   "question": "s12.9.4 has the Contractor operating the on-Site landfill; who constructs it, its capacity, and whether other contractors' waste is accepted are not stated.",
+   "impact": "Landfill FLOC scope and cost allocation.",
+   "priority": "Medium",
+   "type": "Missing information",
+   "page": 312,
+   "kw": "On-Site landfill",
+   "floc_keys": [
+    "WST_LF"
+   ]
+  },
+  {
+   "topic": "Commissioning support duration",
+   "question": "Commissioning support duration and start-up period are undefined (s15.3). Provide the duration or an allowance basis.",
+   "impact": "Open-ended labour/plant allowance for commissioning support.",
+   "priority": "High",
+   "type": "Missing information",
+   "page": 321,
+   "kw": "duration and start-up period undefined",
+   "floc_keys": [
+    "PRE_COMM"
+   ]
+  },
+  {
+   "topic": "Mine Access Road bitumen extent and aerodrome access road ownership",
+   "question": "Bitumen extent is left to Contractor strategy and no loadings are given; the unsealed Aerodrome Access Road has no stated owner. Confirm design basis and ownership.",
+   "impact": "Pavement quantities for Mine Access Road and Aerodrome access FLOCs.",
+   "priority": "Medium",
+   "type": "Ambiguity",
+   "page": 231,
+   "kw": "Aerodrome Access Road|sealed",
+   "floc_keys": [
+    "MAR_ROAD",
+    "AER_ROAD"
+   ]
+  }
+ ]
+}

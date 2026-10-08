@@ -1,0 +1,128 @@
+{
+  "project": "Winu Copper-Gold Project",
+  "project_code": "WIN",
+  "client": "Rio Tinto Projects",
+  "document_id": "WIN-CON-EPC-001",
+  "document_title": "Tender for Construction Contract - Australian Contractor (ITT Pack) - covering letter ref C-LTR-C0007-CONEPC001-RIO-C-LTR-00005.00",
+  "pdf_file": "input/Winu/C-LTR-C0007-CONEPC001-RIO-C-LTR-00005.00-WIN-CON-EPC-001 Australian Contractor (ITT Pack) (1).pdf",
+  "pdf_page_count": 638,
+  "currency": "AUD",
+  "workbook_version": "0.1 (draft for review)",
+  "numbering": {
+    "format": "{prefix}-{L2:04d}-{L3:02d}-{L4:02d}-{L5:03d}",
+    "note": "L1 = WIN (project). L2 = 4 digits in steps of 100 (1000, 1100 ...). L3 and L4 = 2 digits sequential. L5 = 3 digits sequential. Codes are assigned in tree order by resolve_spec.py; never re-use a retired code.",
+    "l2_start": 1000,
+    "l2_step": 100
+  },
+  "levels": {
+    "1": "Project",
+    "2": "Area / Precinct (physical area or scope stream)",
+    "3": "System / Facility",
+    "4": "Sub-system / Work Package",
+    "5": "Equipment / Cost Object"
+  },
+  "level_colours": {
+    "1": "1F3864",
+    "2": "2F75B5",
+    "3": "9DC3E6",
+    "4": "DDEBF7",
+    "5": "F2F2F2"
+  },
+  "level_font_white": {
+    "1": true,
+    "2": true,
+    "3": false,
+    "4": false,
+    "5": false
+  },
+  "parts": [
+    {
+      "name": "Cover",
+      "pdf_from": 1,
+      "pdf_to": 1,
+      "offset": null
+    },
+    {
+      "name": "Table of Contents",
+      "pdf_from": 2,
+      "pdf_to": 3,
+      "offset": 1,
+      "note": "roman i-ii"
+    },
+    {
+      "name": "Section A Tender Documents (front matter)",
+      "pdf_from": 4,
+      "pdf_to": 6,
+      "offset": 4,
+      "note": "roman i-ii"
+    },
+    {
+      "name": "Section A Tender Documents",
+      "pdf_from": 7,
+      "pdf_to": 27,
+      "offset": 4
+    },
+    {
+      "name": "Section B Returnable Information",
+      "pdf_from": 28,
+      "pdf_to": 46,
+      "offset": 30,
+      "note": "front matter roman, offset 28"
+    },
+    {
+      "name": "Form of Agreement",
+      "pdf_from": 47,
+      "pdf_to": 59,
+      "offset": 46
+    },
+    {
+      "name": "Form of Agreement (Agreement Schedule)",
+      "pdf_from": 60,
+      "pdf_to": 67,
+      "offset": 58,
+      "note": "schedule pages numbered 2-9"
+    },
+    {
+      "name": "General Conditions of Contract",
+      "pdf_from": 68,
+      "pdf_to": 147,
+      "offset": 71
+    },
+    {
+      "name": "General Conditions - Annexures",
+      "pdf_from": 148,
+      "pdf_to": 156,
+      "offset": 147,
+      "note": "annexures restart at 1"
+    },
+    {
+      "name": "Contract Specification",
+      "pdf_from": 157,
+      "pdf_to": 198,
+      "offset": 158,
+      "note": "roman contents offset 157"
+    },
+    {
+      "name": "Scope of Work C0007-0000-G-SOW-00005",
+      "pdf_from": 199,
+      "pdf_to": 323,
+      "offset": 198,
+      "note": "printed as 'n / 125'; PDF 199 is the unnumbered cover"
+    },
+    {
+      "name": "Schedules",
+      "pdf_from": 324,
+      "pdf_to": 391,
+      "offset": 326,
+      "note": "roman contents offset 324"
+    },
+    {
+      "name": "Appendices",
+      "pdf_from": 392,
+      "pdf_to": 638,
+      "offset": 392,
+      "note": "printed 'Page n of 246'"
+    }
+  ],
+  "link_note": "Hyperlinks use file:///<absolute path>#page=N. Acrobat, Edge and Chrome honour #page=N; Excel may open the PDF at page 1 on some set-ups. The PDF Page column is authoritative."
+}

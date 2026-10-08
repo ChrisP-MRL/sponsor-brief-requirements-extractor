@@ -1,0 +1,3435 @@
+{
+ "meta": {
+  "version": "0.1 (draft for review)",
+  "date": "08/10/2026",
+  "itt_pdf_pages": 638,
+  "scope_workbook": "output/Winu/Winu_MinRes_Quotation_Scope_and_EWP.xlsx",
+  "floc_workbook": "output/Winu/Winu_FLOC_Cost_Allocation_Workbook.xlsx"
+ },
+ "lists": {
+  "positions": [
+   "Within MinRes scope",
+   "Owner scope",
+   "Third-party scope",
+   "Interface only",
+   "Not in ITT",
+   "Clarify"
+  ],
+  "levels": [
+   "Level 0",
+   "Level 1",
+   "Level 2",
+   "Level 3",
+   "Level 4",
+   "Cross-cutting"
+  ],
+  "domains": [
+   "Mining",
+   "Processing",
+   "Waste Handling",
+   "Logistics"
+  ],
+  "delivery": [
+   "Design",
+   "Supply",
+   "Install",
+   "Configure",
+   "Integrate",
+   "Commission",
+   "Operate",
+   "None (not MinRes)"
+  ],
+  "confidence": [
+   "High",
+   "Medium",
+   "Low"
+  ],
+  "activity": [
+   "Production operations",
+   "Maintenance operations",
+   "Quality operations",
+   "Inventory operations",
+   "Not applicable (outside Level 3)"
+  ]
+ },
+ "capabilities": [
+  {
+   "id": "CAP-L1-MIN-01",
+   "name": "Equipment positioning (high-precision GPS and GNSS base stations)",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Apply Company-provided coordinates to high-precision GPS units in Company Supplied and Contractor Supplied Equipment; provide GNSS base stations or correction services and field-to-office survey data transfer.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Configure",
+   "dto": "Supply; Install; Operate",
+   "src": [
+    "SRC-0717",
+    "SRC-0499"
+   ],
+   "floc": [
+    "WIN-2100-03",
+    "WIN-1000-06"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-01",
+    "PROP-02"
+   ],
+   "ifs": [],
+   "conf": "High",
+   "risk": "GPS unit supply for Contractor Supplied Equipment and the number of units are not stated.",
+   "impact": "Hardware and licence allowance depends on fleet size, which is not in the pack (RFI-012).",
+   "rfi": [
+    "RFI-012",
+    "OPS-RFI-06"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Fleet list with GPS/on-board unit count",
+     "Equipment list",
+     "Not available in ITT"
+    ],
+    [
+     "GNSS base station and correction service quote",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L1-MIN-02",
+   "name": "Blast and geotechnical monitoring instruments",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling",
+   "desc": "Provide blast monitoring equipment; install, maintain and collect data from geotechnical monitoring systems as directed by the Company-appointed Site Geotechnical Engineer, and operate any Company-provided monitoring systems.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Supply",
+   "dto": "Install; Operate",
+   "src": [
+    "SRC-0697",
+    "SRC-0421"
+   ],
+   "floc": [
+    "WIN-2100-02",
+    "WIN-1000-01"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-07",
+    "PROP-08"
+   ],
+   "ifs": [
+    "IF-08"
+   ],
+   "conf": "Medium",
+   "risk": "Instrument types, quantities and monitoring frequency are not stated; Company retains the geotechnical model and design authority.",
+   "impact": "Allowance only; direction by the Site Geotechnical Engineer may change quantities during the Works.",
+   "rfi": [
+    "RFI-013"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Geotechnical monitoring plan and instrument schedule",
+     "Instrument schedule",
+     "Not available in ITT"
+    ],
+    [
+     "Blast monitoring equipment specification",
+     "System specification",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L1-LOG-01",
+   "name": "Weighbridge and weighing instrumentation (Mine Access Road)",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Logistics",
+   "oth": "Mining",
+   "desc": "Weighbridge listed with the weed and seed facility in the Mine Access Road mechanical and E&I areas. Equipment supply, weighing software, calibration and operator are not stated.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Commission",
+   "src": [
+    "SRC-1129",
+    "SRC-1130"
+   ],
+   "floc": [
+    "WIN-1200-05"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-10"
+   ],
+   "ifs": [
+    "IF-32"
+   ],
+   "conf": "Medium",
+   "risk": "Installation is implied by the area list only; no specification, capacity or data requirement is given.",
+   "impact": "Cannot separate civil, mechanical, E&I and system costs; supply could be free-issue or Contractor.",
+   "rfi": [
+    "OPS-RFI-11"
+   ],
+   "note": "Position rests on the mechanical and E&I area lists; supply responsibility is open.",
+   "inputs": [
+    [
+     "Weighbridge specification, capacity and calibration regime",
+     "System specification",
+     "Not available in ITT"
+    ],
+    [
+     "Weighbridge supplier quote",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L1-LOG-02",
+   "name": "Main Site Access Gate and boom-gate access control",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Logistics",
+   "oth": "Mining",
+   "desc": "Company operates and administers the Main Site Access Gate, boom gates and access control systems and maintains the infrastructure.",
+   "basis": "Standard",
+   "pos": "Owner scope",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [
+    "SRC-1452",
+    "SRC-1453"
+   ],
+   "floc": [
+    "WIN-1000-09-01"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [
+    "IF-27"
+   ],
+   "conf": "High",
+   "risk": "Contractor workforce access rules and credentials are not stated.",
+   "impact": "No installation cost; interface and induction effort only.",
+   "rfi": [],
+   "note": "",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L1-MIN-03",
+   "name": "Mining Exclusion Area and Contractor-controlled area access control",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Establish and maintain demarcation, signage, barriers, gates and access controls for the Mining Exclusion Area and Contractor-controlled areas, with radio and traffic protocols.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Operate",
+   "src": [
+    "SRC-0797",
+    "SRC-1455"
+   ],
+   "floc": [
+    "WIN-2100-06",
+    "WIN-1000-09-01"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "High",
+   "risk": "Whether access control is electronic or physical is not stated.",
+   "impact": "Physical works are priced under existing EWPs; any electronic access system is unquantified.",
+   "rfi": [],
+   "note": "",
+   "inputs": [
+    [
+     "Access control philosophy for exclusion areas",
+     "Control philosophy",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L1-MIN-04",
+   "name": "CCTV, access control and alarm devices (Explosives Facility and NPI)",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Install free-issued cameras, detectors, access control and alarm devices at the Explosives Facility and connect to the NVR (network video recorder) in the monitoring room, but the exclusions list removes backbone fibre, CCTV and access control systems.",
+   "basis": "Standard",
+   "pos": "Clarify",
+   "dt": "Install",
+   "dto": "Integrate; Commission",
+   "src": [
+    "SRC-1200",
+    "SRC-1302",
+    "SRC-1600"
+   ],
+   "floc": [
+    "WIN-1000-17",
+    "WIN-1000-18"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-04"
+   ],
+   "ifs": [],
+   "conf": "Low",
+   "risk": "Direct conflict between installation text and exclusion text; extends RFI-011.",
+   "impact": "Either an unpriced installation scope or a double-count if excluded.",
+   "rfi": [
+    "RFI-011",
+    "OPS-RFI-04"
+   ],
+   "note": "Input workbook holds WIN-1000-18 as Exclude and WIN-1000-17 as Price.",
+   "inputs": [
+    [
+     "Camera and access device schedule, NVR location",
+     "Instrument schedule",
+     "Not available in ITT"
+    ],
+    [
+     "Security systems design by others",
+     "System specification",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L1-CRS-01",
+   "name": "Field instrumentation installation (flow, level, pressure, analysers, samplers)",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling; Processing",
+   "desc": "Install, test, calibrate and pre-commission instruments on bores, pump stations, utilities and NPI facilities, including Company-supplied instruments listed as 'Contractor installed', with brackets, stands, junction boxes, tubing and loop checks. ITT sets instrument requirements (smart HART transmitters, 4-20 mA).",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Commission",
+   "src": [
+    "SRC-1169",
+    "SRC-1281",
+    "SRC-1282",
+    "SRC-1234",
+    "SRC-1111",
+    "SRC-1159"
+   ],
+   "floc": [
+    "WIN-2200-07",
+    "WIN-2200-01",
+    "WIN-2200-02",
+    "WIN-2200-03",
+    "WIN-1000-17"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-04"
+   ],
+   "ifs": [
+    "IF-10"
+   ],
+   "conf": "High",
+   "risk": "Project instrumentation list, equipment list and cable schedule are referenced but not in the pack.",
+   "impact": "Instrument counts cannot be priced; loop-check effort is open-ended.",
+   "rfi": [
+    "OPS-RFI-03",
+    "RFI-013"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Project instrumentation list ('Contractor installed' items)",
+     "Instrument schedule",
+     "Not available in ITT"
+    ],
+    [
+     "Cable schedule",
+     "Cable schedule",
+     "Not available in ITT"
+    ],
+    [
+     "Loop check and calibration procedure",
+     "Control philosophy",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L1-WAS-01",
+   "name": "Water flow metering for abstraction and discharge records",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Waste Handling",
+   "oth": "Mining",
+   "desc": "Water abstracted or discharged only from Company-nominated licensed locations and recorded via calibrated flowmeter, with monthly reporting.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Supply",
+   "dto": "Install; Operate",
+   "src": [
+    "SRC-1977"
+   ],
+   "floc": [
+    "WIN-1000-12",
+    "WIN-1000-05"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "Number and location of meters not stated.",
+   "impact": "Low unit value; reporting effort sits in HSESC indirects.",
+   "rfi": [],
+   "note": "",
+   "inputs": [
+    [
+     "Water licence locations and metering points",
+     "Equipment list",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L1-LOG-03",
+   "name": "Aerodrome automated weather indicator and airfield aids",
+   "lvl": "Level 1",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Logistics",
+   "oth": "",
+   "desc": "Airfield lighting, PAPI (precision approach path indicator), wind direction indicator and Automated Weather Indicator Services (AWIS) listed with the aerodrome E&I scope.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Commission",
+   "src": [
+    "SRC-0598",
+    "SRC-0600",
+    "SRC-0317"
+   ],
+   "floc": [
+    "WIN-1800-06"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "The aerodrome E&I list sits in the bulk earthworks work area description, so package ownership is unclear.",
+   "impact": "Possible boundary overlap between earthworks and E&I estimators.",
+   "rfi": [
+    "GAP-120"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Aerodrome E&I equipment list",
+     "Equipment list",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L2-PRO-01",
+   "name": "Process plant control systems (PLC, DCS, SCADA, HMI) and EI&C",
+   "lvl": "Level 2",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Processing",
+   "oth": "",
+   "desc": "MPP electrical, instrumentation and communications systems are excluded. PLC (programmable logic controller), DCS (distributed control system), SCADA (supervisory control and data acquisition) and HMI (human-machine interface) for the plant belong to the MPP EPC Contractor.",
+   "basis": "Standard",
+   "pos": "Third-party scope",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [
+    "SRC-1599",
+    "SRC-0369",
+    "SRC-1595"
+   ],
+   "floc": [
+    "WIN-1500-07",
+    "WIN-1500-06"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [
+    "IF-12"
+   ],
+   "conf": "High",
+   "risk": "Pre-commissioning wording (s15.2) reads as covering all systems in every area (RFI-011).",
+   "impact": "Boundary tie-in effort only if the exclusion holds.",
+   "rfi": [
+    "RFI-005",
+    "RFI-011"
+   ],
+   "note": "",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L2-MIN-01",
+   "name": "NPI controls and instrumentation: supply, install, calibrate, test",
+   "lvl": "Level 2",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling; Processing",
+   "desc": "Supply, install, calibrate and test controls and instrumentation for MSA safe and reliable operation, and install instrumentation, controls and monitoring for the Village raw water, potable ring main, UV unit, sewage, emergency power and gas reticulation.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Supply; Configure; Commission",
+   "src": [
+    "SRC-1221",
+    "SRC-1208"
+   ],
+   "floc": [
+    "WIN-1400-08",
+    "WIN-2200-07",
+    "WIN-1300-07-01"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-04"
+   ],
+   "ifs": [
+    "IF-10"
+   ],
+   "conf": "Medium",
+   "risk": "Supply of controllers and panels is not separated from installation; 'controls' content (PLC, RTU, local panels) is not defined.",
+   "impact": "Vendor quote needed for panels and controllers; scope may be install-only.",
+   "rfi": [
+    "OPS-RFI-02",
+    "OPS-RFI-03"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "I/O list and control panel schedule",
+     "I/O list",
+     "Not available in ITT"
+    ],
+    [
+     "Control philosophy for NPI facilities",
+     "Control philosophy",
+     "Not available in ITT"
+    ],
+    [
+     "Panel and controller vendor quote",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L2-MIN-02",
+   "name": "Supervisory control: PLC/RTU programming, SCADA, HMI and central control system integration",
+   "lvl": "Level 2",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling; Processing",
+   "desc": "Telemetry to the central control system and integration of the Contractor's E&I back to the control room in the MSA. The ITT does not name the control system, its supplier, or who programs and commissions it.",
+   "basis": "Standard",
+   "pos": "Clarify",
+   "dt": "Integrate",
+   "dto": "Configure; Commission",
+   "src": [
+    "SRC-1295",
+    "SRC-1235"
+   ],
+   "floc": [
+    "WIN-2200-07",
+    "WIN-1400-08"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-04"
+   ],
+   "ifs": [
+    "IF-10",
+    "IF-11",
+    "IF-12"
+   ],
+   "conf": "Low",
+   "risk": "Programming and integration may be assumed by the Owner or by the Contractor; the ITT says only 'integration back to the control room'.",
+   "impact": "Largest unquantified systems exposure in SP2 E&I; high rework risk if integration is Contractor-led.",
+   "rfi": [
+    "OPS-RFI-01",
+    "OPS-RFI-02"
+   ],
+   "note": "Control room is part of MSA item 18 (SRC-1035, p272).",
+   "inputs": [
+    [
+     "Control system architecture and network diagram",
+     "Network architecture",
+     "Not available in ITT"
+    ],
+    [
+     "Integration specification for MSA control room",
+     "Integration specification",
+     "Not available in ITT"
+    ],
+    [
+     "SCADA/PLC software licence requirements",
+     "Licence / software requirement",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L2-CRS-01",
+   "name": "Alarm management",
+   "lvl": "Level 2",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "",
+   "desc": "No alarm philosophy or alarm management requirement is stated.",
+   "basis": "Standard",
+   "pos": "Not in ITT",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [],
+   "floc": [],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "Alarm rationalisation could be assumed as part of commissioning.",
+   "impact": "None priced; watch for scope creep via commissioning support.",
+   "rfi": [],
+   "note": "Search basis: ITT page text (638 pages) contains no alarm management or alarm philosophy; the only alarm references are fire alarm panels and security alarm devices.",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L2-CRS-02",
+   "name": "Electrical protection settings application and testing",
+   "lvl": "Level 2",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling",
+   "desc": "Apply and test protection settings per engineering studies and design for installed electrical equipment.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Configure",
+   "dto": "Commission",
+   "src": [
+    "SRC-1231",
+    "SRC-1172"
+   ],
+   "floc": [
+    "WIN-2200-07",
+    "WIN-1000-17"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "High",
+   "risk": "Protection studies are not in the pack.",
+   "impact": "Relay engineering support may need a specialist subcontractor.",
+   "rfi": [
+    "OPS-RFI-03"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Protection study and settings schedule",
+     "System specification",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L2-CRS-03",
+   "name": "Fire detection and alarm panels and site-wide fire system interface",
+   "lvl": "Level 2",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling; Logistics",
+   "desc": "Fire detection and alarm for all buildings, with a master fire alarm control panel (FACP) in the Emergency Response Facility and dedicated panels for hazardous facilities; interface to configure the site-wide fire detection system.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Configure; Commission",
+   "src": [
+    "SRC-1239",
+    "SRC-1240",
+    "SRC-1303"
+   ],
+   "floc": [
+    "WIN-1000-17"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-04"
+   ],
+   "ifs": [
+    "IF-28"
+   ],
+   "conf": "Medium",
+   "risk": "Fire system supplier and configuration owner not stated.",
+   "impact": "Configuration effort may sit with the Owner's fire system integrator.",
+   "rfi": [],
+   "note": "",
+   "inputs": [
+    [
+     "Fire detection design and FACP schedule",
+     "System specification",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-01",
+   "name": "Fleet management system (FMS): tracking, dispatch, status, cycle and production monitoring",
+   "lvl": "Level 3",
+   "act": "Production operations",
+   "gen": "Dispatching; Tracking; Data collection",
+   "dom": "Mining",
+   "oth": "Waste Handling; Logistics",
+   "desc": "Provide, install, commission, operate and maintain an FMS from the start of pre-strip (allow Wenco or Company-approved equivalent for the full pre-strip duration): software, licences, on-board equipment, servers, operator interfaces, mesh network, repeaters and repeater trailers. Minimum functions: fleet tracking and dispatch, equipment status and utilisation, haul cycle and production monitoring, source-to-destination material tracking.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Supply",
+   "dto": "Install; Configure; Integrate; Commission; Operate",
+   "src": [
+    "SRC-0788",
+    "SRC-0789",
+    "SRC-0790",
+    "SRC-0794",
+    "SRC-1384"
+   ],
+   "floc": [
+    "WIN-2100-07",
+    "WIN-1000-07-01"
+   ],
+   "ewp": [
+    "EWP-ICT-01"
+   ],
+   "prop": [
+    "PROP-01"
+   ],
+   "ifs": [
+    "IF-01",
+    "IF-02",
+    "IF-03",
+    "IF-04"
+   ],
+   "conf": "High",
+   "risk": "Fleet size, pre-strip duration, on-board unit count and who supplies on-board units for Company free-issue HME are not stated; redundancy and spares at Contractor cost; migration to a Company FMS is open-ended.",
+   "impact": "Vendor-quote driven; licence term and per-unit charges scale with fleet and duration; operating resource (supervision and dispatch) is a recurring cost.",
+   "rfi": [
+    "RFI-009",
+    "RFI-012",
+    "OPS-RFI-06"
+   ],
+   "note": "ISA-95 has no FMS object. Adaptation: FMS treated as Level 3 production operations dispatching and tracking.",
+   "inputs": [
+    [
+     "Fleet list and unit count (HME and light vehicles)",
+     "Equipment list",
+     "Not available in ITT"
+    ],
+    [
+     "FMS vendor quote (software, licences, on-board, servers, mesh)",
+     "Vendor quote",
+     "Not available in ITT"
+    ],
+    [
+     "Mine coverage design and repeater count",
+     "Network architecture",
+     "Not available in ITT"
+    ],
+    [
+     "FMS staffing model and shift pattern",
+     "Other",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-02",
+   "name": "Mine scheduling and dispatch operations (daily and fortnightly plans)",
+   "lvl": "Level 3",
+   "act": "Production operations",
+   "gen": "Detailed scheduling; Dispatching; Execution management",
+   "dom": "Mining",
+   "oth": "",
+   "desc": "Daily and fortnightly mine planning from the Company Life of Mine plan and Three Month Production Plan; scheduling and dispatch operations and material tracking system from pit block model to final dump. Daily plan before each shift; fortnightly plan two days before each fortnight, for approval.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "",
+   "src": [
+    "SRC-0707",
+    "SRC-0687",
+    "SRC-0688",
+    "SRC-0670"
+   ],
+   "floc": [
+    "WIN-2100-01",
+    "WIN-2100-03",
+    "WIN-2100-07"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-01"
+   ],
+   "ifs": [
+    "IF-05",
+    "IF-06"
+   ],
+   "conf": "High",
+   "risk": "Mine planning software and block model access are not stated; plan tolerance (+5% / -10% cumulative) carries payment risk.",
+   "impact": "Planning resource and software licences are not separately priceable from the ITT.",
+   "rfi": [
+    "RFI-009",
+    "RFI-013"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Mine planning software and block model access arrangement",
+     "Licence / software requirement",
+     "Not available in ITT"
+    ],
+    [
+     "Planning and dispatch resource plan",
+     "Other",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-03",
+   "name": "Material tracking and reconciliation from pit to final destination",
+   "lvl": "Level 3",
+   "act": "Inventory operations",
+   "gen": "Tracking; Data collection; Analysis",
+   "dom": "Mining",
+   "oth": "Waste Handling",
+   "desc": "Material tracking supports allocation and reconciliation of pre-strip material delivered to the TSF (tailings storage facility), ROM (run-of-mine pad), stockpile bases, haul roads and waste rock landforms. Contractor keeps mine planning, survey, material classification and destination information current in the FMS.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Configure",
+   "dto": "Operate",
+   "src": [
+    "SRC-0791",
+    "SRC-0707"
+   ],
+   "floc": [
+    "WIN-2100-07",
+    "WIN-1900-05"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-01"
+   ],
+   "ifs": [
+    "IF-01"
+   ],
+   "conf": "High",
+   "risk": "Pre-strip to TSF pricing split depends on a transfer node not in the pack (RFI-009).",
+   "impact": "Reconciliation basis for payment; disputes arise if tracking data and survey differ.",
+   "rfi": [
+    "RFI-009",
+    "OPS-RFI-06"
+   ],
+   "note": "Adaptation: ISA-95 material movement and tracking applied to bulk mining material; placed under inventory operations.",
+   "inputs": [
+    [
+     "Destination and material classification list",
+     "Other",
+     "Not available in ITT"
+    ],
+    [
+     "TSF transfer node drawing",
+     "Drawing / layout",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-04",
+   "name": "Stockpile management and inventory (ore and construction material)",
+   "lvl": "Level 3",
+   "act": "Inventory operations",
+   "gen": "Resource management; Tracking; Data collection",
+   "dom": "Mining",
+   "oth": "Processing",
+   "desc": "Deliver and stockpile process feed (named material types), mine and stockpile the first approximately 600 kt of ore, manage stockpiles as required; survey quantities and stockpiles through the Works. Rehandle from stockpiles to the crusher is excluded.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "",
+   "src": [
+    "SRC-0774",
+    "SRC-0775",
+    "SRC-0414",
+    "SRC-0776"
+   ],
+   "floc": [
+    "WIN-2100-03",
+    "WIN-1700-01"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-01"
+   ],
+   "ifs": [
+    "IF-07"
+   ],
+   "conf": "Medium",
+   "risk": "Stockpile inventory system, grade information and cut-off are not stated.",
+   "impact": "Quantities by survey only; no inventory system priced unless Company directs.",
+   "rfi": [
+    "OPS-RFI-08"
+   ],
+   "note": "Adaptation: stockpile inventory mapped to ISA-95 inventory operations.",
+   "inputs": [
+    [
+     "Stockpile design and material type register",
+     "Drawing / layout",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-05",
+   "name": "Production reporting and data export to Company",
+   "lvl": "Level 3",
+   "act": "Production operations",
+   "gen": "Data collection; Analysis; Execution management",
+   "dom": "Mining",
+   "oth": "",
+   "desc": "Provide FMS production and movement data in an agreed electronic format for reconciliation and incorporation into Company reporting systems. For pricing, no live or automated interface is required; regular structured data exports are required.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Configure",
+   "dto": "Operate",
+   "src": [
+    "SRC-0792",
+    "SRC-0788"
+   ],
+   "floc": [
+    "WIN-2100-07"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-01",
+    "PROP-08"
+   ],
+   "ifs": [
+    "IF-01"
+   ],
+   "conf": "High",
+   "risk": "Agreed format and frequency not stated; any move to a live interface changes scope.",
+   "impact": "Export scripting and reporting effort; a later live-interface direction is a variation risk.",
+   "rfi": [
+    "OPS-RFI-07"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Export format and frequency specification",
+     "Integration specification",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-06",
+   "name": "Drill and blast records and blast performance management",
+   "lvl": "Level 3",
+   "act": "Quality operations",
+   "gen": "Execution management; Data collection; Tracking",
+   "dom": "Mining",
+   "oth": "",
+   "desc": "Maintain blast plans, drill logs, charging records, explosive reconciliations and statutory records; contractor is responsible for blast performance (fragmentation, vibration, flyrock, airblast, fumes, misfires).",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "Configure",
+   "src": [
+    "SRC-0697",
+    "SRC-0690"
+   ],
+   "floc": [
+    "WIN-2100-02"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-08"
+   ],
+   "ifs": [
+    "IF-09"
+   ],
+   "conf": "High",
+   "risk": "Blast design software and electronic detonator programming tools are not stated.",
+   "impact": "Software and licence allowance; performance risk sits in drill and blast rates.",
+   "rfi": [
+    "RFI-013"
+   ],
+   "note": "Adaptation: blast performance placed under quality operations.",
+   "inputs": [
+    [
+     "Blast design and records software requirement",
+     "Licence / software requirement",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-07",
+   "name": "Ore and waste classification and grade control",
+   "lvl": "Level 3",
+   "act": "Quality operations",
+   "gen": "Data collection; Analysis; Definition management",
+   "dom": "Mining",
+   "oth": "Processing; Waste Handling",
+   "desc": "Recover ore per plan, identify and segregate TSF construction material and avoid mixing ore, overburden and waste on spillage. No grade control sampling, assay or block-model update responsibility is stated.",
+   "basis": "Adaptation",
+   "pos": "Clarify",
+   "dt": "Operate",
+   "dto": "",
+   "src": [
+    "SRC-0705",
+    "SRC-0760",
+    "SRC-0787"
+   ],
+   "floc": [
+    "WIN-2100-03",
+    "WIN-1900-05"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-08"
+   ],
+   "ifs": [],
+   "conf": "Low",
+   "risk": "Ore loss and dilution accountability without a defined grade control process.",
+   "impact": "Unpriced sampling, assay and survey effort if Contractor-led.",
+   "rfi": [
+    "OPS-RFI-08"
+   ],
+   "note": "Adaptation: grade control placed under quality operations.",
+   "inputs": [
+    [
+     "Grade control and sampling responsibility statement",
+     "Other",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-09",
+   "name": "Survey and quantity data collection",
+   "lvl": "Level 3",
+   "act": "Production operations",
+   "gen": "Data collection; Tracking",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Quantity surveys, progress-payment survey data and as-built survey, with Company check surveys; certified surveyor; DTM (digital terrain model) submitted for approval; datum MGA GDA94 Zone 51 and AHD.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "",
+   "src": [
+    "SRC-0414",
+    "SRC-0412",
+    "SRC-0413",
+    "SRC-0410"
+   ],
+   "floc": [
+    "WIN-1000-01",
+    "WIN-2100-01"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-07"
+   ],
+   "ifs": [
+    "IF-07"
+   ],
+   "conf": "High",
+   "risk": "Survey control establishment is excluded; rework from survey error is at Contractor cost.",
+   "impact": "Survey equipment and software are indirects; DTM approval timing affects payment.",
+   "rfi": [
+    "RFI-013"
+   ],
+   "note": "Adaptation: survey data collection mapped to production operations data collection.",
+   "inputs": [
+    [
+     "Survey systems and software list",
+     "Licence / software requirement",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-MIN-10",
+   "name": "Maintenance management of fleet (maintenance execution, equipment records)",
+   "lvl": "Level 3",
+   "act": "Maintenance operations",
+   "gen": "Execution management; Data collection; Tracking",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Operate and maintain Company Supplied Equipment and facilities: maintenance execution, inspections, servicing, condition monitoring, statutory compliance, equipment records and operating data; provide maintenance histories and asset-health data at handback.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "",
+   "src": [
+    "SRC-0668",
+    "SRC-1385",
+    "SRC-1388",
+    "SRC-1422"
+   ],
+   "floc": [
+    "WIN-1000-07-01",
+    "WIN-1000-07-02",
+    "WIN-1000-07-03"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-09"
+   ],
+   "ifs": [
+    "IF-31"
+   ],
+   "conf": "Medium",
+   "risk": "No CMMS (computerised maintenance management system) is named; responsibility matrices are not in the pack.",
+   "impact": "Maintenance system licence and data capture effort unquantified.",
+   "rfi": [
+    "RFI-012",
+    "OPS-RFI-09"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "HME and construction equipment scope and responsibility matrices",
+     "Responsibility matrix",
+     "Not available in ITT"
+    ],
+    [
+     "Maintenance management system requirement",
+     "Licence / software requirement",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-CRS-01",
+   "name": "Maintenance management interface (asset registration and handover data)",
+   "lvl": "Level 3",
+   "act": "Maintenance operations",
+   "gen": "Definition management; Data collection",
+   "dom": "Mining",
+   "oth": "Processing; Logistics",
+   "desc": "Company retains HME ownership and asset registration; the Contractor supplies equipment records, manufacturing data records (including instrument calibration reports), loop checks and as-built dossiers at handover. The Company CMMS is not named.",
+   "basis": "Standard",
+   "pos": "Interface only",
+   "dt": "Integrate",
+   "dto": "",
+   "src": [
+    "SRC-1390",
+    "SRC-2016",
+    "SRC-1849"
+   ],
+   "floc": [
+    "WIN-1000-13",
+    "WIN-1000-07-01"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-09"
+   ],
+   "ifs": [
+    "IF-31"
+   ],
+   "conf": "Medium",
+   "risk": "Tag and data structure for handover is not defined.",
+   "impact": "Documentation effort; late format direction causes rework.",
+   "rfi": [
+    "OPS-RFI-09"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Asset data handover standard and tag convention",
+     "Integration specification",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-CRS-02",
+   "name": "Construction testing and field laboratory (NATA accredited)",
+   "lvl": "Level 3",
+   "act": "Quality operations",
+   "gen": "Execution management; Data collection",
+   "dom": "Mining",
+   "oth": "Waste Handling",
+   "desc": "Mobilise, establish and operate a field laboratory on Site (NATA accredited where applicable) with minimum capability (AS 1289 soil tests, HDPE seam testing, concrete cylinders, Leco analysis of mine waste); all testing at Contractor cost; on-Site or nominated off-Site laboratory.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "Supply; Install",
+   "src": [
+    "SRC-0423",
+    "SRC-0424",
+    "SRC-0402",
+    "SRC-0898"
+   ],
+   "floc": [
+    "WIN-1000-01",
+    "WIN-1100-03"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-07"
+   ],
+   "ifs": [
+    "IF-30"
+   ],
+   "conf": "High",
+   "risk": "Test volumes are not stated; laboratory may be on-Site or off-Site.",
+   "impact": "Laboratory equipment, accreditation and staffing allowance; no test quantities in the pack.",
+   "rfi": [
+    "OPS-RFI-16",
+    "RFI-013"
+   ],
+   "note": "Adaptation: construction materials testing mapped to quality operations.",
+   "inputs": [
+    [
+     "Testing plan and test volumes",
+     "Other",
+     "Not available in ITT"
+    ],
+    [
+     "Laboratory set-up quote (equipment, accreditation)",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-CRS-03",
+   "name": "Permanent MSA laboratory equipment",
+   "lvl": "Level 3",
+   "act": "Quality operations",
+   "gen": "Resource management",
+   "dom": "Processing",
+   "oth": "Mining",
+   "desc": "MSA laboratory building and sample storage are built by the Contractor; laboratory equipment for the permanent laboratory is excluded.",
+   "basis": "Standard",
+   "pos": "Owner scope",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [
+    "SRC-1598",
+    "SRC-1044",
+    "SRC-1041"
+   ],
+   "floc": [
+    "WIN-1400-11",
+    "WIN-1400-06-02"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "High",
+   "risk": "Services provision to the laboratory (power, data points) must still be coordinated.",
+   "impact": "Building and services only; no equipment cost.",
+   "rfi": [],
+   "note": "Building (WIN-1400-06-02) is priced in EWP-STR-02.",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L3-CRS-04",
+   "name": "Laboratory information management system (LIMS)",
+   "lvl": "Level 3",
+   "act": "Quality operations",
+   "gen": "Data collection; Tracking",
+   "dom": "Processing",
+   "oth": "Mining",
+   "desc": "No LIMS requirement is stated for the field laboratory or the permanent laboratory.",
+   "basis": "Standard",
+   "pos": "Not in ITT",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [],
+   "floc": [],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "Results reporting format to Company may be directed later.",
+   "impact": "None priced.",
+   "rfi": [
+    "OPS-RFI-16"
+   ],
+   "note": "Search basis: no LIMS or laboratory information system term in the ITT page text.",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L3-CRS-05",
+   "name": "Operational historian and shift reporting",
+   "lvl": "Level 3",
+   "act": "Production operations",
+   "gen": "Data collection; Analysis",
+   "dom": "Mining",
+   "oth": "Processing",
+   "desc": "No historian or shift-handover reporting system is stated. Shift-level planning is covered by the daily production plan (CAP-L3-MIN-02).",
+   "basis": "Standard",
+   "pos": "Not in ITT",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [],
+   "floc": [],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "Company may direct reporting after award.",
+   "impact": "None priced.",
+   "rfi": [
+    "OPS-RFI-01"
+   ],
+   "note": "Search basis: no historian term in the ITT page text.",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L3-LOG-01",
+   "name": "Materials control and inventory system (receipt, storage, spares, reconciliation)",
+   "lvl": "Level 3",
+   "act": "Inventory operations",
+   "gen": "Resource management; Tracking; Data collection",
+   "dom": "Logistics",
+   "oth": "Mining",
+   "desc": "Materials Management Plan with qualified personnel, systems and facilities; a materials control system tracking ID, location, quantity, inspection, preservation, NCR (non-conformance report), installation and surplus or spare status; periodic inventory counts and reconciliation; inventory register; warehousing and inventory control for spares; pre-Completion reconciliation and handover.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Configure",
+   "dto": "Supply; Operate",
+   "src": [
+    "SRC-1350",
+    "SRC-1361",
+    "SRC-1362",
+    "SRC-1364",
+    "SRC-1366",
+    "SRC-1368"
+   ],
+   "floc": [
+    "WIN-1000-08-02",
+    "WIN-1000-15"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-05"
+   ],
+   "ifs": [
+    "IF-24"
+   ],
+   "conf": "High",
+   "risk": "No volume, value, warehouse size or end date for surplus and spares (SRC-1367); system platform not stated.",
+   "impact": "Software licences and storekeeping resource scale with unquantified volumes.",
+   "rfi": [
+    "RFI-012",
+    "OPS-RFI-10"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Free-issue equipment list and Company Supplied Items list",
+     "Equipment list",
+     "Not available in ITT"
+    ],
+    [
+     "Materials control system platform and licence requirement",
+     "Licence / software requirement",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-LOG-02",
+   "name": "Cargo and delivery tracking (Port Hedland to Site)",
+   "lvl": "Level 3",
+   "act": "Inventory operations",
+   "gen": "Tracking; Detailed scheduling",
+   "dom": "Logistics",
+   "oth": "Mining",
+   "desc": "Controlled delivery management: scheduling, call-up, site readiness, unloading resources, cargo tracking, shortage and damage management; documented receipt inspection; shortage or damage reported to the Company Representative within 48 hours.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "",
+   "src": [
+    "SRC-1346",
+    "SRC-1351",
+    "SRC-1352"
+   ],
+   "floc": [
+    "WIN-1000-08-01"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-05"
+   ],
+   "ifs": [
+    "IF-25"
+   ],
+   "conf": "High",
+   "risk": "Tracking tool and carrier reporting requirements not stated.",
+   "impact": "Logistics system licences are indirects; volume driven.",
+   "rfi": [
+    "RFI-012"
+   ],
+   "note": "Adaptation: inbound logistics tracking mapped to inventory operations.",
+   "inputs": [
+    [
+     "Cargo manifest and delivery schedule",
+     "Other",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-LOG-03",
+   "name": "Train and port loadout coordination",
+   "lvl": "Level 3",
+   "act": "Inventory operations",
+   "gen": "Detailed scheduling; Dispatching",
+   "dom": "Logistics",
+   "oth": "Processing",
+   "desc": "No product haulage, rail or port loadout scope. The only port reference is inbound transport from the Port Battery Limit to Site; the concentrate loop road is earthworks only.",
+   "basis": "Standard",
+   "pos": "Not in ITT",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [],
+   "floc": [],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "High",
+   "risk": "None identified.",
+   "impact": "None.",
+   "rfi": [],
+   "note": "Search basis: no loadout or train loading term in the ITT page text; Port Hedland references relate to inbound cargo.",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L3-LOG-04",
+   "name": "Fuel management and monitoring (FOBs, meters, reports, inventory control)",
+   "lvl": "Level 3",
+   "act": "Inventory operations",
+   "gen": "Resource management; Tracking; Data collection",
+   "dom": "Logistics",
+   "oth": "Mining",
+   "desc": "Operate temporary site fuel storage, receive deliveries, control inventory and quality; implement fuel monitoring and reporting including FOBs (fuel tags), fuel management software or meters and regular usage reports. Company supplies diesel; Contractor is responsible for fuel burn and refuelling of free-issued equipment.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Supply",
+   "dto": "Install; Configure; Operate",
+   "src": [
+    "SRC-0463",
+    "SRC-0465",
+    "SRC-1387",
+    "SRC-1582"
+   ],
+   "floc": [
+    "WIN-1000-04-03"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-06"
+   ],
+   "ifs": [
+    "IF-26"
+   ],
+   "conf": "High",
+   "risk": "Fleet and tank counts not stated; fuel system must link to FMS if Company expects integrated data.",
+   "impact": "Software and meter hardware priced from vendor quotes once fleet is known.",
+   "rfi": [
+    "RFI-012"
+   ],
+   "note": "Adaptation: fuel inventory treated as inventory operations.",
+   "inputs": [
+    [
+     "Fuel storage and dispensing layout",
+     "Drawing / layout",
+     "Not available in ITT"
+    ],
+    [
+     "Fuel management system vendor quote",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-WAS-01",
+   "name": "Waste tracking and landfill records",
+   "lvl": "Level 3",
+   "act": "Inventory operations",
+   "gen": "Tracking; Data collection",
+   "dom": "Waste Handling",
+   "oth": "Logistics",
+   "desc": "Waste Management Plan identifying waste streams, volumes, segregation, disposal, carriers and tracking; landfill access control, permitted waste only, records of volumes and waste types, licence compliance.",
+   "basis": "Adaptation",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "",
+   "src": [
+    "SRC-1466",
+    "SRC-1476"
+   ],
+   "floc": [
+    "WIN-1000-09-02",
+    "WIN-2300-03"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "High",
+   "risk": "Landfill construction, capacity and third-party waste acceptance are open (RFI-017).",
+   "impact": "Records are low cost; landfill operation sits in indirects.",
+   "rfi": [
+    "RFI-017"
+   ],
+   "note": "Adaptation: waste movement records mapped to inventory operations.",
+   "inputs": [
+    [
+     "Waste streams and volume forecast",
+     "Other",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L3-PRO-01",
+   "name": "Process plant production tracking and product sampling",
+   "lvl": "Level 3",
+   "act": "Production operations",
+   "gen": "Execution management; Tracking",
+   "dom": "Processing",
+   "oth": "Logistics",
+   "desc": "MPP covers ROM handling, crushing, grinding, gravity gold and product sampling and handling; top-of-concrete plant works are excluded and belong to the MPP EPC Contractor.",
+   "basis": "Standard",
+   "pos": "Third-party scope",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [
+    "SRC-0369",
+    "SRC-1595"
+   ],
+   "floc": [
+    "WIN-1500-06"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "Plant start-up needs mine ore delivery data from the FMS.",
+   "impact": "None priced.",
+   "rfi": [
+    "RFI-005"
+   ],
+   "note": "",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L4-MIN-01",
+   "name": "Life of Mine plan and Three Month Production Plan (production schedule)",
+   "lvl": "Level 4",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Processing",
+   "desc": "Company owns the Life of Mine plan and issues the Three Month Production Plan monthly; plan tolerance cumulative +5% / -10%; mine design may change.",
+   "basis": "Standard",
+   "pos": "Owner scope",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [
+    "SRC-0670",
+    "SRC-0683",
+    "SRC-0684",
+    "SRC-0686"
+   ],
+   "floc": [
+    "WIN-2100-01"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [
+    "IF-05"
+   ],
+   "conf": "High",
+   "risk": "Plan changes drive resource and fleet utilisation.",
+   "impact": "Variation and utilisation risk, not a system cost.",
+   "rfi": [],
+   "note": "",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L4-CRS-01",
+   "name": "Enterprise resource planning (ERP): finance and procurement interface",
+   "lvl": "Level 4",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Logistics",
+   "oth": "Mining",
+   "desc": "Invoices must quote the Company SAP purchase order number and go to the Company invoice address; Company ERP is not the Contractor's to supply.",
+   "basis": "Standard",
+   "pos": "Interface only",
+   "dt": "Integrate",
+   "dto": "",
+   "src": [
+    "SRC-2114",
+    "SRC-2126",
+    "SRC-0120"
+   ],
+   "floc": [
+    "WIN-1000-19"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [
+    "IF-21"
+   ],
+   "conf": "High",
+   "risk": "Portal rules and query handling.",
+   "impact": "Administration effort only.",
+   "rfi": [],
+   "note": "",
+   "inputs": []
+  },
+  {
+   "id": "CAP-L4-CRS-02",
+   "name": "Planning, scheduling and cost reporting deliverables (P6, Schedule of Values)",
+   "lvl": "Level 4",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "CPM network in Primavera P6 (v8 or later) submitted monthly as .XER and .pdf; Schedule of Values drives pricing and invoicing and populates the Company cost control system; planning and reporting per Appendix E.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Operate",
+   "dto": "Configure",
+   "src": [
+    "SRC-2053",
+    "SRC-2055",
+    "SRC-2080",
+    "SRC-1424"
+   ],
+   "floc": [
+    "WIN-1000-01"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [
+    "IF-22",
+    "IF-23"
+   ],
+   "conf": "High",
+   "risk": "Company WBS and Schedule of Values not in the pack (GAP-262).",
+   "impact": "Planner resource and software licence in indirects.",
+   "rfi": [
+    "RFI-004"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Company WBS and Schedule of Values",
+     "Other",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-L4-CRS-03",
+   "name": "Corporate and Company reporting systems",
+   "lvl": "Level 4",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "",
+   "desc": "Company reporting systems receive FMS production and movement data via agreed exports; the Company's data systems are not described.",
+   "basis": "Standard",
+   "pos": "Owner scope",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [
+    "SRC-0792"
+   ],
+   "floc": [
+    "WIN-2100-07"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [
+    "IF-01"
+   ],
+   "conf": "Medium",
+   "risk": "Target system and format unknown.",
+   "impact": "None for MinRes beyond export.",
+   "rfi": [
+    "OPS-RFI-07"
+   ],
+   "note": "",
+   "inputs": []
+  },
+  {
+   "id": "CAP-X-CRS-01",
+   "name": "Temporary communications, IT and data infrastructure (construction and pre-strip)",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling; Processing; Logistics",
+   "desc": "Contractor is fully self-sufficient: provide, install, commission, operate and maintain all temporary telephone, mobile, radio, internet, network and IT infrastructure, including connectivity for administration, reporting, remote support, survey and the FMS. Do not assume Company internet or data services.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Design",
+   "dto": "Supply; Install; Commission; Operate",
+   "src": [
+    "SRC-0475",
+    "SRC-0493",
+    "SRC-0499",
+    "SRC-1488"
+   ],
+   "floc": [
+    "WIN-1000-06",
+    "WIN-1000-04-02",
+    "WIN-1000-10"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-02"
+   ],
+   "ifs": [
+    "IF-04"
+   ],
+   "conf": "High",
+   "risk": "Coverage area, user count and duration are not stated; Contractor bears all costs, including redundancy.",
+   "impact": "Allowance in EWP-IND-03 mixes laydown, water and communications; needs a communications specialist.",
+   "rfi": [
+    "RFI-003",
+    "OPS-RFI-13"
+   ],
+   "note": "Primary domain assigned to Mining (Assumption OPS-A-04).",
+   "inputs": [
+    [
+     "Site layout, work fronts and user counts",
+     "Drawing / layout",
+     "Not available in ITT"
+    ],
+    [
+     "Temporary network and internet service quote",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-02",
+   "name": "Temporary radio solution, licences and transition to Company TETRA",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Assume the Company permanent TETRA radio network is not available for construction or pre-strip; provide a complete temporary radio solution, radios for all supervisors and no mobile equipment without radio; obtain radio licences and frequency allocations including crane frequencies; support transition to the Company network when available.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Supply",
+   "dto": "Install; Operate; Commission",
+   "src": [
+    "SRC-0494",
+    "SRC-0495",
+    "SRC-0496",
+    "SRC-0497",
+    "SRC-0498"
+   ],
+   "floc": [
+    "WIN-1000-06"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-02"
+   ],
+   "ifs": [
+    "IF-17",
+    "IF-18"
+   ],
+   "conf": "High",
+   "risk": "Equipment responsibility matrix not in the pack; radios in Company Supplied Equipment are maintained by the Contractor.",
+   "impact": "Radio quantity depends on fleet and workforce; licence and frequency lead time.",
+   "rfi": [
+    "OPS-RFI-13",
+    "RFI-012"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Equipment responsibility matrix",
+     "Responsibility matrix",
+     "Not available in ITT"
+    ],
+    [
+     "Radio network design and quote",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-03",
+   "name": "Site-wide communication system installation (fibre, towers, private LTE, VMR hardware)",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling; Processing; Logistics",
+   "desc": "Install, test and commission a site-wide communication system including fibre optic, data centres, communication towers, private LTE (long-term evolution mobile network) and VMR (voice mobile radio) hardware; install Company-supplied fibre, patch panels, FOBOTs (fibre optic breakout terminals); supply splicing and termination kits; fibre testing and as-builts.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Commission; Supply",
+   "src": [
+    "SRC-1236",
+    "SRC-1237",
+    "SRC-1238",
+    "SRC-1249"
+   ],
+   "floc": [
+    "WIN-2200-09"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-03"
+   ],
+   "ifs": [
+    "IF-13",
+    "IF-19"
+   ],
+   "conf": "High",
+   "risk": "Cable lengths, building count and tower equipment models (some Tbc) are not given.",
+   "impact": "Splicing and testing quantities cannot be derived; Company supply timing drives delay risk.",
+   "rfi": [
+    "OPS-RFI-14",
+    "OPS-RFI-04"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Fibre cable schedule and route plan",
+     "Cable schedule",
+     "Not available in ITT"
+    ],
+    [
+     "Tower equipment lists (Tables 1 and 2) with final models",
+     "Equipment list",
+     "Partly in ITT pack"
+    ],
+    [
+     "Fibre installer quote",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-04",
+   "name": "Data centres DC1 and DC2 installation",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Processing; Waste Handling",
+   "desc": "Take delivery, store, preserve and install the modular prefabricated data centres per OEM manual: support steel and platforms, dedicated LV generator, HVAC and refrigerant lines, gaseous fire suppression, cable ladder, interconnecting cabling, lighting and earthing. DC1 supports a backup control room function.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Commission",
+   "src": [
+    "SRC-1241",
+    "SRC-1242",
+    "SRC-1243",
+    "SRC-1244",
+    "SRC-1246"
+   ],
+   "floc": [
+    "WIN-2200-09",
+    "WIN-1400-06-01"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-03"
+   ],
+   "ifs": [
+    "IF-20"
+   ],
+   "conf": "High",
+   "risk": "Module delivery sequence and Company IT equipment installation boundary not stated.",
+   "impact": "Install effort priced from OEM manual; building shell is in EWP-STR-02.",
+   "rfi": [],
+   "note": "",
+   "inputs": [
+    [
+     "Data centre OEM installation manual and layout",
+     "Drawing / layout",
+     "Partly in ITT pack"
+    ],
+    [
+     "Generator and fire suppression subcontract quote",
+     "Vendor quote",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-05",
+   "name": "Communications towers (40 m and 80 m)",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Assemble and install steel communication towers (80 m in-situ foundation; 40 m precast footing with tower by manufacturer); install Company-supplied antennas, panels, radio equipment, feeders and trays; Telstra carrier equipment on mine towers.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Install",
+   "dto": "Commission",
+   "src": [
+    "SRC-1247",
+    "SRC-1248",
+    "SRC-1249",
+    "SRC-1001"
+   ],
+   "floc": [
+    "WIN-2200-08",
+    "WIN-2200-09"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-03"
+   ],
+   "ifs": [
+    "IF-19"
+   ],
+   "conf": "High",
+   "risk": "Foundation size is estimated only; equipment models Tbc; carrier scope boundary.",
+   "impact": "Structural and equipment installation split across EWP-STR-03 and EWP-ICT-01.",
+   "rfi": [
+    "OPS-RFI-14"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Tower drawings and equipment lists",
+     "Drawing / layout",
+     "Partly in ITT pack"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-06",
+   "name": "Village communications network and data/TV distribution (GPON, IPTV, Wi-Fi)",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Logistics",
+   "oth": "Mining",
+   "desc": "Supply and install Village communications network: fibre optic cabling, GPON (gigabit passive optical network) distribution, IPTV outlets, Wi-Fi in all buildings, Cat 6 patch panels, Optical Line Transmitter with SFP+ uplink to the plant core network.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Supply",
+   "dto": "Install; Commission",
+   "src": [
+    "SRC-1071",
+    "SRC-1205",
+    "SRC-1206"
+   ],
+   "floc": [
+    "WIN-1300-07-02"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "High",
+   "risk": "Listed as 1 lot with no dimensions; building and room counts drive quantities.",
+   "impact": "Vendor quote needed; accommodation services content is not an operational system.",
+   "rfi": [
+    "RFI-007"
+   ],
+   "note": "Relevant as shared infrastructure; low operational systems impact.",
+   "inputs": [
+    [
+     "Village communications block diagram (5650-E-BLD-00001)",
+     "Drawing / layout",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-07",
+   "name": "MSA communications systems and ICT hardware",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Communications systems designed by others and integrated with the site-wide LAN and WAN, but the Contractor installs and mounts all loose ICT hardware and tests structured cabling to IS&T requirements. Input workbook records WIN-1400-12 as Excluded, which may omit this installation.",
+   "basis": "Standard",
+   "pos": "Clarify",
+   "dt": "Install",
+   "dto": "Commission",
+   "src": [
+    "SRC-1224",
+    "SRC-1225",
+    "SRC-1213"
+   ],
+   "floc": [
+    "WIN-1400-12",
+    "WIN-1400-08"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-03"
+   ],
+   "ifs": [
+    "IF-15"
+   ],
+   "conf": "Low",
+   "risk": "Installation text conflicts with the excluded FLOC; possible unpriced installation.",
+   "impact": "Install and test effort not priced if WIN-1400-12 is held as Exclude.",
+   "rfi": [
+    "OPS-RFI-05"
+   ],
+   "note": "Review the Exclude decision on WIN-1400-12.",
+   "inputs": [
+    [
+     "ICT hardware list and MSA structured cabling design",
+     "Equipment list",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-08",
+   "name": "Backbone fibre and network distribution",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Processing",
+   "desc": "Backbone fibre and network fibre distribution for the Project is provided and installed by others up to the FOBOT; the exclusions list names backbone fibre.",
+   "basis": "Standard",
+   "pos": "Third-party scope",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [
+    "SRC-1301",
+    "SRC-1600"
+   ],
+   "floc": [
+    "WIN-1000-18"
+   ],
+   "ewp": [],
+   "prop": [],
+   "ifs": [
+    "IF-13"
+   ],
+   "conf": "High",
+   "risk": "Battery limit at the FOBOT and conduit works need coordination.",
+   "impact": "Interface and testing coordination only.",
+   "rfi": [
+    "RFI-011",
+    "OPS-RFI-04"
+   ],
+   "note": "",
+   "inputs": []
+  },
+  {
+   "id": "CAP-X-CRS-09",
+   "name": "Cybersecurity compliance for systems interfacing with Company networks",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Logistics",
+   "desc": "Contractor systems interfacing with Company networks or systems must comply with the Company's applicable IT and cyber security requirements. The requirements are not in the pack.",
+   "basis": "Standard",
+   "pos": "Clarify",
+   "dt": "Configure",
+   "dto": "",
+   "src": [
+    "SRC-0499"
+   ],
+   "floc": [
+    "WIN-1000-06"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-02"
+   ],
+   "ifs": [
+    "IF-16"
+   ],
+   "conf": "Medium",
+   "risk": "Unknown controls could require segmentation, monitoring or audits.",
+   "impact": "Open-ended compliance effort.",
+   "rfi": [
+    "OPS-RFI-12"
+   ],
+   "note": "Statement is on PDF page 228; the register evidence note for SRC-0499 does not itemise it.",
+   "inputs": [
+    [
+     "Company IT and cyber security requirements",
+     "System specification",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-10",
+   "name": "Operational technology (OT) network segmentation and industrial cybersecurity architecture",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Processing",
+   "desc": "No OT cybersecurity architecture, zones or industrial security standard is stated.",
+   "basis": "Standard",
+   "pos": "Not in ITT",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [],
+   "floc": [],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "Could be directed after award.",
+   "impact": "None priced.",
+   "rfi": [
+    "OPS-RFI-12"
+   ],
+   "note": "Search basis: no IEC 62443 or industrial cybersecurity architecture term in the ITT page text.",
+   "inputs": []
+  },
+  {
+   "id": "CAP-X-CRS-11",
+   "name": "Time synchronisation",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "",
+   "desc": "No time synchronisation requirement is stated.",
+   "basis": "Standard",
+   "pos": "Not in ITT",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [],
+   "floc": [],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "None identified.",
+   "impact": "None.",
+   "rfi": [],
+   "note": "Search basis: no NTP or time synchronisation term in the ITT page text.",
+   "inputs": []
+  },
+  {
+   "id": "CAP-X-CRS-12",
+   "name": "Master data, data model and tagging convention",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Processing; Logistics",
+   "desc": "No data model or tagging convention is stated; equipment, instrumentation and cable lists are referenced but not in the pack.",
+   "basis": "Standard",
+   "pos": "Not in ITT",
+   "dt": "None (not MinRes)",
+   "dto": "",
+   "src": [],
+   "floc": [],
+   "ewp": [],
+   "prop": [],
+   "ifs": [],
+   "conf": "Medium",
+   "risk": "Handover data structure may be directed after award.",
+   "impact": "None priced.",
+   "rfi": [
+    "OPS-RFI-03"
+   ],
+   "note": "Search basis: no data model or tagging standard in the ITT page text.",
+   "inputs": []
+  },
+  {
+   "id": "CAP-X-CRS-13",
+   "name": "Interface management and SIMOPS for systems (telecoms, fibre, control, power)",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Processing; Waste Handling; Logistics",
+   "desc": "Company is Lead Interface; Contractor participates in interface management and is responsible for SIMOPS (simultaneous operations) for all its Works; telecoms, fibre, power and control integration points are identified at battery limits; Offshore EPF Contractor is design authority for NPI.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Integrate",
+   "dto": "",
+   "src": [
+    "SRC-1304",
+    "SRC-1305",
+    "SRC-1310",
+    "SRC-1313",
+    "SRC-1306"
+   ],
+   "floc": [
+    "WIN-1000-11"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-11"
+   ],
+   "ifs": [
+    "IF-14",
+    "IF-29"
+   ],
+   "conf": "High",
+   "risk": "Interface count and meeting cadence not stated.",
+   "impact": "Indirects allowance; resource scales with number of interfacing parties.",
+   "rfi": [
+    "OPS-RFI-15"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Interface register and SIMOPS plan",
+     "Integration specification",
+     "Not available in ITT"
+    ]
+   ]
+  },
+  {
+   "id": "CAP-X-CRS-14",
+   "name": "Pre-commissioning of E&I and communications systems",
+   "lvl": "Cross-cutting",
+   "act": "Not applicable (outside Level 3)",
+   "gen": "",
+   "dom": "Mining",
+   "oth": "Waste Handling; Processing",
+   "desc": "Point-to-point, insulation resistance and loop tests, instrument set-up and calibration, results to Company; pre-commissioning of all systems and sub-systems in every area; commissioning support is 'as required' with no duration; commissioning methodologies come from the Offshore EPF Contractor.",
+   "basis": "Standard",
+   "pos": "Within MinRes scope",
+   "dt": "Commission",
+   "dto": "",
+   "src": [
+    "SRC-1562",
+    "SRC-1560",
+    "SRC-1565",
+    "SRC-1568"
+   ],
+   "floc": [
+    "WIN-1000-13"
+   ],
+   "ewp": [],
+   "prop": [
+    "PROP-12"
+   ],
+   "ifs": [
+    "IF-29"
+   ],
+   "conf": "High",
+   "risk": "Exclusions list conflicts with 'all systems'; support duration undefined.",
+   "impact": "Open-ended labour allowance.",
+   "rfi": [
+    "RFI-011",
+    "RFI-018"
+   ],
+   "note": "",
+   "inputs": [
+    [
+     "Commissioning plan and methodology",
+     "Other",
+     "Not available in ITT"
+    ]
+   ]
+  }
+ ],
+ "interfaces": [
+  {
+   "id": "IF-01",
+   "type": "System-to-system",
+   "from": "Fleet management system (FMS) - Contractor",
+   "to": "Company reporting / data systems",
+   "direction": "One-way export",
+   "data": "FMS production and movement data for reconciliation and incorporation into Company reporting",
+   "protocol": "Not stated (agreed electronic format; regular structured exports; no live or automated interface required for pricing)",
+   "responsible": "Contractor (MinRes) provides export; Company receives",
+   "sources": [
+    "SRC-0792",
+    "SRC-0788"
+   ],
+   "caps": [
+    "CAP-L3-MIN-05",
+    "CAP-L3-MIN-01"
+   ],
+   "rfi": "OPS-RFI-07"
+  },
+  {
+   "id": "IF-02",
+   "type": "System-to-system",
+   "from": "FMS - Contractor",
+   "to": "Company permanent operational FMS",
+   "direction": "Bidirectional (migration or integration as directed)",
+   "data": "Not stated (applies only if the Company permanent FMS becomes available during the Contract)",
+   "protocol": "Not stated",
+   "responsible": "Shared - Company directs, Contractor cooperates",
+   "sources": [
+    "SRC-0793"
+   ],
+   "caps": [
+    "CAP-L3-MIN-01"
+   ],
+   "rfi": "OPS-RFI-06"
+  },
+  {
+   "id": "IF-03",
+   "type": "System-to-system",
+   "from": "Company free-issued heavy mining equipment (HME) on-board systems",
+   "to": "Contractor fleet, radio, FMS and material-tracking systems",
+   "direction": "Bidirectional",
+   "data": "Equipment integration into fleet, radio, FMS and material tracking (data content not stated)",
+   "protocol": "Not stated",
+   "responsible": "Shared - Contractor integrates; Company and OEM supply HME",
+   "sources": [
+    "SRC-1384",
+    "SRC-1380"
+   ],
+   "caps": [
+    "CAP-L3-MIN-01"
+   ],
+   "rfi": "OPS-RFI-06"
+  },
+  {
+   "id": "IF-04",
+   "type": "System-to-system",
+   "from": "FMS mesh network, repeaters and repeater trailers",
+   "to": "Contractor temporary site network",
+   "direction": "Bidirectional",
+   "data": "Connectivity for FMS, administration, reporting, remote support and survey",
+   "protocol": "Not stated (mesh network named; no standard given)",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-0789",
+    "SRC-0499"
+   ],
+   "caps": [
+    "CAP-L3-MIN-01",
+    "CAP-X-CRS-01"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-05",
+   "type": "Party-to-party",
+   "from": "Company (mine planning)",
+   "to": "Contractor (mine planning and dispatch)",
+   "direction": "Company to Contractor",
+   "data": "Life of Mine plan; Three Month Production Plan issued monthly (production requirements); mine design changes",
+   "protocol": "Not stated (document exchange)",
+   "responsible": "Company (Owner, Rio Tinto)",
+   "sources": [
+    "SRC-0670",
+    "SRC-0683",
+    "SRC-0686"
+   ],
+   "caps": [
+    "CAP-L4-MIN-01",
+    "CAP-L3-MIN-02"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-06",
+   "type": "Party-to-party",
+   "from": "Contractor",
+   "to": "Company",
+   "direction": "Contractor to Company",
+   "data": "Daily Production Plan (before each shift); Fortnightly Production Plan (two days before each fortnight, for approval); Company may amend",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-0687",
+    "SRC-0688"
+   ],
+   "caps": [
+    "CAP-L3-MIN-02"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-07",
+   "type": "Party-to-party",
+   "from": "Contractor survey (GNSS and field systems)",
+   "to": "Company (check surveys, progress payment)",
+   "direction": "Contractor to Company",
+   "data": "Quantity and stockpile surveys, progress-payment survey data, as-built survey",
+   "protocol": "Datum MGA GDA94 Zone 51 and AHD (SRC-0411); data format not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-0414",
+    "SRC-0411"
+   ],
+   "caps": [
+    "CAP-L3-MIN-09"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-08",
+   "type": "Party-to-party",
+   "from": "Geotechnical monitoring (Contractor installed and collected)",
+   "to": "Company-appointed Site Geotechnical Engineer",
+   "direction": "Contractor to Company",
+   "data": "Monitoring, survey and production data for daily, weekly and monthly geotechnical assessment",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-0421"
+   ],
+   "caps": [
+    "CAP-L1-MIN-02"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-09",
+   "type": "Party-to-party",
+   "from": "Contractor blast records",
+   "to": "Company (statutory and project records)",
+   "direction": "Contractor to Company",
+   "data": "Blast plans, drill logs, charging records, explosive reconciliations, statutory records",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-0697"
+   ],
+   "caps": [
+    "CAP-L3-MIN-06"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-10",
+   "type": "System-to-system",
+   "from": "NPI field instrumentation (pump stations, water transfer, fire system signals)",
+   "to": "Central control system",
+   "direction": "Field to control (telemetry)",
+   "data": "Instrument signals, fire system signals and telemetry at the electrical battery limit",
+   "protocol": "Field level: smart HART transmitters, 4-20 mA, digital communications preferred (SRC-1234); telemetry link not stated",
+   "responsible": "Unassigned",
+   "sources": [
+    "SRC-1295",
+    "SRC-1234"
+   ],
+   "caps": [
+    "CAP-L2-MIN-01",
+    "CAP-L2-MIN-02"
+   ],
+   "rfi": "OPS-RFI-02"
+  },
+  {
+   "id": "IF-11",
+   "type": "System-to-system",
+   "from": "Contractor-installed E&I outside the IPP and Process Plant boundaries",
+   "to": "Control room in the MSA",
+   "direction": "Field to control",
+   "data": "Integration back to the MSA control room (content not stated)",
+   "protocol": "Not stated",
+   "responsible": "Unassigned",
+   "sources": [
+    "SRC-1235"
+   ],
+   "caps": [
+    "CAP-L2-MIN-02"
+   ],
+   "rfi": "OPS-RFI-02"
+  },
+  {
+   "id": "IF-12",
+   "type": "System-to-system",
+   "from": "Process Plant EI&C systems (MPP EPC Contractor)",
+   "to": "Contractor NPI E&I",
+   "direction": "Bidirectional",
+   "data": "Tie-ins at the Process Plant boundary (content not stated)",
+   "protocol": "Not stated",
+   "responsible": "Shared - tie-ins included in Contractor scope; MPP EPC Contractor owns plant systems",
+   "sources": [
+    "SRC-1235",
+    "SRC-1599"
+   ],
+   "caps": [
+    "CAP-L2-PRO-01",
+    "CAP-L2-MIN-02"
+   ],
+   "rfi": "RFI-011"
+  },
+  {
+   "id": "IF-13",
+   "type": "Party-to-party",
+   "from": "Backbone fibre provider (others)",
+   "to": "Contractor (FOBOT, NPI fibre ring, network cabinet, patching)",
+   "direction": "Others to Contractor, at the FOBOT",
+   "data": "Backbone and network fibre distribution provided up to the FOBOT",
+   "protocol": "Not stated",
+   "responsible": "Third party - not named",
+   "sources": [
+    "SRC-1301",
+    "SRC-1302"
+   ],
+   "caps": [
+    "CAP-X-CRS-08",
+    "CAP-X-CRS-03"
+   ],
+   "rfi": "OPS-RFI-04"
+  },
+  {
+   "id": "IF-14",
+   "type": "Party-to-party",
+   "from": "Contractor",
+   "to": "DHHI (acronym not defined in the ITT)",
+   "direction": "Joint planning",
+   "data": "Fibre and communications infrastructure crossing the Process Plant battery limit",
+   "protocol": "Not stated",
+   "responsible": "Shared - jointly planned",
+   "sources": [
+    "SRC-1313"
+   ],
+   "caps": [
+    "CAP-X-CRS-13"
+   ],
+   "rfi": "OPS-RFI-15"
+  },
+  {
+   "id": "IF-15",
+   "type": "System-to-system",
+   "from": "MSA communications systems (designed by others)",
+   "to": "Site-wide LAN and WAN",
+   "direction": "Integration",
+   "data": "Contractor installs and mounts loose ICT hardware and tests structured cabling; design and integration by others",
+   "protocol": "Company IS&T requirements (document not in the pack)",
+   "responsible": "Shared - design by others, install and test by Contractor",
+   "sources": [
+    "SRC-1225",
+    "SRC-1224",
+    "SRC-1213"
+   ],
+   "caps": [
+    "CAP-X-CRS-07"
+   ],
+   "rfi": "OPS-RFI-05"
+  },
+  {
+   "id": "IF-16",
+   "type": "System-to-system",
+   "from": "Contractor systems",
+   "to": "Company networks and systems",
+   "direction": "Compliance",
+   "data": "Compliance with the Company's applicable IT and cyber security requirements (content not stated)",
+   "protocol": "Company IT and cyber security requirements (document not in the pack)",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-0499"
+   ],
+   "caps": [
+    "CAP-X-CRS-09"
+   ],
+   "rfi": "OPS-RFI-12"
+  },
+  {
+   "id": "IF-17",
+   "type": "System-to-system",
+   "from": "Contractor temporary radio solution",
+   "to": "Company permanent TETRA radio network",
+   "direction": "Transition",
+   "data": "Support transition onto the Company permanent network when available; radio licences and frequencies",
+   "protocol": "TETRA (Company permanent network; not to be assumed available for pricing)",
+   "responsible": "Shared - Contractor supports, Company provides permanent network",
+   "sources": [
+    "SRC-0494",
+    "SRC-0498"
+   ],
+   "caps": [
+    "CAP-X-CRS-02"
+   ],
+   "rfi": "OPS-RFI-13"
+  },
+  {
+   "id": "IF-18",
+   "type": "Party-to-party",
+   "from": "Company",
+   "to": "Contractor",
+   "direction": "Company to Contractor",
+   "data": "Radios installed in Company Supplied Equipment per the equipment responsibility matrix, then maintained by the Contractor",
+   "protocol": "Not stated",
+   "responsible": "Company (Owner, Rio Tinto)",
+   "sources": [
+    "SRC-0496",
+    "SRC-0497"
+   ],
+   "caps": [
+    "CAP-X-CRS-02"
+   ],
+   "rfi": "OPS-RFI-13"
+  },
+  {
+   "id": "IF-19",
+   "type": "Party-to-party",
+   "from": "Company (antennas, panels, radio equipment; carrier equipment)",
+   "to": "Contractor (installation, feeders, trays)",
+   "direction": "Company to Contractor",
+   "data": "Company-supplied tower equipment installed by the Contractor; some models Tbc; carrier (Telstra) panels on mine towers",
+   "protocol": "Private LTE, microwave backhaul, DGPS (tower equipment lists; models partly Tbc)",
+   "responsible": "Company (Owner, Rio Tinto) supplies; Contractor (MinRes) installs",
+   "sources": [
+    "SRC-1249",
+    "SRC-1274"
+   ],
+   "caps": [
+    "CAP-X-CRS-05",
+    "CAP-X-CRS-03"
+   ],
+   "rfi": "OPS-RFI-14"
+  },
+  {
+   "id": "IF-20",
+   "type": "Party-to-party",
+   "from": "Company (data centre modules and support steelwork)",
+   "to": "Contractor (receipt, preservation, installation)",
+   "direction": "Company to Contractor",
+   "data": "Data centres DC1 and DC2 delivered; DC1 supports a backup control room function",
+   "protocol": "Not stated (OEM installation manual)",
+   "responsible": "Shared - Company supplies, Contractor installs",
+   "sources": [
+    "SRC-1241",
+    "SRC-1246"
+   ],
+   "caps": [
+    "CAP-X-CRS-04"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-21",
+   "type": "System-to-system",
+   "from": "Contractor invoicing",
+   "to": "Company SAP (purchase order)",
+   "direction": "Contractor to Company",
+   "data": "Invoices quoting the SAP purchase order number, sent to the Company invoice address",
+   "protocol": "Email to the Company invoice address; SAP PO number on all invoices (SRC-2114, SRC-2126)",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-2114",
+    "SRC-2126"
+   ],
+   "caps": [
+    "CAP-L4-CRS-01"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-22",
+   "type": "System-to-system",
+   "from": "Contractor CPM network (Primavera P6 v8 or later)",
+   "to": "Company integrated schedule",
+   "direction": "Contractor to Company",
+   "data": "Monthly CPM network, detailed enough for Company to integrate design, equipment deliveries and area access",
+   "protocol": "Native .XER and .pdf, monthly (SRC-2053)",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-2053",
+    "SRC-2055"
+   ],
+   "caps": [
+    "CAP-L4-CRS-02"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-23",
+   "type": "Party-to-party",
+   "from": "Contractor Schedule of Values and invoicing",
+   "to": "Company project cost control system",
+   "direction": "Contractor to Company",
+   "data": "Pricing and invoicing follow the Company Representative's Schedule of Values, used to populate the cost control system",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-2080"
+   ],
+   "caps": [
+    "CAP-L4-CRS-02"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-24",
+   "type": "System-to-system",
+   "from": "Contractor materials control system",
+   "to": "Company Representative",
+   "direction": "Contractor to Company",
+   "data": "Inventory discrepancy reports; pre-Completion reconciliation of materials, equipment and spares",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-1362",
+    "SRC-1368"
+   ],
+   "caps": [
+    "CAP-L3-LOG-01"
+   ],
+   "rfi": "OPS-RFI-10"
+  },
+  {
+   "id": "IF-25",
+   "type": "Party-to-party",
+   "from": "Contractor and carriers",
+   "to": "Company Representative",
+   "direction": "Contractor to Company",
+   "data": "Cargo tracking; damage, loss and shortage reported within 48 hours",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-1346",
+    "SRC-1352"
+   ],
+   "caps": [
+    "CAP-L3-LOG-02"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-26",
+   "type": "Party-to-party",
+   "from": "Contractor fuel monitoring",
+   "to": "Company",
+   "direction": "Contractor to Company",
+   "data": "Regular fuel usage reports; Company supplies diesel",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-0465",
+    "SRC-1582"
+   ],
+   "caps": [
+    "CAP-L3-LOG-04"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-27",
+   "type": "Party-to-party",
+   "from": "Main Site Access Gate and boom gates (Company-operated)",
+   "to": "Contractor-controlled access points",
+   "direction": "Bidirectional",
+   "data": "Site access control; Company operates and maintains the main gate",
+   "protocol": "Not stated",
+   "responsible": "Company (Owner, Rio Tinto)",
+   "sources": [
+    "SRC-1452",
+    "SRC-1453"
+   ],
+   "caps": [
+    "CAP-L1-LOG-02"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-28",
+   "type": "System-to-system",
+   "from": "Fire detection and alarm panels installed by the Contractor",
+   "to": "Site-wide fire protection and detection system (master panel)",
+   "direction": "Configuration interface",
+   "data": "Interface to configure the site-wide fire detection system, including the master fire indicator panel",
+   "protocol": "Not stated",
+   "responsible": "Shared - Contractor interfaces, Company system",
+   "sources": [
+    "SRC-1239",
+    "SRC-1303"
+   ],
+   "caps": [
+    "CAP-L2-CRS-03"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-29",
+   "type": "Party-to-party",
+   "from": "Offshore EPF Contractor (design authority for NPI)",
+   "to": "Contractor",
+   "direction": "Offshore EPF Contractor to Contractor",
+   "data": "Design and construction information, installation methodologies, commissioning methodologies for permanent works",
+   "protocol": "Not stated",
+   "responsible": "Offshore EPF Contractor",
+   "sources": [
+    "SRC-1306",
+    "SRC-1565"
+   ],
+   "caps": [
+    "CAP-X-CRS-13",
+    "CAP-X-CRS-14"
+   ],
+   "rfi": ""
+  },
+  {
+   "id": "IF-30",
+   "type": "Party-to-party",
+   "from": "Contractor field laboratory and testing",
+   "to": "Company",
+   "direction": "Contractor to Company",
+   "data": "Test results; instrument calibration reports in the manufacturing data record",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes)",
+   "sources": [
+    "SRC-0947",
+    "SRC-2016"
+   ],
+   "caps": [
+    "CAP-L3-CRS-02"
+   ],
+   "rfi": "OPS-RFI-16"
+  },
+  {
+   "id": "IF-31",
+   "type": "Party-to-party",
+   "from": "Contractor (maintenance records, asset-health data)",
+   "to": "Company asset registration",
+   "direction": "Contractor to Company",
+   "data": "Maintenance histories, inspection records, FMS and asset-health data, configuration records at handback; Company retains asset registration",
+   "protocol": "Not stated",
+   "responsible": "Contractor (MinRes) provides; Company registers",
+   "sources": [
+    "SRC-1390",
+    "SRC-1422"
+   ],
+   "caps": [
+    "CAP-L3-MIN-10",
+    "CAP-L3-CRS-01"
+   ],
+   "rfi": "OPS-RFI-09"
+  },
+  {
+   "id": "IF-32",
+   "type": "System-to-system",
+   "from": "Weighbridge (Mine Access Road)",
+   "to": "Not stated",
+   "direction": "Not stated",
+   "data": "Weight data consumer, dockets and calibration regime not stated",
+   "protocol": "Not stated",
+   "responsible": "Unassigned",
+   "sources": [
+    "SRC-1129"
+   ],
+   "caps": [
+    "CAP-L1-LOG-01"
+   ],
+   "rfi": "OPS-RFI-11"
+  }
+ ],
+ "rfis": [
+  {
+   "id": "OPS-RFI-01",
+   "category": "Missing information",
+   "text": "Provide the Company systems architecture (ISA-95 level model if used, control system, FMS, historian, LIMS, CMMS, network block diagram) and the IS&T requirements document referred to in the E&I scope.",
+   "source": "SRC-1213",
+   "owner": "Commercial Manager",
+   "priority": "High",
+   "status": "Open",
+   "impact": "Without it every Level 2 and Level 3 boundary is an assumption; Owner architecture is 'Not stated'."
+  },
+  {
+   "id": "OPS-RFI-02",
+   "category": "Ambiguity",
+   "text": "Who supplies, designs, programs and commissions the central control system and the MSA control room, and what does 'integration back to the control room' require of the Contractor (signals, protocol, testing)?",
+   "source": "SRC-1235",
+   "owner": "M&E Estimator",
+   "priority": "High",
+   "status": "Open",
+   "impact": "Decides whether CAP-L2-MIN-02 is install-only or includes PLC/RTU programming and SCADA integration."
+  },
+  {
+   "id": "OPS-RFI-03",
+   "category": "Missing document",
+   "text": "Issue the project instrumentation list, I/O list, cable schedule, equipment list and any tagging convention referred to in the E&I scope.",
+   "source": "SRC-1282",
+   "owner": "M&E Estimator",
+   "priority": "High",
+   "status": "Open",
+   "impact": "Instrument and I/O counts cannot be estimated; loop-check effort is open-ended."
+  },
+  {
+   "id": "OPS-RFI-04",
+   "category": "Input conflict",
+   "text": "Section 18 excludes backbone fibre, CCTV and access control systems, but the Explosives Facility and NPI interface text require installation of cameras, access control points and NVR connection. Which applies? (Extends RFI-011.)",
+   "source": "SRC-1600",
+   "owner": "Commercial Manager",
+   "priority": "High",
+   "status": "Open",
+   "impact": "Unpriced installation or double count at the CCTV, access control and fibre boundary."
+  },
+  {
+   "id": "OPS-RFI-05",
+   "category": "Input conflict",
+   "text": "MSA communications are 'designed by others', yet the Contractor installs ICT hardware and tests structured cabling. Confirm the Contractor installation and testing scope, and whether WIN-1400-12 should remain Excluded.",
+   "source": "SRC-1225",
+   "owner": "Commercial Manager",
+   "priority": "Medium",
+   "status": "Open",
+   "impact": "WIN-1400-12 may hide a priced installation scope."
+  },
+  {
+   "id": "OPS-RFI-06",
+   "category": "Missing information",
+   "text": "FMS: state the pre-strip duration, fleet list and unit count, who supplies on-board units for free-issued HME, required coverage area, supervision and dispatch staffing basis, and licence term for the Wenco allowance.",
+   "source": "SRC-0788",
+   "owner": "Mining Estimator",
+   "priority": "High",
+   "status": "Open",
+   "impact": "FMS vendor quote and operating resource cannot be sized."
+  },
+  {
+   "id": "OPS-RFI-07",
+   "category": "Missing information",
+   "text": "Specify the agreed electronic format, frequency and target Company reporting system for FMS production and movement data exports.",
+   "source": "SRC-0792",
+   "owner": "Mining Estimator",
+   "priority": "Medium",
+   "status": "Open",
+   "impact": "Export build effort; risk of later live-interface direction."
+  },
+  {
+   "id": "OPS-RFI-08",
+   "category": "Clarification",
+   "text": "Who is responsible for grade control sampling, ore and waste classification and block-model updates during pre-strip, and what inventory or reconciliation system applies to stockpiles?",
+   "source": "SRC-0705",
+   "owner": "Mining Estimator",
+   "priority": "Medium",
+   "status": "Open",
+   "impact": "CAP-L3-MIN-07 stays Clarify; potential unpriced sampling and assay effort."
+  },
+  {
+   "id": "OPS-RFI-09",
+   "category": "Clarification",
+   "text": "Is a maintenance management system (CMMS) required for the free-issued HME and construction fleet, and in what format must asset-health and maintenance data be handed to the Company asset register?",
+   "source": "SRC-1390",
+   "owner": "Indirects and Planning Estimator",
+   "priority": "Medium",
+   "status": "Open",
+   "impact": "Maintenance system licence and data capture effort."
+  },
+  {
+   "id": "OPS-RFI-10",
+   "category": "Clarification",
+   "text": "Is the Contractor free to select its materials control and inventory system, and in what format must inventory reconciliation data be given to the Company Representative?",
+   "source": "SRC-1361",
+   "owner": "Procurement Lead",
+   "priority": "Medium",
+   "status": "Open",
+   "impact": "Software licence and storekeeping effort."
+  },
+  {
+   "id": "OPS-RFI-11",
+   "category": "Missing information",
+   "text": "Weighbridge on the Mine Access Road: who supplies and operates it, what capacity and calibration regime applies, and which system consumes the weight data?",
+   "source": "SRC-1129",
+   "owner": "M&E Estimator",
+   "priority": "Medium",
+   "status": "Open",
+   "impact": "Supply and system integration cannot be priced."
+  },
+  {
+   "id": "OPS-RFI-12",
+   "category": "Missing document",
+   "text": "Provide the Company's applicable IT and cyber security requirements for Contractor systems that interface with Company networks, and confirm whether OT (operational technology) segmentation is required.",
+   "source": "SRC-0499",
+   "owner": "M&E Estimator",
+   "priority": "High",
+   "status": "Open",
+   "impact": "Open-ended compliance effort on temporary IT, FMS and any integration."
+  },
+  {
+   "id": "OPS-RFI-13",
+   "category": "Missing document",
+   "text": "Provide the equipment responsibility matrix for radios, the radio licence and frequency position, and the expected date the Company permanent TETRA network becomes available.",
+   "source": "SRC-0497",
+   "owner": "M&E Estimator",
+   "priority": "Medium",
+   "status": "Open",
+   "impact": "Radio quantities and the duration of the temporary radio solution."
+  },
+  {
+   "id": "OPS-RFI-14",
+   "category": "Missing information",
+   "text": "Confirm final models for tower equipment shown as Tbc and who installs the carrier (Telstra) equipment on the mine towers.",
+   "source": "SRC-1274",
+   "owner": "M&E Estimator",
+   "priority": "Medium",
+   "status": "Open",
+   "impact": "Tower installation quantities and boundary with the carrier."
+  },
+  {
+   "id": "OPS-RFI-15",
+   "category": "Ambiguity",
+   "text": "'DHHI' appears in the telecoms battery-limit text but is not defined. Identify the party and its role.",
+   "source": "SRC-1313",
+   "owner": "Commercial Manager",
+   "priority": "Low",
+   "status": "Open",
+   "impact": "Counterparty for joint planning of fibre crossing the Process Plant boundary."
+  },
+  {
+   "id": "OPS-RFI-16",
+   "category": "Clarification",
+   "text": "Is a laboratory information system or results interface required for the Contractor's field laboratory, and will the permanent MSA laboratory need data points or services beyond the building?",
+   "source": "SRC-0423",
+   "owner": "Indirects and Planning Estimator",
+   "priority": "Low",
+   "status": "Open",
+   "impact": "Field laboratory set-up and MSA laboratory services boundary."
+  }
+ ],
+ "assumptions": [
+  {
+   "id": "OPS-A-01",
+   "text": "ISA-95 (ANSI/ISA-95, IEC 62264) is used only as a classification framework. The ITT does not mention ISA-95 and does not require compliance with it.",
+   "source": "Not stated",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-02",
+   "text": "'Not in ITT' means the term or requirement was not found in the extracted ITT page text (638 pages). Scanned images, drawings and figures were not interpreted (limitation inherited from the FLOC workbook).",
+   "source": "Not stated",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-03",
+   "text": "The FMS is treated as a Contractor system for the pre-strip duration only; the Company's permanent operational FMS is outside the Contract unless directed (SRC-0793).",
+   "source": "SRC-0793",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-04",
+   "text": "Site-wide infrastructure (communications, data centres, towers, temporary IT) is assigned a primary domain of Mining because the pre-strip FMS is its principal user. Other domains are listed.",
+   "source": "Not stated",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-05",
+   "text": "Scope positions are for estimation scoping and are 'Proposed - to confirm', consistent with the input workbook. They are not legal interpretation of the contract.",
+   "source": "Not stated",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-06",
+   "text": "Capability links to FLOCs follow the input workbook's FLOC-to-EWP mapping unchanged. EWPs added by judgement are flagged in the map.",
+   "source": "Not stated",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-07",
+   "text": "The tender closing date (07/10/2026 4:00pm AWST) and the RFI cut-off (04/10/2026) have passed (BID-RFI-03). The OPS RFIs may need to be handled as tender qualifications or stated assumptions unless an extension is confirmed.",
+   "source": "SRC-0004",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-08",
+   "text": "No amounts, quantities or rates are used. Named products (Wenco FMS, Nokia and Cambium tower equipment, TETRA, Telstra) appear only where the ITT names them.",
+   "source": "Not stated",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-09",
+   "text": "ISA-95 Level 0 is the physical process (drilling, blasting, haulage, stockpiling). No systems capability is recorded at Level 0.",
+   "source": "Not stated",
+   "basis": "Assumption"
+  },
+  {
+   "id": "OPS-A-10",
+   "text": "The pre-strip duration and FMS operating period are not stated in the FMS clause; Contract milestones run from 11/10/2028 to 15/01/2029 and Completion is 30/11/2029 (Bid_Programme), but their relation to pre-strip is not confirmed.",
+   "source": "SRC-0788",
+   "basis": "Assumption"
+  }
+ ],
+ "proposed_ewps": [
+  {
+   "id": "PROP-01",
+   "type": "New",
+   "ewp": "EWP-MIN-02",
+   "title": "Fleet management system and material tracking",
+   "scope": "FMS supply, install, commission and operation; dispatch resources; material tracking; production data export; GPS units.",
+   "derived": "EWP-ICT-01; EWP-MIN-01",
+   "owner": "Mining Estimator",
+   "rationale": "FMS is bundled with data centres in EWP-ICT-01 and is an operating cost, not an installation cost. Needs a vendor quote and a mining estimator."
+  },
+  {
+   "id": "PROP-02",
+   "type": "New",
+   "ewp": "EWP-ICT-02",
+   "title": "Temporary communications, IT, radio and GNSS",
+   "scope": "Temporary telephone, mobile, radio, internet and IT infrastructure; radio licences; GNSS base stations; cyber compliance.",
+   "derived": "EWP-IND-03",
+   "owner": "M&E Estimator",
+   "rationale": "Currently an allowance inside EWP-IND-03 with laydown and water; needs a communications specialist."
+  },
+  {
+   "id": "PROP-03",
+   "type": "Amend",
+   "ewp": "EWP-ICT-01",
+   "title": "Data centres and site-wide communications installation",
+   "scope": "Remove FMS (to PROP-01). Add site-wide fibre, towers equipment, private LTE and VMR hardware, MSA ICT hardware and structured cabling.",
+   "derived": "EWP-ICT-01; EWP-STR-03; EWP-STR-02",
+   "owner": "M&E Estimator",
+   "rationale": "Title and scope under-describe the communications system installation in the E&I scope."
+  },
+  {
+   "id": "PROP-04",
+   "type": "New",
+   "ewp": "EWP-ELE-02",
+   "title": "Instrumentation, controls, telemetry and fire detection interfaces",
+   "scope": "Field instruments, NPI controls, telemetry and integration to the MSA control room, fire panels, CCTV and access control devices.",
+   "derived": "EWP-ELE-01",
+   "owner": "M&E Estimator",
+   "rationale": "Systems content is not separable inside EWP-ELE-01 (power, lighting, Village LV)."
+  },
+  {
+   "id": "PROP-05",
+   "type": "Amend",
+   "ewp": "EWP-IND-05",
+   "title": "Transport, logistics, Company Supplied Items and materials control",
+   "scope": "Add materials control system, inventory register, cargo tracking.",
+   "derived": "EWP-IND-05",
+   "owner": "Procurement Lead",
+   "rationale": "Allowance does not mention systems."
+  },
+  {
+   "id": "PROP-06",
+   "type": "Amend",
+   "ewp": "EWP-IND-03",
+   "title": "Temporary works, laydown, water and fuel monitoring",
+   "scope": "Add fuel monitoring (FOBs, meters, software). Temporary communications moves to PROP-02.",
+   "derived": "EWP-IND-03",
+   "owner": "Indirects and Planning Estimator",
+   "rationale": "Fuel monitoring is a stated requirement with no estimating home."
+  },
+  {
+   "id": "PROP-07",
+   "type": "Amend",
+   "ewp": "EWP-IND-01",
+   "title": "Project management, engineering, survey, QA/QC, field laboratory",
+   "scope": "Add field laboratory operation, survey data systems, geotechnical monitoring data and planning deliverables (P6, Schedule of Values).",
+   "derived": "EWP-IND-01",
+   "owner": "Indirects and Planning Estimator",
+   "rationale": "Laboratory and monitoring data are not described in the EWP."
+  },
+  {
+   "id": "PROP-08",
+   "type": "Amend",
+   "ewp": "EWP-MIN-01",
+   "title": "Mine pre-strip with production reporting and blast records",
+   "scope": "Add blast monitoring and records, ore and waste classification (subject to RFI), production data export.",
+   "derived": "EWP-MIN-01",
+   "owner": "Mining Estimator",
+   "rationale": "Systems records are implicit in mining rates."
+  },
+  {
+   "id": "PROP-09",
+   "type": "Amend",
+   "ewp": "EWP-IND-04",
+   "title": "Plant and equipment fleet with maintenance records",
+   "scope": "Add maintenance records, asset-health data and any maintenance management system.",
+   "derived": "EWP-IND-04",
+   "owner": "Indirects and Planning Estimator",
+   "rationale": "Maintenance data requirement is in the fleet clauses."
+  },
+  {
+   "id": "PROP-10",
+   "type": "Amend",
+   "ewp": "EWP-MEC-01",
+   "title": "Facility mechanical with weighbridge weighing system",
+   "scope": "Add weighing system supply and integration, subject to supply clarification.",
+   "derived": "EWP-MEC-01",
+   "owner": "M&E Estimator",
+   "rationale": "Weighbridge sits in a mechanical bundle with no system content."
+  },
+  {
+   "id": "PROP-11",
+   "type": "Amend",
+   "ewp": "EWP-IND-06",
+   "title": "Site management, interface and SIMOPS with systems interfaces",
+   "scope": "Add systems interface management for telecoms, fibre, control and power battery limits.",
+   "derived": "EWP-IND-06",
+   "owner": "Indirects and Planning Estimator",
+   "rationale": "Interface management allowance should recognise systems interfaces."
+  },
+  {
+   "id": "PROP-12",
+   "type": "Amend",
+   "ewp": "EWP-IND-07",
+   "title": "Pre-commissioning with E&I and communications testing",
+   "scope": "Add loop checks, instrument calibration, point-to-point and fibre testing notes.",
+   "derived": "EWP-IND-07",
+   "owner": "Indirects and Planning Estimator",
+   "rationale": "Scope note only; duration remains open (RFI-018)."
+  }
+ ],
+ "framework": {
+  "levels": [
+   [
+    "Level 0",
+    "Physical process",
+    "The production process itself: drilling, blasting, loading, hauling, dumping, stockpiling, dewatering, waste handling.",
+    "Equipment and material (no systems).",
+    "Pre-strip mining and construction works in WIN-2100 and WIN-1700 are the physical process.",
+    "Standard"
+   ],
+   [
+    "Level 1",
+    "Sensing and actuation",
+    "Sensors, analysers, meters and actuators that sense or manipulate the process.",
+    "Instruments, flowmeters, weighing devices, GPS units, cameras.",
+    "Instrument installation (SRC-1169, SRC-1281), GPS (SRC-0717), weighbridge (SRC-1129).",
+    "Standard"
+   ],
+   [
+    "Level 2",
+    "Supervisory control",
+    "Monitoring and supervisory control: PLC (programmable logic controller), DCS (distributed control system), SCADA (supervisory control and data acquisition), HMI (human-machine interface), alarms.",
+    "PLC, RTU, SCADA, HMI, fire alarm panels.",
+    "Plant control excluded (SRC-1599). NPI controls and telemetry stated (SRC-1295); platform not stated.",
+    "Standard"
+   ],
+   [
+    "Level 3",
+    "Manufacturing operations management (MOM)",
+    "Operations management: dispatch, scheduling, tracking, quality, maintenance and inventory activity models. Called MES (manufacturing execution system) in manufacturing.",
+    "FMS, dispatch, material tracking, LIMS (laboratory information management system), CMMS (computerised maintenance management system), historian.",
+    "FMS stated (SRC-0788). LIMS, CMMS, historian not stated.",
+    "Adaptation"
+   ],
+   [
+    "Level 4",
+    "Business planning and logistics",
+    "Enterprise planning: ERP (enterprise resource planning), planning, finance, procurement, corporate reporting.",
+    "SAP, mine planning, corporate reporting.",
+    "SAP PO on invoices (SRC-2114); LOM and Three Month Plan by Company (SRC-0683).",
+    "Standard"
+   ],
+   [
+    "Cross-cutting",
+    "Cross-cutting capabilities",
+    "Industrial network, cybersecurity, communications, time synchronisation, master data, integration and interface management. Not an ISA-95 level; used here to classify enabling capability.",
+    "LAN/WAN, fibre, private LTE, radio, data centres.",
+    "Communications stated (SRC-1236); cyber compliance sentence (SRC-0499).",
+    "Adaptation"
+   ]
+  ],
+  "activities": [
+   [
+    "Production operations",
+    "Directs the use of resources to produce product.",
+    "Detailed scheduling; dispatching; execution management; resource management; definition management; data collection; tracking; analysis",
+    "Mine scheduling, dispatch and fleet management (FMS); survey and production data collection.",
+    "Adaptation"
+   ],
+   [
+    "Maintenance operations",
+    "Coordinates activities that keep equipment and assets available.",
+    "Same generic set",
+    "Fleet maintenance execution, equipment records and asset handover data.",
+    "Standard"
+   ],
+   [
+    "Quality operations",
+    "Manages quality testing and analysis of product and process.",
+    "Same generic set",
+    "Blast performance and records; ore and waste classification (grade control); construction materials laboratory testing.",
+    "Adaptation"
+   ],
+   [
+    "Inventory operations",
+    "Manages material and energy storage and movement.",
+    "Same generic set",
+    "Material tracking pit to destination; stockpile inventory; fuel; spares and materials control; cargo and waste tracking.",
+    "Adaptation"
+   ]
+  ],
+  "flows": [
+   [
+    "Level 4 to Level 3",
+    "Production schedule",
+    "Requests for production, orders and plans.",
+    "Life of Mine plan and monthly Three Month Production Plan from Company (SRC-0683); Contractor issues daily and fortnightly plans back for approval.",
+    "Stated",
+    "SRC-0683",
+    "IF-05; IF-06"
+   ],
+   [
+    "Level 3 to Level 4",
+    "Production performance",
+    "Actual production, resource use and results.",
+    "Regular structured FMS data exports to Company reporting; no live interface required for pricing (SRC-0792).",
+    "Stated",
+    "SRC-0792",
+    "IF-01"
+   ],
+   [
+    "Level 3 to Level 4",
+    "Production capability",
+    "Available resources and capacity.",
+    "Fleet availability and utilisation reporting not stated beyond FMS status.",
+    "Not stated",
+    "",
+    "OPS-RFI-06"
+   ],
+   [
+    "Level 4 to Level 3",
+    "Product and process definition",
+    "Definitions, material classes, specifications.",
+    "Material classification and destination information maintained in FMS (clause 6.2.16); source of definitions not stated.",
+    "Partly stated",
+    "SRC-0788",
+    "IF-05"
+   ],
+   [
+    "Level 2 to Level 3",
+    "Process data and events",
+    "Telemetry, status, alarms, production counts.",
+    "Telemetry to central control system (SRC-1295); FMS equipment status. Link protocol not stated.",
+    "Partly stated",
+    "SRC-1295",
+    "IF-10"
+   ],
+   [
+    "Level 3 to Level 2",
+    "Setpoints, schedules, commands",
+    "Orders and setpoints to control.",
+    "Not stated.",
+    "Not stated",
+    "",
+    "OPS-RFI-01"
+   ]
+  ],
+  "adaptations": [
+   [
+    "AD-01",
+    "Fleet management and dispatch",
+    "Placed under Level 3 production operations (dispatching, tracking, data collection)",
+    "ISA-95 has no fleet or truck dispatch object; mining FMS performs the dispatch and tracking functions."
+   ],
+   [
+    "AD-02",
+    "Blast performance and grade control",
+    "Placed under Level 3 quality operations",
+    "Blast outcomes and ore classification act as quality control of the product and process."
+   ],
+   [
+    "AD-03",
+    "Bulk material and stockpile tracking",
+    "Placed under Level 3 inventory operations",
+    "Material movement from pit to dump and stockpile quantities map to inventory movement and storage."
+   ],
+   [
+    "AD-04",
+    "Construction materials testing",
+    "Placed under Level 3 quality operations",
+    "Field laboratory testing for civil quality has no production counterpart in the ISA-95 model; nearest fit is quality operations."
+   ],
+   [
+    "AD-05",
+    "Fuel and waste tracking",
+    "Placed under Level 3 inventory operations",
+    "Fuel and waste are tracked as consumables and by-products."
+   ],
+   [
+    "AD-06",
+    "Cross-cutting capabilities",
+    "Added a Cross-cutting class outside Levels 0 to 4",
+    "Communications, cyber, time, master data and interface management support all levels and are not ISA-95 levels."
+   ],
+   [
+    "AD-07",
+    "Four domains",
+    "Domains Mining, Processing, Waste Handling and Logistics added as a second dimension",
+    "ISA-95 is domain neutral; domains are the user's classification."
+   ]
+  ],
+  "arch_not_stated": [
+   [
+    "Owner systems architecture or level model",
+    "Not stated",
+    "OPS-RFI-01"
+   ],
+   [
+    "Central control system and MSA control room platform",
+    "Not stated",
+    "OPS-RFI-02"
+   ],
+   [
+    "Historian, LIMS, CMMS platforms",
+    "Not stated",
+    "OPS-RFI-01"
+   ],
+   [
+    "Industrial network and OT security architecture",
+    "Not stated",
+    "OPS-RFI-12"
+   ],
+   [
+    "Data model and tagging convention",
+    "Not stated",
+    "OPS-RFI-03"
+   ],
+   [
+    "Company permanent FMS and its timing",
+    "Not stated",
+    "OPS-RFI-06"
+   ]
+  ]
+ }
+}

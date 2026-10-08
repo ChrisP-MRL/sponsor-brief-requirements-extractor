@@ -1,0 +1,226 @@
+{
+  "_note": "Edit this file, then re-run scripts/build_ewp_workbook.py. Delivery defaults, EWP groupings, owners, reviewers, decision overrides and new RFIs are all driven from here.",
+  "project": "Winu",
+  "tender_role": "MinRes is the Australian Contractor bidding to the Owner (Rio Tinto) under the EPC ITT pack. The ITT calls the Owner 'Company'.",
+  "version": "0.1 (draft for review)",
+  "estimate_class": "Class 5 (Assumption: no drawings, MTO or priced schedule in the ITT pack)",
+  "delivery_basis": "Proposed - to confirm",
+
+  "delivery_by_discipline": {
+    "CIV": "Self-perform",
+    "MIN": "Self-perform",
+    "CON": "Self-perform",
+    "STR": "Subcontract",
+    "MEC": "Subcontract",
+    "PIP": "Subcontract",
+    "ELE": "Subcontract",
+    "ICT": "Subcontract",
+    "IND": "Self-perform",
+    "COM": "Self-perform"
+  },
+
+  "delivery_by_ewp": {"EWP-CIV-05": "Subcontract"},
+
+  "discipline_names": {
+    "CIV": "Civil and earthworks", "MIN": "Mining", "CON": "Concrete",
+    "STR": "Structural and buildings", "MEC": "Mechanical", "PIP": "Piping and buried utilities",
+    "ELE": "Electrical and instrumentation", "ICT": "Communications and IT",
+    "IND": "Indirects and shared costs", "COM": "Commercial"
+  },
+
+  "decision_rules": {
+    "In scope": "Price",
+    "Excluded": "Exclude",
+    "Provisional_default": "Price as Option or Alternative",
+    "no_source": "Clarify",
+    "expected_by_itt_status": {
+      "In scope": ["Price", "Price"],
+      "Excluded": ["Exclude", "Exclude"],
+      "Provisional": ["Price as Provisional Sum", "Price as Option or Alternative"]
+    },
+    "default_risk": "Medium",
+    "high_risk_decisions": ["Clarify", "Price as Option or Alternative", "Price as Provisional Sum"],
+    "key_risk_text": {
+      "Price": "Quantities not stated in the ITT pack; remeasure-rate exposure (RFI-004, RFI-013).",
+      "Exclude": "Boundary and interface risk with Owner or other-contractor scope.",
+      "Price as Option or Alternative": "Base-price treatment unresolved (RFI-002, BID-RFI-02).",
+      "Price as Provisional Sum": "Provisional Sum treatment and value basis not confirmed.",
+      "Clarify": "Scope undecided until the linked RFI is answered."
+    }
+  },
+
+  "decision_overrides": {
+    "WIN-1600-04": {
+      "decision": "Clarify",
+      "reason": "ITT shows Provisional, but the recharge model to the IPP Contractor is still to be determined, so MinRes cannot yet decide the pricing basis.",
+      "rfis": ["BID-RFI-01"]
+    }
+  },
+  "extra_rfi_links": {
+    "WIN-1000-03-04": ["BID-RFI-02"],
+    "WIN-1000-03-05": ["BID-RFI-02"],
+    "WIN-1000-07-02": ["BID-RFI-02"],
+    "WIN-1000-07-03": ["BID-RFI-02"],
+    "WIN-1000-19": ["BID-RFI-03"]
+  },
+
+  "new_rfis": [
+    {
+      "id": "BID-RFI-01", "type": "Clarification", "topic": "IPP concrete recharge model",
+      "question": "Confirm how concrete supplied to the IPP Contractor is to be recharged and priced (rate, basis, provisional or remeasure).",
+      "priority": "Medium", "source_id": "SRC-0903", "pdf_page": 263,
+      "floc_ids": "WIN-1600-04",
+      "impact": "Decides whether WIN-1600-04 is priced as a Provisional Sum, an option or excluded (currently Clarify)."
+    },
+    {
+      "id": "BID-RFI-02", "type": "Clarification", "topic": "Treatment of camp and fleet options in the Contract Price",
+      "question": "Confirm whether the camp (Options A and B) and construction fleet (Options 1 and 2) are priced as separate options, Provisional Sums or in the base price.",
+      "priority": "High", "source_id": "SRC-0446", "pdf_page": 220,
+      "floc_ids": "WIN-1000-03-04, WIN-1000-03-05, WIN-1000-07-02, WIN-1000-07-03",
+      "impact": "Decides base price versus option for four FLOCs (currently Price as Option or Alternative). Relates to RFI-002."
+    },
+    {
+      "id": "BID-RFI-03", "type": "Programme", "topic": "Tender closing date and RFI cut-off",
+      "question": "Confirm whether the tender closing date of 07/10/2026 4:00pm AWST has been extended.",
+      "priority": "High", "source_id": "SRC-0004", "pdf_page": 7,
+      "floc_ids": "WIN-1000-19",
+      "impact": "Determines whether any scope decision or RFI can still be actioned before submission."
+    }
+  ],
+
+  "rfi_owner_defaults": {
+    "Carried forward - authored": "Commercial Manager",
+    "Carried forward - auto-extracted": "Lead Estimator",
+    "New - bid specific": "Commercial Manager"
+  },
+
+  "roles": [
+    {"role": "Lead Estimator", "remit": "Consolidates the estimate; reviews direct-cost EWPs."},
+    {"role": "Civil Estimator", "remit": "Civil, earthworks and concrete EWPs."},
+    {"role": "Mining Estimator", "remit": "Pre-strip, waste rock landform and haul roads."},
+    {"role": "Structural and Buildings Estimator", "remit": "Village, MSA, aerodrome and explosives structures."},
+    {"role": "M&E Estimator", "remit": "Mechanical, piping, electrical, instrumentation and ICT."},
+    {"role": "Indirects and Planning Estimator", "remit": "Preliminaries, temporary works, plant fleet and shared costs."},
+    {"role": "Commercial Manager", "remit": "Contract terms, securities, insurance, RFIs and commercial risk."},
+    {"role": "Procurement Lead", "remit": "Subcontractor and vendor enquiries; logistics and Company Supplied Items."},
+    {"role": "Estimate Reviewer", "remit": "Independent review of indirects and commercial EWPs."}
+  ],
+
+  "inputs": {
+    "all": [
+      {"input": "Drawings and material take-offs (MTO) for this package", "type": "Drawings / quantities", "source": "Owner (Company); not in the ITT pack (see RFI-013)", "status": "Not available in ITT"},
+      {"input": "Specification and Scope of Work extracts (see Source IDs)", "type": "Specification", "source": "ITT pack", "status": "In ITT pack"},
+      {"input": "Pricing schedule structure (Schedules A.1 and A.2)", "type": "Pricing schedule", "source": "ITT pack; template missing (RFI-001, RFI-004)", "status": "Not available in ITT"}
+    ],
+    "Self-perform": [
+      {"input": "Internal labour, plant rates and productivity", "type": "Rates", "source": "MinRes internal", "status": "Not requested"}
+    ],
+    "Subcontract": [
+      {"input": "Subcontractor quotes", "type": "Subcontractor quote", "source": "Subcontractors (to be identified)", "status": "Not requested"}
+    ],
+    "Supply-only": [
+      {"input": "Vendor supply quotes", "type": "Vendor quote", "source": "Vendors (to be identified)", "status": "Not requested"}
+    ],
+    "Vendor quote method": [
+      {"input": "Vendor quotes for major items", "type": "Vendor quote", "source": "Vendors (to be identified)", "status": "Not requested"}
+    ],
+    "by_ewp": {
+      "CON-01": [{"input": "Reinforcement supply quotes (supply-only)", "type": "Vendor quote", "source": "Reinforcement suppliers (to be identified)", "status": "Not requested"}],
+      "STR-01": [{"input": "Modular accommodation supply quotes (supply-only)", "type": "Vendor quote", "source": "Modular building suppliers (to be identified)", "status": "Not requested"}],
+      "CIV-05": [{"input": "TSF liner supply and installation quotes", "type": "Subcontractor quote", "source": "Geosynthetics specialists (to be identified)", "status": "Not requested"}],
+      "IND-02": [{"input": "Company accommodation and flight charge-back rates (Appendix A)", "type": "Rates", "source": "ITT pack Appendix A (see RFI-014)", "status": "In ITT pack"}]
+    }
+  },
+
+  "ewps": [
+    {"id": "EWP-CIV-01", "title": "Site clearing, topsoil, borrow and landfill earthworks", "disc": "CIV", "method": "Rate-based", "owner": "Civil Estimator", "reviewer": "Lead Estimator",
+     "desc": "Clearing, grubbing, topsoil, borrow pits, waste management area earthworks and on-Site landfill.",
+     "flocs": ["WIN-1100", "WIN-2300-01", "WIN-2300-03"]},
+    {"id": "EWP-CIV-02", "title": "Mine Access Road, intersections, drainage and borefield tracks", "disc": "CIV", "method": "Rate-based", "owner": "Civil Estimator", "reviewer": "Lead Estimator",
+     "desc": "182 km sealed Mine Access Road earthworks and pavement, highway intersections, rest areas, drainage structures, existing access tracks and borefield access tracks. Concrete is in EWP-CON-01.",
+     "flocs": ["WIN-1200-01", "WIN-1200-02", "WIN-1200-03", "WIN-1200-04", "WIN-1200-06", "WIN-2200-10"]},
+    {"id": "EWP-CIV-03", "title": "Bulk earthworks and pads by area", "disc": "CIV", "method": "Rate-based", "owner": "Civil Estimator", "reviewer": "Lead Estimator",
+     "desc": "Bulk earthworks, roads and pads for Village access, MSA, MPP enabling works, IPP areas, aerodrome and explosives area.",
+     "flocs": ["WIN-1300-01", "WIN-1400-01", "WIN-1500-01", "WIN-1500-02", "WIN-1500-03", "WIN-1600-01", "WIN-1600-02", "WIN-1600-03", "WIN-1800-01", "WIN-1800-02", "WIN-1800-03", "WIN-1800-04", "WIN-2000-01"]},
+    {"id": "EWP-CIV-04", "title": "Ore stockpiles, ponds and surface water management", "disc": "CIV", "method": "Rate-based", "owner": "Civil Estimator", "reviewer": "Lead Estimator",
+     "desc": "Stockpile bases, clean water bunds, detention and stormwater ponds, dewatering pond (HDPE-lined items per specification).",
+     "flocs": ["WIN-1700"]},
+    {"id": "EWP-CIV-05", "title": "TSF Stage 0 earthworks, liner and drainage", "disc": "CIV", "method": "Vendor quote", "owner": "Civil Estimator", "reviewer": "Lead Estimator",
+     "desc": "TSF Stage 0 impoundment earthworks, HDPE liner and CQA, drainage, tailings corridors and material supply. Liner is a specialist subcontract.",
+     "flocs": ["WIN-1900-01", "WIN-1900-02", "WIN-1900-03", "WIN-1900-04", "WIN-1900-05"]},
+    {"id": "EWP-CIV-06", "title": "Permanent Village external works", "disc": "CIV", "method": "Rate-based", "owner": "Civil Estimator", "reviewer": "Lead Estimator",
+     "desc": "Sports court, yarning circle, bus and LME parking and charging bays, walking track.",
+     "flocs": ["WIN-1300-04"]},
+    {"id": "EWP-MIN-01", "title": "Mine pre-strip, waste rock landform and haul roads", "disc": "MIN", "method": "Rate-based", "owner": "Mining Estimator", "reviewer": "Lead Estimator",
+     "desc": "Mine planning and production control, drill and blast, overburden mining, haul roads, waste rock landform, exclusion zones and mine drainage.",
+     "flocs": ["WIN-2100-01", "WIN-2100-02", "WIN-2100-03", "WIN-2100-04", "WIN-2100-05", "WIN-2100-06", "WIN-2100-08"]},
+    {"id": "EWP-CON-01", "title": "Concrete and reinforcement, all areas", "disc": "CON", "method": "Rate-based", "owner": "Civil Estimator", "reviewer": "Lead Estimator",
+     "desc": "Concrete for Mine Access Road, Village, MSA, MPP, aerodrome, TSF and explosives area. Reinforcement is supply-only.",
+     "flocs": ["WIN-1200-07", "WIN-1300-10", "WIN-1400-10", "WIN-1500-04", "WIN-1800-07", "WIN-1900-06", "WIN-2000-06"]},
+    {"id": "EWP-CON-02", "title": "Concrete supply to the IPP Contractor (recharge)", "disc": "CON", "method": "Allowance", "owner": "Civil Estimator", "reviewer": "Lead Estimator",
+     "desc": "Concrete supplied to the IPP Contractor on a recharge basis. Pricing basis is a Clarify item (BID-RFI-01).",
+     "flocs": ["WIN-1600-04"]},
+    {"id": "EWP-STR-01", "title": "Permanent Village buildings", "disc": "STR", "method": "Vendor quote", "owner": "Structural and Buildings Estimator", "reviewer": "Lead Estimator",
+     "desc": "Accommodation modules, administration, messes, laundries, recreation and ablution facilities, and modular building structural works. Modular accommodation is supply-only.",
+     "flocs": ["WIN-1300-02", "WIN-1300-03", "WIN-1300-08"]},
+    {"id": "EWP-STR-02", "title": "Mine Services Area buildings", "disc": "STR", "method": "Vendor quote", "owner": "Structural and Buildings Estimator", "reviewer": "Lead Estimator",
+     "desc": "HME and LME workshops, warehouse, fuel storage, change house, administration, data centre and laboratory buildings.",
+     "flocs": ["WIN-1400-02", "WIN-1400-03", "WIN-1400-04", "WIN-1400-05", "WIN-1400-06"]},
+    {"id": "EWP-STR-03", "title": "Aerodrome, explosives and tower structures", "disc": "STR", "method": "Vendor quote", "owner": "Structural and Buildings Estimator", "reviewer": "Lead Estimator",
+     "desc": "Aerodrome terminal, ablutions and shade structures; explosives storage buildings; 40 m and 80 m communications towers.",
+     "flocs": ["WIN-1800-05", "WIN-2000-02", "WIN-2000-03", "WIN-2000-04", "WIN-2200-08"]},
+    {"id": "EWP-MEC-01", "title": "Facility mechanical, HVAC and water plants", "disc": "MEC", "method": "Vendor quote", "owner": "M&E Estimator", "reviewer": "Lead Estimator",
+     "desc": "Village water and wastewater plants, HVAC and E&I areas, MSA mechanical, weighbridge and weed and seed facility, explosives area mechanical and E&I, solids waste facility.",
+     "flocs": ["WIN-1300-05", "WIN-1300-06", "WIN-1300-09", "WIN-1400-07", "WIN-1200-05", "WIN-2000-05", "WIN-2300-02"]},
+    {"id": "EWP-PIP-01", "title": "Site-wide piping and buried utilities", "disc": "PIP", "method": "Rate-based", "owner": "M&E Estimator", "reviewer": "Lead Estimator",
+     "desc": "Dewatering, managed aquifer recharge, raw, potable and fire water, sewer, fuel and air piping, and buried utilities for each area.",
+     "flocs": ["WIN-2200-01", "WIN-2200-02", "WIN-2200-03", "WIN-2200-04", "WIN-2200-05", "WIN-2200-06", "WIN-2200-11", "WIN-1300-11", "WIN-1400-09", "WIN-1500-05", "WIN-2000-07"]},
+    {"id": "EWP-ELE-01", "title": "Electrical and instrumentation", "disc": "ELE", "method": "Vendor quote", "owner": "M&E Estimator", "reviewer": "Lead Estimator",
+     "desc": "Village LV distribution and communications network, MSA E&I, aerodrome lighting and aids, site-wide power reticulation.",
+     "flocs": ["WIN-1300-07", "WIN-1400-08", "WIN-1800-06", "WIN-2200-07"]},
+    {"id": "EWP-ICT-01", "title": "Data centres and fleet management integration", "disc": "ICT", "method": "Vendor quote", "owner": "M&E Estimator", "reviewer": "Lead Estimator",
+     "desc": "Data centres DC1 and DC2 (IS&T infrastructure) and fleet management system integration.",
+     "flocs": ["WIN-2200-09", "WIN-2100-07"]},
+    {"id": "EWP-IND-01", "title": "Project management, engineering, survey and QA/QC", "disc": "IND", "method": "Historical benchmark", "owner": "Indirects and Planning Estimator", "reviewer": "Estimate Reviewer",
+     "desc": "Project management, construction engineering, survey, geotechnical and QA/QC (AR-01, AR-09).",
+     "flocs": ["WIN-1000-01"], "ar": "AR-01, AR-09"},
+    {"id": "EWP-IND-02", "title": "Mobilisation, camps, accommodation and demobilisation", "disc": "IND", "method": "Rate-based", "owner": "Indirects and Planning Estimator", "reviewer": "Estimate Reviewer",
+     "desc": "Mobilisation, travel, Site establishment, existing and fly camps, Company camp charge-back, flights and demobilisation. Includes camp Options A and B (AR-02, AR-03, AR-04, AR-15).",
+     "flocs": ["WIN-1000-02", "WIN-1000-03", "WIN-1000-14"], "ar": "AR-02, AR-03, AR-04, AR-15"},
+    {"id": "EWP-IND-03", "title": "Temporary works, laydown, water and communications", "disc": "IND", "method": "Allowance", "owner": "Indirects and Planning Estimator", "reviewer": "Estimate Reviewer",
+     "desc": "Laydown areas, temporary construction facilities, construction water, temporary communications and other temporary works (AR-05, AR-06).",
+     "flocs": ["WIN-1000-04", "WIN-1000-05", "WIN-1000-06", "WIN-1000-10"], "ar": "AR-05, AR-06"},
+    {"id": "EWP-IND-04", "title": "Plant and equipment fleet", "disc": "IND", "method": "Vendor quote", "owner": "Indirects and Planning Estimator", "reviewer": "Estimate Reviewer",
+     "desc": "Pre-strip HME and construction fleet, including fleet Options 1 and 2 (AR-08).",
+     "flocs": ["WIN-1000-07"], "ar": "AR-08"},
+    {"id": "EWP-IND-05", "title": "Transport, logistics and Company Supplied Items", "disc": "IND", "method": "Allowance", "owner": "Procurement Lead", "reviewer": "Estimate Reviewer",
+     "desc": "Port Hedland to Site transport, materials management, and receipt and custody of Company Supplied Items (AR-11, AR-13).",
+     "flocs": ["WIN-1000-08", "WIN-1000-15"], "ar": "AR-11, AR-13"},
+    {"id": "EWP-IND-06", "title": "Site management, HSESC, interface and SIMOPS", "disc": "IND", "method": "Allowance", "owner": "Indirects and Planning Estimator", "reviewer": "Estimate Reviewer",
+     "desc": "Site management, security, signage, lighting, interface management, SIMOPS, and HSESC, environmental, community and emergency response (AR-10, AR-14).",
+     "flocs": ["WIN-1000-09", "WIN-1000-11", "WIN-1000-12"], "ar": "AR-10, AR-14"},
+    {"id": "EWP-IND-07", "title": "Pre-commissioning and commissioning support", "disc": "IND", "method": "Allowance", "owner": "Indirects and Planning Estimator", "reviewer": "Estimate Reviewer",
+     "desc": "Pre-commissioning, commissioning support and handover (AR-12). Duration is open (RFI-018).",
+     "flocs": ["WIN-1000-13"], "ar": "AR-12"},
+    {"id": "EWP-IND-08", "title": "Shared concrete supply and SP2 general requirements", "disc": "IND", "method": "Rate-based", "owner": "Civil Estimator", "reviewer": "Estimate Reviewer",
+     "desc": "Shared batch plant, concrete supply, reinforcement and cast-in items, and common SP2 structural requirements (AR-07).",
+     "flocs": ["WIN-1000-16", "WIN-1000-17"], "ar": "AR-07"},
+    {"id": "EWP-COM-01", "title": "Contract, securities, insurance and commercial administration", "disc": "COM", "method": "Vendor quote", "owner": "Commercial Manager", "reviewer": "Estimate Reviewer",
+     "desc": "Terms and conditions, securities, insurance, finance and contract administration (AR-16).",
+     "flocs": ["WIN-1000-19"], "ar": "AR-16"}
+  ],
+
+  "bid_programme": [
+    {"category": "Bid", "milestone": "ITT issued", "date": "12/08/2026", "time": "", "owner": "Commercial Manager", "basis": "Stated in ITT", "source_id": "SRC-0052", "pdf_page": 21, "notes": "Receipt of ITT dated 12 August 2026 is acknowledged in the ITT."},
+    {"category": "Bid", "milestone": "Bid kick-off", "date": "", "time": "", "owner": "Lead Estimator", "basis": "Not stated", "source_id": "", "pdf_page": "", "notes": ""},
+    {"category": "Bid", "milestone": "Tender RFI cut-off (72 hours before closing)", "date": "04/10/2026", "time": "4:00pm AWST", "owner": "Commercial Manager", "basis": "Derived from ITT", "source_id": "SRC-0005", "pdf_page": 7, "notes": "72 hours before the stated closing time."},
+    {"category": "Bid", "milestone": "Internal RFIs raised", "date": "", "time": "", "owner": "Commercial Manager", "basis": "Not stated", "source_id": "", "pdf_page": "", "notes": ""},
+    {"category": "Bid", "milestone": "Subcontractor and vendor quotes due", "date": "", "time": "", "owner": "Procurement Lead", "basis": "Not stated", "source_id": "", "pdf_page": "", "notes": ""},
+    {"category": "Bid", "milestone": "Estimate review", "date": "", "time": "", "owner": "Estimate Reviewer", "basis": "Not stated", "source_id": "", "pdf_page": "", "notes": ""},
+    {"category": "Bid", "milestone": "Executive approval", "date": "", "time": "", "owner": "Commercial Manager", "basis": "Not stated", "source_id": "", "pdf_page": "", "notes": ""},
+    {"category": "Bid", "milestone": "Tender submission (tender closing)", "date": "07/10/2026", "time": "4:00pm AWST", "owner": "Commercial Manager", "basis": "Stated in ITT", "source_id": "SRC-0004", "pdf_page": 7, "notes": "1 electronic copy to Winu Services Pty Ltd, Perth. See BID-RFI-03 on any extension."},
+    {"category": "Contract reference", "milestone": "Commencement Date", "date": "", "time": "", "owner": "", "basis": "Stated in ITT", "source_id": "SRC-0102", "pdf_page": 54, "notes": "ITT states 'End of Quarter 1 2027', which is not a calendar date."},
+    {"category": "Contract reference", "milestone": "Site access date", "date": "23/11/2027", "time": "", "owner": "", "basis": "Stated in ITT", "source_id": "SRC-0104", "pdf_page": 54, "notes": ""},
+    {"category": "Contract reference", "milestone": "Completion Date (all Works, SP1 and SP2)", "date": "30/11/2029", "time": "", "owner": "", "basis": "Stated in ITT", "source_id": "SRC-0106", "pdf_page": 55, "notes": "Milestones 1 to 9 run from 11/10/2028 to 15/01/2029 (SRC-0108 to SRC-0114, p.55)."}
+  ]
+}

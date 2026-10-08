@@ -1,0 +1,102 @@
+---
+name: dts-project-categorisation-scorer
+description: Evaluates a PowerPoint project brief/deck against the DTS Project Delivery Framework's six-dimension categorisation model and produces an objective, consolidated score with concise commentary. Use when a user uploads or references a PowerPoint (or extracted text from one) describing a project and asks for a governance tier assessment, categorisation score, or PRINCE2 tailoring recommendation.
+---
+
+# DTS Project Categorisation Scorer
+
+## Purpose
+Read the content of a PowerPoint presentation describing a proposed or in-flight
+project and objectively score it against the six dimensions defined in Section 6.2
+of the DTS Project Delivery Framework (PRINCE2-Aligned), then determine the
+resulting governance tier per Section 6.4, applying the dollar gate (6.3) and
+severe-risk override rules.
+
+## When to use this skill
+- A user provides a PowerPoint (or its extracted text/slide content) about a
+  project and asks for a categorisation, governance tier, or risk score.
+- A user asks "what tier would this project sit in" or "score this against the
+  DTS framework".
+
+## Inputs required
+1. The PowerPoint content (slide text, speaker notes, tables — extract all
+   available text before scoring).
+2. If stated in the deck: estimated project cost and delivery discipline
+   (IT Infrastructure / Applications / AI-Automation / Cyber). If absent, note
+   this as a gap rather than guessing.
+
+## Scoring method
+
+Score each dimension 1 (Low) to 4 (High) using the rubric below, drawn directly
+from Section 6.2 of the framework. For each dimension:
+- Extract the specific evidence from the deck that supports the score (a slide
+  title, a stated fact, a stakeholder list, a technology named, etc.).
+- If the deck is silent on a dimension, default conservatively to the lowest
+  defensible score and flag it explicitly as "not addressed in deck" rather
+  than inferring detail that isn't there.
+
+### Rubric (from Section 6.2)
+
+| Dimension | 1 — Low | 2 | 3 | 4 — High |
+|---|---|---|---|---|
+| Execution risk | Routine; low chance of failure | Some delivery risk; manageable | Significant risk; active management needed | High risk of failure without intensive control |
+| Complexity | Single component; one team/site | Few components; limited integration | Multiple systems, teams or sites integrated | Enterprise-wide; many integration points |
+| Familiarity & repeatability | Done often; fully templated | Done before; mostly repeatable | Done rarely; limited precedent | First time for DTS or industry; no template |
+| Reputation & stakeholder risk | Internal; low visibility | Cross-team; moderate visibility | Executive-visible or customer-facing | Board/regulator/public exposure; high stakes |
+| Technology maturity | Mature, well-established tech | Established with some new elements | Substantially new technology | Emerging/unproven; key tech not yet in use |
+| Business change impact | No process/behaviour change | Minor change; few users | Significant change; whole team/function | Major change across multiple business units |
+
+### Step-by-step process
+1. Extract and summarise all slide content relevant to scope, technology,
+   stakeholders, cost, timeline, and organisational impact.
+2. Score each of the six dimensions 1–4 against the rubric, citing the deck
+   evidence used.
+3. Sum the total (max 24).
+4. Apply the dollar gate (Section 6.3) if cost and discipline are stated —
+   the gate can only escalate, never de-escalate, the score-derived tier.
+5. Apply the severe-risk override: if Execution risk = 4, Reputation risk = 4,
+   or (for regulated/novel-tech work) Technology maturity = 4, escalate one
+   tier automatically regardless of total score.
+6. Map the (possibly escalated) total to a tier using Section 6.4:
+   - Minor Works: 6–8
+   - Small Projects: 9–12
+   - Standard: 13–17
+   - Major: 18–24
+7. State any information gaps that limited confidence in the scoring, and
+   recommend what the presenter should add to the deck to firm up the
+   assessment.
+
+## Output format (mandatory)
+
+Produce output in this exact structure — no additional preamble:
+
+**Project name:** [from deck, or "Not stated"]
+
+| Dimension | Score (1–4) | Commentary |
+|---|---|---|
+| Execution risk | X | One or two sentences, evidence-based |
+| Complexity | X | One or two sentences, evidence-based |
+| Familiarity & repeatability | X | One or two sentences, evidence-based |
+| Reputation & stakeholder risk | X | One or two sentences, evidence-based |
+| Technology maturity | X | One or two sentences, evidence-based |
+| Business change impact | X | One or two sentences, evidence-based |
+| **Total** | **XX / 24** | |
+
+**Dollar gate applied:** [Discipline / band / effect, or "Not stated in deck — gate not applied"]
+
+**Severe-risk override:** [Triggered / Not triggered — reason]
+
+**Resulting governance tier:** [Minor Works / Small Projects / Standard / Major]
+
+**Confidence & gaps:** Brief note on what wasn't covered in the deck and would
+sharpen the assessment (e.g. cost, stakeholder list, technology stack).
+
+## Principles to follow
+- Be objective and evidence-based — score what is in the deck, not what is
+  assumed about the project type.
+- Keep commentary concise (one to two sentences per dimension).
+- Never let cost lower a score-derived tier — dollar gate is escalate-only.
+- Flag missing information rather than filling gaps with speculation.
+- Do not recommend artefacts/governance detail beyond the tier — that is a
+  separate exercise (Section 7 of the framework), out of scope for this skill
+  unless the user explicitly asks for it as a follow-up.
