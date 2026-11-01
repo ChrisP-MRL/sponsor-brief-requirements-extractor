@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft Marks and Their Role in Measuring Iron Ore Cargo on Bulk Carriers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1a472a;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #2c5f3d;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #2c5f3d;
+            font-size: 2em;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            border-left: 6px solid #2c5f3d;
+            padding-left: 20px;
+        }
+
+        h3 {
+            color: #3d7a4f;
+            font-size: 1.5em;
+            margin-top: 35px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            color: #4a8f5e;
+            font-size: 1.2em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 20px 0 20px 40px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border: 2px solid #2c5f3d;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc ul ul {
+            margin-left: 25px;
+        }
+
+        .toc a {
+            color: #2c5f3d;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: #1a472a;
+            text-decoration: underline;
+        }
+
+        .diagram-container {
+            background: linear-gradient(to bottom, #e8f4ea 0%, #f8f9fa 100%);
+            border: 2px solid #2c5f3d;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .diagram-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #1a472a;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #2c5f3d;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .formula {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            border-radius: 4px;
+        }
+
+        .citation {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            vertical-align: super;
+        }
+
+        .citation:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: #e8f4ea;
+            border-left: 5px solid #2c5f3d;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .references {
+            font-size: 0.9em;
+            background: #f8f9fa;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 8px;
+        }
+
+        .references ol {
+            margin-left: 20px;
+        }
+
+        .references li {
+            margin-bottom: 15px;
+        }
+
+        .references a {
+            color: #0066cc;
+            word-break: break-all;
+        }
+
+        strong {
+            color: #1a472a;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Draft Marks and Their Role in Measuring Iron Ore Cargo on Bulk Carriers: A Comprehensive Analysis</h1>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#understanding-draft">2. Understanding Draft: Fundamental Concepts and Definitions</a>
+                    <ul>
+                        <li><a href="#what-is-draft">2.1 What is Draft?</a></li>
+                        <li><a href="#draft-cargo-relationship">2.2 The Relationship Between Draft and Cargo Weight</a></li>
+                    </ul>
+                </li>
+                <li><a href="#six-point-system">3. The Six Standard Draft Mark Positions: Technical Specifications</a>
+                    <ul>
+                        <li><a href="#position-locations">3.1 Position Locations and Designation</a></li>
+                        <li><a href="#physical-characteristics">3.2 Physical Characteristics and Dimensions</a></li>
+                        <li><a href="#perpendiculars">3.3 Reference Points: The Perpendiculars</a></li>
+                    </ul>
+                </li>
+                <li><a href="#draft-reading">4. The Draft Reading Process: Procedures for Ocean-Going Bulk Carriers</a>
+                    <ul>
+                        <li><a href="#pre-survey">4.1 Pre-Survey Preparation and Vessel Conditions</a></li>
+                        <li><a href="#reading-marks">4.2 Reading Draft Marks: The Six-Point System</a></li>
+                        <li><a href="#water-density">4.3 Water Density Measurement</a></li>
+                    </ul>
+                </li>
+                <li><a href="#calculations">5. Calculation of Mean Drafts from Six-Point Measurements</a>
+                    <ul>
+                        <li><a href="#step1">5.1 Step 1: Calculate Mean Drafts at Each Position</a></li>
+                        <li><a href="#step2">5.2 Step 2: Calculate Apparent Trim</a></li>
+                        <li><a href="#step3">5.3 Step 3: Corrections to Perpendiculars</a></li>
+                        <li><a href="#step4">5.4 Step 4: Detection of Hull Deflection</a></li>
+                        <li><a href="#step5">5.5 Step 5: Calculate Quarter Mean Draft</a></li>
+                    </ul>
+                </li>
+                <li><a href="#pilbara-application">6. Application to Bulk Carriers in the Pilbara Iron Ore Trade</a>
+                    <ul>
+                        <li><a href="#vessel-characteristics">6.1 Characteristics of Bulk Carriers Operating in Pilbara Ports</a></li>
+                        <li><a href="#draft-limitations">6.2 Vessel Draft Limitations for Iron Ore Carriers</a></li>
+                        <li><a href="#practical-example">6.3 Practical Draft Survey Example: Iron Ore Loading</a></li>
+                    </ul>
+                </li>
+                <li><a href="#equipment-standards">7. Measurement Equipment and Standards</a>
+                    <ul>
+                        <li><a href="#required-equipment">7.1 Required Equipment for Accurate Draft Surveys</a></li>
+                        <li><a href="#regulatory-framework">7.2 Regulatory Framework and Standards</a></li>
+                    </ul>
+                </li>
+                <li><a href="#errors-challenges">8. Common Errors and Challenges in Draft Measurement</a>
+                    <ul>
+                        <li><a href="#environmental-challenges">8.1 Environmental and Operational Challenges</a></li>
+                        <li><a href="#precision-requirements">8.2 Measurement Precision Requirements</a></li>
+                    </ul>
+                </li>
+                <li><a href="#un-ece-framework">9. Draft Survey Standardization: The UN ECE Framework</a></li>
+                <li><a href="#practical-procedures">10. Practical Application: Draft Survey Procedures for Iron Ore Bulk Carriers</a>
+                    <ul>
+                        <li><a href="#pre-survey-phase">10.1 Pre-Survey Phase</a></li>
+                        <li><a href="#execution-phase">10.2 Survey Execution Phase</a></li>
+                        <li><a href="#calculation-phase">10.3 Post-Survey Calculation Phase</a></li>
+                    </ul>
+                </li>
+                <li><a href="#pilbara-specifications">11. Specifications for Major Pilbara Bulk Carriers</a></li>
+                <li><a href="#advanced-technologies">12. Advanced Technologies and Future Developments</a></li>
+                <li><a href="#regulatory-compliance">13. Regulatory Compliance and Survey Requirements</a></li>
+                <li><a href="#diagrams">14. Diagram and Visual Representation: Draft Marks Configuration</a></li>
+                <li><a href="#calculation-example">15. Comprehensive Calculation Example: Six-Point Draft Survey</a></li>
+                <li><a href="#significance">16. Significance of Accurate Draft Measurement in Pilbara Operations</a></li>
+                <li><a href="#conclusion">17. Conclusion</a></li>
+                <li><a href="#references">18. References Cited</a></li>
+            </ul>
+        </div>
+
+        <!-- Introduction -->
+        <h2 id="introduction">1. Introduction</h2>
+        <p>Draft marks represent one of the most critical measurement systems in maritime commerce, particularly for bulk carriers transporting iron ore from Western Australia's Pilbara region. These standardized markings painted on a vessel's hull enable surveyors to determine the weight of cargo loaded or discharged by measuring changes in the ship's displacement based on Archimedes' principle<a href="#ref71" class="citation">[71]</a>. For iron ore operations in the Pilbara—one of the world's largest iron ore export regions<a href="#ref37" class="citation">[37]</a>—accurate draft measurement is essential for ensuring cargo integrity, operational efficiency, and regulatory compliance.</p>
+
+        <p>This comprehensive research report examines the six-point draft mark system, its technical specifications, measurement procedures, and application specifically for bulk carriers operating in iron ore trade between the Pilbara and international markets.</p>
+
+        <!-- Section 2: Understanding Draft -->
+        <h2 id="understanding-draft">2. Understanding Draft: Fundamental Concepts and Definitions</h2>
+
+        <h3 id="what-is-draft">2.1 What is Draft?</h3>
+        <p>The draft (or draught in British terminology) of a ship is the determined depth of the vessel below the waterline, measured vertically to its hull's lowest point—typically the propellers, keel, or other reference point<a href="#ref12" class="citation">[12]</a>. Draft varies according to the loaded condition of the ship, with a deeper draft indicating greater vertical submersion and typically representing a heavier cargo load<a href="#ref12" class="citation">[12]</a>.</p>
+
+        <div class="highlight-box">
+            <h4>Draft serves multiple critical functions:</h4>
+            <ul>
+                <li>Determines the maximum cargo weight the vessel can safely carry<a href="#ref12" class="citation">[12]</a></li>
+                <li>Ensures compliance with load line regulations and safety requirements<a href="#ref13" class="citation">[13]</a></li>
+                <li>Enables precise calculation of cargo weight through displacement measurements<a href="#ref71" class="citation">[71]</a></li>
+                <li>Prevents excessive immersion that could compromise stability and buoyancy<a href="#ref78" class="citation">[78]</a></li>
+            </ul>
+        </div>
+
+        <h3 id="draft-cargo-relationship">2.2 The Relationship Between Draft and Cargo Weight</h3>
+        <p>The fundamental principle underlying draft measurement is <strong>Archimedes' principle of buoyancy</strong><a href="#ref71" class="citation">[71]</a>. A ship in water is buoyed up by a force equal to the weight of water it displaces. By measuring exactly how much water the ship displaces—determined through draft readings—surveyors can calculate the total displacement of water and, accounting for the ship's bunkers and ballast, determine the weight of cargo on board<a href="#ref12" class="citation">[12]</a><a href="#ref107" class="citation">[107]</a>.</p>
+
+        <div class="formula">
+            <strong>Displacement Calculation Formula:</strong><br>
+            Relative density (specific gravity) × Volume (m³) = Displacement (m³)<a href="#ref3" class="citation">[3]</a>
+        </div>
+
+        <!-- Section 3: Six Point System -->
+        <h2 id="six-point-system">3. The Six Standard Draft Mark Positions: Technical Specifications</h2>
+
+        <h3 id="position-locations">3.1 Position Locations and Designation</h3>
+        <p>The draft survey method employs a standardized system of <strong>six measurement points positioned strategically along the vessel's hull</strong><a href="#ref71" class="citation">[71]</a>. These positions are distributed across three longitudinal locations at both port and starboard sides:</p>
+
+        <ol>
+            <li><strong>Forward Port (FP)</strong> – Forward perpendicular, port side<a href="#ref8" class="citation">[8]</a><a href="#ref47" class="citation">[47]</a></li>
+            <li><strong>Forward Starboard (FS)</strong> – Forward perpendicular, starboard side<a href="#ref8" class="citation">[8]</a><a href="#ref47" class="citation">[47]</a></li>
+            <li><strong>Midship Port (MP)</strong> – Amidships, port side<a href="#ref8" class="citation">[8]</a><a href="#ref47" class="citation">[47]</a></li>
+            <li><strong>Midship Starboard (MS)</strong> – Amidships, starboard side<a href="#ref8" class="citation">[8]</a><a href="#ref47" class="citation">[47]</a></li>
+            <li><strong>Aft Port (AP)</strong> – Aft perpendicular, port side<a href="#ref8" class="citation">[8]</a><a href="#ref47" class="citation">[47]</a></li>
+            <li><strong>Aft Starboard (AS)</strong> – Aft perpendicular, starboard side<a href="#ref8" class="citation">[8]</a><a href="#ref47" class="citation">[47]</a></li>
+        </ol>
+
+        <h3 id="physical-characteristics">3.2 Physical Characteristics and Dimensions</h3>
+        <p>Draft marks follow strict international standards regarding physical appearance and dimensions to ensure consistency and accuracy across vessels worldwide.</p>
+
+        <div class="highlight-box">
+            <h4>Standard Dimensions:</h4>
+            <ul>
+                <li><strong>Height of numerals:</strong> 10 cm (100 mm)<a href="#ref15" class="citation">[15]</a><a href="#ref46" class="citation">[46]</a></li>
+                <li><strong>Spacing between figures:</strong> 10 cm (100 mm)<a href="#ref15" class="citation">[15]</a><a href="#ref46" class="citation">[46]</a></li>
+                <li><strong>Horizontal line dimensions:</strong> 230 mm × 25 mm (for load line marks)<a href="#ref5" class="citation">[5]</a></li>
+                <li><strong>Measurement units:</strong> Always in meters (M), separated by decimal places in increments of 0.2 meters<a href="#ref10" class="citation">[10]</a></li>
+            </ul>
+
+            <h4>Historical Imperial Units (older vessels):</h4>
+            <ul>
+                <li><strong>Height of figures:</strong> 6 inches<a href="#ref19" class="citation">[19]</a><a href="#ref55" class="citation">[55]</a></li>
+                <li><strong>Spacing:</strong> 12 inches bottom to bottom, vertically<a href="#ref12" class="citation">[12]</a></li>
+            </ul>
+        </div>
+
+        <h4>Marking Requirements:</h4>
+        <p>All draft marks must be separated so that the projections onto a vertical plane are of uniform height equal to the vertical spacing between consecutive marks<a href="#ref4" class="citation">[4]</a>. The letters "CC" (cargo compartment) marking—when applicable—must be at least four inches in height and positioned to be visible at all times<a href="#ref2" class="citation">[2]</a>.</p>
+
+        <h3 id="perpendiculars">3.3 Reference Points: The Perpendiculars</h3>
+        <p>Understanding the perpendiculars is essential for accurate draft measurement:</p>
+
+        <div class="highlight-box">
+            <h4>Forward Perpendicular (FP):</h4>
+            <ul>
+                <li>The forward point where the hull intersects the summer load waterline<a href="#ref43" class="citation">[43]</a></li>
+                <li>Represents the forward measurement station for hydrostatic calculations<a href="#ref43" class="citation">[43]</a></li>
+            </ul>
+
+            <h4>Aft Perpendicular (AP):</h4>
+            <ul>
+                <li>Passes through the rudder stock of the vessel<a href="#ref43" class="citation">[43]</a></li>
+                <li>Represents the aft measurement station for calculations<a href="#ref43" class="citation">[43]</a></li>
+            </ul>
+
+            <h4>Midships:</h4>
+            <ul>
+                <li>The station midway between the forward and aft perpendiculars<a href="#ref43" class="citation">[43]</a></li>
+                <li>Used to assess hull deflection (hogging or sagging)<a href="#ref63" class="citation">[63]</a></li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Draft Reading Process -->
+        <h2 id="draft-reading">4. The Draft Reading Process: Procedures for Ocean-Going Bulk Carriers</h2>
+
+        <h3 id="pre-survey">4.1 Pre-Survey Preparation and Vessel Conditions</h3>
+        <p>Before undertaking draft mark readings, specific conditions must be met to ensure measurement accuracy:</p>
+
+        <h4>Vessel Orientation:</h4>
+        <p>The vessel should be <strong>upright with a minimum of trim</strong> before draft marks are read<a href="#ref8" class="citation">[8]</a>. This fundamental requirement ensures that measurements reflect true water displacement rather than being skewed by vessel list or excessive trim.</p>
+
+        <h4>Advance Notice:</h4>
+        <p>The master of a vessel should be advised in adequate time that a draught survey will be taking place<a href="#ref8" class="citation">[8]</a>. For initial light ship surveys (establishing the vessel's empty weight), the master should be requested, subject to the safety of the vessel, to ensure that individual ballast tanks are either fully pressed up or empty<a href="#ref8" class="citation">[8]</a>.</p>
+
+        <h3 id="reading-marks">4.2 Reading Draft Marks: The Six-Point System</h3>
+
+        <h4>Systematic Reading Protocol:</h4>
+        <p>Draft marks must be read on both sides of the vessel at all three longitudinal positions<a href="#ref8" class="citation">[8]</a>:</p>
+        <ol>
+            <li><strong>Forward port and starboard</strong></li>
+            <li><strong>Amidships port and starboard</strong></li>
+            <li><strong>Aft port and starboard</strong></li>
+        </ol>
+        <p>Alternatively, if additional marks are displayed on large vessels, readings may be taken at alternative positions<a href="#ref8" class="citation">[8]</a>.</p>
+
+        <div class="highlight-box">
+            <h4>Accurate Measurement Technique:</h4>
+            <ul>
+                <li>Readings should be taken as close as possible to the waterline to avoid parallax error<a href="#ref162" class="citation">[162]</a></li>
+                <li>For rough sea conditions, a <strong>"draft tube"</strong> (a clear plastic tube with a small weight) can be used to dampen wave action and obtain a stable reading<a href="#ref161" class="citation">[161]</a></li>
+                <li>Multiple readings should be taken—at least three times at exposed berths—with the average used in calculations<a href="#ref105" class="citation">[105]</a></li>
+            </ul>
+        </div>
+
+        <h3 id="water-density">4.3 Water Density Measurement</h3>
+        <p>A critical component often overlooked is the measurement of water density at the survey location:</p>
+
+        <h4>Density Sampling Requirements:</h4>
+        <p>For draft surveys, the density of dock water must be measured just before or after reading the visual drafts<a href="#ref18" class="citation">[18]</a>. Water samples should be obtained for density assessment at:</p>
+        <ul>
+            <li>Forward sections</li>
+            <li>Aft sections</li>
+            <li>Midship sections</li>
+            <li>Approximately half of the ship's draft depth<a href="#ref76" class="citation">[76]</a></li>
+        </ul>
+
+        <h4>Density Variations:</h4>
+        <p>Density can fluctuate rapidly in certain ports and may vary with:</p>
+        <ul>
+            <li>Depth of measurement</li>
+            <li>Time of day</li>
+            <li>Heavy rainfall (reducing salinity)</li>
+            <li>Tidal forces introducing saltwater<a href="#ref76" class="citation">[76]</a></li>
+        </ul>
+
+        <!-- Section 5: Calculations -->
+        <h2 id="calculations">5. Calculation of Mean Drafts from Six-Point Measurements</h2>
+
+        <h3 id="step1">5.1 Step 1: Calculate Mean Drafts at Each Position</h3>
+        <p>From the six individual readings, three mean drafts are calculated by averaging port and starboard readings at each location:</p>
+
+        <div class="formula">
+            <strong>Forward Mean Draft (Fm):</strong><br>
+            Fm = (FP<sub>port</sub> + FP<sub>starboard</sub>) / 2<a href="#ref69" class="citation">[69]</a><a href="#ref106" class="citation">[106]</a>
+        </div>
+
+        <div class="formula">
+            <strong>Midship Mean Draft (Mm):</strong><br>
+            Mm = (MP<sub>port</sub> + MS<sub>starboard</sub>) / 2<a href="#ref69" class="citation">[69]</a><a href="#ref106" class="citation">[106]</a>
+        </div>
+
+        <div class="formula">
+            <strong>Aft Mean Draft (Am):</strong><br>
+            Am = (AP<sub>port</sub> + AS<sub>starboard</sub>) / 2<a href="#ref69" class="citation">[69]</a><a href="#ref106" class="citation">[106]</a>
+        </div>
+
+        <h3 id="step2">5.2 Step 2: Calculate Apparent Trim</h3>
+        <p>Trim represents the difference between forward and aft drafts, indicating whether the vessel is <strong>trimmed by the bow</strong> (forward draft less than aft) or <strong>trimmed by the stern</strong> (aft draft greater than forward):</p>
+
+        <div class="formula">
+            <strong>Apparent Trim (AT):</strong><br>
+            AT = Am - Fm<a href="#ref18" class="citation">[18]</a><a href="#ref69" class="citation">[69]</a>
+        </div>
+
+        <div class="highlight-box">
+            <h4>Interpretation:</h4>
+            <ul>
+                <li>Positive trim = vessel down by stern</li>
+                <li>Negative trim = vessel down by head (bow)</li>
+                <li>Zero trim = vessel floating even<a href="#ref69" class="citation">[69]</a></li>
+            </ul>
+        </div>
+
+        <h3 id="step3">5.3 Step 3: Corrections to Perpendiculars</h3>
+        <p>Since draft marks are frequently not positioned exactly at the forward and aft perpendiculars, corrections must be applied<a href="#ref111" class="citation">[111]</a>. These corrections bring the observed drafts to the true perpendiculars:</p>
+
+        <div class="formula">
+            <strong>Forward Correction:</strong><br>
+            F<sub>correction</sub> = (AT × Fd) / (LBM)<a href="#ref95" class="citation">[95]</a>
+        </div>
+
+        <div class="formula">
+            <strong>Aft Correction:</strong><br>
+            A<sub>correction</sub> = (AT × Ad) / (LBM)<a href="#ref95" class="citation">[95]</a>
+        </div>
+
+        <div class="formula">
+            <strong>Midship Correction:</strong><br>
+            M<sub>correction</sub> = (AT × Md) / (LBM)<a href="#ref95" class="citation">[95]</a>
+        </div>
+
+        <p><strong>Where:</strong></p>
+        <ul>
+            <li><strong>Fd</strong> = distance from forward draft mark to forward perpendicular</li>
+            <li><strong>Ad</strong> = distance from aft draft mark to aft perpendicular</li>
+            <li><strong>Md</strong> = distance from midship draft mark to true midship</li>
+            <li><strong>LBM</strong> = length between marks (LBP – (Ad + Fd))<a href="#ref95" class="citation">[95]</a></li>
+        </ul>
+
+        <h3 id="step4">5.4 Step 4: Detection of Hull Deflection (Hogging and Sagging)</h3>
+        <p>An essential part of draft survey analysis involves detecting hull deflection:</p>
+
+        <p><strong>If the arithmetic mean of forward and aft drafts differs from the midship draft, the hull is distorted:</strong></p>
+        <ul>
+            <li><strong>Hogging:</strong> Vessel deflected upwards at central section (midship draft &lt; mean of forward and aft)<a href="#ref104" class="citation">[104]</a></li>
+            <li><strong>Sagging:</strong> Vessel deflected downwards at central section (midship draft &gt; mean of forward and aft)<a href="#ref104" class="citation">[104]</a></li>
+        </ul>
+
+        <p>This detection is crucial because hull deflection significantly affects displacement calculations and must be corrected for accurate results<a href="#ref45" class="citation">[45]</a>.</p>
+
+        <h3 id="step5">5.5 Step 5: Calculate Quarter Mean Draft (Corrected for Hog/Sag)</h3>
+        <p>The standard formula for quarter mean draft accounts for hull deflection:</p>
+
+        <div class="formula">
+            <strong>Quarter Mean Draft (DM):</strong><br>
+            QMD = (Fm + Am + (4 × Mm)) / 6<a href="#ref64" class="citation">[64]</a>
+        </div>
+
+        <p>Alternative formulas exist depending on vessel type and stability booklet specifications, such as:</p>
+
+        <div class="formula">
+            <strong>Alternative Quarter Mean Draft:</strong><br>
+            QMD = (Fwd + Aft + (6 × Mid)) / 8<a href="#ref45" class="citation">[45]</a><a href="#ref102" class="citation">[102]</a>
+        </div>
+
+        <!-- Section 6: Pilbara Application -->
+        <h2 id="pilbara-application">6. Application to Bulk Carriers in the Pilbara Iron Ore Trade</h2>
+
+        <h3 id="vessel-characteristics">6.1 Characteristics of Bulk Carriers Operating in Pilbara Ports</h3>
+        <p>The Pilbara region of Western Australia is one of the world's largest iron ore export hubs<a href="#ref37" class="citation">[37]</a>. Bulk carriers operating in this region face specific operational parameters:</p>
+
+        <div class="highlight-box">
+            <h4>Port Specifications:</h4>
+            <ul>
+                <li><strong>Port Hedland</strong> is one of the largest iron ore loading ports in the world and the largest in Australia<a href="#ref24" class="citation">[24]</a></li>
+                <li><strong>Dampier and Port Walcott</strong> are additional major iron ore exporting ports in the Pilbara<a href="#ref24" class="citation">[24]</a></li>
+                <li>Pilbara Ports collectively account for approximately <strong>77 percent of Australia's and 42 percent of the world's iron ore trade</strong><a href="#ref37" class="citation">[37]</a></li>
+                <li>The port's <strong>17.2-meter natural draft accommodates the largest bulk carriers</strong> without extensive dredging<a href="#ref21" class="citation">[21]</a></li>
+            </ul>
+        </div>
+
+        <h3 id="draft-limitations">6.2 Vessel Draft Limitations for Iron Ore Carriers</h3>
+        <p>Bulk carriers in the iron ore trade operate within strict draft parameters:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                    <th>Reference</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maximum draft at Dampier</td>
+                    <td>Approximately 10.7 metres when fully loaded</td>
+                    <td><a href="#ref23" class="citation">[23]</a></td>
+                </tr>
+                <tr>
+                    <td>Typical bulk carrier drafts</td>
+                    <td>10 to 16 meters (container ships)</td>
+                    <td><a href="#ref49" class="citation">[49]</a></td>
+                </tr>
+                <tr>
+                    <td>Large bulk carriers and tankers</td>
+                    <td>Up to 20 meters or more</td>
+                    <td><a href="#ref49" class="citation">[49]</a></td>
+                </tr>
+                <tr>
+                    <td>Suez Canal limitation</td>
+                    <td>16.2 m (53.0 ft) maximum</td>
+                    <td><a href="#ref50" class="citation">[50]</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Dynamic Under Keel Clearance (DUKC) Technology:</h4>
+        <p>Modern ports like Pilbara implement sophisticated systems for optimizing draft conditions:</p>
+        <ul>
+            <li>DUKC systems integrate multiple data streams including <strong>bathymetric surveys, weather forecasting, and vessel specifications</strong><a href="#ref27" class="citation">[27]</a></li>
+            <li>These systems determine <strong>maximum safe cargo loads for each departure</strong> based on real-time tidal data<a href="#ref27" class="citation">[27]</a></li>
+            <li>Traditional static clearance requirements would restrict approximately 35% of potential sailing opportunities, but DUKC implementation has reduced these restrictions to less than 15%<a href="#ref21" class="citation">[21]</a></li>
+        </ul>
+
+        <h3 id="practical-example">6.3 Practical Draft Survey Example: Iron Ore Loading</h3>
+        <p>The following example illustrates draft readings during an actual iron ore loading operation:</p>
+
+        <div class="highlight-box">
+            <h4>Example Scenario:</h4>
+            <p>During an intermediate draft survey on a bulk carrier loading iron ore at the Port of Ashburton, the following draft readings were recorded:</p>
+            <ul>
+                <li>Initial survey completed (vessel light ship established)</li>
+                <li>Intermediate survey conducted during loading: <strong>Final drafts recorded as 12.08 m forward, 12.55 m aft</strong></li>
+                <li>Mean draft: <strong>12.32 m</strong></li>
+                <li>Trim: <strong>-0.47 m (down by head)</strong></li>
+                <li>Approximately 5,000 MT of iron ore remaining to be loaded after intermediate survey<a href="#ref225" class="citation">[225]</a></li>
+            </ul>
+            <p>This example demonstrates how multiple surveys are conducted throughout the loading process to ensure accurate cargo measurement and vessel stability.</p>
+        </div>
+
+        <!-- Section 7: Equipment and Standards -->
+        <h2 id="equipment-standards">7. Measurement Equipment and Standards</h2>
+
+        <h3 id="required-equipment">7.1 Required Equipment for Accurate Draft Surveys</h3>
+        <p>Professional draft surveys require specialized equipment:</p>
+
+        <div class="highlight-box">
+            <h4>Standard Equipment:</h4>
+            <ul>
+                <li><strong>Steel tape measure with plumb bob</strong> – preferably calibrated<a href="#ref8" class="citation">[8]</a></li>
+                <li><strong>Stainless steel sounding tape with brass plumb bob</strong> – for precision measurement<a href="#ref8" class="citation">[8]</a></li>
+                <li><strong>Sea water sampling bucket</strong> – sufficient volume for density determination<a href="#ref8" class="citation">[8]</a></li>
+                <li><strong>Computer/calculator</strong> – for complex calculations<a href="#ref8" class="citation">[8]</a></li>
+                <li><strong>Hydrometer</strong> – to measure apparent density of water<a href="#ref3" class="citation">[3]</a><a href="#ref108" class="citation">[108]</a></li>
+                <li><strong>Photographic documentation</strong> – to create clear records<a href="#ref112" class="citation">[112]</a></li>
+            </ul>
+        </div>
+
+        <h3 id="regulatory-framework">7.2 Regulatory Framework and Standards</h3>
+        <p>Draft mark specifications are governed by international maritime conventions:</p>
+
+        <h4>SOLAS Requirements:</h4>
+        <p>Draft marks are a fundamental safety requirement under the <strong>SOLAS Convention, Chapter II-1 (Regulation 5)</strong> and are verified by surveyors during load line assignment in accordance with the <strong>ICLL 1966</strong><a href="#ref15" class="citation">[15]</a>.</p>
+
+        <h4>Regulatory Bodies:</h4>
+        <p>In Australia, the <strong>Australian Maritime Safety Authority (AMSA)</strong> enforces compliance with:</p>
+        <ul>
+            <li>Marine Order 16 (international load line standards)<a href="#ref114" class="citation">[114]</a></li>
+            <li>National Standard for Commercial Vessels (NSCV)<a href="#ref165" class="citation">[165]</a></li>
+            <li>Draft survey procedures compliant with UN ECE standards<a href="#ref181" class="citation">[181]</a></li>
+        </ul>
+
+        <!-- Section 8: Errors and Challenges -->
+        <h2 id="errors-challenges">8. Common Errors and Challenges in Draft Measurement</h2>
+
+        <h3 id="environmental-challenges">8.1 Environmental and Operational Challenges</h3>
+
+        <h4>Wave and Swell Effects:</h4>
+        <p>The principal difficulty faced when observing and recording draft figures is <strong>wave swell dip</strong>. Visual averaging by on-site observers assists, and video recording of this process is recommended for evidential purposes<a href="#ref121" class="citation">[121]</a>.</p>
+
+        <h4>Hull Deflection (Hogging and Sagging):</h4>
+        <p>Hogging or sagging of the vessel is another source of error that occurs due to unavoidable circumstances<a href="#ref43" class="citation">[43]</a>. These conditions must be corrected for accurate cargo calculations, with potential deflections at support locations reaching:</p>
+        <ul>
+            <li><strong>Sagging:</strong> -109 mm to -76.62 mm at specific hull locations<a href="#ref203" class="citation">[203]</a></li>
+            <li><strong>Hogging:</strong> +109 mm to +76.62 mm<a href="#ref203" class="citation">[203]</a></li>
+        </ul>
+
+        <h3 id="precision-requirements">8.2 Measurement Precision Requirements</h3>
+
+        <h4>Accuracy Standards:</h4>
+        <p>The final fully corrected 3/4 mean draught should be within <strong>±10 mm of the true mean draught</strong><a href="#ref125" class="citation">[125]</a>. This stringent requirement reflects the critical importance of precision in cargo weight determination.</p>
+
+        <div class="highlight-box">
+            <h4>Error Sources (in order of impact):</h4>
+            <ol>
+                <li><strong>Perpendicular positioning errors</strong> – Most critical (using AMD instead of TMD introduces significant errors)<a href="#ref45" class="citation">[45]</a></li>
+                <li><strong>Hull deflection not accounted for</strong> – Substantially affects displacement calculations<a href="#ref45" class="citation">[45]</a></li>
+                <li><strong>Water density variations</strong> – Rapid fluctuations can significantly impact calculations<a href="#ref76" class="citation">[76]</a></li>
+                <li><strong>Parallax errors</strong> – Failure to read marks as close as possible to waterline<a href="#ref162" class="citation">[162]</a></li>
+                <li><strong>Inadequate wave dampening</strong> – Rough sea conditions without draft tubes<a href="#ref112" class="citation">[112]</a></li>
+                <li><strong>Incorrect list/trim corrections</strong> – Particularly for vessels with significant heel angles<a href="#ref45" class="citation">[45]</a></li>
+            </ol>
+        </div>
+
+        <!-- Section 9: UN ECE Framework -->
+        <h2 id="un-ece-framework">9. Draft Survey Standardization: The UN ECE Framework</h2>
+
+        <h3>International Standards</h3>
+        <p>The procedure for draft surveys is <strong>standardized by the United Nations Economic Commission for Europe</strong><a href="#ref71" class="citation">[71]</a>, establishing uniform standards and procedures for the performance of draught surveys.</p>
+
+        <div class="highlight-box">
+            <h4>UN ECE Draught Survey Code:</h4>
+            <p>This comprehensive code provides:</p>
+            <ul>
+                <li>Form templates for standardized reporting<a href="#ref188" class="citation">[188]</a></li>
+                <li>Step-by-step procedures for measurement<a href="#ref182" class="citation">[182]</a></li>
+                <li>Calculation methodologies for various vessel types<a href="#ref184" class="citation">[184]</a></li>
+                <li>Definitions and meanings for all technical terms<a href="#ref193" class="citation">[193]</a></li>
+            </ul>
+        </div>
+
+        <h4>Formulas and Calculations:</h4>
+        <p>The UN ECE standard specifies various calculation approaches. When the ship is <strong>sagged:</strong></p>
+
+        <div class="formula">
+            <strong>Sagging Correction Formula:</strong><br>
+            D = M + f(MS - M)<a href="#ref186" class="citation">[186]</a><a href="#ref187" class="citation">[187]</a><br><br>
+            <strong>Where:</strong><br>
+            • D = Draught applied in displacement calculation<br>
+            • M = Mean of draughts at forward and aft perpendiculars<br>
+            • MS = Mean of draughts measured at amidships<br>
+            • f = deflection correction factor
+        </div>
+
+        <p>This formula accounts for the non-uniform distribution of buoyancy along the vessel length<a href="#ref187" class="citation">[187]</a>.</p>
+
+        <!-- Section 10: Practical Procedures -->
+        <h2 id="practical-procedures">10. Practical Application: Draft Survey Procedures for Iron Ore Bulk Carriers</h2>
+
+        <h3 id="pre-survey-phase">10.1 Pre-Survey Phase</h3>
+        <ol>
+            <li><strong>Advance Notification:</strong> Master advised of survey timing<a href="#ref8" class="citation">[8]</a></li>
+            <li><strong>Documentation Review:</strong> General arrangement plans, capacity plans, stability booklet, tank calibration tables examined<a href="#ref45" class="citation">[45]</a></li>
+            <li><strong>Equipment Inspection:</strong> All measurement instruments calibrated and ready<a href="#ref111" class="citation">[111]</a></li>
+            <li><strong>Vessel Condition:</strong> Ballast tanks confirmed as fully pressed up or empty; vessel upright with minimum trim<a href="#ref8" class="citation">[8]</a></li>
+        </ol>
+
+        <h3 id="execution-phase">10.2 Survey Execution Phase</h3>
+
+        <h4>Step 1: Read Drafts</h4>
+        <ul>
+            <li>Observe all six draft marks (forward port/starboard, midship port/starboard, aft port/starboard)<a href="#ref47" class="citation">[47]</a></li>
+            <li>Ensure readings taken as close to waterline as possible<a href="#ref162" class="citation">[162]</a></li>
+            <li>For rough seas, use draft tube to dampen wave action<a href="#ref161" class="citation">[161]</a></li>
+            <li>Multiple readings recommended (minimum three times at exposed berths)<a href="#ref105" class="citation">[105]</a></li>
+        </ul>
+
+        <h4>Step 2: Measure Water Density</h4>
+        <ul>
+            <li>Record hydrometer readings for dock water<a href="#ref112" class="citation">[112]</a></li>
+            <li>Obtain samples at forward, midship, and aft sections at approximately half draft depth<a href="#ref76" class="citation">[76]</a></li>
+        </ul>
+
+        <h4>Step 3: Record Ballast and Bunker Quantities</h4>
+        <ul>
+            <li>Sound ballast tanks (or read gauges)<a href="#ref111" class="citation">[111]</a></li>
+            <li>Record fuel oil, fresh water, and other consumable quantities<a href="#ref111" class="citation">[111]</a></li>
+            <li>These measurements affect net displacement calculations<a href="#ref112" class="citation">[112]</a></li>
+        </ul>
+
+        <h4>Step 4: Photograph Documentation</h4>
+        <ul>
+            <li>Capture images of draft marks for evidential record<a href="#ref121" class="citation">[121]</a></li>
+            <li>Document visible conditions (swell, water clarity, etc.)<a href="#ref112" class="citation">[112]</a></li>
+        </ul>
+
+        <h3 id="calculation-phase">10.3 Post-Survey Calculation Phase</h3>
+        <ol>
+            <li>Calculate mean drafts at each position<a href="#ref69" class="citation">[69]</a><a href="#ref106" class="citation">[106]</a></li>
+            <li>Calculate apparent trim<a href="#ref69" class="citation">[69]</a></li>
+            <li>Apply corrections to perpendiculars<a href="#ref95" class="citation">[95]</a></li>
+            <li>Detect and correct for hull deflection (hogging/sagging)<a href="#ref45" class="citation">[45]</a><a href="#ref104" class="citation">[104]</a></li>
+            <li>Calculate quarter mean draft<a href="#ref64" class="citation">[64]</a></li>
+            <li>Interpolate displacement from hydrostatic tables<a href="#ref68" class="citation">[68]</a></li>
+            <li>Apply density corrections<a href="#ref70" class="citation">[70]</a></li>
+            <li>Subtract ballast, bunkers, and fresh water weights<a href="#ref70" class="citation">[70]</a></li>
+            <li>Subtract lightship constant<a href="#ref68" class="citation">[68]</a></li>
+            <li>Determine final cargo weight<a href="#ref70" class="citation">[70]</a></li>
+        </ol>
+
+        <!-- Section 11: Pilbara Specifications -->
+        <h2 id="pilbara-specifications">11. Specifications for Major Pilbara Bulk Carriers</h2>
+
+        <h3>Recent Iron Ore Shipments</h3>
+        <p>To contextualize the scale of operations, recent significant shipments demonstrate the importance of accurate draft measurement:</p>
+
+        <div class="highlight-box">
+            <h4>Historical Milestone:</h4>
+            <p>On <strong>19 May 2026</strong>, the bulk carrier <strong>Juno Horizon</strong> departed Cape Lambert port in Western Australia loaded with cargo that pushed Rio Tinto's cumulative Pilbara export tally to <strong>eight billion tonnes</strong>—marking 60 years of operation<a href="#ref22" class="citation">[22]</a><a href="#ref35" class="citation">[35]</a>.</p>
+
+            <h4>Throughput Volumes:</h4>
+            <ul>
+                <li>In 2021/22, <strong>561 million tonnes</strong> of cargo passed through Pilbara ports<a href="#ref24" class="citation">[24]</a></li>
+                <li>In 2023/24, over <strong>7,000 bulk carrier vessels</strong> (about half carrying iron ore) visited Pilbara ports<a href="#ref24" class="citation">[24]</a></li>
+            </ul>
+        </div>
+
+        <h3>Large Vessel Specifications</h3>
+        <p>The largest vessels operating in the iron ore trade demonstrate the physical scale requiring precise draft measurement:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>ULCV Specification</th>
+                    <th>Reference</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Length</td>
+                    <td>Approximately 360 metres</td>
+                    <td><a href="#ref218" class="citation">[218]</a></td>
+                </tr>
+                <tr>
+                    <td>Beam</td>
+                    <td>65 metres</td>
+                    <td><a href="#ref218" class="citation">[218]</a></td>
+                </tr>
+                <tr>
+                    <td>Draft</td>
+                    <td>24 metres</td>
+                    <td><a href="#ref218" class="citation">[218]</a></td>
+                </tr>
+                <tr>
+                    <td>Deadweight Capacity</td>
+                    <td>400,000 tonnes</td>
+                    <td><a href="#ref218" class="citation">[218]</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>These massive vessels require meticulous draft measurement due to their substantial displacement and cargo volumes. The difference of even a few centimeters in draft reading can translate to thousands of tonnes in cargo weight calculations.</p>
+
+        <!-- Section 12: Advanced Technologies -->
+        <h2 id="advanced-technologies">12. Advanced Technologies and Future Developments</h2>
+
+        <h3>Real-Time Draft Monitoring Systems</h3>
+        <p>Modern maritime technology is evolving toward automated draft measurement:</p>
+
+        <div class="highlight-box">
+            <h4>Future Directions:</h4>
+            <ul>
+                <li><strong>Drone-based video recording</strong> – Capturing video from each of the ship's six draft locations for precise visual documentation<a href="#ref48" class="citation">[48]</a></li>
+                <li><strong>Automated measurement software</strong> – Processing video frames to calculate cumulative draft estimates with statistical analysis<a href="#ref48" class="citation">[48]</a></li>
+                <li><strong>Integration with vessel monitoring systems</strong> – Real-time draft data linked to loading computers and stability systems<a href="#ref163" class="citation">[163]</a></li>
+            </ul>
+        </div>
+
+        <h3>Vessel Information Systems</h3>
+        <h4>iStow Draft System:</h4>
+        <ul>
+            <li>Crew manually enters draft measurements into the system<a href="#ref163" class="citation">[163]</a></li>
+            <li>System simulates draft in 2D format<a href="#ref163" class="citation">[163]</a></li>
+            <li>Provides clear and accurate visual representation of ship's draft and cargo load<a href="#ref163" class="citation">[163]</a></li>
+        </ul>
+
+        <!-- Section 13: Regulatory Compliance -->
+        <h2 id="regulatory-compliance">13. Regulatory Compliance and Survey Requirements</h2>
+
+        <h3>Australian Maritime Safety Authority Requirements</h3>
+        <p>As iron ore shipments depart from Australian ports, they must comply with AMSA standards:</p>
+
+        <div class="highlight-box">
+            <h4>Requirements for Vessels:</h4>
+            <ul>
+                <li>Vessels in Australia used for any commercial, government, or research activity must be compliant with Australian standards and regulations<a href="#ref167" class="citation">[167]</a></li>
+                <li>Draft survey procedures must be acceptable methods of cargo measurement<a href="#ref18" class="citation">[18]</a></li>
+                <li>Survey techniques must minimize risk of shortage claims and disputes<a href="#ref183" class="citation">[183]</a></li>
+            </ul>
+        </div>
+
+        <h3>Industry Best Practices</h3>
+        <h4>Recommended Practices:</h4>
+        <ul>
+            <li>Masters and chief officers of dry bulk carriers should have access to UN ECE draught survey codes or equivalent publications<a href="#ref121" class="citation">[121]</a></li>
+            <li>These references should be referenced in ISM Code or NCVS SMS procedures<a href="#ref121" class="citation">[121]</a></li>
+            <li>Pre-voyage agreements must specify which correction methodology will be used consistently throughout operations<a href="#ref45" class="citation">[45]</a></li>
+        </ul>
+
+        <!-- Section 14: Diagrams -->
+        <h2 id="diagrams">14. Diagram and Visual Representation: Draft Marks Configuration</h2>
+
+        <h3>Six-Point Draft Mark System: Side View</h3>
+        <div class="diagram-container">
+            <div class="diagram-title">Vessel Profile - Six Draft Mark Positions</div>
+            <svg width="100%" height="400" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Waterline -->
+                <line x1="50" y1="250" x2="950" y2="250" stroke="#0066cc" stroke-width="3" stroke-dasharray="10,5"/>
+                <text x="960" y="255" font-size="14" fill="#0066cc" font-weight="bold">WATERLINE</text>
+
+                <!-- Hull outline -->
+                <path d="M 100,250 L 100,350 L 150,370 L 850,370 L 900,350 L 900,250"
+                      fill="#cccccc" stroke="#333" stroke-width="2"/>
+
+                <!-- Forward Section -->
+                <g id="forward-marks">
+                    <text x="150" y="100" font-size="16" fill="#1a472a" font-weight="bold">FORWARD SECTION</text>
+                    <text x="120" y="130" font-size="14" fill="#2c5f3d">(FP - Port | FS - Starboard)</text>
+
+                    <!-- Port side marks -->
+                    <rect x="110" y="170" width="15" height="8" fill="#1a472a"/>
+                    <text x="130" y="177" font-size="12" fill="#000">5</text>
+                    <rect x="110" y="190" width="15" height="8" fill="#1a472a"/>
+                    <text x="130" y="197" font-size="12" fill="#000">4</text>
+                    <rect x="110" y="210" width="15" height="8" fill="#1a472a"/>
+                    <text x="130" y="217" font-size="12" fill="#000">3</text>
+                    <rect x="110" y="230" width="15" height="8" fill="#1a472a"/>
+                    <text x="130" y="237" font-size="12" fill="#000">2</text>
+                    <rect x="110" y="250" width="15" height="8" fill="#1a472a"/>
+                    <text x="130" y="257" font-size="12" fill="#000">1</text>
+
+                    <!-- Starboard side marks -->
+                    <rect x="180" y="170" width="15" height="8" fill="#1a472a"/>
+                    <text x="160" y="177" font-size="12" fill="#000">5</text>
+                    <rect x="180" y="190" width="15" height="8" fill="#1a472a"/>
+                    <text x="160" y="197" font-size="12" fill="#000">4</text>
+                    <rect x="180" y="210" width="15" height="8" fill="#1a472a"/>
+                    <text x="160" y="217" font-size="12" fill="#000">3</text>
+                    <rect x="180" y="230" width="15" height="8" fill="#1a472a"/>
+                    <text x="160" y="237" font-size="12" fill="#000">2</text>
+                    <rect x="180" y="250" width="15" height="8" fill="#1a472a"/>
+                    <text x="160" y="257" font-size="12" fill="#000">1</text>
+                </g>
+
+                <!-- Midship Section -->
+                <g id="midship-marks">
+                    <text x="440" y="100" font-size="16" fill="#1a472a" font-weight="bold">MIDSHIP SECTION</text>
+                    <text x="420" y="130" font-size="14" fill="#2c5f3d">(MP - Port | MS - Starboard)</text>
+
+                    <!-- Port side marks -->
+                    <rect x="470" y="170" width="15" height="8" fill="#1a472a"/>
+                    <text x="490" y="177" font-size="12" fill="#000">5</text>
+                    <rect x="470" y="190" width="15" height="8" fill="#1a472a"/>
+                    <text x="490" y="197" font-size="12" fill="#000">4</text>
+                    <rect x="470" y="210" width="15" height="8" fill="#1a472a"/>
+                    <text x="490" y="217" font-size="12" fill="#000">3</text>
+                    <rect x="470" y="230" width="15" height="8" fill="#1a472a"/>
+                    <text x="490" y="237" font-size="12" fill="#000">2</text>
+                    <rect x="470" y="250" width="15" height="8" fill="#1a472a"/>
+                    <text x="490" y="257" font-size="12" fill="#000">1</text>
+
+                    <!-- Starboard side marks -->
+                    <rect x="530" y="170" width="15" height="8" fill="#1a472a"/>
+                    <text x="510" y="177" font-size="12" fill="#000">5</text>
+                    <rect x="530" y="190" width="15" height="8" fill="#1a472a"/>
+                    <text x="510" y="197" font-size="12" fill="#000">4</text>
+                    <rect x="530" y="210" width="15" height="8" fill="#1a472a"/>
+                    <text x="510" y="217" font-size="12" fill="#000">3</text>
+                    <rect x="530" y="230" width="15" height="8" fill="#1a472a"/>
+                    <text x="510" y="237" font-size="12" fill="#000">2</text>
+                    <rect x="530" y="250" width="15" height="8" fill="#1a472a"/>
+                    <text x="510" y="257" font-size="12" fill="#000">1</text>
+                </g>
+
+                <!-- Aft Section -->
+                <g id="aft-marks">
+                    <text x="810" y="100" font-size="16" fill="#1a472a" font-weight="bold">AFT SECTION</text>
+                    <text x="780" y="130" font-size="14" fill="#2c5f3d">(AP - Port | AS - Starboard)</text>
+
+                    <!-- Port side marks -->
+                    <rect x="820" y="170" width="15" height="8" fill="#1a472a"/>
+                    <text x="840" y="177" font-size="12" fill="#000">5</text>
+                    <rect x="820" y="190" width="15" height="8" fill="#1a472a"/>
+                    <text x="840" y="197" font-size="12" fill="#000">4</text>
+                    <rect x="820" y="210" width="15" height="8" fill="#1a472a"/>
+                    <text x="840" y="217" font-size="12" fill="#000">3</text>
+                    <rect x="820" y="230" width="15" height="8" fill="#1a472a"/>
+                    <text x="840" y="237" font-size="12" fill="#000">2</text>
+                    <rect x="820" y="250" width="15" height="8" fill="#1a472a"/>
+                    <text x="840" y="257" font-size="12" fill="#000">1</text>
+
+                    <!-- Starboard side marks -->
+                    <rect x="880" y="170" width="15" height="8" fill="#1a472a"/>
+                    <text x="860" y="177" font-size="12" fill="#000">5</text>
+                    <rect x="880" y="190" width="15" height="8" fill="#1a472a"/>
+                    <text x="860" y="197" font-size="12" fill="#000">4</text>
+                    <rect x="880" y="210" width="15" height="8" fill="#1a472a"/>
+                    <text x="860" y="217" font-size="12" fill="#000">3</text>
+                    <rect x="880" y="230" width="15" height="8" fill="#1a472a"/>
+                    <text x="860" y="237" font-size="12" fill="#000">2</text>
+                    <rect x="880" y="250" width="15" height="8" fill="#1a472a"/>
+                    <text x="860" y="257" font-size="12" fill="#000">1</text>
+                </g>
+
+                <!-- Annotations -->
+                <text x="400" y="390" font-size="12" fill="#666" font-style="italic">
+                    Draft marks: 10cm high, 10cm spacing. Measurements in meters.
+                </text>
+            </svg>
+        </div>
+
+        <h3>Load Line Marking Configuration</h3>
+        <div class="diagram-container">
+            <div class="diagram-title">Plimsoll Mark and Load Line Marks - Amidships</div>
+            <svg width="100%" height="500" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+                <!-- Deck Line -->
+                <line x1="100" y1="80" x2="500" y2="80" stroke="#000" stroke-width="4"/>
+                <text x="510" y="85" font-size="14" fill="#000" font-weight="bold">DECK LINE</text>
+
+                <!-- Plimsoll Disc -->
+                <circle cx="250" cy="200" r="50" fill="none" stroke="#000" stroke-width="4"/>
+                <line x1="200" y1="200" x2="300" y2="200" stroke="#000" stroke-width="3"/>
+                <text x="320" y="205" font-size="14" fill="#000" font-weight="bold">Plimsoll Disc</text>
+
+                <!-- Vertical line 540mm forward of disc -->
+                <line x1="160" y1="100" x2="160" y2="450" stroke="#000" stroke-width="5"/>
+                <text x="80" y="250" font-size="12" fill="#666">540mm →</text>
+
+                <!-- Load Line Marks -->
+                <g id="load-lines">
+                    <!-- Summer (S) -->
+                    <line x1="160" y1="200" x2="250" y2="200" stroke="#000" stroke-width="4"/>
+                    <text x="260" y="205" font-size="16" fill="#000" font-weight="bold">S</text>
+                    <text x="280" y="205" font-size="12" fill="#666">(Summer)</text>
+
+                    <!-- Winter North Atlantic (WNA) -->
+                    <line x1="160" y1="230" x2="250" y2="230" stroke="#000" stroke-width="4"/>
+                    <text x="260" y="235" font-size="16" fill="#000" font-weight="bold">WNA</text>
+                    <text x="300" y="235" font-size="12" fill="#666">(Winter North Atlantic)</text>
+
+                    <!-- Winter (W) -->
+                    <line x1="160" y1="260" x2="250" y2="260" stroke="#000" stroke-width="4"/>
+                    <text x="260" y="265" font-size="16" fill="#000" font-weight="bold">W</text>
+                    <text x="280" y="265" font-size="12" fill="#666">(Winter)</text>
+
+                    <!-- Tropical (T) -->
+                    <line x1="160" y1="170" x2="250" y2="170" stroke="#000" stroke-width="4"/>
+                    <text x="260" y="175" font-size="16" fill="#000" font-weight="bold">T</text>
+                    <text x="280" y="175" font-size="12" fill="#666">(Tropical)</text>
+
+                    <!-- Tropical Fresh (TF) -->
+                    <line x1="160" y1="140" x2="250" y2="140" stroke="#000" stroke-width="4"/>
+                    <text x="260" y="145" font-size="16" fill="#000" font-weight="bold">TF</text>
+                    <text x="285" y="145" font-size="12" fill="#666">(Tropical Fresh)</text>
+
+                    <!-- Fresh (F) -->
+                    <line x1="160" y1="110" x2="250" y2="110" stroke="#000" stroke-width="4"/>
+                    <text x="260" y="115" font-size="16" fill="#000" font-weight="bold">F</text>
+                    <text x="280" y="115" font-size="12" fill="#666">(Fresh Water)</text>
+                </g>
+
+                <!-- Dimension annotations -->
+                <text x="50" y="480" font-size="11" fill="#666">Line dimensions: 230mm × 25mm</text>
+                <text x="50" y="495" font-size="11" fill="#666">Vertical spacing: 1/48 of Summer draft (W-S, T-S)</text>
+            </svg>
+        </div>
+
+        <!-- Section 15: Calculation Example -->
+        <h2 id="calculation-example">15. Comprehensive Calculation Example: Six-Point Draft Survey</h2>
+
+        <h3>Scenario: Bulk Carrier Loading Iron Ore at Port Hedland</h3>
+
+        <div class="highlight-box">
+            <h4>Vessel Details:</h4>
+            <ul>
+                <li><strong>LBP:</strong> 200 meters</li>
+                <li><strong>Forward draft mark distance to FP:</strong> 2.0 m aft</li>
+                <li><strong>Aft draft mark distance to AP:</strong> 1.5 m forward</li>
+                <li><strong>Midship mark distance to true midship:</strong> 0.5 m aft</li>
+                <li><strong>LCF (from hydrostatic tables):</strong> 95 m from aft perpendicular</li>
+            </ul>
+        </div>
+
+        <h4>Raw Draft Readings (in meters):</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Port</th>
+                    <th>Starboard</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Forward</td>
+                    <td>8.42</td>
+                    <td>8.48</td>
+                </tr>
+                <tr>
+                    <td>Midship</td>
+                    <td>8.95</td>
+                    <td>8.98</td>
+                </tr>
+                <tr>
+                    <td>Aft</td>
+                    <td>9.65</td>
+                    <td>9.72</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Calculations</h3>
+
+        <h4>Step 1: Calculate Mean Drafts</h4>
+        <div class="formula">
+            Fm = (8.42 + 8.48) / 2 = <strong>8.45 m</strong><br>
+            Mm = (8.95 + 8.98) / 2 = <strong>8.965 m</strong><br>
+            Am = (9.65 + 9.72) / 2 = <strong>9.685 m</strong>
+        </div>
+
+        <h4>Step 2: Calculate Apparent Trim</h4>
+        <div class="formula">
+            AT = Am - Fm = 9.685 - 8.45 = <strong>1.235 m (down by stern)</strong>
+        </div>
+
+        <h4>Step 3: Apply Perpendicular Corrections</h4>
+        <p>Assuming LBM = 195 m:</p>
+        <div class="formula">
+            F<sub>correction</sub> = (1.235 × 2.0) / 195 = <strong>0.0127 m</strong> (add to forward draft)<br>
+            A<sub>correction</sub> = (1.235 × 1.5) / 195 = <strong>0.0095 m</strong> (subtract from aft draft)<br><br>
+            <strong>Corrected drafts:</strong><br>
+            F<sub>corrected</sub> = 8.45 + 0.0127 = <strong>8.463 m</strong><br>
+            A<sub>corrected</sub> = 9.685 - 0.0095 = <strong>9.676 m</strong>
+        </div>
+
+        <h4>Step 4: Assess Hull Deflection</h4>
+        <div class="formula">
+            Mean of corrected forward and aft = (8.463 + 9.676) / 2 = 9.070 m<br>
+            Midship reading = 8.965 m<br>
+            Difference = 9.070 - 8.965 = <strong>0.105 m (vessel is slightly hogged)</strong>
+        </div>
+
+        <h4>Step 5: Calculate Quarter Mean Draft</h4>
+        <div class="formula">
+            QMD = (Fm + Am + (4 × Mm)) / 6<br>
+            QMD = (8.463 + 9.676 + (4 × 8.965)) / 6<br>
+            QMD = (8.463 + 9.676 + 35.86) / 6<br>
+            QMD = 53.999 / 6 = <strong>9.00 m</strong>
+        </div>
+
+        <h4>Step 6: Determine Displacement</h4>
+        <p>From hydrostatic tables at 9.00 m mean draft: <strong>Displacement = 18,500 tonnes</strong></p>
+
+        <h4>Step 7: Apply Density Correction</h4>
+        <div class="formula">
+            Measured water density = 1.026 t/m³<br>
+            Standard density from tables = 1.025 t/m³<br>
+            Correction factor = 1.026 / 1.025 = 1.0010<br>
+            <strong>Corrected displacement = 18,500 × 1.0010 = 18,518.5 tonnes</strong>
+        </div>
+
+        <h4>Step 8: Subtract Ballast, Bunkers, Fresh Water</h4>
+        <ul>
+            <li>Ballast water: 2,000 tonnes</li>
+            <li>Heavy fuel oil: 450 tonnes</li>
+            <li>Marine diesel oil: 150 tonnes</li>
+            <li>Fresh water: 250 tonnes</li>
+            <li><strong>Total consumables = 2,850 tonnes</strong></li>
+        </ul>
+
+        <h4>Step 9: Subtract Lightship Constant</h4>
+        <p>Lightship constant (established from initial survey): <strong>8,000 tonnes</strong></p>
+
+        <h4>Step 10: Calculate Cargo Weight</h4>
+        <div class="formula">
+            <strong>Cargo Weight = 18,518.5 - 2,850 - 8,000 = 7,668.5 tonnes of iron ore</strong>
+        </div>
+
+        <p>This final figure represents the net weight of iron ore loaded onto the bulk carrier at this specific point in the loading operation.</p>
+
+        <!-- Section 16: Significance -->
+        <h2 id="significance">16. Significance of Accurate Draft Measurement in Pilbara Operations</h2>
+
+        <h3>Economic Impact</h3>
+        <p>For context on the significance of accurate measurement, consider the scale of Pilbara operations:</p>
+        <ul>
+            <li>Over <strong>561 million tonnes</strong> of cargo in 2021/22 alone<a href="#ref24" class="citation">[24]</a></li>
+            <li>Each vessel averaging 60,000-100,000 tonnes cargo (depending on vessel class)</li>
+            <li>Even a 0.5% error in draft-based measurement equates to thousands of tonnes per vessel</li>
+        </ul>
+
+        <h3>Operational Efficiency</h3>
+        <div class="highlight-box">
+            <h4>DUKC Implementation Results:</h4>
+            <p>Advanced draft optimization has revolutionized port throughput:</p>
+            <ul>
+                <li>Dynamic Under Keel Clearance systems calculate optimal departure times based on real-time tidal data<a href="#ref21" class="citation">[21]</a></li>
+                <li>Traditional static clearance requirements restricted ~35% of sailing opportunities<a href="#ref21" class="citation">[21]</a></li>
+                <li>DUKC implementation reduced these restrictions to less than 15%<a href="#ref21" class="citation">[21]</a></li>
+                <li>Advanced tidal prediction models provide accurate forecasting up to 14 days ahead<a href="#ref21" class="citation">[21]</a></li>
+            </ul>
+        </div>
+
+        <!-- Section 17: Conclusion -->
+        <h2 id="conclusion">17. Conclusion</h2>
+
+        <p>The six-point draft mark system represents a sophisticated yet standardized methodology for determining cargo weight on ocean-going bulk carriers operating in the Pilbara iron ore trade. These marks—positioned at forward, midship, and aft locations on both port and starboard sides—provide the fundamental measurement basis for applying Archimedes' principle to calculate displacement and thus cargo weight<a href="#ref71" class="citation">[71]</a>.</p>
+
+        <div class="highlight-box">
+            <h4>Key Findings:</h4>
+            <ol>
+                <li><strong>Standardization:</strong> Draft marks follow rigorous international standards with 10 cm height and spacing, ensuring consistency across vessels worldwide<a href="#ref15" class="citation">[15]</a><a href="#ref46" class="citation">[46]</a></li>
+
+                <li><strong>Precision Requirement:</strong> Measurements must be accurate to within ±10 mm to ensure reliable cargo weight determination<a href="#ref125" class="citation">[125]</a></li>
+
+                <li><strong>Complex Calculations:</strong> Raw draft readings require multiple corrections for perpendicular positioning, hull deflection (hogging/sagging), water density, and vessel trim<a href="#ref95" class="citation">[95]</a><a href="#ref104" class="citation">[104]</a><a href="#ref68" class="citation">[68]</a></li>
+
+                <li><strong>Operational Context:</strong> Pilbara ports handle over 77% of Australia's iron ore exports using vessels with draft capabilities up to 24 meters for ULCVs<a href="#ref37" class="citation">[37]</a><a href="#ref218" class="citation">[218]</a></li>
+
+                <li><strong>Regulatory Framework:</strong> All procedures must comply with SOLAS requirements and UN ECE standardized codes, with enforcement by maritime authorities including Australia's AMSA<a href="#ref15" class="citation">[15]</a><a href="#ref114" class="citation">[114]</a></li>
+
+                <li><strong>Technology Evolution:</strong> Modern systems incorporate DUKC optimization, automated monitoring, and real-time data integration to maximize efficiency and safety<a href="#ref21" class="citation">[21]</a><a href="#ref27" class="citation">[27]</a></li>
+            </ol>
+        </div>
+
+        <p>For bulk carriers operating in the Pilbara iron ore trade, accurate draft measurement is not merely an administrative requirement—it is a fundamental operational necessity that ensures proper cargo accounting, vessel stability, regulatory compliance, and ultimately, the safety of the vessel and crew operating in this critical global trade route.</p>
+
+        <!-- References Section -->
+        <h2 id="references">18. References Cited</h2>
+
+        <div class="references">
+            <ol>
+                <li id="ref2">Marine Safety Center Technical Note - dco.uscg.gov. <a href="https://www.dco.uscg.mil/Portals/9/DCO%20Documents/Marine%20Safety%20Center/Tonnage/MTN_01-99_CH-5.pdf">https://www.dco.uscg.mil/Portals/9/DCO%20Documents/Marine%20Safety%20Center/Tonnage/MTN_01-99_CH-5.pdf</a></li>
+
+                <li id="ref3">UK P&I Club. "Chapter 16 – Draught Surveys." Carefully to Carry, 2023. <a href="https://www.ukpandi.com/fileadmin/uploads/ukpandi/Documents/uk-p-i-club/carefully-to-carry/2023/UKPI_Carefully_to_Carry_2023_16.pdf">https://www.ukpandi.com/fileadmin/uploads/ukpandi/Documents/uk-p-i-club/carefully-to-carry/2023/UKPI_Carefully_to_Carry_2023_16.pdf</a></li>
+
+                <li id="ref4">eCFR. "46 CFR Part 32 Subpart 32.05 -- Markings." <a href="https://www.ecfr.gov/current/title-46/chapter-I/subchapter-D/part-32/subpart-32.05">https://www.ecfr.gov/current/title-46/chapter-I/subchapter-D/part-32/subpart-32.05</a></li>
+
+                <li id="ref5">Maritime Safety Innovation Lab. "Load Line Calculation for a Tanker Vessel." <a href="https://maritimesafetyinnovationlab.org/wp-content/uploads/2021/12/LOADLINECALCULATIONARTICLE1.pdf">https://maritimesafetyinnovationlab.org/wp-content/uploads/2021/12/LOADLINECALCULATIONARTICLE1.pdf</a></li>
+
+                <li id="ref8">BulkCarrierGuide. "Draught surveys practice & Measurement of bulk cargoes." <a href="https://bulkcarrierguide.com/draft-survey.html">https://bulkcarrierguide.com/draft-survey.html</a></li>
+
+                <li id="ref10">Marine Insight. "What are Draft Lines Of Vessels?" <a href="https://www.marineinsight.com/naval-architecture/draft-lines-of-vessels/">https://www.marineinsight.com/naval-architecture/draft-lines-of-vessels/</a></li>
+
+                <li id="ref12">Wikipedia. "Draft (hull)." <a href="https://en.wikipedia.org/wiki/Draft_(hull)">https://en.wikipedia.org/wiki/Draft_(hull)</a></li>
+
+                <li id="ref13">Captain Damley. "Load line and Draught Markings." <a href="https://captaindamley.net/e-modules/general-ship-knowledge/load-line-and-draught-markings/">https://captaindamley.net/e-modules/general-ship-knowledge/load-line-and-draught-markings/</a></li>
+
+                <li id="ref15">Maritime Page. "Ship Hull Markings Explained — 7 Key Symbols On Every Vessel." <a href="https://maritimepage.com/ship-hull-markings/">https://maritimepage.com/ship-hull-markings/</a></li>
+
+                <li id="ref18">MySeaTime. "All You Wanted to Know About Draft Survey Calculations." <a href="https://www.myseatime.com/blog/detail/here-is-all-you-wanted-to-know-about-draft-survey-calculations">https://www.myseatime.com/blog/detail/here-is-all-you-wanted-to-know-about-draft-survey-calculations</a></li>
+
+                <li id="ref19">Knowledge Of Sea. "LoadLine and Draft Marks." <a href="https://knowledgeofsea.com/loadline-and-draft-marks/">https://knowledgeofsea.com/loadline-and-draft-marks/</a></li>
+
+                <li id="ref21">Discovery Alert. "Pilbara Ports Achieves Record Iron Ore Throughput in December." <a href="https://discoveryalert.com.au/iron-ore-throughput-pilbara-ports-2026/">https://discoveryalert.com.au/iron-ore-throughput-pilbara-ports-2026/</a></li>
+
+                <li id="ref22">Discovery Alert. "Rio Tinto's Eight-Billionth Tonne of Pilbara Iron Ore: 2026 Milestone." <a href="https://discoveryalert.com.au/iron-ore-pilbara-rio-tinto-eight-billion-tonne-2026/">https://discoveryalert.com.au/iron-ore-pilbara-rio-tinto-eight-billion-tonne-2026/</a></li>
+
+                <li id="ref23">Discovery Alert. "Dampier Port Upgrades Boost Iron Ore Export Capacity." <a href="https://discoveryalert.com.au/pilbara-ports-dampier-upgrades-2026-infrastructure/">https://discoveryalert.com.au/pilbara-ports-dampier-upgrades-2026-infrastructure/</a></li>
+
+                <li id="ref24">Wikipedia. "Port of Port Hedland." <a href="https://en.wikipedia.org/wiki/Port_of_Port_Hedland">https://en.wikipedia.org/wiki/Port_of_Port_Hedland</a></li>
+
+                <li id="ref27">Discovery Alert. "Pilbara Ports Record Iron Ore Exports Hit 40.6M Tonnes." <a href="https://discoveryalert.com.au/advanced-maritime-engineering-australian-export-efficiency-2026/">https://discoveryalert.com.au/advanced-maritime-engineering-australian-export-efficiency-2026/</a></li>
+
+                <li id="ref35">Australian Mining. "Rio Tinto marks eight billion tonnes from the Pilbara." <a href="https://www.australianmining.com.au/rio-tinto-marks-eight-billion-tonnes-from-the-pilbara/">https://www.australianmining.com.au/rio-tinto-marks-eight-billion-tonnes-from-the-pilbara/</a></li>
+
+                <li id="ref37">Ports Australia. "Pilbara Ports." <a href="https://www.portsaustralia.com.au/members/pilbara-ports">https://www.portsaustralia.com.au/members/pilbara-ports</a></li>
+
+                <li id="ref43">Marine Insight. "Understanding Draft Surveys - Importance, Calculations & Errors." <a href="https://www.marineinsight.com/naval-architecture/draft-surveys-calculations-errors/">https://www.marineinsight.com/naval-architecture/draft-surveys-calculations-errors/</a></li>
+
+                <li id="ref45">Marine Public. "Bulk Carriers: 50 Draft Survey Q&A to Pass Exam & Interview." <a href="https://www.marinepublic.com/blogs/merchant-fleet/652868-bulk-carriers-50-draft-survey-q-a-to-pass-exam-interview">https://www.marinepublic.com/blogs/merchant-fleet/652868-bulk-carriers-50-draft-survey-q-a-to-pass-exam-interview</a></li>
+
+                <li id="ref46">Vietcontrol. "Draft mark reading." <a href="https://vietcontrol.com/5578/?lang=en">https://vietcontrol.com/5578/?lang=en</a></li>
+
+                <li id="ref47">Virtue Marine. "Conducting a Ship Draft Survey: Step-by-Step Guide." <a href="https://www.virtuemarine.nl/post/how-ship-draft-surveys-are-conducted-uncovering-the-process">https://www.virtuemarine.nl/post/how-ship-draft-surveys-are-conducted-uncovering-the-process</a></li>
+
+                <li id="ref48">International Journal of Advanced Computer Science and Applications. "Aerial Draft Surveyor." <a href="https://thesai.org/Downloads/Volume16No10/Paper_78-Aerial_Draft_Surveyor.pdf">https://thesai.org/Downloads/Volume16No10/Paper_78-Aerial_Draft_Surveyor.pdf</a></li>
+
+                <li id="ref49">Beacon. "Draft (Draught) | Supply Chain Glossary." <a href="https://beacon.com/glossary/draft">https://beacon.com/glossary/draft</a></li>
+
+                <li id="ref50">US Army Corps of Engineers. "EM 1110-2-1613 Engineering and Design." <a href="https://www.publications.usace.army.mil/Portals/76/Publications/EngineerManuals/EM_1110-2-1613.pdf">https://www.publications.usace.army.mil/Portals/76/Publications/EngineerManuals/EM_1110-2-1613.pdf</a></li>
+
+                <li id="ref55">Global Security. "Shipboard Measurements." <a href="https://www.globalsecurity.org/military/systems/ship/measurement.htm">https://www.globalsecurity.org/military/systems/ship/measurement.htm</a></li>
+
+                <li id="ref63">Marine Public. "Draft Survey Guide: Key Steps for Accurate Measurements." <a href="https://www.marinepublic.com/blogs/merchant-fleet/700429-draft-survey-guide-key-steps-for-accurate-measurements">https://www.marinepublic.com/blogs/merchant-fleet/700429-draft-survey-guide-key-steps-for-accurate-measurements</a></li>
+
+                <li id="ref64">BulkersGuide. "Section 7.4 Draft Surveys: Principles, Procedures, and Calculations." <a href="https://bulkersguide.com/section-7-4-draft-surveys-principles-procedures-and-calculations-initial-intermediate-final/">https://bulkersguide.com/section-7-4-draft-surveys-principles-procedures-and-calculations-initial-intermediate-final/</a></li>
+
+                <li id="ref68">TheNavalArch. "Draft Surveys: Methodology, Calculations, and common errors." <a href="https://thenavalarch.com/draft-surveys-methodology-calculations-and-common-errors/">https://thenavalarch.com/draft-surveys-methodology-calculations-and-common-errors/</a></li>
+
+                <li id="ref69">Mariners Narod. "Draft Survey Procedure." <a href="https://mariners.narod.ru/dsprocedure.html">https://mariners.narod.ru/dsprocedure.html</a></li>
+
+                <li id="ref70">MARS-NET. "Draft survey operation Tutorial." <a href="https://marplat.eu/pluginfile.php/1835/mod_folder/content/0/Draft%20survey%20operation/Draft%20survey%20operation%20TUTORIAL.pdf">https://marplat.eu/pluginfile.php/1835/mod_folder/content/0/Draft%20survey%20operation/Draft%20survey%20operation%20TUTORIAL.pdf</a></li>
+
+                <li id="ref71">Wikipedia. "Draft survey." <a href="https://en.wikipedia.org/wiki/Draft_survey">https://en.wikipedia.org/wiki/Draft_survey</a></li>
+
+                <li id="ref76">SAFETY4SEA. "Britannia Club: Comprehensive guidance to conducting draft surveys for ships." <a href="https://safety4sea.com/britannia-club-comprehensive-guidance-to-conducting-draft-surveys-for-ships/">https://safety4sea.com/britannia-club-comprehensive-guidance-to-conducting-draft-surveys-for-ships/</a></li>
+
+                <li id="ref78">IMLI. "Merchant Shipping (Load Lines) Regulations 2019." <a href="https://imli.org/wp-content/uploads/2021/03/Khalila-W.-Astwood.pdf">https://imli.org/wp-content/uploads/2021/03/Khalila-W.-Astwood.pdf</a></li>
+
+                <li id="ref95">Seven Surveyor. "Basic Calculation for Surveyor - Marine Surveyor Information." <a href="https://sevensurveyor.com/basic-calculation-for-surveyor-part/">https://sevensurveyor.com/basic-calculation-for-surveyor-part/</a></li>
+
+                <li id="ref102">Arbrink. "Draft Survey Formulae." <a href="https://www.arbrink.com/wp-content/uploads/2022/01/DRAFT-SURVEY-FORMULAE.pdf">https://www.arbrink.com/wp-content/uploads/2022/01/DRAFT-SURVEY-FORMULAE.pdf</a></li>
+
+                <li id="ref104">xSHIPx. "Introduction to Draught Survey." <a href="https://xshipx.com/introduction-to-draught-survey/">https://xshipx.com/introduction-to-draught-survey/</a></li>
+
+                <li id="ref105">xSHIPx. "Draught Survey Code." <a href="https://xshipx.com/draught-survey-code/">https://xshipx.com/draught-survey-code/</a></li>
+
+                <li id="ref106">AIM Control Group. "Draft Surveys." <a href="https://aimcontrolgroup.com/en/Draft-Surveys.html">https://aimcontrolgroup.com/en/Draft-Surveys.html</a></li>
+
+                <li id="ref107">Wärtsilä. "Draft survey." <a href="https://www.wartsila.com/encyclopedia/term/draft-survey">https://www.wartsila.com/encyclopedia/term/draft-survey</a></li>
+
+                <li id="ref108">Scribd. "Draught Survey Procedures and Practices | PDF." <a href="https://www.scribd.com/document/385235034/Draught-Surveys">https://www.scribd.com/document/385235034/Draught-Surveys</a></li>
+
+                <li id="ref111">Cotecna. "Draft Survey Inspection Services and Procedures." <a href="https://www.cotecna.com/en/media/news/draft-survey-inspection-services-and-procedures">https://www.cotecna.com/en/media/news/draft-survey-inspection-services-and-procedures</a></li>
+
+                <li id="ref112">UseBase. "Draft Survey in Shipping: How Bulk Cargo Surveys Are Calculated." <a href="https://www.usebase.io/draft-survey/">https://www.usebase.io/draft-survey/</a></li>
+
+                <li id="ref114">AMSA. "Regulations and standards | Australian Maritime Safety Authority." <a href="https://www.amsa.gov.au/about/regulations-and-standards">https://www.amsa.gov.au/about/regulations-and-standards</a></li>
+
+                <li id="ref121">Maritime Mutual. "Draft Survey Defence of Dry Bulk Cargo Short Delivery Claims." <a href="https://maritime-mutual.com/risk-bulletins/draft-survey-defence-of-dry-bulk-cargo-short-delivery-claims/">https://maritime-mutual.com/risk-bulletins/draft-survey-defence-of-dry-bulk-cargo-short-delivery-claims/</a></li>
+
+                <li id="ref125">Constellation MS. "Draft Survey of Solid Bulk Cargo and Survey Limitations." <a href="https://constellationms.com/solid-bulk-cargo.html">https://constellationms.com/solid-bulk-cargo.html</a></li>
+
+                <li id="ref161">Hifshan. "Draft Survey Calculation Guide Complete 2026." <a href="https://hifshan.site/blog/draft-survey-calculation-guide-complete-2026">https://hifshan.site/blog/draft-survey-calculation-guide-complete-2026</a></li>
+
+                <li id="ref162">BulkersGuide. "Appendix C: Draft Survey Calculation Guide and Examples." <a href="https://bulkersguide.com/appendix-c-draft-survey-calculation-guide-and-examples/">https://bulkersguide.com/appendix-c-draft-survey-calculation-guide-and-examples/</a></li>
+
+                <li id="ref163">iStow. "What is a Draft Survey and Why Does It Matter in Shipping?" <a href="https://istow.id/what-is-a-draft-survey-and-why-does-it-matter-in-shipping/">https://istow.id/what-is-a-draft-survey-and-why-does-it-matter-in-shipping/</a></li>
+
+                <li id="ref165">AMSA. "National Standard for Commercial Vessels (NSCV)." <a href="https://www.amsa.gov.au/vessels-operators/nscv">https://www.amsa.gov.au/vessels-operators/nscv</a></li>
+
+                <li id="ref167">AMSA. "Vessels & operators | Australian Maritime Safety Authority." <a href="https://www.amsa.gov.au/vessels-operators">https://www.amsa.gov.au/vessels-operators</a></li>
+
+                <li id="ref181">Seven Surveyor. "Downloads - Marine Surveyor Information." <a href="https://sevensurveyor.com/downloads/">https://sevensurveyor.com/downloads/</a></li>
+
+                <li id="ref182">UN Digital Library. "Code of uniform standards and procedures for the performance of draught surveys of coal cargoes." <a href="https://digitallibrary.un.org/record/168125">https://digitallibrary.un.org/record/168125</a></li>
+
+                <li id="ref183">AM Nautical. "Draught Surveys: A Guide to Good Practice, 2nd Edition." <a href="https://www.amnautical.com/products/draught-surveys-a-guide-to-good-practice-second-edition">https://www.amnautical.com/products/draught-surveys-a-guide-to-good-practice-second-edition</a></li>
+
+                <li id="ref184">DOKUMEN.TIPS. "(PDF) Draught Survey Code by UNECE." <a href="https://dokumen.tips/documents/draught-survey-code-by-unece.html">https://dokumen.tips/documents/draught-survey-code-by-unece.html</a></li>
+
+                <li id="ref186">SlideShare. "UNECE - Draught survey code | PDF." <a href="https://www.slideshare.net/HobbyLogic/draught-survey-code-unece-all">https://www.slideshare.net/HobbyLogic/draught-survey-code-unece-all</a></li>
+
+                <li id="ref187">CUPDF. "Draught Survey Code - UNECE - [PDF Document]." <a href="https://cupdf.com/document/draught-survey-code-unece.html">https://cupdf.com/document/draught-survey-code-unece.html</a></li>
+
+                <li id="ref188">Scribd. "U.N. ECE Draught Survey Code | PDF." <a href="https://www.scribd.com/document/212870401/Draught-Survey-Code-by-UNECE">https://www.scribd.com/document/212870401/Draught-Survey-Code-by-UNECE</a></li>
+
+                <li id="ref193">Scribd. "Draught Survey Code - UNECE | PDF." <a href="https://www.scribd.com/doc/238862606/Draught-Survey-Code-UNECE">https://www.scribd.com/doc/238862606/Draught-Survey-Code-UNECE</a></li>
+
+                <li id="ref203">Scribd. "Ship Sagging and Hogging Analysis | PDF." <a href="https://www.scribd.com/document/248896559/Ship-Sagging-and-Hogging">https://www.scribd.com/document/248896559/Ship-Sagging-and-Hogging</a></li>
+
+                <li id="ref218">BulkCarrierGuide. "Safe carriage of Iron ores & other iron concentrates in bulk." <a href="https://bulkcarrierguide.com/iron-ore.html">https://bulkcarrierguide.com/iron-ore.html</a></li>
+
+                <li id="ref225">Scribd. "Iron Ore Bulk Carrier Loading Plan | PDF." <a href="https://www.scribd.com/document/692629158/LOADING-SEQ-iron-ore-4">https://www.scribd.com/document/692629158/LOADING-SEQ-iron-ore-4</a></li>
+            </ol>
+        </div>
+
+    </div>
+</body>
+</html>
